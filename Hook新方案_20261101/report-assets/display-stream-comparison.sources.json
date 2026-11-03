@@ -1,0 +1,274 @@
+{
+  "matrix": "/Users/weiyao/Desktop/考试星防作弊/Hook新方案_20261101/artifacts/display-stream-matrix-20261101T141122Z",
+  "description": "Each card contains two separate exact synthetic window crops, rearranged side by side and independently resized; not the original desktop layout.",
+  "sources": [
+    {
+      "case": "queue-baseline",
+      "source": "artifacts/display-stream-matrix-20261101T141122Z/queue-baseline/capture/frame-0001.png",
+      "sha256": "cc76d7e8e583dd66ba1acff024a3c881bf971858b20a22e5921a0f17b0c7df43",
+      "originalDimensions": [
+        3024,
+        1964
+      ],
+      "displayBoundsPoints": {
+        "height": 982,
+        "width": 1512,
+        "x": 0,
+        "y": 0
+      },
+      "crops": [
+        {
+          "window": "exam",
+          "windowID": 185925,
+          "boundsPoints": {
+            "height": 722,
+            "width": 850,
+            "x": 24,
+            "y": 57
+          },
+          "pixelCropLTRB": [
+            48,
+            114,
+            1748,
+            1558
+          ],
+          "resizedDimensions": [
+            1089,
+            925
+          ],
+          "positionOnComposite": [
+            100,
+            380
+          ],
+          "resize": "LANCZOS; original pixels preserved except crop and resize"
+        },
+        {
+          "window": "control",
+          "windowID": 185927,
+          "boundsPoints": {
+            "height": 242,
+            "width": 530,
+            "x": 890,
+            "y": 57
+          },
+          "pixelCropLTRB": [
+            1780,
+            114,
+            2840,
+            598
+          ],
+          "resizedDimensions": [
+            530,
+            242
+          ],
+          "positionOnComposite": [
+            1220,
+            430
+          ],
+          "resize": "LANCZOS; original pixels preserved except crop and resize"
+        }
+      ]
+    },
+    {
+      "case": "queue-block",
+      "source": "artifacts/display-stream-matrix-20261101T141122Z/queue-block/capture/frame-0001.png",
+      "sha256": "c07c99e376090cbc467dc3ae3a6757d74ca36e14aa5b6e354aec253912952a22",
+      "originalDimensions": [
+        3024,
+        1964
+      ],
+      "displayBoundsPoints": {
+        "height": 982,
+        "width": 1512,
+        "x": 0,
+        "y": 0
+      },
+      "crops": [
+        {
+          "window": "exam",
+          "windowID": 185925,
+          "boundsPoints": {
+            "height": 722,
+            "width": 850,
+            "x": 24,
+            "y": 57
+          },
+          "pixelCropLTRB": [
+            48,
+            114,
+            1748,
+            1558
+          ],
+          "resizedDimensions": [
+            1089,
+            925
+          ],
+          "positionOnComposite": [
+            1850,
+            380
+          ],
+          "resize": "LANCZOS; original pixels preserved except crop and resize"
+        },
+        {
+          "window": "control",
+          "windowID": 185927,
+          "boundsPoints": {
+            "height": 242,
+            "width": 530,
+            "x": 890,
+            "y": 57
+          },
+          "pixelCropLTRB": [
+            1780,
+            114,
+            2840,
+            598
+          ],
+          "resizedDimensions": [
+            530,
+            242
+          ],
+          "positionOnComposite": [
+            2970,
+            430
+          ],
+          "resize": "LANCZOS; original pixels preserved except crop and resize"
+        }
+      ]
+    },
+    {
+      "case": "runloop-baseline",
+      "source": "artifacts/display-stream-matrix-20261101T141122Z/runloop-baseline/capture/frame-0001.png",
+      "sha256": "a2548204bd1a56968df3cd49fa58c35d5d5f661cf2733a1dbe0c675def3011e1",
+      "originalDimensions": [
+        3024,
+        1964
+      ],
+      "displayBoundsPoints": {
+        "height": 982,
+        "width": 1512,
+        "x": 0,
+        "y": 0
+      },
+      "crops": [
+        {
+          "window": "exam",
+          "windowID": 185925,
+          "boundsPoints": {
+            "height": 722,
+            "width": 850,
+            "x": 24,
+            "y": 57
+          },
+          "pixelCropLTRB": [
+            48,
+            114,
+            1748,
+            1558
+          ],
+          "resizedDimensions": [
+            1089,
+            925
+          ],
+          "positionOnComposite": [
+            100,
+            1530
+          ],
+          "resize": "LANCZOS; original pixels preserved except crop and resize"
+        },
+        {
+          "window": "control",
+          "windowID": 185927,
+          "boundsPoints": {
+            "height": 242,
+            "width": 530,
+            "x": 890,
+            "y": 57
+          },
+          "pixelCropLTRB": [
+            1780,
+            114,
+            2840,
+            598
+          ],
+          "resizedDimensions": [
+            530,
+            242
+          ],
+          "positionOnComposite": [
+            1220,
+            1580
+          ],
+          "resize": "LANCZOS; original pixels preserved except crop and resize"
+        }
+      ]
+    },
+    {
+      "case": "runloop-block",
+      "source": "artifacts/display-stream-matrix-20261101T141122Z/runloop-block/capture/frame-0001.png",
+      "sha256": "7cbb0bd5093a34bcf4a43985f662a5ae417dd7ad7dea2b6d73cc263918216040",
+      "originalDimensions": [
+        3024,
+        1964
+      ],
+      "displayBoundsPoints": {
+        "height": 982,
+        "width": 1512,
+        "x": 0,
+        "y": 0
+      },
+      "crops": [
+        {
+          "window": "exam",
+          "windowID": 185925,
+          "boundsPoints": {
+            "height": 722,
+            "width": 850,
+            "x": 24,
+            "y": 57
+          },
+          "pixelCropLTRB": [
+            48,
+            114,
+            1748,
+            1558
+          ],
+          "resizedDimensions": [
+            1089,
+            925
+          ],
+          "positionOnComposite": [
+            1850,
+            1530
+          ],
+          "resize": "LANCZOS; original pixels preserved except crop and resize"
+        },
+        {
+          "window": "control",
+          "windowID": 185927,
+          "boundsPoints": {
+            "height": 242,
+            "width": 530,
+            "x": 890,
+            "y": 57
+          },
+          "pixelCropLTRB": [
+            1780,
+            114,
+            2840,
+            598
+          ],
+          "resizedDimensions": [
+            530,
+            242
+          ],
+          "positionOnComposite": [
+            2970,
+            1580
+          ],
+          "resize": "LANCZOS; original pixels preserved except crop and resize"
+        }
+      ]
+    }
+  ]
+}

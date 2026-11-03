@@ -1,0 +1,305 @@
+{
+  "atUTC": "2026-11-01T14:21:26.982268+00:00",
+  "applications": [
+    {
+      "path": "/Applications/ToDesk.app",
+      "bundleID": "com.youqu.todesk.mac",
+      "version": "5.2.3.0",
+      "build": "2943"
+    },
+    {
+      "path": "/Applications/UURemote.app",
+      "bundleID": "com.netease.uuremote",
+      "version": "4.40.0",
+      "build": "621"
+    }
+  ],
+  "componentHashes": [
+    {
+      "path": "/Applications/ToDesk.app/Contents/Helpers/ToDesk_Screenwall_Helper.app/Contents/MacOS/ToDesk_Screenwall_Helper",
+      "beforeSHA256": "4273a5540a0676281df7cdfb3d2cbb1ef5eff0adecea79350e90e61b32ea36a3",
+      "afterSHA256": "4273a5540a0676281df7cdfb3d2cbb1ef5eff0adecea79350e90e61b32ea36a3",
+      "unchanged": true
+    },
+    {
+      "path": "/Applications/ToDesk.app/Contents/Helpers/ToDesk_Session.app/Contents/MacOS/ToDesk_Session",
+      "beforeSHA256": "12843d1339a4c613ea5e3d7c8b6255fcdc59f4d9d8de85a9755924ca1d480dab",
+      "afterSHA256": "12843d1339a4c613ea5e3d7c8b6255fcdc59f4d9d8de85a9755924ca1d480dab",
+      "unchanged": true
+    },
+    {
+      "path": "/Applications/ToDesk.app/Contents/Frameworks/zulerLog.framework/Versions/A/zulerLog",
+      "beforeSHA256": "9815754e211b212f20c30ef962f1d3af32c9c9096e208ba93624a1dc21987577",
+      "afterSHA256": "9815754e211b212f20c30ef962f1d3af32c9c9096e208ba93624a1dc21987577",
+      "unchanged": true
+    },
+    {
+      "path": "/Applications/ToDesk.app/Contents/MacOS/ToDesk",
+      "beforeSHA256": "72c3e094473369415a5c04abdbe611ecd6bffe9b87b7dbbd3d70b7cc94db88a6",
+      "afterSHA256": "72c3e094473369415a5c04abdbe611ecd6bffe9b87b7dbbd3d70b7cc94db88a6",
+      "unchanged": true
+    },
+    {
+      "path": "/Applications/ToDesk.app/Contents/MacOS/ToDesk_Session_Proxy",
+      "beforeSHA256": "3548c4b100e6dc4087fc191a66de83cedae42721e9bee95a77ab2a59f62dea6a",
+      "afterSHA256": "3548c4b100e6dc4087fc191a66de83cedae42721e9bee95a77ab2a59f62dea6a",
+      "unchanged": true
+    },
+    {
+      "path": "/Applications/ToDesk.app/Contents/MacOS/updater",
+      "beforeSHA256": "719fe72b3bebb95f8413087406b1c9ef1eb8725820f44df00b7d0804364330b8",
+      "afterSHA256": "719fe72b3bebb95f8413087406b1c9ef1eb8725820f44df00b7d0804364330b8",
+      "unchanged": true
+    },
+    {
+      "path": "/Applications/ToDesk.app/Contents/MacOS/ToDesk_Service",
+      "beforeSHA256": "82522ce303badb24e4b1a435114cdee7f99a20852c2dca6ed0d6311cfe716359",
+      "afterSHA256": "82522ce303badb24e4b1a435114cdee7f99a20852c2dca6ed0d6311cfe716359",
+      "unchanged": true
+    },
+    {
+      "path": "/Applications/ToDesk.app/Contents/MacOS/CrashReport",
+      "beforeSHA256": "92c5bd565f3af7f1b7570c8350cd244d3a8a88272583f8c6761b3c034c6984bd",
+      "afterSHA256": "92c5bd565f3af7f1b7570c8350cd244d3a8a88272583f8c6761b3c034c6984bd",
+      "unchanged": true
+    },
+    {
+      "path": "/Applications/ToDesk.app/Contents/MacOS/todesk-mcp",
+      "beforeSHA256": "cc6032775bf6cc14f61f622d2caee903499050436cc1f96e88a5e185e22fd170",
+      "afterSHA256": "cc6032775bf6cc14f61f622d2caee903499050436cc1f96e88a5e185e22fd170",
+      "unchanged": true
+    },
+    {
+      "path": "/Applications/ToDesk.app/Contents/Frameworks/zrtc.framework/Versions/A/zrtc",
+      "beforeSHA256": "e34a8418d855b75f40a4a2b3932eb5cfc9386de83bfbe3823cb746851ad6cb04",
+      "afterSHA256": "e34a8418d855b75f40a4a2b3932eb5cfc9386de83bfbe3823cb746851ad6cb04",
+      "unchanged": true
+    },
+    {
+      "path": "/Applications/ToDesk.app/Contents/XPCServices/ToDesk_XPCHelper.xpc/Contents/MacOS/ToDesk_XPCHelper",
+      "beforeSHA256": "5b50f3145d4e09685e7084ca039f5c5fe175fdd8c4600bbcd0834773933d51d9",
+      "afterSHA256": "5b50f3145d4e09685e7084ca039f5c5fe175fdd8c4600bbcd0834773933d51d9",
+      "unchanged": true
+    },
+    {
+      "path": "/Applications/ToDesk.app/Contents/Frameworks/Breakpad.framework/Versions/A/Breakpad",
+      "beforeSHA256": "0c370f0d5d62887277ced00b9203666de2f1947160685f2f7c5464bec53a1f60",
+      "afterSHA256": "0c370f0d5d62887277ced00b9203666de2f1947160685f2f7c5464bec53a1f60",
+      "unchanged": true
+    },
+    {
+      "path": "/Applications/ToDesk.app/Contents/Frameworks/Breakpad.framework/Versions/A/Frameworks/breakpadUtilities.dylib",
+      "beforeSHA256": "066b68b1b45d0163e234446a582d7c6948c8edf31367175d5558ee680d9f9b94",
+      "afterSHA256": "066b68b1b45d0163e234446a582d7c6948c8edf31367175d5558ee680d9f9b94",
+      "unchanged": true
+    },
+    {
+      "path": "/Applications/ToDesk.app/Contents/Frameworks/Sparkle.framework/Versions/A/Sparkle",
+      "beforeSHA256": "8085ab17badf356086c97a73b7ced163ba6c197aea788c65007ddd25fd7e5399",
+      "afterSHA256": "8085ab17badf356086c97a73b7ced163ba6c197aea788c65007ddd25fd7e5399",
+      "unchanged": true
+    },
+    {
+      "path": "/Applications/ToDesk.app/Contents/Frameworks/zagent.framework/Versions/A/zagent",
+      "beforeSHA256": "c9662569b7a57e45857ead0b09fa452c422787e019e6dac00015f491b39d86ac",
+      "afterSHA256": "c9662569b7a57e45857ead0b09fa452c422787e019e6dac00015f491b39d86ac",
+      "unchanged": true
+    },
+    {
+      "path": "/Applications/ToDesk.app/Contents/Frameworks/Sparkle.framework/Versions/A/XPCServices/Installer.xpc/Contents/MacOS/Installer",
+      "beforeSHA256": "47e4ae3907fe71587739f3e789ae6be8d78155a89dae46fb3a7997f4da7d801a",
+      "afterSHA256": "47e4ae3907fe71587739f3e789ae6be8d78155a89dae46fb3a7997f4da7d801a",
+      "unchanged": true
+    },
+    {
+      "path": "/Applications/ToDesk.app/Contents/Frameworks/Sparkle.framework/Versions/A/XPCServices/Downloader.xpc/Contents/MacOS/Downloader",
+      "beforeSHA256": "5603975b60858e00cd14fff920623f4dbcc0238ac5af143e3a7d7467dec32993",
+      "afterSHA256": "5603975b60858e00cd14fff920623f4dbcc0238ac5af143e3a7d7467dec32993",
+      "unchanged": true
+    },
+    {
+      "path": "/Applications/ToDesk.app/Contents/Frameworks/Breakpad.framework/Versions/A/Resources/crash_report_sender.app/Contents/MacOS/crash_report_sender",
+      "beforeSHA256": "50c95af7f639cbb6af644fcac6fd1a55bdfe90735302493574f87f1436cc11b4",
+      "afterSHA256": "50c95af7f639cbb6af644fcac6fd1a55bdfe90735302493574f87f1436cc11b4",
+      "unchanged": true
+    },
+    {
+      "path": "/Applications/ToDesk.app/Contents/Frameworks/Breakpad.framework/Versions/A/Resources/breakpadUtilities.dylib",
+      "beforeSHA256": "25f7281be61afd591faa7f9fa86bd2b18264fd37c98d78486b2246ab089216af",
+      "afterSHA256": "25f7281be61afd591faa7f9fa86bd2b18264fd37c98d78486b2246ab089216af",
+      "unchanged": true
+    },
+    {
+      "path": "/Applications/ToDesk.app/Contents/Frameworks/Breakpad.framework/Versions/A/Resources/Inspector",
+      "beforeSHA256": "91b02f195f6ba13b981124c793d69ae9aa44ef6b2946aaf5d78fec28db3f6574",
+      "afterSHA256": "91b02f195f6ba13b981124c793d69ae9aa44ef6b2946aaf5d78fec28db3f6574",
+      "unchanged": true
+    },
+    {
+      "path": "/Applications/ToDesk.app/Contents/Frameworks/Sparkle.framework/Versions/A/Autoupdate",
+      "beforeSHA256": "5ddbdd1af4c33f0003e6e39716e74c1c9222c3bdfa704e0e0192e45ac07b01be",
+      "afterSHA256": "5ddbdd1af4c33f0003e6e39716e74c1c9222c3bdfa704e0e0192e45ac07b01be",
+      "unchanged": true
+    },
+    {
+      "path": "/Applications/ToDesk.app/Contents/Frameworks/Sparkle.framework/Versions/A/Updater.app/Contents/MacOS/Updater",
+      "beforeSHA256": "6cd62d96964ee889db7ebe320ce787e532622bd99964b0e6d5d8f4bd185242f0",
+      "afterSHA256": "6cd62d96964ee889db7ebe320ce787e532622bd99964b0e6d5d8f4bd185242f0",
+      "unchanged": true
+    },
+    {
+      "path": "/Applications/UURemote.app/Contents/Helpers/tmux/uuyc-mux",
+      "beforeSHA256": "f87105fa7d8f0e585d8f0b97d6f84bb6f9c80c5e123adb216d71601fefdbf3b7",
+      "afterSHA256": "f87105fa7d8f0e585d8f0b97d6f84bb6f9c80c5e123adb216d71601fefdbf3b7",
+      "unchanged": true
+    },
+    {
+      "path": "/Applications/UURemote.app/Contents/Helpers/UURemoteUpdater.app/Contents/Frameworks/libswift_Concurrency.dylib",
+      "beforeSHA256": "fe9ed73cef3f739c93525db160dea5d8fb29050d918b3f54ad8da8e85adcd4d2",
+      "afterSHA256": "fe9ed73cef3f739c93525db160dea5d8fb29050d918b3f54ad8da8e85adcd4d2",
+      "unchanged": true
+    },
+    {
+      "path": "/Applications/UURemote.app/Contents/Helpers/UURemoteUpdater.app/Contents/XPCServices/UURemoteHelper.xpc/Contents/MacOS/UURemoteHelper",
+      "beforeSHA256": "01549d757e0e9380a8ca27eadba6c78e01eaf7f764a612fb742c520196a8bdaf",
+      "afterSHA256": "01549d757e0e9380a8ca27eadba6c78e01eaf7f764a612fb742c520196a8bdaf",
+      "unchanged": true
+    },
+    {
+      "path": "/Applications/UURemote.app/Contents/Helpers/uuyc-cli",
+      "beforeSHA256": "0c1464393bf579cad83e16c19dfbf4fcc2fd4db0aa9c1205695a4df8681f2ade",
+      "afterSHA256": "0c1464393bf579cad83e16c19dfbf4fcc2fd4db0aa9c1205695a4df8681f2ade",
+      "unchanged": true
+    },
+    {
+      "path": "/Applications/UURemote.app/Contents/Helpers/UURemoteServer",
+      "beforeSHA256": "992666aa2617983dcfd9f8d0e8f1cc8b9cf30f3fd18c02d24cd6d5f4ca6774aa",
+      "afterSHA256": "992666aa2617983dcfd9f8d0e8f1cc8b9cf30f3fd18c02d24cd6d5f4ca6774aa",
+      "unchanged": true
+    },
+    {
+      "path": "/Applications/UURemote.app/Contents/Frameworks/libstreamer.dylib",
+      "beforeSHA256": "2964a0307c2c508667c250688492a39326e3d11b2eb403cbeebabfcfd67d3e3a",
+      "afterSHA256": "2964a0307c2c508667c250688492a39326e3d11b2eb403cbeebabfcfd67d3e3a",
+      "unchanged": true
+    },
+    {
+      "path": "/Applications/UURemote.app/Contents/Frameworks/libswift_Concurrency.dylib",
+      "beforeSHA256": "3f08f5ea0b0745f83262bc127d47dbf081824889baf1ca852ce74e97127f4a2c",
+      "afterSHA256": "3f08f5ea0b0745f83262bc127d47dbf081824889baf1ca852ce74e97127f4a2c",
+      "unchanged": true
+    },
+    {
+      "path": "/Applications/UURemote.app/Contents/Helpers/UURemoteUpdater.app/Contents/MacOS/UURemoteUpdater",
+      "beforeSHA256": "774409afc29adfb214bcb84e6dd43386f5df98df5ad0b7e6114fc120f57437d3",
+      "afterSHA256": "774409afc29adfb214bcb84e6dd43386f5df98df5ad0b7e6114fc120f57437d3",
+      "unchanged": true
+    },
+    {
+      "path": "/Applications/UURemote.app/Contents/MacOS/UURemoteDaemon",
+      "beforeSHA256": "14a5ffe066832f267edfc8c3905b28b2f8c25d661b1be4815dca813e0f861eb3",
+      "afterSHA256": "14a5ffe066832f267edfc8c3905b28b2f8c25d661b1be4815dca813e0f861eb3",
+      "unchanged": true
+    },
+    {
+      "path": "/Applications/UURemote.app/Contents/MacOS/UURemoteService",
+      "beforeSHA256": "a9f8ba82d37a8fa545323aeb311ad2316fea8ff86304ae13f00632098731af0a",
+      "afterSHA256": "a9f8ba82d37a8fa545323aeb311ad2316fea8ff86304ae13f00632098731af0a",
+      "unchanged": true
+    },
+    {
+      "path": "/Applications/UURemote.app/Contents/MacOS/UURemote",
+      "beforeSHA256": "235eb6415bc6828d05b87820869d40c9ebb5da268ebdd8ede8e4394c5f17f5e6",
+      "afterSHA256": "235eb6415bc6828d05b87820869d40c9ebb5da268ebdd8ede8e4394c5f17f5e6",
+      "unchanged": true
+    },
+    {
+      "path": "/Applications/UURemote.app/Contents/XPCServices/UURemoteHelper.xpc/Contents/MacOS/UURemoteHelper",
+      "beforeSHA256": "97e554a83723432780098a356a16e203655805e5e0cf4ec966cdc5c2298f45f9",
+      "afterSHA256": "97e554a83723432780098a356a16e203655805e5e0cf4ec966cdc5c2298f45f9",
+      "unchanged": true
+    }
+  ],
+  "all34OriginalMachOFilesUnchanged": true,
+  "jobs": [
+    {
+      "label": "com.youqu.todesk.desktop",
+      "returnCode": 0,
+      "expectedOriginalPath": "/Library/LaunchAgents/com.youqu.todesk.session.plist",
+      "path": "/Library/LaunchAgents/com.youqu.todesk.session.plist",
+      "program": "/Applications/ToDesk.app/Contents/MacOS/ToDesk_Session_Proxy",
+      "state": "running",
+      "pid": "36612",
+      "originalDefinitionRestored": true,
+      "experimentEnvironmentKeysPresent": []
+    },
+    {
+      "label": "com.netease.uuremote.agent",
+      "returnCode": 0,
+      "expectedOriginalPath": "/Library/LaunchAgents/com.netease.uuremote.agent.plist",
+      "path": "/Library/LaunchAgents/com.netease.uuremote.agent.plist",
+      "program": "/Applications/UURemote.app/Contents/MacOS/UURemoteService",
+      "state": "running",
+      "pid": "84016",
+      "originalDefinitionRestored": true,
+      "experimentEnvironmentKeysPresent": []
+    }
+  ],
+  "processes": [
+    {
+      "pid": 3980,
+      "parentPID": 1,
+      "uid": 0,
+      "executable": "/Applications/UURemote.app/Contents/MacOS/UURemoteDaemon"
+    },
+    {
+      "pid": 36612,
+      "parentPID": 1,
+      "uid": 501,
+      "executable": "/Applications/ToDesk.app/Contents/MacOS/ToDesk_Session_Proxy"
+    },
+    {
+      "pid": 36640,
+      "parentPID": 36612,
+      "uid": 501,
+      "executable": "/Applications/ToDesk.app/Contents/Helpers/ToDesk_Session.app/Contents/MacOS/ToDesk_Session"
+    },
+    {
+      "pid": 78215,
+      "parentPID": 1,
+      "uid": 0,
+      "executable": "/Applications/ToDesk.app/Contents/MacOS/ToDesk_Service"
+    },
+    {
+      "pid": 81381,
+      "parentPID": 1,
+      "uid": 501,
+      "executable": "/Applications/ToDesk.app/Contents/MacOS/ToDesk"
+    },
+    {
+      "pid": 84016,
+      "parentPID": 1,
+      "uid": 501,
+      "executable": "/Applications/UURemote.app/Contents/MacOS/UURemoteService"
+    },
+    {
+      "pid": 84053,
+      "parentPID": 84016,
+      "uid": 501,
+      "executable": "/Applications/UURemote.app/Contents/Helpers/UURemoteServer"
+    },
+    {
+      "pid": 84593,
+      "parentPID": 1,
+      "uid": 501,
+      "executable": "/Applications/UURemote.app/Contents/MacOS/UURemote"
+    },
+    {
+      "pid": 84609,
+      "parentPID": 1,
+      "uid": 0,
+      "executable": "/Applications/UURemote.app/Contents/XPCServices/UURemoteHelper.xpc/Contents/MacOS/UURemoteHelper"
+    }
+  ],
+  "scope": "Metadata and original-file verification. Does not assert a newly successful remote UU connection."
+}

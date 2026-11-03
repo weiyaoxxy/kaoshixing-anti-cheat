@@ -1,0 +1,31 @@
+{
+  "atUTC": "2026-11-01T15:19:26.351763+00:00",
+  "source": "/Applications/UURemote.app",
+  "copy": "/Users/weiyao/Desktop/考试星防作弊/Hook新方案_20261101/UU深入验证_20261101/sandbox-apps/UURemote-Test.app",
+  "files": [
+    {
+      "relativePath": "Contents/Helpers/UURemoteServer",
+      "sourceSHA256": "992666aa2617983dcfd9f8d0e8f1cc8b9cf30f3fd18c02d24cd6d5f4ca6774aa",
+      "copySHA256": "992666aa2617983dcfd9f8d0e8f1cc8b9cf30f3fd18c02d24cd6d5f4ca6774aa",
+      "distinctInode": true
+    },
+    {
+      "relativePath": "Contents/MacOS/UURemoteService",
+      "sourceSHA256": "a9f8ba82d37a8fa545323aeb311ad2316fea8ff86304ae13f00632098731af0a",
+      "copySHA256": "a9f8ba82d37a8fa545323aeb311ad2316fea8ff86304ae13f00632098731af0a",
+      "distinctInode": true
+    },
+    {
+      "relativePath": "Contents/MacOS/UURemote",
+      "sourceSHA256": "235eb6415bc6828d05b87820869d40c9ebb5da268ebdd8ede8e4394c5f17f5e6",
+      "copySHA256": "235eb6415bc6828d05b87820869d40c9ebb5da268ebdd8ede8e4394c5f17f5e6",
+      "distinctInode": true
+    },
+    {
+      "relativePath": "Contents/Frameworks/libstreamer.dylib",
+      "sourceSHA256": "2964a0307c2c508667c250688492a39326e3d11b2eb403cbeebabfcfd67d3e3a",
+      "copySHA256": "2964a0307c2c508667c250688492a39326e3d11b2eb403cbeebabfcfd67d3e3a",
+      "distinctInode": true
+    }
+  ]
+}

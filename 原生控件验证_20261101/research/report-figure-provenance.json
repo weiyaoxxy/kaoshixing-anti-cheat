@@ -1,0 +1,73 @@
+[
+  {
+    "figure": "review-figures/01-native-edited.png",
+    "source": "artifacts/native-final-v03-20261101T133147Z/raster-protected/edited-source.png",
+    "sourceSHA256": "3c91fa9aa8ad854e608afb36ff128431ee8463482251a13ea24fe23dded94534",
+    "cropPixels": null,
+    "figureSHA256": "581e6878ae4ebde02681e8e1c6cda546924cf3d461a56e63782d74a271b882a8",
+    "isNewExperiment": false
+  },
+  {
+    "figure": "review-figures/02-native-selection.png",
+    "source": "artifacts/native-keyboard-20261101T133448Z/raster-protected/02-drag-selection-source.png",
+    "sourceSHA256": "38882b5e5f9ce511392e605e517a864c41e3a53c552574ae34ea3f273e1afaee",
+    "cropPixels": [
+      30,
+      200,
+      1750,
+      310
+    ],
+    "figureSHA256": "aa4f7e8f3eef8022337a130ea029887869ee3350567b9a40f11f981b75ee7480",
+    "isNewExperiment": false
+  },
+  {
+    "figure": "review-figures/03-baseline-window.png",
+    "source": "artifacts/native-final-v03-20261101T133147Z/raster-baseline/capture/sck-screenshot-window.png",
+    "sourceSHA256": "c59672ba079dcf0c5dec98b92a5b01e9a388f067d60c6d948b143e8cfdfe264a",
+    "cropPixels": null,
+    "figureSHA256": "c313be0cc75a416eda4d40683203cfbf0a41f9ae2e305b9acc0c9b981404ed44",
+    "isNewExperiment": false
+  },
+  {
+    "figure": "review-figures/04-protected-window.png",
+    "source": "artifacts/native-final-v03-20261101T133147Z/raster-protected/capture/sck-screenshot-window.png",
+    "sourceSHA256": "c9eea51f5976d9aa0f8b631e1d5ad804da2a8f378418363060432383f46a0714",
+    "cropPixels": null,
+    "figureSHA256": "cf242b6b1e3e8877ff7fac536621059c47917ed87e01320cc61386f434c63617",
+    "isNewExperiment": false
+  },
+  {
+    "figure": "review-figures/05-ime-candidate-leak.png",
+    "source": "artifacts/native-ime-20261101T134127Z/raster-protected/capture-composition/sck-screenshot-rectangle.png",
+    "sourceSHA256": "2525f5f35c6c21fa406f188bbd09feef43d013983a9c2c10385d3b49748df73f",
+    "cropPixels": [
+      0,
+      0,
+      1800,
+      840
+    ],
+    "figureSHA256": "d48b1e8d613f64ec1ebeed422ac3d20649d5af58a8f8a1e14736c82c45be1635",
+    "isNewExperiment": false
+  },
+  {
+    "figure": "review-figures/06-native-chinese-commit.png",
+    "source": "artifacts/native-ime-20261101T134127Z/raster-protected/03-commit-source.png",
+    "sourceSHA256": "611f247e23c555cf53492c04900ee49f293b2df85bfa3e64d9c1a8dd6678f1db",
+    "cropPixels": [
+      30,
+      140,
+      1750,
+      310
+    ],
+    "figureSHA256": "454f3ef4985921868b6015b39c3307e24ebe4502c51fe9f522be508b07405e98",
+    "isNewExperiment": false
+  },
+  {
+    "figure": "review-figures/07-hidden-source-readable.png",
+    "source": "artifacts/source-exposure-control-20261101T132024Z/source-hidden-after-visible-screenshot/sck-screenshot-window.png",
+    "sourceSHA256": "a6c1499567fed2c5b41180125251f2b68111452db7750ac02d85689fc61e1cfd",
+    "cropPixels": null,
+    "figureSHA256": "40a48b9fcf0464dabd99dd93af47caab87a27cad86c5639e7a30ae80f38aecc2",
+    "isNewExperiment": false
+  }
+]

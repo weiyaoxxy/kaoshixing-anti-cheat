@@ -1,0 +1,12 @@
+{
+  "CaptureProbe.swift": true,
+  "LegacyCapture.c": true,
+  "LegacyCapture.h": true,
+  "README.md": true,
+  "docs/API依据.md": true,
+  "docs/DRM与系统路线.md": true,
+  "docs/PoC设计与复现.md": true,
+  "docs/实验矩阵与验收.md": true,
+  "docs/技术预研报告.md": true,
+  "docs/本机测试结果.md": true
+}

@@ -1,0 +1,18 @@
+{
+  "atUTC": "2026-11-01T14:24:31.219897+00:00",
+  "localLinksChecked": 108,
+  "missingLinks": [],
+  "pythonSyntaxParsed": [
+    "scripts/test-uu-load-witness.py",
+    "scripts/analyze-hook-matrix.py",
+    "scripts/uu-service-instrument.py",
+    "scripts/run-display-stream-matrix.py",
+    "scripts/analyze-display-stream-matrix.py",
+    "scripts/run-controlled-matrix.py",
+    "scripts/render-controlled-comparison.py",
+    "scripts/audit-remote-targets.py",
+    "scripts/democtl.py",
+    "scripts/render-display-stream-comparison.py",
+    "scripts/todesk-proxy-instrument.py"
+  ]
+}

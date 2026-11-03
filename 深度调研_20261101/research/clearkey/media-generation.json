@@ -1,0 +1,71 @@
+{
+  "source": "/Users/weiyao/Desktop/考试星防作弊/artifacts/matrix-20261101T082724Z/baseline/self-recording-A1C86017.mp4",
+  "sourceSHA256": "964d01a75b10d0be6094c0434631d0b3bcceb47377e9fa1164bdddf5db5198db",
+  "toolRepository": "https://github.com/axiomatic-systems/Bento4",
+  "toolCommit": "b8c50a078356a1c3444ce0a8744634ed488424a4",
+  "encryption": "SAMPLE-AES in MPEG-TS, identity key delivery (not whole-segment AES-128)",
+  "testKeyHex": "00112233445566778899aabbccddeeff",
+  "commands": [
+    {
+      "mode": "plain",
+      "command": [
+        "/Users/weiyao/Desktop/考试星防作弊/深度调研_20261101/research/clearkey/Bento4/Build/Targets/any-gnu-gcc/Release/mp42hls",
+        "--hls-version",
+        "5",
+        "--segment-duration",
+        "3",
+        "--audio-track-id",
+        "0",
+        "/Users/weiyao/Desktop/考试星防作弊/artifacts/matrix-20261101T082724Z/baseline/self-recording-A1C86017.mp4"
+      ],
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "mode": "encrypted",
+      "command": [
+        "/Users/weiyao/Desktop/考试星防作弊/深度调研_20261101/research/clearkey/Bento4/Build/Targets/any-gnu-gcc/Release/mp42hls",
+        "--hls-version",
+        "5",
+        "--segment-duration",
+        "3",
+        "--audio-track-id",
+        "0",
+        "--encryption-mode",
+        "SAMPLE-AES",
+        "--encryption-key",
+        "00112233445566778899aabbccddeeff",
+        "--encryption-iv-mode",
+        "random",
+        "--encryption-key-uri",
+        "key.bin",
+        "--encryption-key-format",
+        "identity",
+        "/Users/weiyao/Desktop/考试星防作弊/artifacts/matrix-20261101T082724Z/baseline/self-recording-A1C86017.mp4"
+      ],
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "files": {
+    "plain/segment-1.ts": "eb541096330e609e9e2df5c2142ca558174f5c61b9cf92d8fdb4574671a2626b",
+    "plain/segment-5.ts": "ce39a68d9cb3dc8dad407e26e8b56af8e67087e6c24340c50bb87518f8d3a126",
+    "plain/segment-4.ts": "93f56d4a1dc66e147bfba94bbe9cfdd5eeb4739b5034daa3ea7292119149e2dd",
+    "plain/segment-0.ts": "4c2b07adcb0acefbbd34bbec69b61921dbb8d83ea577b1b8d05cfd2b317b9224",
+    "plain/master.m3u8": "7c6441f201a6dfaf3ed7472af67223cc96b7e32ba9724c5dbb2ce7cbec308a05",
+    "plain/iframes.m3u8": "04e7076edfb73463ec44192d188cce015c2fd3d544bf295ca29cdb67c4450cfa",
+    "plain/stream.m3u8": "7779de2e579123b38b938221986e15e289fc18d733095f7e694049dc9327eeef",
+    "plain/segment-3.ts": "f7ae30a32d048cfaf0f9c035a53eedd5558eb7b9fcdc4d8c30be9d09b83e13fd",
+    "plain/segment-2.ts": "9a0a56e92a1b3d359f057926d2c9d728d37e6c8637382d6a2720cfd513980fe7",
+    "encrypted/segment-1.ts": "5b281cd142088c33edddb83b6cf7ffa0b7cec6bc0f22e6f16de25df661599fda",
+    "encrypted/segment-5.ts": "abd400400dd6be66592300184bc8a2b52bd7601d679650961fd53827db7a7b3d",
+    "encrypted/segment-4.ts": "ecce922fbaa08c98058fc5a0166c81865de2574afe156dec5e79b1cfa72fed3c",
+    "encrypted/segment-0.ts": "a92986c690292923ef49015ae67fde51a440d34f113d115621f9b1da40fe00bf",
+    "encrypted/master.m3u8": "7c6441f201a6dfaf3ed7472af67223cc96b7e32ba9724c5dbb2ce7cbec308a05",
+    "encrypted/iframes.m3u8": "4f298849e88b5ded15960c61f44f5c01ecf05d2e034e4ddc9d4b9b7b8e2bd4b6",
+    "encrypted/key.bin": "a8faed6abbf35c12a4b26e40f6feb19d736d90045c83b9f9a31f638d323e6811",
+    "encrypted/stream.m3u8": "6b4df4894b9d05862a25ac8ba8766e20e1bb69b1a1230156cde7678a5c15c2e2",
+    "encrypted/segment-3.ts": "16349ee8bc1d59b0e6e00c8277995d029ec473c9977bb739d5777e6d095a2185",
+    "encrypted/segment-2.ts": "dc126f4e27fab63e7a93bed1e66e881e52457356f965ce5c0deb5d6909e847c3"
+  }
+}

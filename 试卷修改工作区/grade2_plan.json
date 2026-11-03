@@ -1,0 +1,147 @@
+{
+  "source": "/Users/weiyao/Desktop/二年级期中测试.docx",
+  "counting_note": "Part 7、8、9各有第1题已作答示例，均不计入待答题；各5道待答题，修改2道，恰好40%。Part 8为问答选择（非独立语法单项选择），对应用户所指语法选择。",
+  "sections": [
+    {
+      "section": "Part 7:Make sentences with the words.",
+      "total_assessed_items": 5,
+      "changed_items": [
+        2,
+        3
+      ],
+      "ratio": 0.4
+    },
+    {
+      "section": "Part 8:Read and choose.",
+      "total_assessed_items": 5,
+      "changed_items": [
+        2,
+        3
+      ],
+      "ratio": 0.4
+    },
+    {
+      "section": "Part 9:Look and read.Then choose and write.",
+      "total_assessed_items": 5,
+      "changed_items": [
+        2,
+        6
+      ],
+      "ratio": 0.4
+    }
+  ],
+  "reading_updated_text": "It's ① Saturday. At eight o'clock, Tom ② _____. He doesn't ③ _____ today. He ④ _____ and washes his face. There are some ⑤ _____ on the plate. Tom is very happy. Then he sits at the table and has breakfast. He ⑥ _____ tea, so he has milk.",
+  "reading_answers": {
+    "1": "Saturday (example)",
+    "2": "gets up",
+    "3": "go to school",
+    "4": "gets dressed",
+    "5": "sandwiches",
+    "6": "doesn't like"
+  },
+  "other_notes": [
+    "其余题型和示例不变。",
+    "已查看Part9全部八张图片，图片为词库配图（tea/gets dressed/go to school/likes/gets up/doesn't like/sandwiches/Saturday），不是题目事件插图。因此所拟两处短文修改不与图片冲突。",
+    "Part9第②题请优先分开替换空白前后文字，以保留原编号与答案下划线格式。第⑥题只需替换末尾文字。",
+    "Part8问答选择题没有全新的独立语法单选，按对应语法选择处理已获主agent确认。"
+  ],
+  "counting": {
+    "grammar": {
+      "total": 5,
+      "changed": 2
+    },
+    "word_order": {
+      "total": 5,
+      "changed": 2
+    },
+    "reading": {
+      "total": 5,
+      "changed": 2
+    }
+  },
+  "items": [
+    {
+      "section": "Part 7",
+      "number": 2,
+      "concept": "否定祈使句 Don't + 动词原形；stand up 改 sit down，消除原tand拼写问题，词数不变。",
+      "answer": "Don't sit down.",
+      "replacements": [
+        {
+          "paragraph_index": 276,
+          "old": "2.up       don't      tand",
+          "new": "2.down       don't      sit"
+        }
+      ]
+    },
+    {
+      "section": "Part 7",
+      "number": 3,
+      "concept": "第三人称单数一般现在时日常活动陈述句、at + 整点；gets up改has breakfast，同为已出现的基础词汇，词数同为7。",
+      "answer": "Lucy has breakfast at seven o'clock.",
+      "replacements": [
+        {
+          "paragraph_index": 278,
+          "old": "3.six      at      o'clock      up      gets     Emma",
+          "new": "3.seven      at      o'clock      breakfast      has     Lucy"
+        }
+      ]
+    },
+    {
+      "section": "Part 8",
+      "number": 2,
+      "concept": "When询问日常活动时间；介词at + 整点时间回答。",
+      "answer": "E. At six o'clock.",
+      "replacements": [
+        {
+          "paragraph_index": 295,
+          "old": "2.-When  do  you  have breakfast?",
+          "new": "2.-When  do  you  have dinner?"
+        }
+      ]
+    },
+    {
+      "section": "Part 8",
+      "number": 3,
+      "concept": "Does一般疑问句与she的否定简答；人名换为女性家庭成员名词短语，动物喜好语境不变。",
+      "answer": "D. No, she doesn't.",
+      "replacements": [
+        {
+          "paragraph_index": 300,
+          "old": "3.-Does  Lucy  like  parrots?",
+          "new": "3.-Does  your  mum  like  pandas?"
+        }
+      ]
+    },
+    {
+      "section": "Part 9",
+      "number": 2,
+      "concept": "根据晨起语境识别第三人称单数日常活动短语；修改时间信息及句序。",
+      "answer": "gets up",
+      "replacements": [
+        {
+          "paragraph_index": 349,
+          "old": "Tom  ",
+          "new": "At eight o'clock, Tom "
+        },
+        {
+          "paragraph_index": 349,
+          "old": "at seven o'clock.",
+          "new": "."
+        }
+      ]
+    },
+    {
+      "section": "Part 9",
+      "number": 6,
+      "concept": "根据饮食语境辨析likes / doesn't like；主语和时态不变，词库中已有否定选项。",
+      "answer": "doesn't like",
+      "replacements": [
+        {
+          "paragraph_index": 350,
+          "old": "the sandwich very much.",
+          "new": "tea, so he has milk."
+        }
+      ]
+    }
+  ]
+}

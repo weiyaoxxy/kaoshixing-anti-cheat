@@ -1,0 +1,356 @@
+SDK 26.5; captured 2026-11-01 (client date).
+These are excerpts of installed Apple public SDK headers.
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks/AVFoundation.framework/Headers/AVSampleBufferDisplayLayer.h
+31: AVF_EXPORT NSString *const AVSampleBufferDisplayLayerFailedToDecodeNotification API_AVAILABLE(macos(10.10), ios(8.0), tvos(10.2), visionos(1.0)) API_UNAVAILABLE(watchos); // decode failed, see NSError in notification payload
+32: AVF_EXPORT NSString *const AVSampleBufferDisplayLayerFailedToDecodeNotificationErrorKey API_AVAILABLE(macos(10.10), ios(8.0), tvos(10.2), visionos(1.0)) API_UNAVAILABLE(watchos); // NSError
+33: 
+34: AVF_EXPORT NSNotificationName const AVSampleBufferDisplayLayerRequiresFlushToResumeDecodingDidChangeNotification API_AVAILABLE(macos(11.0), ios(14.0), tvos(14.0), visionos(1.0)) API_UNAVAILABLE(watchos); // see requiresFlushToResumeDecoding property
+35: AVF_EXPORT NSNotificationName const AVSampleBufferDisplayLayerOutputObscuredDueToInsufficientExternalProtectionDidChangeNotification API_AVAILABLE(macos(11.3), ios(14.5), tvos(14.5), watchos(7.4), visionos(1.0)); // see outputObscuredDueToInsufficientExternalProtection property
+36: 
+37: AVF_EXPORT NSNotificationName const AVSampleBufferDisplayLayerReadyForDisplayDidChangeNotification API_AVAILABLE(macos(14.4), ios(17.4), tvos(17.4), visionos(1.1)) API_UNAVAILABLE(watchos); // see readyForDisplay property
+38: 
+39: API_AVAILABLE(macos(10.8), ios(8.0), tvos(10.2), visionos(1.0)) API_UNAVAILABLE(watchos)
+40: @interface AVSampleBufferDisplayLayer : CALayer
+229: 
+230: API_AVAILABLE(macos(10.15), ios(13.0), tvos(13.0), visionos(1.0)) API_UNAVAILABLE(watchos)
+231: @interface AVSampleBufferDisplayLayer (AVSampleBufferDisplayLayerImageProtection)
+232: 
+233: /*!
+234:  @property		preventsCapture
+235:  @abstract		Indicates that image data should be protected from capture.
+236:  */
+237: @property (nonatomic) BOOL preventsCapture API_AVAILABLE(macos(10.15), ios(13.0), tvos(13.0), visionos(1.0)) API_UNAVAILABLE(watchos);
+238: 
+239: @end
+270: 
+271: API_AVAILABLE(macos(11.3), ios(14.5), tvos(14.5), visionos(1.0)) API_UNAVAILABLE(watchos)
+272: @interface AVSampleBufferDisplayLayer (ProtectedContent)
+273: 
+274: /*!
+275:  @property      outputObscuredDueToInsufficientExternalProtection
+276:  @abstract      Whether or not decoded output is being obscured due to insufficient external protection.
+277:  
+278:  @discussion
+279: 	 The value of this property indicates whether the layer is purposefully obscuring its visual output
+280: 	 because the requirement for an external protection mechanism is not met by the current device
+281: 	 configuration. The change of this property can be observed through AVSampleBufferDisplayLayerOutputObscuredDueToInsufficientExternalProtectionDidChangeNotification
+282: 	 
+283: 	 It is highly recommended that clients whose content requires external
+284: 	 protection observe this property and set the playback rate to zero and display an appropriate user
+285: 	 interface when the value changes to YES.
+286: 	 
+287: 	 Note that the value of this property is dependent on the external protection requirements of the
+288: 	 media being displayed by the layer. These requirements are inherent to the content itself and cannot
+289: 	 be externally specified. If the content does not require external protection, the value of this
+290: 	 property will be NO.
+291:  */
+292: @property (nonatomic, readonly) BOOL outputObscuredDueToInsufficientExternalProtection API_AVAILABLE(macos(11.3), ios(14.5), tvos(14.5), visionos(1.0)) API_UNAVAILABLE(watchos);
+293: @end
+294: 
+295: API_AVAILABLE(macos(14.0), ios(17.0), tvos(17.0), visionos(1.0)) API_UNAVAILABLE(watchos)
+296: @interface AVSampleBufferDisplayLayer (AVSampleBufferDisplayLayerRenderer)
+297: 
+298: /*!
+299: 	@property		sampleBufferRenderer
+300: 	@abstract		An AVSampleBufferVideoRenderer instance that allows enqueuing sample buffers for rendering.
+301: 	@discussion		Although AVSampleBufferDisplayLayer conforms to the AVQueuedSampleBufferRendering protocol, the sampleBufferRenderer should be used to enqueue sample buffers. sampleBufferRenderer allows the client to safely enqueue sample buffers from a background thread. NOTE: Do not use AVSampleBufferDisplayLayer's AVQueuedSampleBufferRendering functions when using sampleBufferRenderer.
+302:  */
+303: @property (nonatomic, readonly) AVSampleBufferVideoRenderer *sampleBufferRenderer API_AVAILABLE(macos(14.0), ios(17.0), tvos(17.0), visionos(1.0)) API_UNAVAILABLE(watchos);
+304: 
+305: @end
+306: 
+307: 
+308: NS_ASSUME_NONNULL_END
+82: 
+83: API_AVAILABLE(macos(10.8), ios(8.0), tvos(10.2), visionos(1.0)) API_UNAVAILABLE(watchos)
+84: @interface AVSampleBufferDisplayLayer (AVSampleBufferDisplayLayerQueueManagement) <AVQueuedSampleBufferRendering>
+85: 
+86: /*!
+87: 	@property		timebase
+88: 	@abstract		The renderer's timebase, which governs how time stamps are interpreted.
+89: 	@discussion
+90: 		The timebase is used to interpret time stamps.
+91:  
+92: 		The timebase is read-only.  Use the AVSampleBufferRenderSynchronizer to set the rate or time.
+93: */
+94: @property (retain, readonly) __attribute__((NSObject)) CMTimebaseRef timebase API_DEPRECATED("Use sampleBufferRenderer's timebase instead", macos(10.8, 15.0), ios(8.0, 18.0), tvos(10.2, 18.0), visionos(1.0, 2.0)) API_UNAVAILABLE(watchos);
+95: 
+96: /*!
+97: 	@property		status
+98: 	@abstract		The ability of the display layer to be used for enqueuing sample buffers.
+99: 	@discussion		The value of this property is an AVQueuedSampleBufferRenderingStatus that indicates whether the receiver can be used for enqueuing and rendering sample buffers. When the value of this property is AVQueuedSampleBufferRenderingStatusFailed, clients can check the value of the error property to determine the failure. To resume rendering sample buffers using the display layer after a failure, clients must first reset the status to AVQueuedSampleBufferRenderingStatusUnknown. This can be achieved by invoking -flush on the display layer.
+100: 		
+101: 					This property is key value observable.
+102:  */
+103: @property (nonatomic, readonly) AVQueuedSampleBufferRenderingStatus status API_DEPRECATED("Use sampleBufferRenderer's status instead", macos(10.10, 15.0), ios(8.0, 18.0), tvos(10.2, 18.0), visionos(1.0, 2.0)) API_UNAVAILABLE(watchos);
+104: 
+105: /*!
+106: 	@property		error
+107: 	@abstract		If the display layer's status is AVQueuedSampleBufferRenderingStatusFailed, this describes the error that caused the failure.
+108: 	@discussion		The value of this property is an NSError that describes what caused the display layer to no longer be able to enqueue sample buffers. If the status is not AVQueuedSampleBufferRenderingStatusFailed, the value of this property is nil.
+109:  */
+110: @property (nonatomic, readonly, nullable) NSError *error API_DEPRECATED("Use sampleBufferRenderer's error instead", macos(10.10, 15.0), ios(8.0, 18.0), tvos(10.2, 18.0), visionos(1.0, 2.0)) API_UNAVAILABLE(watchos);
+111: 
+112: /*!
+113: 	@method			enqueueSampleBuffer:
+114: 	@abstract		Sends a sample buffer for display.
+115: 	@discussion		If sampleBuffer has the kCMSampleAttachmentKey_DoNotDisplay attachment set to
+116: 					kCFBooleanTrue, the frame will be decoded but not displayed.
+117: 					Otherwise, if sampleBuffer has the kCMSampleAttachmentKey_DisplayImmediately
+118: 					attachment set to kCFBooleanTrue, the decoded image will be displayed as soon 
+119: 					as possible, replacing all previously enqueued images regardless of their timestamps.
+120: 					Otherwise, the decoded image will be displayed at sampleBuffer's output presentation
+121: 					timestamp, as interpreted by the control timebase (or the mach_absolute_time timeline
+122: 					if there is no control timebase).
+123: 					
+124: 					To schedule the removal of previous images at a specific timestamp, enqueue 
+125: 					a marker sample buffer containing no samples, with the
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks/AVFoundation.framework/Headers/AVPlayer.h
+598: 
+599: #endif // TARGET_OS_IPHONE
+600: 
+601: /// Methods supporting protected content.
+602: @interface AVPlayer (AVPlayerProtectedContent)
+603: 
+604: /// Whether or not decoded output is being obscured due to insufficient external protection.
+605: /// 
+606: /// The value of this property indicates whether the player is purposefully obscuring the visual output
+607: /// of the current item because the requirement for an external protection mechanism is not met by the
+608: /// current device configuration. It is highly recommended that clients whose content requires external
+609: /// protection observe this property and set the playback rate to zero and display an appropriate user
+610: /// interface when the value changes to YES. This property is key value observable.
+611: /// 
+612: /// Note that the value of this property is dependent on the external protection requirements of the
+613: /// current item. These requirements are inherent to the content itself and cannot be externally specified.
+614: /// If the current item does not require external protection, the value of this property will be NO.
+615: @property (readonly) BOOL outputObscuredDueToInsufficientExternalProtection NS_SWIFT_NONISOLATED API_AVAILABLE(macos(10.12), ios(6.0), tvos(9.0), visionos(1.0)) API_UNAVAILABLE(watchos);
+616: 
+805: 
+806: @interface AVPlayer (AVPlayerAllowsCaptureOfClearKeyVideo)
+807: 
+808: /// Indicates whether the video output of ClearKey Encrypted Video can be captured
+809: ///
+810: /// When set to YES, and the video being played by AVPlayer is Clear Key encrypted, allows video to be captured in screenshots and screen recordings, and via APIs like AVPlayerItemVideoOutput and ScreenCaptureKit. When NO, Clear Key encrypted video will not be included in such captured video. This property has no effect on content protected by FairPlay Streaming.
+811: /// Default is NO.
+812: 
+813: @property (nonatomic) BOOL allowsCaptureOfClearKeyVideo NS_SWIFT_NONISOLATED API_AVAILABLE(macos(26.4), ios(26.4), tvos(26.4), watchos(26.4), visionos(26.4));
+814: 
+815: @end
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSWindow.h
+80: /*!
+81:  * @typedef NSWindowSharingType
+82:  *
+83:  * @const NSWindowSharingNone          Window contents may not be read by another process.
+84:  * @const NSWindowSharingReadOnly   Window contents may be read by another process.
+85:  */
+86: typedef NS_ENUM(NSUInteger, NSWindowSharingType) {
+87:     NSWindowSharingNone = 0,
+88:     NSWindowSharingReadOnly = 1,
+89: } API_AVAILABLE(macos(10.5));
+90: 
+519: 
+520: /*! `-setSharingType:` specifies whether the window content can be read from another process.  The default sharing type is \c NSWindowSharingReadOnly, which means other processes can read the window content (eg. for window capture) but cannot modify it.  If you set your window sharing type to \c NSWindowSharingNone, so that the content cannot be captured, your window will also not be able to participate in a number of system services, so this setting should be used with caution.
+521: */
+522: @property NSWindowSharingType sharingType API_AVAILABLE(macos(10.5));
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CGWindow.h
+223: #define SCREEN_CAPTURE_OBSOLETE(x,y,z) \
+224:     __attribute__((availability(macos,introduced=x,deprecated=y,obsoleted=z,message="Please use ScreenCaptureKit instead.")));
+225: 
+226: 
+227: /* Create an image containing a composite of the specified set of windows
+228:    contained within a rectangular area. The set of windows is specified
+229:    using options from `CGWindowListOption', along with an optional
+230:    additional window ID.
+231: 
+232:    The windows list options are:
+233: 
+234:    --- kCGWindowListOptionAll, kCGWindowListOptionOnScreenOnly: Use all
+235:    on-screen windows in this user session to construct the image. The
+236:    parameter `windowID' should be `kCGNullWindowID'.
+237: 
+238:    --- kCGWindowListOptionOnScreenAboveWindow: Use all on-screen windows in
+239:    this user session above the window specified by `windowID', ordered from
+240:    front to back, to construct the image. To include the window specified by
+241:    `windowID', add the flag `kCGWindowListOptionIncludingWindow'.
+242: 
+243:    --- kCGWindowListOptionOnScreenBelowWindow: Use all on-screen windows in
+244:    this user session below the window specified by `windowID', ordered from
+245:    front to back, to construct the image. To include the window specified by
+246:    `windowID', add the flag `kCGWindowListOptionIncludingWindow'.
+247: 
+248:    --- kCGWindowListOptionIncludingWindow: Use only the window specified by
+249:    `windowID' to construct the image.
+250: 
+251:    The parameter `screenBounds' specifies the rectangle in screen space
+252:    (origin at the upper-left; y-value increasing downward). Setting
+253:    `screenBounds' to `CGRectInfinite' will include all the windows on the
+254:    entire desktop. Setting `screenBounds' to `CGRectNull' will use the
+255:    bounding box of the specified windows as the screen space rectangle.
+256: 
+257:    The parameter `imageOptions' allows you to specify whether the window
+258:    frame ornamentation, such as a shadow or similar effect, should be
+259:    included or excluded in the bounds calculation when `CGRectNull' is
+260:    specified for the window bounds.
+261: 
+262:    If no windows meet the specified criteria, or the windows can't be read,
+263:    then a transparent black image will be returned.
+264: 
+265:    Any on-screen window with sharing type `kCGWindowSharingNone' will not
+266:    be included in the image.
+267: 
+268:    This function returns NULL if the caller is not running within a Quartz
+269:    GUI session or the window server is disabled. */
+270: 
+271: CG_EXTERN CGImageRef __nullable CGWindowListCreateImage(CGRect screenBounds,
+272:     CGWindowListOption listOption, CGWindowID windowID,
+273:     CGWindowImageOption imageOption)
+274:     SCREEN_CAPTURE_OBSOLETE(10.5,14.0,15.0);
+294: /* Checks whether the current process already has screen capture access */
+295: CG_EXTERN bool CGPreflightScreenCaptureAccess(void) API_AVAILABLE(macos(10.15));
+296: 
+297: /* Requests event listening access if absent, potentially prompting */
+298: CG_EXTERN bool CGRequestScreenCaptureAccess(void) API_AVAILABLE(macos(10.15));
+299: 
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CGDirectDisplay.h
+380: /* Return an image containing the contents of the display identified by
+381:    `displayID'. */
+382: 
+383: CG_EXTERN CGImageRef __nullable CGDisplayCreateImage(CGDirectDisplayID displayID)
+384:     SCREEN_CAPTURE_OBSOLETE(10.6,14.4,15.0);
+385: 
+386: /* Return an image containing the contents of the rectangle `rect',
+387:    specified in display space, of the display identified by `displayID'. The
+388:    actual rectangle used is the rectangle returned from
+389:    `CGRectIntegral(rect)'. */
+390: 
+391: CG_EXTERN CGImageRef __nullable CGDisplayCreateImageForRect(
+392:     CGDirectDisplayID display, CGRect rect)
+393:     SCREEN_CAPTURE_OBSOLETE(10.6,14.4,15.0);
+394: 
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks/ScreenCaptureKit.framework/Headers/SCShareableContent.h
+139: API_AVAILABLE(macos(12.3), macCatalyst(18.2))
+140: @interface SCShareableContent : NSObject
+141: /*!
+142: @abstract getShareableContentWithCompletionHandler:completionHandler
+143: @param completionHandler the call back that will hand you back a SCShareableContent object
+144: @discussion this method will create a SCShareableContent object that is called on the supplied queue. The SCShareableContent will contain the windows, displays and applications that are available to capture
+145: */
+146: + (void)getShareableContentWithCompletionHandler:(void(^)(SCShareableContent * _Nullable shareableContent, NSError * _Nullable error))completionHandler NS_SWIFT_ASYNC(1) NS_SWIFT_ASYNC_NAME(getter:current());
+147: 
+148: /*!
+149: @abstract getCurrentProcessShareableContentWithCompletionHandler:completionHandler
+150: @param completionHandler the call back that will hand you back a SCShareableContent object
+151: @discussion this method will create a SCShareableContent object that is called on the supplied queue. The SCShareableContent will contain redacted information about windows, displays and applications that are available to capture by current process without user consent via TCC
+152: */
+153: + (void)getCurrentProcessShareableContentWithCompletionHandler:(void(^)(SCShareableContent * _Nullable shareableContent, NSError * _Nullable error))completionHandler NS_SWIFT_ASYNC(1) NS_SWIFT_ASYNC_NAME(getter:currentProcess()) API_AVAILABLE(macos(14.4));
+154: 
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks/ScreenCaptureKit.framework/Headers/SCScreenshotManager.h
+133: API_AVAILABLE(macos(14.0), macCatalyst(18.2))
+134: @interface SCScreenshotManager : NSObject
+135: - (instancetype)init API_UNAVAILABLE(ios, tvos, macCatalyst, macos);
+136: /*!
+137:  @abstract captureSampleBufferWithFilter:configuration:completionHandler:
+138:  @param contentFilter is the filter containing the content to take a screenshot of
+139:  @param config is the stream configuration containing information on how to format the screenshot
+140:  @param completionHandler is the handler that will deliver the screenshot to the user
+141:  @discussion this method takes a screenshot using the filter and configuration passed in and returns it as a CMSampleBuffer
+142: */
+143: + (void)captureSampleBufferWithFilter:(SCContentFilter *)contentFilter configuration:(SCStreamConfiguration *)config completionHandler:(nullable void (^)(CMSampleBufferRef _Nullable sampleBuffer, NSError *_Nullable error))completionHandler NS_SWIFT_NAME(captureSampleBuffer(contentFilter:configuration:completionHandler:)) API_AVAILABLE(macos(14.0));
+144: 
+145: /*!
+146:  @abstract captureImageWithFilter:configuration:completionHandler:
+147:  @param contentFilter is the filter containing the content to take a screenshot of
+148:  @param config is the stream configuration containing information on how to format the screenshot
+149:  @param completionHandler is the handler that will deliver the screenshot to the user
+150:  @discussion this method takes a screenshot using the filter and configuration passed in and returns it as a CGImage in BGRA format if captureDynamicRange is SCCaptureDynamicRangeSDR, in RGhA format if captureDynamicRange is SCCaptureDynamicRangeHDRLocalDisplay/SCCaptureDynamicRangeHDRCanonicalDisplay
+151: */
+152: + (void)captureImageWithFilter:(SCContentFilter *)contentFilter configuration:(SCStreamConfiguration *)config completionHandler:(nullable void (^)(CGImageRef _Nullable sampleBuffer, NSError *_Nullable error))completionHandler NS_SWIFT_NAME(captureImage(contentFilter:configuration:completionHandler:)) API_AVAILABLE(macos(14.0));
+153: 
+154: /*!
+155:  @abstract captureImageInRect:completionHandler:
+156:  @param rect the rect for the region in points on the screen space for the screen shot, this is display agnostic and supports multiple displays
+157:  @param completionHandler is the handler that will deliver the screenshot to the client
+158:  @discussion this method returns an image containing the contents of the rectangle in points, specified in display space
+159: */
+160: + (void)captureImageInRect:(CGRect)rect completionHandler:(nullable void (^)(CGImageRef _Nullable image, NSError *_Nullable error))completionHandler NS_SWIFT_NAME(captureImage(in:completionHandler:)) API_AVAILABLE(macos(15.2));
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks/ScreenCaptureKit.framework/Headers/SCRecordingOutput.h
+85: 
+86: API_AVAILABLE(macos(15.0), macCatalyst(18.2))
+87: @interface SCRecordingOutput : NSObject
+88: /*!
+89:  @abstract Indicates current duration of recording to the output file.
+90:  */
+91: @property(nonatomic, readonly) CMTime recordedDuration;
+92: 
+93: /*!
+94:  @abstract Indicates current size, in bytes, of the data recorded to the output file.
+95:  */
+96: @property(nonatomic, readonly) NSInteger recordedFileSize;
+97: 
+98: /*!
+99:  @method initWithConfiguration:delegate:
+100:  @abstract initialize SCRecordingOutput object with SCRecordingOutputConfiguration and SCRecordingOutputDelegate
+101:  @param recordingOutputConfiguration the requested recording configuration to be applied to the SCRecordingOutput
+102:  @parame delegate object conforming SCRecordingOutputDelegate protocol. Clients must specify a delegate so that they can be notified about recording event.
+103:  @discussion Client can create a SCRecordingOutput with this initializer and add to SCStream to record all captured media into one recording file given output url specified in recordingOutputConfig. The recording will be using H264 and file format is MPEG-4.
+104: */
+105: - (instancetype)initWithConfiguration:(SCRecordingOutputConfiguration *)recordingOutputConfiguration delegate:(id<SCRecordingOutputDelegate>)delegate;
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks/ScreenCaptureKit.framework/Headers/SCStream.h
+77: typedef NS_ENUM(NSInteger, SCCaptureResolutionType) {
+78:     SCCaptureResolutionAutomatic,
+79:     SCCaptureResolutionBest,
+80:     SCCaptureResolutionNominal
+81: } API_AVAILABLE(macos(12.3), macCatalyst(18.2));
+82: 
+83: /*!
+84:  @typedef SCCaptureDynamicRange
+85:  @abstract SCCaptureDynamicRange client can specify whether the captured screen output will be SDR or HDR. When SCCaptureDynamicRangeHDR is set, the output screen capture buffer pixel format and color space will be updated in order to support HDR.
+86:  @constant SCCaptureDynamicRangeSDR by default, screen capture output will be SDR.
+87:  @constant SCCaptureDynamicRangeHDRLocalDisplay by default, screen capture output will be HDR, optimized for rendering on the local captured display
+88:  @constant SCCaptureDynamicRangeHDRCanonicalDisplay by default, screen capture output will be HDR, optimized for rendering on any HDR display
+89: */
+90: typedef NS_ENUM(NSInteger, SCCaptureDynamicRange) {
+91:     SCCaptureDynamicRangeSDR,
+92:     SCCaptureDynamicRangeHDRLocalDisplay,
+93:     SCCaptureDynamicRangeHDRCanonicalDisplay
+94: } API_AVAILABLE(macos(15.0), macCatalyst(18.2));
+95: 
+96: /*!
+447: API_AVAILABLE(macos(12.3), macCatalyst(18.2))
+448: @interface SCStream : NSObject
+449: 
+450: /*!
+451:  @abstract Synchronization clock used for media capture.
+452:  */
+453: @property(nonatomic, readonly, nullable) CMClockRef synchronizationClock API_AVAILABLE(macos(13.0));
+454: 
+455: - (instancetype)init NS_UNAVAILABLE;
+456: + (instancetype)new NS_UNAVAILABLE;
+457: /*!
+458:  @abstract initWithFilter:configuration:delegate:
+459:  @param contentFilter the requested content filter to be captured
+460:  @param streamConfig the requested stream configuration to be applied to the SCStream
+461:  @param delegate the SCStream delegate object
+462:  @discussion this method create a SCStream object that has the particular output settings for the content stream
+463: */
+464: - (instancetype)initWithFilter:(SCContentFilter *)contentFilter configuration:(SCStreamConfiguration *)streamConfig delegate:(id<SCStreamDelegate> _Nullable)delegate;
+465: 
+466: /*!
+467:  @abstract addStreamOutput:type:sampleHandlerQueue:error:
+468:  @param output an object that adheres to the SCStreamOutput protocol that will receive the frames and call its delegate frame call back on its sample handler queue
+469:  @param type the SCStreamOutput type
+470:  @param sampleHandlerQueue the return queue for the sample handler
+471:  @param error the error pertaining to the add stream output
+472:  @discussion An SCStreamOutput protocol object instance can only be added to a session using -addStreamOutput: Returns a BOOL denoting if the add was successful
+473: */
+474: - (BOOL)addStreamOutput:(id<SCStreamOutput>)output type:(SCStreamOutputType)type sampleHandlerQueue:(dispatch_queue_t _Nullable)sampleHandlerQueue error:(NSError **)error NS_SWIFT_ASYNC_NAME (addStreamOutput(_:type:sampleHandlerQueue:)) NS_SWIFT_NAME (addStreamOutput(_:type:sampleHandlerQueue:));
+

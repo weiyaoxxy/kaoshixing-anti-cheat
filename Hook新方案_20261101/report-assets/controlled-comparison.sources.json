@@ -1,0 +1,207 @@
+{
+  "createdAtUTC": "2026-11-01T13:54:23.411868+00:00",
+  "matrix": "artifacts/controlled-matrix-20261101T134227Z",
+  "output": "report-assets/controlled-comparison.png",
+  "outputSHA256": "04e355b28826ad5fc03600ae8d3dd623041f07161a3096d2e75c35d05c105d6d",
+  "outputSizePixels": [
+    3600,
+    2440
+  ],
+  "font": "/System/Library/Fonts/STHeiti Medium.ttc",
+  "title": "独立捕获探针实验，非 ToDesk 远端截图",
+  "sourcePolicy": "Application-filter captures only; no desktop or third-party remote-client screenshot.",
+  "sources": [
+    {
+      "case": "baseline",
+      "source": "artifacts/controlled-matrix-20261101T134227Z/baseline/capture/sck-stream-application/frame-010.png",
+      "sourceSHA256": "771cefc644663f733b91ff33e7cb9c71e50f9eb44999cdad849b09c341520742",
+      "sourceSizePixels": [
+        3024,
+        1964
+      ],
+      "cropPixelsLTRB": [
+        40,
+        106,
+        2848,
+        1566
+      ],
+      "cropMeaning": "Union of complete exam/control CG window bounds plus 8-pixel margin",
+      "windowBoundsCG": {
+        "exam": {
+          "height": 722,
+          "width": 850,
+          "x": 24,
+          "y": 57
+        },
+        "control": {
+          "height": 242,
+          "width": 530,
+          "x": 890,
+          "y": 57
+        }
+      },
+      "displayFrameCG": {
+        "height": 982,
+        "width": 1512,
+        "x": 0,
+        "y": 0
+      },
+      "displayID": 1,
+      "captureScope": "application",
+      "applicationOwnerPID": 89885,
+      "panelImageRectPixels": [
+        70,
+        276,
+        1692,
+        880
+      ],
+      "alphaBackground": "#e6ebf1",
+      "resize": "LANCZOS",
+      "contentRetouched": false
+    },
+    {
+      "case": "audit",
+      "source": "artifacts/controlled-matrix-20261101T134227Z/audit/capture/sck-stream-application/frame-010.png",
+      "sourceSHA256": "25547c7eb57ef0731d64ca3408a28926957b605bb282137966e630325f695a93",
+      "sourceSizePixels": [
+        3024,
+        1964
+      ],
+      "cropPixelsLTRB": [
+        40,
+        106,
+        2848,
+        1566
+      ],
+      "cropMeaning": "Union of complete exam/control CG window bounds plus 8-pixel margin",
+      "windowBoundsCG": {
+        "exam": {
+          "height": 722,
+          "width": 850,
+          "x": 24,
+          "y": 57
+        },
+        "control": {
+          "height": 242,
+          "width": 530,
+          "x": 890,
+          "y": 57
+        }
+      },
+      "displayFrameCG": {
+        "height": 982,
+        "width": 1512,
+        "x": 0,
+        "y": 0
+      },
+      "displayID": 1,
+      "captureScope": "application",
+      "applicationOwnerPID": 89885,
+      "panelImageRectPixels": [
+        1838,
+        276,
+        1692,
+        880
+      ],
+      "alphaBackground": "#e6ebf1",
+      "resize": "LANCZOS",
+      "contentRetouched": false
+    },
+    {
+      "case": "block",
+      "source": "artifacts/controlled-matrix-20261101T134227Z/block/capture/sck-stream-application/frame-010.png",
+      "sourceSHA256": "435cf29917e6fd3f5567cb65d395cbae327273ceb2efd2ae0797e2afd25762db",
+      "sourceSizePixels": [
+        3024,
+        1964
+      ],
+      "cropPixelsLTRB": [
+        40,
+        106,
+        2848,
+        1566
+      ],
+      "cropMeaning": "Union of complete exam/control CG window bounds plus 8-pixel margin",
+      "windowBoundsCG": {
+        "exam": {
+          "height": 722,
+          "width": 850,
+          "x": 24,
+          "y": 57
+        },
+        "control": {
+          "height": 242,
+          "width": 530,
+          "x": 890,
+          "y": 57
+        }
+      },
+      "displayFrameCG": {
+        "height": 982,
+        "width": 1512,
+        "x": 0,
+        "y": 0
+      },
+      "displayID": 1,
+      "captureScope": "application",
+      "applicationOwnerPID": 89885,
+      "panelImageRectPixels": [
+        70,
+        1368,
+        1692,
+        880
+      ],
+      "alphaBackground": "#e6ebf1",
+      "resize": "LANCZOS",
+      "contentRetouched": false
+    },
+    {
+      "case": "recovery",
+      "source": "artifacts/controlled-matrix-20261101T134227Z/recovery/capture/sck-stream-application/frame-010.png",
+      "sourceSHA256": "937de009c18a34aa40cf3276482d593607cade8677927c2607e102328558b036",
+      "sourceSizePixels": [
+        3024,
+        1964
+      ],
+      "cropPixelsLTRB": [
+        40,
+        106,
+        2848,
+        1566
+      ],
+      "cropMeaning": "Union of complete exam/control CG window bounds plus 8-pixel margin",
+      "windowBoundsCG": {
+        "exam": {
+          "height": 722,
+          "width": 850,
+          "x": 24,
+          "y": 57
+        },
+        "control": {
+          "height": 242,
+          "width": 530,
+          "x": 890,
+          "y": 57
+        }
+      },
+      "displayFrameCG": {
+        "height": 982,
+        "width": 1512,
+        "x": 0,
+        "y": 0
+      },
+      "displayID": 1,
+      "captureScope": "application",
+      "applicationOwnerPID": 89885,
+      "panelImageRectPixels": [
+        1838,
+        1368,
+        1692,
+        880
+      ],
+      "alphaBackground": "#e6ebf1",
+      "resize": "LANCZOS",
+      "contentRetouched": false
+    }
+  ]
+}

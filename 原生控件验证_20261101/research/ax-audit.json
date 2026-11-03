@@ -1,0 +1,1565 @@
+{
+  "auditDate": "2026-11-01",
+  "status": "Expanded offline audit: v0.3 main matrix and post-commit IME AX observations added. Historical records retained and grouped. Keyboard batch contains no saved AX tree.",
+  "method": {
+    "parse": "Parse outer CLI invocation JSON, then parse its stdout as JSON; inspect only axTree descendants.",
+    "attributeAllowList": [
+      "description",
+      "help",
+      "selectedText",
+      "title",
+      "value"
+    ],
+    "normalization": "Uppercase then remove all characters except ASCII A-Z and 0-9.",
+    "markers": {
+      "EXAM-SECRET": "EXAMSECRET",
+      "NATIVE-EDIT": "NATIVEEDIT",
+      "INPUTSECRET": "INPUTSECRET",
+      "SCROLL-SECRET": "SCROLLSECRET"
+    },
+    "excluded": "CLI command arguments, filenames, paths, stdout wrapper prose, targetExecutable, screenshots and currentText state outside the AX tree are not searched.",
+    "countMeaning": "Occurrence counts are within returned text attributes; repeated content across attributes/nodes is not an independent leak trial.",
+    "scope": "No new AX call was made. Only already saved synthetic NativeControlDemo AX data were read.",
+    "supplementalMarkers": {
+      "PUBLIC-CONTROL": "Normalized ASCII public header positive control",
+      "committedChineseLiteral_你好": "Exact literal substring in AX text attributes; ASCII normalization is not used for Chinese."
+    },
+    "contextBoundary": "Observation before/after currentText and active/window state are metadata for validity only, excluded from AX marker matching."
+  },
+  "records": [
+    {
+      "source": "artifacts/native-matrix-20261101T132323Z/direct/ax-input.json",
+      "sourceSHA256": "ad5bb26b4e6f37d1162f49a594ac31c0111fb9c41957009dbc09f6648d180c81",
+      "wrapperReturnCode": 0,
+      "AXIsProcessTrusted": true,
+      "targetPID": 76278,
+      "targetBundleIdentifier": "local.examcapture.nativecontrols",
+      "status": "ax_inspected_no_events_posted",
+      "axNodesVisited": 78,
+      "axTreeTruncated": false,
+      "clipboardRead": false,
+      "permissionRequested": false,
+      "posted": false,
+      "postedEventCount": 0,
+      "timestamp": "2026-11-01T13:23:38Z",
+      "treePresent": true,
+      "nodesReadFromTree": 78,
+      "stringAttributesExamined": 74,
+      "attributeErrors": {
+        "-25212": 312,
+        "-25205": 6
+      },
+      "markerPresent": {
+        "EXAM-SECRET": false,
+        "NATIVE-EDIT": false,
+        "INPUTSECRET": false,
+        "SCROLL-SECRET": false
+      },
+      "markerOccurrences": {
+        "EXAM-SECRET": 0,
+        "NATIVE-EDIT": 0,
+        "INPUTSECRET": 0,
+        "SCROLL-SECRET": 0
+      },
+      "attributesContainingMarker": {
+        "EXAM-SECRET": 0,
+        "NATIVE-EDIT": 0,
+        "INPUTSECRET": 0,
+        "SCROLL-SECRET": 0
+      },
+      "hits": [],
+      "supplementalMarkerOccurrences": {
+        "PUBLIC-CONTROL": 0,
+        "committedChineseLiteral_你好": 0
+      },
+      "supplementalHits": [],
+      "stringAttributesByName": {
+        "title": 74
+      },
+      "batch": "native-matrix-20261101T132323Z",
+      "mode": "direct",
+      "observationSource": "artifacts/native-matrix-20261101T132323Z/direct/ax-observation.json",
+      "observationContext": {
+        "before": {
+          "implementationVersion": "native-controls-v0.2",
+          "pid": 76278,
+          "windowID": 185793,
+          "windowVisible": true,
+          "currentText": "INPUTSECRETSTART5B7KINPUTSECRETABC1ZINPUTS3",
+          "editorText": "INPUTSECRETSTART5B7KINPUTSECRETABC1ZINPUTS3",
+          "sourceWindowVisible": false,
+          "sourceWindowEverOrderedFront": false,
+          "sourceExposureTest": false,
+          "focus": "field"
+        },
+        "after": {
+          "implementationVersion": "native-controls-v0.2",
+          "pid": 76278,
+          "windowID": 185793,
+          "windowVisible": true,
+          "currentText": "INPUTSECRETSTART5B7KINPUTSECRETABC1ZINPUTS3",
+          "editorText": "INPUTSECRETSTART5B7KINPUTSECRETABC1ZINPUTS3",
+          "sourceWindowVisible": false,
+          "sourceWindowEverOrderedFront": false,
+          "sourceExposureTest": false,
+          "focus": "field"
+        }
+      },
+      "implementationVersion": "native-controls-v0.2",
+      "runHashes": {
+        "appSHA256": "149cf3695275f103be75e141e490ac8f47095560122e3ae467f13ac3a7d65b55",
+        "sourceSHA256": "057aaccd6c59c8fd05f2472218bc841c3b697cbbf0b4f648d057e94d75e663b2",
+        "probeSHA256": "c2b75be422e5c21af5112956090321ffdcb0e04ca492b5320695dee0dec2d164"
+      },
+      "interactionChecks": {
+        "passed": 0,
+        "total": 8
+      },
+      "interpretationGroup": "historical_v02_incomplete_matrix_do_not_pool_with_final"
+    },
+    {
+      "source": "artifacts/native-matrix-20261101T132323Z/mixed/ax-input.json",
+      "sourceSHA256": "e8ad1714268854fff4cf4ce26479fc4dfa87595045178ac37c34d688c4d977a7",
+      "wrapperReturnCode": 0,
+      "AXIsProcessTrusted": true,
+      "targetPID": 77484,
+      "targetBundleIdentifier": "local.examcapture.nativecontrols",
+      "status": "ax_inspected_no_events_posted",
+      "axNodesVisited": 88,
+      "axTreeTruncated": false,
+      "clipboardRead": false,
+      "permissionRequested": false,
+      "posted": false,
+      "postedEventCount": 0,
+      "timestamp": "2026-11-01T13:24:36Z",
+      "treePresent": true,
+      "nodesReadFromTree": 88,
+      "stringAttributesExamined": 80,
+      "attributeErrors": {
+        "-25205": 41,
+        "-25212": 319
+      },
+      "markerPresent": {
+        "EXAM-SECRET": false,
+        "NATIVE-EDIT": false,
+        "INPUTSECRET": false,
+        "SCROLL-SECRET": false
+      },
+      "markerOccurrences": {
+        "EXAM-SECRET": 0,
+        "NATIVE-EDIT": 0,
+        "INPUTSECRET": 0,
+        "SCROLL-SECRET": 0
+      },
+      "attributesContainingMarker": {
+        "EXAM-SECRET": 0,
+        "NATIVE-EDIT": 0,
+        "INPUTSECRET": 0,
+        "SCROLL-SECRET": 0
+      },
+      "hits": [],
+      "supplementalMarkerOccurrences": {
+        "PUBLIC-CONTROL": 1,
+        "committedChineseLiteral_你好": 0
+      },
+      "supplementalHits": [
+        {
+          "path": "axTree.children[0].children[0].value",
+          "role": "AXStaticText",
+          "attribute": "value",
+          "marker": "PUBLIC-CONTROL",
+          "occurrences": 1,
+          "valuePrefix": "PUBLIC-CONTROL-4M2P  原生控件验证  mixed"
+        }
+      ],
+      "stringAttributesByName": {
+        "title": 76,
+        "value": 4
+      },
+      "batch": "native-matrix-20261101T132323Z",
+      "mode": "mixed",
+      "observationSource": "artifacts/native-matrix-20261101T132323Z/mixed/ax-observation.json",
+      "observationContext": {
+        "before": {
+          "implementationVersion": "native-controls-v0.2",
+          "pid": 77484,
+          "windowID": 185889,
+          "windowVisible": true,
+          "currentText": "INPUTSECRETFINAL7H5T",
+          "editorText": "",
+          "sourceWindowVisible": false,
+          "sourceWindowEverOrderedFront": false,
+          "sourceExposureTest": false,
+          "focus": "button"
+        },
+        "after": {
+          "implementationVersion": "native-controls-v0.2",
+          "pid": 77484,
+          "windowID": 185889,
+          "windowVisible": true,
+          "currentText": "INPUTSECRETFINAL7H5T",
+          "editorText": "",
+          "sourceWindowVisible": false,
+          "sourceWindowEverOrderedFront": false,
+          "sourceExposureTest": false,
+          "focus": "button"
+        }
+      },
+      "implementationVersion": "native-controls-v0.2",
+      "runHashes": {
+        "appSHA256": "149cf3695275f103be75e141e490ac8f47095560122e3ae467f13ac3a7d65b55",
+        "sourceSHA256": "057aaccd6c59c8fd05f2472218bc841c3b697cbbf0b4f648d057e94d75e663b2",
+        "probeSHA256": "c2b75be422e5c21af5112956090321ffdcb0e04ca492b5320695dee0dec2d164"
+      },
+      "interactionChecks": {
+        "passed": 8,
+        "total": 8
+      },
+      "interpretationGroup": "historical_v02_incomplete_matrix_do_not_pool_with_final"
+    },
+    {
+      "source": "artifacts/native-matrix-20261101T132323Z/raster-baseline/ax-input.json",
+      "sourceSHA256": "f7edf4606214b140b7f36685edd0b28540b5e9808399e92c0765223d8e855522",
+      "wrapperReturnCode": 0,
+      "AXIsProcessTrusted": true,
+      "targetPID": 76665,
+      "targetBundleIdentifier": "local.examcapture.nativecontrols",
+      "status": "ax_inspected_no_events_posted",
+      "axNodesVisited": 78,
+      "axTreeTruncated": false,
+      "clipboardRead": false,
+      "permissionRequested": false,
+      "posted": false,
+      "postedEventCount": 0,
+      "timestamp": "2026-11-01T13:23:51Z",
+      "treePresent": true,
+      "nodesReadFromTree": 78,
+      "stringAttributesExamined": 74,
+      "attributeErrors": {
+        "-25212": 312,
+        "-25205": 6
+      },
+      "markerPresent": {
+        "EXAM-SECRET": false,
+        "NATIVE-EDIT": false,
+        "INPUTSECRET": false,
+        "SCROLL-SECRET": false
+      },
+      "markerOccurrences": {
+        "EXAM-SECRET": 0,
+        "NATIVE-EDIT": 0,
+        "INPUTSECRET": 0,
+        "SCROLL-SECRET": 0
+      },
+      "attributesContainingMarker": {
+        "EXAM-SECRET": 0,
+        "NATIVE-EDIT": 0,
+        "INPUTSECRET": 0,
+        "SCROLL-SECRET": 0
+      },
+      "hits": [],
+      "supplementalMarkerOccurrences": {
+        "PUBLIC-CONTROL": 0,
+        "committedChineseLiteral_你好": 0
+      },
+      "supplementalHits": [],
+      "stringAttributesByName": {
+        "title": 74
+      },
+      "batch": "native-matrix-20261101T132323Z",
+      "mode": "raster-baseline",
+      "observationSource": "artifacts/native-matrix-20261101T132323Z/raster-baseline/ax-observation.json",
+      "observationContext": {
+        "before": {
+          "implementationVersion": "native-controls-v0.2",
+          "pid": 76665,
+          "windowID": 185808,
+          "windowVisible": true,
+          "currentText": "INPUTSECRETABC13",
+          "editorText": "INPUTSECRETABC13",
+          "sourceWindowVisible": false,
+          "sourceWindowEverOrderedFront": false,
+          "sourceExposureTest": false,
+          "focus": "field"
+        },
+        "after": {
+          "implementationVersion": "native-controls-v0.2",
+          "pid": 76665,
+          "windowID": 185808,
+          "windowVisible": true,
+          "currentText": "INPUTSECRETABC13",
+          "editorText": "INPUTSECRETABC13",
+          "sourceWindowVisible": false,
+          "sourceWindowEverOrderedFront": false,
+          "sourceExposureTest": false,
+          "focus": "field"
+        }
+      },
+      "implementationVersion": "native-controls-v0.2",
+      "runHashes": {
+        "appSHA256": "149cf3695275f103be75e141e490ac8f47095560122e3ae467f13ac3a7d65b55",
+        "sourceSHA256": "057aaccd6c59c8fd05f2472218bc841c3b697cbbf0b4f648d057e94d75e663b2",
+        "probeSHA256": "c2b75be422e5c21af5112956090321ffdcb0e04ca492b5320695dee0dec2d164"
+      },
+      "interactionChecks": {
+        "passed": 2,
+        "total": 8
+      },
+      "interpretationGroup": "historical_v02_incomplete_matrix_do_not_pool_with_final"
+    },
+    {
+      "source": "artifacts/native-matrix-20261101T132323Z/raster-protected/ax-input.json",
+      "sourceSHA256": "71e96e4278e13b4a13100bbf235bb09b8d5467bea2b520fbaba1d721d46480cf",
+      "wrapperReturnCode": 0,
+      "AXIsProcessTrusted": true,
+      "targetPID": 76764,
+      "targetBundleIdentifier": "local.examcapture.nativecontrols",
+      "status": "ax_inspected_no_events_posted",
+      "axNodesVisited": 87,
+      "axTreeTruncated": false,
+      "clipboardRead": false,
+      "permissionRequested": false,
+      "posted": false,
+      "postedEventCount": 0,
+      "timestamp": "2026-11-01T13:24:13Z",
+      "treePresent": true,
+      "nodesReadFromTree": 87,
+      "stringAttributesExamined": 79,
+      "attributeErrors": {
+        "-25205": 38,
+        "-25212": 318
+      },
+      "markerPresent": {
+        "EXAM-SECRET": false,
+        "NATIVE-EDIT": false,
+        "INPUTSECRET": false,
+        "SCROLL-SECRET": false
+      },
+      "markerOccurrences": {
+        "EXAM-SECRET": 0,
+        "NATIVE-EDIT": 0,
+        "INPUTSECRET": 0,
+        "SCROLL-SECRET": 0
+      },
+      "attributesContainingMarker": {
+        "EXAM-SECRET": 0,
+        "NATIVE-EDIT": 0,
+        "INPUTSECRET": 0,
+        "SCROLL-SECRET": 0
+      },
+      "hits": [],
+      "supplementalMarkerOccurrences": {
+        "PUBLIC-CONTROL": 1,
+        "committedChineseLiteral_你好": 0
+      },
+      "supplementalHits": [
+        {
+          "path": "axTree.children[0].children[0].value",
+          "role": "AXStaticText",
+          "attribute": "value",
+          "marker": "PUBLIC-CONTROL",
+          "occurrences": 1,
+          "valuePrefix": "PUBLIC-CONTROL-4M2P  原生控件验证  raster-protected"
+        }
+      ],
+      "stringAttributesByName": {
+        "title": 76,
+        "value": 3
+      },
+      "batch": "native-matrix-20261101T132323Z",
+      "mode": "raster-protected",
+      "observationSource": "artifacts/native-matrix-20261101T132323Z/raster-protected/ax-observation.json",
+      "observationContext": {
+        "before": {
+          "implementationVersion": "native-controls-v0.2",
+          "pid": 76764,
+          "windowID": 185842,
+          "windowVisible": true,
+          "currentText": "INPUTSECRETFINAL7H5T",
+          "editorText": "",
+          "sourceWindowVisible": false,
+          "sourceWindowEverOrderedFront": false,
+          "sourceExposureTest": false,
+          "focus": "button"
+        },
+        "after": {
+          "implementationVersion": "native-controls-v0.2",
+          "pid": 76764,
+          "windowID": 185842,
+          "windowVisible": true,
+          "currentText": "INPUTSECRETFINAL7H5T",
+          "editorText": "",
+          "sourceWindowVisible": false,
+          "sourceWindowEverOrderedFront": false,
+          "sourceExposureTest": false,
+          "focus": "button"
+        }
+      },
+      "implementationVersion": "native-controls-v0.2",
+      "runHashes": {
+        "appSHA256": "149cf3695275f103be75e141e490ac8f47095560122e3ae467f13ac3a7d65b55",
+        "sourceSHA256": "057aaccd6c59c8fd05f2472218bc841c3b697cbbf0b4f648d057e94d75e663b2",
+        "probeSHA256": "c2b75be422e5c21af5112956090321ffdcb0e04ca492b5320695dee0dec2d164"
+      },
+      "interactionChecks": {
+        "passed": 8,
+        "total": 8
+      },
+      "interpretationGroup": "historical_v02_incomplete_matrix_do_not_pool_with_final"
+    },
+    {
+      "source": "artifacts/source-exposure-control-20261101T132024Z/ax-hidden-after-visible-input.json",
+      "sourceSHA256": "9e87a1c9bbf05b4a43a07d640706632726126b5c522ed86c1bfd8ae5cd2de6a6",
+      "wrapperReturnCode": 0,
+      "AXIsProcessTrusted": true,
+      "targetPID": 70719,
+      "targetBundleIdentifier": "local.examcapture.nativecontrols",
+      "status": "ax_inspected_no_events_posted",
+      "axNodesVisited": 88,
+      "axTreeTruncated": false,
+      "clipboardRead": false,
+      "permissionRequested": false,
+      "posted": false,
+      "postedEventCount": 0,
+      "timestamp": "2026-11-01T13:20:29Z",
+      "treePresent": true,
+      "nodesReadFromTree": 88,
+      "stringAttributesExamined": 79,
+      "attributeErrors": {
+        "-25205": 44,
+        "-25212": 318
+      },
+      "markerPresent": {
+        "EXAM-SECRET": false,
+        "NATIVE-EDIT": false,
+        "INPUTSECRET": false,
+        "SCROLL-SECRET": false
+      },
+      "markerOccurrences": {
+        "EXAM-SECRET": 0,
+        "NATIVE-EDIT": 0,
+        "INPUTSECRET": 0,
+        "SCROLL-SECRET": 0
+      },
+      "attributesContainingMarker": {
+        "EXAM-SECRET": 0,
+        "NATIVE-EDIT": 0,
+        "INPUTSECRET": 0,
+        "SCROLL-SECRET": 0
+      },
+      "hits": [],
+      "supplementalMarkerOccurrences": {
+        "PUBLIC-CONTROL": 1,
+        "committedChineseLiteral_你好": 0
+      },
+      "supplementalHits": [
+        {
+          "path": "axTree.children[0].children[0].value",
+          "role": "AXStaticText",
+          "attribute": "value",
+          "marker": "PUBLIC-CONTROL",
+          "occurrences": 1,
+          "valuePrefix": "PUBLIC-CONTROL-4M2P  原生控件验证  raster-protected"
+        }
+      ],
+      "stringAttributesByName": {
+        "title": 76,
+        "value": 3
+      },
+      "batch": "source-exposure-control-20261101T132024Z",
+      "mode": "source-exposure-control",
+      "observationSource": "artifacts/source-exposure-control-20261101T132024Z/ax-hidden-after-visible-observation.json",
+      "observationContext": {
+        "before": {
+          "implementationVersion": "native-controls-v0.2",
+          "pid": 70719,
+          "windowID": 185765,
+          "windowVisible": true,
+          "currentText": "INPUTSECRETSOURCECONTROL8K2P",
+          "editorText": "INPUTSECRETSOURCECONTROL8K2P",
+          "sourceWindowVisible": false,
+          "sourceWindowEverOrderedFront": true,
+          "sourceExposureTest": true,
+          "focus": "field"
+        },
+        "after": {
+          "implementationVersion": "native-controls-v0.2",
+          "pid": 70719,
+          "windowID": 185765,
+          "windowVisible": true,
+          "currentText": "INPUTSECRETSOURCECONTROL8K2P",
+          "editorText": "INPUTSECRETSOURCECONTROL8K2P",
+          "sourceWindowVisible": false,
+          "sourceWindowEverOrderedFront": true,
+          "sourceExposureTest": true,
+          "focus": "field"
+        }
+      },
+      "implementationVersion": "native-controls-v0.2",
+      "runHashes": {
+        "appSHA256": "149cf3695275f103be75e141e490ac8f47095560122e3ae467f13ac3a7d65b55",
+        "sourceSHA256": "057aaccd6c59c8fd05f2472218bc841c3b697cbbf0b4f648d057e94d75e663b2",
+        "probeSHA256": "c2b75be422e5c21af5112956090321ffdcb0e04ca492b5320695dee0dec2d164"
+      },
+      "interpretationGroup": "historical_explicit_source_visibility_control"
+    },
+    {
+      "source": "artifacts/source-exposure-control-20261101T132024Z/ax-never-visible-input.json",
+      "sourceSHA256": "402c362f2be6d55f44684e4992b05365c10415c95230b0907284eee2b2e9c7d7",
+      "wrapperReturnCode": 0,
+      "AXIsProcessTrusted": true,
+      "targetPID": 70719,
+      "targetBundleIdentifier": "local.examcapture.nativecontrols",
+      "status": "ax_inspected_no_events_posted",
+      "axNodesVisited": 87,
+      "axTreeTruncated": false,
+      "clipboardRead": false,
+      "permissionRequested": false,
+      "posted": false,
+      "postedEventCount": 0,
+      "timestamp": "2026-11-01T13:20:26Z",
+      "treePresent": true,
+      "nodesReadFromTree": 87,
+      "stringAttributesExamined": 79,
+      "attributeErrors": {
+        "-25205": 38,
+        "-25212": 318
+      },
+      "markerPresent": {
+        "EXAM-SECRET": false,
+        "NATIVE-EDIT": false,
+        "INPUTSECRET": false,
+        "SCROLL-SECRET": false
+      },
+      "markerOccurrences": {
+        "EXAM-SECRET": 0,
+        "NATIVE-EDIT": 0,
+        "INPUTSECRET": 0,
+        "SCROLL-SECRET": 0
+      },
+      "attributesContainingMarker": {
+        "EXAM-SECRET": 0,
+        "NATIVE-EDIT": 0,
+        "INPUTSECRET": 0,
+        "SCROLL-SECRET": 0
+      },
+      "hits": [],
+      "supplementalMarkerOccurrences": {
+        "PUBLIC-CONTROL": 1,
+        "committedChineseLiteral_你好": 0
+      },
+      "supplementalHits": [
+        {
+          "path": "axTree.children[0].children[0].value",
+          "role": "AXStaticText",
+          "attribute": "value",
+          "marker": "PUBLIC-CONTROL",
+          "occurrences": 1,
+          "valuePrefix": "PUBLIC-CONTROL-4M2P  原生控件验证  raster-protected"
+        }
+      ],
+      "stringAttributesByName": {
+        "title": 76,
+        "value": 3
+      },
+      "batch": "source-exposure-control-20261101T132024Z",
+      "mode": "source-exposure-control",
+      "observationSource": "artifacts/source-exposure-control-20261101T132024Z/ax-never-visible-observation.json",
+      "observationContext": {
+        "before": {
+          "implementationVersion": "native-controls-v0.2",
+          "pid": 70719,
+          "windowID": 185765,
+          "windowVisible": true,
+          "currentText": "INPUTSECRETSOURCECONTROL8K2P",
+          "editorText": "INPUTSECRETSOURCECONTROL8K2P",
+          "sourceWindowVisible": false,
+          "sourceWindowEverOrderedFront": false,
+          "sourceExposureTest": false,
+          "focus": "field"
+        },
+        "after": {
+          "implementationVersion": "native-controls-v0.2",
+          "pid": 70719,
+          "windowID": 185765,
+          "windowVisible": true,
+          "currentText": "INPUTSECRETSOURCECONTROL8K2P",
+          "editorText": "INPUTSECRETSOURCECONTROL8K2P",
+          "sourceWindowVisible": false,
+          "sourceWindowEverOrderedFront": false,
+          "sourceExposureTest": false,
+          "focus": "field"
+        }
+      },
+      "implementationVersion": "native-controls-v0.2",
+      "runHashes": {
+        "appSHA256": "149cf3695275f103be75e141e490ac8f47095560122e3ae467f13ac3a7d65b55",
+        "sourceSHA256": "057aaccd6c59c8fd05f2472218bc841c3b697cbbf0b4f648d057e94d75e663b2",
+        "probeSHA256": "c2b75be422e5c21af5112956090321ffdcb0e04ca492b5320695dee0dec2d164"
+      },
+      "interpretationGroup": "historical_explicit_source_visibility_control"
+    },
+    {
+      "source": "artifacts/source-exposure-control-20261101T132024Z/ax-visible-input.json",
+      "sourceSHA256": "e39d83ee21cce2f0eb3e19d63c028a82e0ab6ac8de00fc79c2594d1e84cdc85d",
+      "wrapperReturnCode": 0,
+      "AXIsProcessTrusted": true,
+      "targetPID": 70719,
+      "targetBundleIdentifier": "local.examcapture.nativecontrols",
+      "status": "ax_inspected_no_events_posted",
+      "axNodesVisited": 104,
+      "axTreeTruncated": false,
+      "clipboardRead": false,
+      "permissionRequested": false,
+      "posted": false,
+      "postedEventCount": 0,
+      "timestamp": "2026-11-01T13:20:28Z",
+      "treePresent": true,
+      "nodesReadFromTree": 104,
+      "stringAttributesExamined": 90,
+      "attributeErrors": {
+        "-25205": 113,
+        "-25212": 322,
+        "-25200": 1
+      },
+      "markerPresent": {
+        "EXAM-SECRET": true,
+        "NATIVE-EDIT": true,
+        "INPUTSECRET": true,
+        "SCROLL-SECRET": true
+      },
+      "markerOccurrences": {
+        "EXAM-SECRET": 1,
+        "NATIVE-EDIT": 1,
+        "INPUTSECRET": 1,
+        "SCROLL-SECRET": 35
+      },
+      "attributesContainingMarker": {
+        "EXAM-SECRET": 1,
+        "NATIVE-EDIT": 1,
+        "INPUTSECRET": 1,
+        "SCROLL-SECRET": 1
+      },
+      "hits": [
+        {
+          "treePath": "$.axTree.children[0].children[0].value",
+          "nodeIndex": 3,
+          "role": "AXStaticText",
+          "attribute": "value",
+          "matchedOccurrences": {
+            "EXAM-SECRET": 1
+          },
+          "syntheticTextSnippets": [
+            "原生控件离屏验证 · EXAM-SECRET-7K9Q"
+          ]
+        },
+        {
+          "treePath": "$.axTree.children[0].children[1].value",
+          "nodeIndex": 4,
+          "role": "AXStaticText",
+          "attribute": "value",
+          "matchedOccurrences": {
+            "NATIVE-EDIT": 1
+          },
+          "syntheticTextSnippets": [
+            "真实可编辑 NSTextField · NATIVE-EDIT-6T2W"
+          ]
+        },
+        {
+          "treePath": "$.axTree.children[0].children[2].value",
+          "nodeIndex": 5,
+          "role": "AXTextField",
+          "attribute": "value",
+          "matchedOccurrences": {
+            "INPUTSECRET": 1
+          },
+          "syntheticTextSnippets": [
+            "INPUTSECRETSOURCECONTROL8K2P"
+          ]
+        },
+        {
+          "treePath": "$.axTree.children[0].children[6].children[0].value",
+          "nodeIndex": 10,
+          "role": "AXTextArea",
+          "attribute": "value",
+          "matchedOccurrences": {
+            "SCROLL-SECRET": 35
+          },
+          "syntheticTextSnippets": [
+            "原生滚动内容 ROW-00 SCROLL-SECRET-9J4V",
+            "原生滚动内容 ROW-01 SCROLL-SECRET-9J4V"
+          ]
+        }
+      ],
+      "supplementalMarkerOccurrences": {
+        "PUBLIC-CONTROL": 1,
+        "committedChineseLiteral_你好": 0
+      },
+      "supplementalHits": [
+        {
+          "path": "axTree.children[1].children[0].value",
+          "role": "AXStaticText",
+          "attribute": "value",
+          "marker": "PUBLIC-CONTROL",
+          "occurrences": 1,
+          "valuePrefix": "PUBLIC-CONTROL-4M2P  原生控件验证  raster-protected"
+        }
+      ],
+      "stringAttributesByName": {
+        "title": 79,
+        "value": 9,
+        "selectedText": 2
+      },
+      "batch": "source-exposure-control-20261101T132024Z",
+      "mode": "source-exposure-control",
+      "observationSource": "artifacts/source-exposure-control-20261101T132024Z/ax-visible-observation.json",
+      "observationContext": {
+        "before": {
+          "implementationVersion": "native-controls-v0.2",
+          "pid": 70719,
+          "windowID": 185765,
+          "windowVisible": true,
+          "currentText": "INPUTSECRETSOURCECONTROL8K2P",
+          "editorText": "INPUTSECRETSOURCECONTROL8K2P",
+          "sourceWindowVisible": true,
+          "sourceWindowEverOrderedFront": true,
+          "sourceExposureTest": true,
+          "focus": "field"
+        },
+        "after": {
+          "implementationVersion": "native-controls-v0.2",
+          "pid": 70719,
+          "windowID": 185765,
+          "windowVisible": true,
+          "currentText": "INPUTSECRETSOURCECONTROL8K2P",
+          "editorText": "INPUTSECRETSOURCECONTROL8K2P",
+          "sourceWindowVisible": true,
+          "sourceWindowEverOrderedFront": true,
+          "sourceExposureTest": true,
+          "focus": "field"
+        }
+      },
+      "implementationVersion": "native-controls-v0.2",
+      "runHashes": {
+        "appSHA256": "149cf3695275f103be75e141e490ac8f47095560122e3ae467f13ac3a7d65b55",
+        "sourceSHA256": "057aaccd6c59c8fd05f2472218bc841c3b697cbbf0b4f648d057e94d75e663b2",
+        "probeSHA256": "c2b75be422e5c21af5112956090321ffdcb0e04ca492b5320695dee0dec2d164"
+      },
+      "interpretationGroup": "historical_explicit_source_visibility_control"
+    },
+    {
+      "source": "artifacts/native-final-v03-20261101T133147Z/direct/ax-input.json",
+      "sourceSHA256": "b7bb01309c98789690e7c5d6106cb9d19a5c829a1a03dcb47950343142e6023e",
+      "wrapperReturnCode": 0,
+      "AXIsProcessTrusted": true,
+      "targetPID": 94258,
+      "targetBundleIdentifier": "local.examcapture.nativecontrols",
+      "status": "ax_inspected_no_events_posted",
+      "axNodesVisited": 119,
+      "axTreeTruncated": false,
+      "clipboardRead": false,
+      "permissionRequested": false,
+      "posted": false,
+      "postedEventCount": 0,
+      "timestamp": "2026-11-01T13:32:06Z",
+      "axScope": "Read-only synthetic Demo AX contents only; authorized AX access is distinct from captured screen pixels. An empty/bounded tree does not prove inaccessible content across every AX path.",
+      "treePresent": true,
+      "nodesReadFromTree": 119,
+      "stringAttributesExamined": 104,
+      "attributeErrors": {
+        "-25205": 103,
+        "-25212": 392,
+        "-25200": 1
+      },
+      "markerPresent": {
+        "EXAM-SECRET": true,
+        "NATIVE-EDIT": true,
+        "INPUTSECRET": true,
+        "SCROLL-SECRET": true
+      },
+      "markerOccurrences": {
+        "EXAM-SECRET": 1,
+        "NATIVE-EDIT": 1,
+        "INPUTSECRET": 1,
+        "SCROLL-SECRET": 35
+      },
+      "attributesContainingMarker": {
+        "EXAM-SECRET": 1,
+        "NATIVE-EDIT": 1,
+        "INPUTSECRET": 1,
+        "SCROLL-SECRET": 1
+      },
+      "hits": [
+        {
+          "path": "axTree.children[0].children[3].value",
+          "role": "AXStaticText",
+          "attribute": "value",
+          "marker": "EXAM-SECRET",
+          "occurrences": 1,
+          "valuePrefix": "原生控件离屏验证 · EXAM-SECRET-7K9Q"
+        },
+        {
+          "path": "axTree.children[0].children[4].value",
+          "role": "AXStaticText",
+          "attribute": "value",
+          "marker": "NATIVE-EDIT",
+          "occurrences": 1,
+          "valuePrefix": "真实可编辑 NSTextField · NATIVE-EDIT-6T2W"
+        },
+        {
+          "path": "axTree.children[0].children[5].value",
+          "role": "AXTextField",
+          "attribute": "value",
+          "marker": "INPUTSECRET",
+          "occurrences": 1,
+          "valuePrefix": "INPUTSECRETFINAL7H5T"
+        },
+        {
+          "path": "axTree.children[0].children[9].children[0].value",
+          "role": "AXTextArea",
+          "attribute": "value",
+          "marker": "SCROLL-SECRET",
+          "occurrences": 35,
+          "valuePrefix": "原生滚动内容 ROW-00 SCROLL-SECRET-9J4V\n原生滚动内容 ROW-01 SCROLL-SECRET-9J4V\n原生滚动内容 ROW-02 SCROLL-SECRET-9J4V\n原生滚动内容 ROW-03 SCROLL-SECRET-9J4V\n原生滚动内容 ROW-04 SCROLL-SECRET-9J4V\n原生滚动内容 ROW-05 S"
+        }
+      ],
+      "supplementalMarkerOccurrences": {
+        "PUBLIC-CONTROL": 1,
+        "committedChineseLiteral_你好": 0
+      },
+      "supplementalHits": [
+        {
+          "path": "axTree.children[0].children[0].value",
+          "role": "AXStaticText",
+          "attribute": "value",
+          "marker": "PUBLIC-CONTROL",
+          "occurrences": 1,
+          "valuePrefix": "PUBLIC-CONTROL-4M2P  原生控件验证  direct"
+        }
+      ],
+      "stringAttributesByName": {
+        "title": 93,
+        "value": 9,
+        "selectedText": 2
+      },
+      "batch": "native-final-v03-20261101T133147Z",
+      "mode": "direct",
+      "observationSource": "artifacts/native-final-v03-20261101T133147Z/direct/ax-observation.json",
+      "observationContext": {
+        "before": {
+          "implementationVersion": "native-controls-v0.3",
+          "pid": 94258,
+          "windowID": 185952,
+          "windowVisible": true,
+          "windowMiniaturized": false,
+          "appHidden": false,
+          "appActive": true,
+          "windowKey": true,
+          "currentText": "INPUTSECRETFINAL7H5T",
+          "editorText": "INPUTSECRETFINAL7H5T",
+          "sourceWindowVisible": false,
+          "sourceWindowEverOrderedFront": false,
+          "sourceExposureTest": false,
+          "focus": "field"
+        },
+        "after": {
+          "implementationVersion": "native-controls-v0.3",
+          "pid": 94258,
+          "windowID": 185952,
+          "windowVisible": true,
+          "windowMiniaturized": false,
+          "appHidden": false,
+          "appActive": true,
+          "windowKey": true,
+          "currentText": "INPUTSECRETFINAL7H5T",
+          "editorText": "INPUTSECRETFINAL7H5T",
+          "sourceWindowVisible": false,
+          "sourceWindowEverOrderedFront": false,
+          "sourceExposureTest": false,
+          "focus": "field"
+        }
+      },
+      "implementationVersion": "native-controls-v0.3",
+      "runHashes": {
+        "appSHA256": "0cbe3e4fafc0cc30b2877940f7c4f814815d2e2748365a5e571f79020a6b4aa1",
+        "sourceSHA256": "b256ce232aeba98257de5b87d6061f516fe910eb6c5bfd91eac1b2fd9cf72c77",
+        "probeSHA256": "c2b75be422e5c21af5112956090321ffdcb0e04ca492b5320695dee0dec2d164"
+      },
+      "interactionChecks": {
+        "passed": 8,
+        "total": 8
+      },
+      "interpretationGroup": "v03_main_qualified"
+    },
+    {
+      "source": "artifacts/native-final-v03-20261101T133147Z/mixed/ax-input.json",
+      "sourceSHA256": "1fd9c09c4c89dae0a551e3867d1066a2944e1cb6e614f0561efe471bb4d255c2",
+      "wrapperReturnCode": 0,
+      "AXIsProcessTrusted": true,
+      "targetPID": 98956,
+      "targetBundleIdentifier": "local.examcapture.nativecontrols",
+      "status": "ax_inspected_no_events_posted",
+      "axNodesVisited": 95,
+      "axTreeTruncated": false,
+      "clipboardRead": false,
+      "permissionRequested": false,
+      "posted": false,
+      "postedEventCount": 0,
+      "timestamp": "2026-11-01T13:33:05Z",
+      "axScope": "Read-only synthetic Demo AX contents only; authorized AX access is distinct from captured screen pixels. An empty/bounded tree does not prove inaccessible content across every AX path.",
+      "treePresent": true,
+      "nodesReadFromTree": 95,
+      "stringAttributesExamined": 89,
+      "attributeErrors": {
+        "-25205": 6,
+        "-25212": 382
+      },
+      "markerPresent": {
+        "EXAM-SECRET": false,
+        "NATIVE-EDIT": false,
+        "INPUTSECRET": false,
+        "SCROLL-SECRET": false
+      },
+      "markerOccurrences": {
+        "EXAM-SECRET": 0,
+        "NATIVE-EDIT": 0,
+        "INPUTSECRET": 0,
+        "SCROLL-SECRET": 0
+      },
+      "attributesContainingMarker": {
+        "EXAM-SECRET": 0,
+        "NATIVE-EDIT": 0,
+        "INPUTSECRET": 0,
+        "SCROLL-SECRET": 0
+      },
+      "hits": [],
+      "supplementalMarkerOccurrences": {
+        "PUBLIC-CONTROL": 0,
+        "committedChineseLiteral_你好": 0
+      },
+      "supplementalHits": [],
+      "stringAttributesByName": {
+        "title": 89
+      },
+      "batch": "native-final-v03-20261101T133147Z",
+      "mode": "mixed",
+      "observationSource": "artifacts/native-final-v03-20261101T133147Z/mixed/ax-observation.json",
+      "observationContext": {
+        "before": {
+          "implementationVersion": "native-controls-v0.3",
+          "pid": 98956,
+          "windowID": 186048,
+          "windowVisible": true,
+          "windowMiniaturized": false,
+          "appHidden": false,
+          "appActive": false,
+          "windowKey": false,
+          "currentText": "INPUTSECRETABC1Z3",
+          "editorText": "INPUTSECRETABC1Z3",
+          "sourceWindowVisible": false,
+          "sourceWindowEverOrderedFront": false,
+          "sourceExposureTest": false,
+          "focus": "field"
+        },
+        "after": {
+          "implementationVersion": "native-controls-v0.3",
+          "pid": 98956,
+          "windowID": 186048,
+          "windowVisible": true,
+          "windowMiniaturized": false,
+          "appHidden": false,
+          "appActive": false,
+          "windowKey": false,
+          "currentText": "INPUTSECRETABC1Z3",
+          "editorText": "INPUTSECRETABC1Z3",
+          "sourceWindowVisible": false,
+          "sourceWindowEverOrderedFront": false,
+          "sourceExposureTest": false,
+          "focus": "field"
+        }
+      },
+      "implementationVersion": "native-controls-v0.3",
+      "runHashes": {
+        "appSHA256": "0cbe3e4fafc0cc30b2877940f7c4f814815d2e2748365a5e571f79020a6b4aa1",
+        "sourceSHA256": "b256ce232aeba98257de5b87d6061f516fe910eb6c5bfd91eac1b2fd9cf72c77",
+        "probeSHA256": "c2b75be422e5c21af5112956090321ffdcb0e04ca492b5320695dee0dec2d164"
+      },
+      "interactionChecks": {
+        "passed": 3,
+        "total": 8
+      },
+      "interpretationGroup": "v03_mixed_interaction_incomplete_not_primary_control"
+    },
+    {
+      "source": "artifacts/native-final-v03-20261101T133147Z/raster-baseline/ax-input.json",
+      "sourceSHA256": "7a0cd31f1f51f35ca4a9c3a1e4eadffee536b26a525084be1819724d5170bff6",
+      "wrapperReturnCode": 0,
+      "AXIsProcessTrusted": true,
+      "targetPID": 94484,
+      "targetBundleIdentifier": "local.examcapture.nativecontrols",
+      "status": "ax_inspected_no_events_posted",
+      "axNodesVisited": 104,
+      "axTreeTruncated": false,
+      "clipboardRead": false,
+      "permissionRequested": false,
+      "posted": false,
+      "postedEventCount": 0,
+      "timestamp": "2026-11-01T13:32:26Z",
+      "axScope": "Read-only synthetic Demo AX contents only; authorized AX access is distinct from captured screen pixels. An empty/bounded tree does not prove inaccessible content across every AX path.",
+      "treePresent": true,
+      "nodesReadFromTree": 104,
+      "stringAttributesExamined": 94,
+      "attributeErrors": {
+        "-25205": 38,
+        "-25212": 388
+      },
+      "markerPresent": {
+        "EXAM-SECRET": false,
+        "NATIVE-EDIT": false,
+        "INPUTSECRET": false,
+        "SCROLL-SECRET": false
+      },
+      "markerOccurrences": {
+        "EXAM-SECRET": 0,
+        "NATIVE-EDIT": 0,
+        "INPUTSECRET": 0,
+        "SCROLL-SECRET": 0
+      },
+      "attributesContainingMarker": {
+        "EXAM-SECRET": 0,
+        "NATIVE-EDIT": 0,
+        "INPUTSECRET": 0,
+        "SCROLL-SECRET": 0
+      },
+      "hits": [],
+      "supplementalMarkerOccurrences": {
+        "PUBLIC-CONTROL": 1,
+        "committedChineseLiteral_你好": 0
+      },
+      "supplementalHits": [
+        {
+          "path": "axTree.children[0].children[0].value",
+          "role": "AXStaticText",
+          "attribute": "value",
+          "marker": "PUBLIC-CONTROL",
+          "occurrences": 1,
+          "valuePrefix": "PUBLIC-CONTROL-4M2P  原生控件验证  raster-baseline"
+        }
+      ],
+      "stringAttributesByName": {
+        "title": 91,
+        "value": 3
+      },
+      "batch": "native-final-v03-20261101T133147Z",
+      "mode": "raster-baseline",
+      "observationSource": "artifacts/native-final-v03-20261101T133147Z/raster-baseline/ax-observation.json",
+      "observationContext": {
+        "before": {
+          "implementationVersion": "native-controls-v0.3",
+          "pid": 94484,
+          "windowID": 185975,
+          "windowVisible": true,
+          "windowMiniaturized": false,
+          "appHidden": false,
+          "appActive": true,
+          "windowKey": true,
+          "currentText": "INPUTSECRETFINAL7H5T",
+          "editorText": "",
+          "sourceWindowVisible": false,
+          "sourceWindowEverOrderedFront": false,
+          "sourceExposureTest": false,
+          "focus": "button"
+        },
+        "after": {
+          "implementationVersion": "native-controls-v0.3",
+          "pid": 94484,
+          "windowID": 185975,
+          "windowVisible": true,
+          "windowMiniaturized": false,
+          "appHidden": false,
+          "appActive": true,
+          "windowKey": true,
+          "currentText": "INPUTSECRETFINAL7H5T",
+          "editorText": "",
+          "sourceWindowVisible": false,
+          "sourceWindowEverOrderedFront": false,
+          "sourceExposureTest": false,
+          "focus": "button"
+        }
+      },
+      "implementationVersion": "native-controls-v0.3",
+      "runHashes": {
+        "appSHA256": "0cbe3e4fafc0cc30b2877940f7c4f814815d2e2748365a5e571f79020a6b4aa1",
+        "sourceSHA256": "b256ce232aeba98257de5b87d6061f516fe910eb6c5bfd91eac1b2fd9cf72c77",
+        "probeSHA256": "c2b75be422e5c21af5112956090321ffdcb0e04ca492b5320695dee0dec2d164"
+      },
+      "interactionChecks": {
+        "passed": 8,
+        "total": 8
+      },
+      "interpretationGroup": "v03_main_qualified"
+    },
+    {
+      "source": "artifacts/native-final-v03-20261101T133147Z/raster-protected/ax-input.json",
+      "sourceSHA256": "a8a4fcf8afd9bb91cc6e6d19787e142e4eafa7920a224444e0ebfc655b8a2714",
+      "wrapperReturnCode": 0,
+      "AXIsProcessTrusted": true,
+      "targetPID": 97081,
+      "targetBundleIdentifier": "local.examcapture.nativecontrols",
+      "status": "ax_inspected_no_events_posted",
+      "axNodesVisited": 95,
+      "axTreeTruncated": false,
+      "clipboardRead": false,
+      "permissionRequested": false,
+      "posted": false,
+      "postedEventCount": 0,
+      "timestamp": "2026-11-01T13:32:49Z",
+      "axScope": "Read-only synthetic Demo AX contents only; authorized AX access is distinct from captured screen pixels. An empty/bounded tree does not prove inaccessible content across every AX path.",
+      "treePresent": true,
+      "nodesReadFromTree": 95,
+      "stringAttributesExamined": 89,
+      "attributeErrors": {
+        "-25205": 6,
+        "-25212": 382
+      },
+      "markerPresent": {
+        "EXAM-SECRET": false,
+        "NATIVE-EDIT": false,
+        "INPUTSECRET": false,
+        "SCROLL-SECRET": false
+      },
+      "markerOccurrences": {
+        "EXAM-SECRET": 0,
+        "NATIVE-EDIT": 0,
+        "INPUTSECRET": 0,
+        "SCROLL-SECRET": 0
+      },
+      "attributesContainingMarker": {
+        "EXAM-SECRET": 0,
+        "NATIVE-EDIT": 0,
+        "INPUTSECRET": 0,
+        "SCROLL-SECRET": 0
+      },
+      "hits": [],
+      "supplementalMarkerOccurrences": {
+        "PUBLIC-CONTROL": 0,
+        "committedChineseLiteral_你好": 0
+      },
+      "supplementalHits": [],
+      "stringAttributesByName": {
+        "title": 89
+      },
+      "batch": "native-final-v03-20261101T133147Z",
+      "mode": "raster-protected",
+      "observationSource": "artifacts/native-final-v03-20261101T133147Z/raster-protected/ax-observation.json",
+      "observationContext": {
+        "before": {
+          "implementationVersion": "native-controls-v0.3",
+          "pid": 97081,
+          "windowID": 186004,
+          "windowVisible": true,
+          "windowMiniaturized": false,
+          "appHidden": false,
+          "appActive": false,
+          "windowKey": false,
+          "currentText": "INPUTSECRETFINAL7H5T",
+          "editorText": "",
+          "sourceWindowVisible": false,
+          "sourceWindowEverOrderedFront": false,
+          "sourceExposureTest": false,
+          "focus": "button"
+        },
+        "after": {
+          "implementationVersion": "native-controls-v0.3",
+          "pid": 97081,
+          "windowID": 186004,
+          "windowVisible": true,
+          "windowMiniaturized": false,
+          "appHidden": false,
+          "appActive": false,
+          "windowKey": false,
+          "currentText": "INPUTSECRETFINAL7H5T",
+          "editorText": "",
+          "sourceWindowVisible": false,
+          "sourceWindowEverOrderedFront": false,
+          "sourceExposureTest": false,
+          "focus": "button"
+        }
+      },
+      "implementationVersion": "native-controls-v0.3",
+      "runHashes": {
+        "appSHA256": "0cbe3e4fafc0cc30b2877940f7c4f814815d2e2748365a5e571f79020a6b4aa1",
+        "sourceSHA256": "b256ce232aeba98257de5b87d6061f516fe910eb6c5bfd91eac1b2fd9cf72c77",
+        "probeSHA256": "c2b75be422e5c21af5112956090321ffdcb0e04ca492b5320695dee0dec2d164"
+      },
+      "interactionChecks": {
+        "passed": 8,
+        "total": 8
+      },
+      "interpretationGroup": "v03_main_qualified"
+    },
+    {
+      "source": "artifacts/native-ime-20261101T134127Z/direct/ax-ime-input.json",
+      "sourceSHA256": "985578fa451b75ee52de91b659a5122ebe51b3edac51f08ff7f5de014bc87feb",
+      "wrapperReturnCode": 0,
+      "AXIsProcessTrusted": true,
+      "targetPID": 14170,
+      "targetBundleIdentifier": "local.examcapture.nativecontrols",
+      "status": "ax_inspected_no_events_posted",
+      "axNodesVisited": 119,
+      "axTreeTruncated": false,
+      "clipboardRead": false,
+      "permissionRequested": false,
+      "posted": false,
+      "postedEventCount": 0,
+      "timestamp": "2026-11-01T13:41:35Z",
+      "axScope": "Read-only synthetic Demo AX contents only; authorized AX access is distinct from captured screen pixels. An empty/bounded tree does not prove inaccessible content across every AX path.",
+      "treePresent": true,
+      "nodesReadFromTree": 119,
+      "stringAttributesExamined": 104,
+      "attributeErrors": {
+        "-25205": 103,
+        "-25212": 392,
+        "-25200": 1
+      },
+      "markerPresent": {
+        "EXAM-SECRET": true,
+        "NATIVE-EDIT": true,
+        "INPUTSECRET": false,
+        "SCROLL-SECRET": true
+      },
+      "markerOccurrences": {
+        "EXAM-SECRET": 1,
+        "NATIVE-EDIT": 1,
+        "INPUTSECRET": 0,
+        "SCROLL-SECRET": 35
+      },
+      "attributesContainingMarker": {
+        "EXAM-SECRET": 1,
+        "NATIVE-EDIT": 1,
+        "INPUTSECRET": 0,
+        "SCROLL-SECRET": 1
+      },
+      "hits": [
+        {
+          "path": "axTree.children[0].children[3].value",
+          "role": "AXStaticText",
+          "attribute": "value",
+          "marker": "EXAM-SECRET",
+          "occurrences": 1,
+          "valuePrefix": "原生控件离屏验证 · EXAM-SECRET-7K9Q"
+        },
+        {
+          "path": "axTree.children[0].children[4].value",
+          "role": "AXStaticText",
+          "attribute": "value",
+          "marker": "NATIVE-EDIT",
+          "occurrences": 1,
+          "valuePrefix": "真实可编辑 NSTextField · NATIVE-EDIT-6T2W"
+        },
+        {
+          "path": "axTree.children[0].children[9].children[0].value",
+          "role": "AXTextArea",
+          "attribute": "value",
+          "marker": "SCROLL-SECRET",
+          "occurrences": 35,
+          "valuePrefix": "原生滚动内容 ROW-00 SCROLL-SECRET-9J4V\n原生滚动内容 ROW-01 SCROLL-SECRET-9J4V\n原生滚动内容 ROW-02 SCROLL-SECRET-9J4V\n原生滚动内容 ROW-03 SCROLL-SECRET-9J4V\n原生滚动内容 ROW-04 SCROLL-SECRET-9J4V\n原生滚动内容 ROW-05 S"
+        }
+      ],
+      "supplementalMarkerOccurrences": {
+        "PUBLIC-CONTROL": 1,
+        "committedChineseLiteral_你好": 1
+      },
+      "supplementalHits": [
+        {
+          "path": "axTree.children[0].children[0].value",
+          "role": "AXStaticText",
+          "attribute": "value",
+          "marker": "PUBLIC-CONTROL",
+          "occurrences": 1,
+          "valuePrefix": "PUBLIC-CONTROL-4M2P  原生控件验证  direct"
+        },
+        {
+          "path": "axTree.children[0].children[5].value",
+          "role": "AXTextField",
+          "attribute": "value",
+          "marker": "committedChineseLiteral_你好",
+          "occurrences": 1,
+          "valuePrefix": "你好"
+        }
+      ],
+      "stringAttributesByName": {
+        "title": 93,
+        "value": 9,
+        "selectedText": 2
+      },
+      "batch": "native-ime-20261101T134127Z",
+      "mode": "direct",
+      "observationSource": "artifacts/native-ime-20261101T134127Z/direct/ax-ime-observation.json",
+      "observationContext": {
+        "before": {
+          "implementationVersion": "native-controls-v0.3",
+          "pid": 14170,
+          "windowID": 186188,
+          "windowVisible": true,
+          "windowMiniaturized": false,
+          "appHidden": false,
+          "appActive": true,
+          "windowKey": true,
+          "currentText": "你好",
+          "editorText": "你好",
+          "sourceWindowVisible": false,
+          "sourceWindowEverOrderedFront": false,
+          "sourceExposureTest": false,
+          "focus": "field"
+        },
+        "after": {
+          "implementationVersion": "native-controls-v0.3",
+          "pid": 14170,
+          "windowID": 186188,
+          "windowVisible": true,
+          "windowMiniaturized": false,
+          "appHidden": false,
+          "appActive": true,
+          "windowKey": true,
+          "currentText": "你好",
+          "editorText": "你好",
+          "sourceWindowVisible": false,
+          "sourceWindowEverOrderedFront": false,
+          "sourceExposureTest": false,
+          "focus": "field"
+        }
+      },
+      "implementationVersion": "native-controls-v0.3",
+      "runHashes": {
+        "appSHA256": "0cbe3e4fafc0cc30b2877940f7c4f814815d2e2748365a5e571f79020a6b4aa1",
+        "sourceSHA256": "b256ce232aeba98257de5b87d6061f516fe910eb6c5bfd91eac1b2fd9cf72c77",
+        "probeSHA256": "c2b75be422e5c21af5112956090321ffdcb0e04ca492b5320695dee0dec2d164"
+      },
+      "interpretationGroup": "v03_ime_after_commit_active_window"
+    },
+    {
+      "source": "artifacts/native-ime-20261101T134127Z/raster-baseline/ax-ime-input.json",
+      "sourceSHA256": "32c53d2789c102541e31404ec091eb52dc77458d214a1590747fbd98b7a14d66",
+      "wrapperReturnCode": 0,
+      "AXIsProcessTrusted": true,
+      "targetPID": 14280,
+      "targetBundleIdentifier": "local.examcapture.nativecontrols",
+      "status": "ax_inspected_no_events_posted",
+      "axNodesVisited": 104,
+      "axTreeTruncated": false,
+      "clipboardRead": false,
+      "permissionRequested": false,
+      "posted": false,
+      "postedEventCount": 0,
+      "timestamp": "2026-11-01T13:41:44Z",
+      "axScope": "Read-only synthetic Demo AX contents only; authorized AX access is distinct from captured screen pixels. An empty/bounded tree does not prove inaccessible content across every AX path.",
+      "treePresent": true,
+      "nodesReadFromTree": 104,
+      "stringAttributesExamined": 94,
+      "attributeErrors": {
+        "-25205": 38,
+        "-25212": 388
+      },
+      "markerPresent": {
+        "EXAM-SECRET": false,
+        "NATIVE-EDIT": false,
+        "INPUTSECRET": false,
+        "SCROLL-SECRET": false
+      },
+      "markerOccurrences": {
+        "EXAM-SECRET": 0,
+        "NATIVE-EDIT": 0,
+        "INPUTSECRET": 0,
+        "SCROLL-SECRET": 0
+      },
+      "attributesContainingMarker": {
+        "EXAM-SECRET": 0,
+        "NATIVE-EDIT": 0,
+        "INPUTSECRET": 0,
+        "SCROLL-SECRET": 0
+      },
+      "hits": [],
+      "supplementalMarkerOccurrences": {
+        "PUBLIC-CONTROL": 1,
+        "committedChineseLiteral_你好": 0
+      },
+      "supplementalHits": [
+        {
+          "path": "axTree.children[0].children[0].value",
+          "role": "AXStaticText",
+          "attribute": "value",
+          "marker": "PUBLIC-CONTROL",
+          "occurrences": 1,
+          "valuePrefix": "PUBLIC-CONTROL-4M2P  原生控件验证  raster-baseline"
+        }
+      ],
+      "stringAttributesByName": {
+        "title": 91,
+        "value": 3
+      },
+      "batch": "native-ime-20261101T134127Z",
+      "mode": "raster-baseline",
+      "observationSource": "artifacts/native-ime-20261101T134127Z/raster-baseline/ax-ime-observation.json",
+      "observationContext": {
+        "before": {
+          "implementationVersion": "native-controls-v0.3",
+          "pid": 14280,
+          "windowID": 186217,
+          "windowVisible": true,
+          "windowMiniaturized": false,
+          "appHidden": false,
+          "appActive": true,
+          "windowKey": true,
+          "currentText": "你好",
+          "editorText": "你好",
+          "sourceWindowVisible": false,
+          "sourceWindowEverOrderedFront": false,
+          "sourceExposureTest": false,
+          "focus": "field"
+        },
+        "after": {
+          "implementationVersion": "native-controls-v0.3",
+          "pid": 14280,
+          "windowID": 186217,
+          "windowVisible": true,
+          "windowMiniaturized": false,
+          "appHidden": false,
+          "appActive": true,
+          "windowKey": true,
+          "currentText": "你好",
+          "editorText": "你好",
+          "sourceWindowVisible": false,
+          "sourceWindowEverOrderedFront": false,
+          "sourceExposureTest": false,
+          "focus": "field"
+        }
+      },
+      "implementationVersion": "native-controls-v0.3",
+      "runHashes": {
+        "appSHA256": "0cbe3e4fafc0cc30b2877940f7c4f814815d2e2748365a5e571f79020a6b4aa1",
+        "sourceSHA256": "b256ce232aeba98257de5b87d6061f516fe910eb6c5bfd91eac1b2fd9cf72c77",
+        "probeSHA256": "c2b75be422e5c21af5112956090321ffdcb0e04ca492b5320695dee0dec2d164"
+      },
+      "interpretationGroup": "v03_ime_after_commit_active_window"
+    },
+    {
+      "source": "artifacts/native-ime-20261101T134127Z/raster-protected/ax-ime-input.json",
+      "sourceSHA256": "48bea8dca9bc8273f5359e9488d6d77d0feb54b3ab7bfd34cb3cefaeac17544e",
+      "wrapperReturnCode": 0,
+      "AXIsProcessTrusted": true,
+      "targetPID": 14393,
+      "targetBundleIdentifier": "local.examcapture.nativecontrols",
+      "status": "ax_inspected_no_events_posted",
+      "axNodesVisited": 104,
+      "axTreeTruncated": false,
+      "clipboardRead": false,
+      "permissionRequested": false,
+      "posted": false,
+      "postedEventCount": 0,
+      "timestamp": "2026-11-01T13:41:53Z",
+      "axScope": "Read-only synthetic Demo AX contents only; authorized AX access is distinct from captured screen pixels. An empty/bounded tree does not prove inaccessible content across every AX path.",
+      "treePresent": true,
+      "nodesReadFromTree": 104,
+      "stringAttributesExamined": 94,
+      "attributeErrors": {
+        "-25205": 38,
+        "-25212": 388
+      },
+      "markerPresent": {
+        "EXAM-SECRET": false,
+        "NATIVE-EDIT": false,
+        "INPUTSECRET": false,
+        "SCROLL-SECRET": false
+      },
+      "markerOccurrences": {
+        "EXAM-SECRET": 0,
+        "NATIVE-EDIT": 0,
+        "INPUTSECRET": 0,
+        "SCROLL-SECRET": 0
+      },
+      "attributesContainingMarker": {
+        "EXAM-SECRET": 0,
+        "NATIVE-EDIT": 0,
+        "INPUTSECRET": 0,
+        "SCROLL-SECRET": 0
+      },
+      "hits": [],
+      "supplementalMarkerOccurrences": {
+        "PUBLIC-CONTROL": 1,
+        "committedChineseLiteral_你好": 0
+      },
+      "supplementalHits": [
+        {
+          "path": "axTree.children[0].children[0].value",
+          "role": "AXStaticText",
+          "attribute": "value",
+          "marker": "PUBLIC-CONTROL",
+          "occurrences": 1,
+          "valuePrefix": "PUBLIC-CONTROL-4M2P  原生控件验证  raster-protected"
+        }
+      ],
+      "stringAttributesByName": {
+        "title": 91,
+        "value": 3
+      },
+      "batch": "native-ime-20261101T134127Z",
+      "mode": "raster-protected",
+      "observationSource": "artifacts/native-ime-20261101T134127Z/raster-protected/ax-ime-observation.json",
+      "observationContext": {
+        "before": {
+          "implementationVersion": "native-controls-v0.3",
+          "pid": 14393,
+          "windowID": 186229,
+          "windowVisible": true,
+          "windowMiniaturized": false,
+          "appHidden": false,
+          "appActive": true,
+          "windowKey": true,
+          "currentText": "你好",
+          "editorText": "你好",
+          "sourceWindowVisible": false,
+          "sourceWindowEverOrderedFront": false,
+          "sourceExposureTest": false,
+          "focus": "field"
+        },
+        "after": {
+          "implementationVersion": "native-controls-v0.3",
+          "pid": 14393,
+          "windowID": 186229,
+          "windowVisible": true,
+          "windowMiniaturized": false,
+          "appHidden": false,
+          "appActive": true,
+          "windowKey": true,
+          "currentText": "你好",
+          "editorText": "你好",
+          "sourceWindowVisible": false,
+          "sourceWindowEverOrderedFront": false,
+          "sourceExposureTest": false,
+          "focus": "field"
+        }
+      },
+      "implementationVersion": "native-controls-v0.3",
+      "runHashes": {
+        "appSHA256": "0cbe3e4fafc0cc30b2877940f7c4f814815d2e2748365a5e571f79020a6b4aa1",
+        "sourceSHA256": "b256ce232aeba98257de5b87d6061f516fe910eb6c5bfd91eac1b2fd9cf72c77",
+        "probeSHA256": "c2b75be422e5c21af5112956090321ffdcb0e04ca492b5320695dee0dec2d164"
+      },
+      "interpretationGroup": "v03_ime_after_commit_active_window"
+    }
+  ],
+  "missingEvidence": [
+    {
+      "batch": "native-keyboard-20261101T133448Z",
+      "modes": [
+        "raster-baseline",
+        "raster-protected"
+      ],
+      "axInputFilesFound": 0,
+      "axTreesFound": 0,
+      "status": "not-tested-by-this-batch",
+      "reason": "Saved 01–08 input wrappers do not contain axTree; do not interpret absence of an AX test as an AX-negative result."
+    }
+  ]
+}

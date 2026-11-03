@@ -1,0 +1,953 @@
+{
+  "purpose": "Offline analysis inventory; counts are PNG files, not independent trials or security pass rates. Original summaries and capture reports are authoritative.",
+  "cases": [
+    {
+      "case": "main/direct",
+      "summaryPath": "artifacts/native-final-v03-20261101T133147Z/direct/native-image-summary.json",
+      "summarySHA256": "74496db8423294151e5389b334cc14478e4fbe0d39e4aa4bca828d2b8ae0d9a5",
+      "actualPNGCount": 71,
+      "groups": {
+        "external-system-capture": {
+          "images": 55,
+          "tokens": {
+            "exam_secret": 55,
+            "native_edit": 55,
+            "input_secret_prefix": 55,
+            "native_leak": 0,
+            "public_control": 55,
+            "edited": 55,
+            "keyboard": 0
+          },
+          "allTransparent": 0,
+          "ocrErrors": 0,
+          "imageErrors": 0
+        },
+        "native-source-reference": {
+          "images": 13,
+          "tokens": {
+            "exam_secret": 13,
+            "native_edit": 13,
+            "input_secret_prefix": 12,
+            "native_leak": 0,
+            "public_control": 0,
+            "edited": 7,
+            "keyboard": 0
+          },
+          "allTransparent": 0,
+          "ocrErrors": 0,
+          "imageErrors": 0
+        },
+        "own-recording-representative-frame": {
+          "images": 3,
+          "tokens": {
+            "exam_secret": 3,
+            "native_edit": 3,
+            "input_secret_prefix": 2,
+            "native_leak": 0,
+            "public_control": 0,
+            "edited": 2,
+            "keyboard": 0
+          },
+          "allTransparent": 0,
+          "ocrErrors": 0,
+          "imageErrors": 0
+        }
+      },
+      "ocrErrors": 0,
+      "imageErrors": 0,
+      "missingDeclaredPNGs": [],
+      "streamIntegrity": [
+        {
+          "report": "capture/report.json",
+          "stream": "stream_application",
+          "status": "completed",
+          "streamErrors": [],
+          "reportedSaved": 16,
+          "savedFrameRows": 16,
+          "pngFiles": 16,
+          "missing": [],
+          "extra": [],
+          "duplicateSavedNames": 0,
+          "reportedCountMatchesRows": true,
+          "interpretation": "Zero saved frames or suspended callbacks are not a protection pass."
+        },
+        {
+          "report": "capture/report.json",
+          "stream": "stream_display",
+          "status": "completed",
+          "streamErrors": [],
+          "reportedSaved": 15,
+          "savedFrameRows": 15,
+          "pngFiles": 15,
+          "missing": [],
+          "extra": [],
+          "duplicateSavedNames": 0,
+          "reportedCountMatchesRows": true,
+          "interpretation": "Zero saved frames or suspended callbacks are not a protection pass."
+        },
+        {
+          "report": "capture/report.json",
+          "stream": "stream_window",
+          "status": "completed",
+          "streamErrors": [],
+          "reportedSaved": 16,
+          "savedFrameRows": 16,
+          "pngFiles": 16,
+          "missing": [],
+          "extra": [],
+          "duplicateSavedNames": 0,
+          "reportedCountMatchesRows": true,
+          "interpretation": "Zero saved frames or suspended callbacks are not a protection pass."
+        }
+      ],
+      "captureFailureOrSkippedEntries": []
+    },
+    {
+      "case": "main/raster-baseline",
+      "summaryPath": "artifacts/native-final-v03-20261101T133147Z/raster-baseline/native-image-summary.json",
+      "summarySHA256": "45695e2486101abf86e56b922723ccebf765c9248f237d74ffabe2b1daa62690",
+      "actualPNGCount": 89,
+      "groups": {
+        "external-hidden-source-target": {
+          "images": 17,
+          "tokens": {
+            "exam_secret": 17,
+            "native_edit": 17,
+            "input_secret_prefix": 17,
+            "native_leak": 0,
+            "public_control": 17,
+            "edited": 17,
+            "keyboard": 0
+          },
+          "allTransparent": 0,
+          "ocrErrors": 0,
+          "imageErrors": 0
+        },
+        "external-system-capture": {
+          "images": 56,
+          "tokens": {
+            "exam_secret": 56,
+            "native_edit": 56,
+            "input_secret_prefix": 56,
+            "native_leak": 0,
+            "public_control": 56,
+            "edited": 56,
+            "keyboard": 0
+          },
+          "allTransparent": 0,
+          "ocrErrors": 0,
+          "imageErrors": 0
+        },
+        "native-source-reference": {
+          "images": 13,
+          "tokens": {
+            "exam_secret": 13,
+            "native_edit": 13,
+            "input_secret_prefix": 12,
+            "native_leak": 0,
+            "public_control": 0,
+            "edited": 7,
+            "keyboard": 0
+          },
+          "allTransparent": 0,
+          "ocrErrors": 0,
+          "imageErrors": 0
+        },
+        "own-recording-representative-frame": {
+          "images": 3,
+          "tokens": {
+            "exam_secret": 3,
+            "native_edit": 3,
+            "input_secret_prefix": 2,
+            "native_leak": 0,
+            "public_control": 0,
+            "edited": 2,
+            "keyboard": 0
+          },
+          "allTransparent": 0,
+          "ocrErrors": 0,
+          "imageErrors": 0
+        }
+      },
+      "ocrErrors": 0,
+      "imageErrors": 0,
+      "missingDeclaredPNGs": [],
+      "streamIntegrity": [
+        {
+          "report": "capture/report.json",
+          "stream": "stream_application",
+          "status": "completed",
+          "streamErrors": [],
+          "reportedSaved": 16,
+          "savedFrameRows": 16,
+          "pngFiles": 16,
+          "missing": [],
+          "extra": [],
+          "duplicateSavedNames": 0,
+          "reportedCountMatchesRows": true,
+          "interpretation": "Zero saved frames or suspended callbacks are not a protection pass."
+        },
+        {
+          "report": "capture/report.json",
+          "stream": "stream_display",
+          "status": "completed",
+          "streamErrors": [],
+          "reportedSaved": 16,
+          "savedFrameRows": 16,
+          "pngFiles": 16,
+          "missing": [],
+          "extra": [],
+          "duplicateSavedNames": 0,
+          "reportedCountMatchesRows": true,
+          "interpretation": "Zero saved frames or suspended callbacks are not a protection pass."
+        },
+        {
+          "report": "capture/report.json",
+          "stream": "stream_window",
+          "status": "completed",
+          "streamErrors": [],
+          "reportedSaved": 16,
+          "savedFrameRows": 16,
+          "pngFiles": 16,
+          "missing": [],
+          "extra": [],
+          "duplicateSavedNames": 0,
+          "reportedCountMatchesRows": true,
+          "interpretation": "Zero saved frames or suspended callbacks are not a protection pass."
+        },
+        {
+          "report": "hidden-source-capture/report.json",
+          "stream": "stream_application",
+          "status": "completed",
+          "streamErrors": [],
+          "reportedSaved": 7,
+          "savedFrameRows": 7,
+          "pngFiles": 7,
+          "missing": [],
+          "extra": [],
+          "duplicateSavedNames": 0,
+          "reportedCountMatchesRows": true,
+          "interpretation": "Zero saved frames or suspended callbacks are not a protection pass."
+        },
+        {
+          "report": "hidden-source-capture/report.json",
+          "stream": "stream_display",
+          "status": "completed",
+          "streamErrors": [],
+          "reportedSaved": 7,
+          "savedFrameRows": 7,
+          "pngFiles": 7,
+          "missing": [],
+          "extra": [],
+          "duplicateSavedNames": 0,
+          "reportedCountMatchesRows": true,
+          "interpretation": "Zero saved frames or suspended callbacks are not a protection pass."
+        },
+        {
+          "report": "hidden-source-capture/report.json",
+          "stream": "stream_window",
+          "status": "completed",
+          "streamErrors": [],
+          "reportedSaved": 0,
+          "savedFrameRows": 0,
+          "pngFiles": 0,
+          "missing": [],
+          "extra": [],
+          "duplicateSavedNames": 0,
+          "reportedCountMatchesRows": true,
+          "interpretation": "Zero saved frames or suspended callbacks are not a protection pass."
+        }
+      ],
+      "captureFailureOrSkippedEntries": [
+        {
+          "report": "hidden-source-capture/report.json",
+          "path": "coreGraphics.window",
+          "details": {
+            "status": "nil_image"
+          }
+        },
+        {
+          "report": "hidden-source-capture/report.json",
+          "path": "screenshot_rectangle",
+          "details": {
+            "reason": "No valid on-display target rectangle; an offscreen source is not a meaningful screen rectangle screenshot",
+            "status": "skipped"
+          }
+        },
+        {
+          "report": "hidden-source-capture/report.json",
+          "path": "screenshot_window",
+          "details": {
+            "code": -3811,
+            "domain": "com.apple.ScreenCaptureKit.SCStreamErrorDomain",
+            "message": "Failed to start stream due to audio/video capture failure",
+            "status": "error"
+          }
+        }
+      ]
+    },
+    {
+      "case": "main/raster-protected",
+      "summaryPath": "artifacts/native-final-v03-20261101T133147Z/raster-protected/native-image-summary.json",
+      "summarySHA256": "0b00aa8c8b2eea69a00469167bf0a86eb5bf5cb79996ba1964cd9eb367628e3d",
+      "actualPNGCount": 62,
+      "groups": {
+        "external-hidden-source-target": {
+          "images": 10,
+          "tokens": {
+            "exam_secret": 0,
+            "native_edit": 0,
+            "input_secret_prefix": 0,
+            "native_leak": 0,
+            "public_control": 0,
+            "edited": 0,
+            "keyboard": 0
+          },
+          "allTransparent": 0,
+          "ocrErrors": 0,
+          "imageErrors": 0
+        },
+        "external-system-capture": {
+          "images": 36,
+          "tokens": {
+            "exam_secret": 0,
+            "native_edit": 0,
+            "input_secret_prefix": 0,
+            "native_leak": 0,
+            "public_control": 35,
+            "edited": 0,
+            "keyboard": 0
+          },
+          "allTransparent": 0,
+          "ocrErrors": 0,
+          "imageErrors": 0
+        },
+        "native-source-reference": {
+          "images": 13,
+          "tokens": {
+            "exam_secret": 13,
+            "native_edit": 13,
+            "input_secret_prefix": 12,
+            "native_leak": 0,
+            "public_control": 0,
+            "edited": 7,
+            "keyboard": 0
+          },
+          "allTransparent": 0,
+          "ocrErrors": 0,
+          "imageErrors": 0
+        },
+        "own-recording-representative-frame": {
+          "images": 3,
+          "tokens": {
+            "exam_secret": 3,
+            "native_edit": 3,
+            "input_secret_prefix": 2,
+            "native_leak": 0,
+            "public_control": 0,
+            "edited": 2,
+            "keyboard": 0
+          },
+          "allTransparent": 0,
+          "ocrErrors": 0,
+          "imageErrors": 0
+        }
+      },
+      "ocrErrors": 0,
+      "imageErrors": 0,
+      "missingDeclaredPNGs": [],
+      "streamIntegrity": [
+        {
+          "report": "capture/report.json",
+          "stream": "stream_application",
+          "status": "completed",
+          "streamErrors": [],
+          "reportedSaved": 0,
+          "savedFrameRows": 0,
+          "pngFiles": 0,
+          "missing": [],
+          "extra": [],
+          "duplicateSavedNames": 0,
+          "reportedCountMatchesRows": true,
+          "interpretation": "Zero saved frames or suspended callbacks are not a protection pass."
+        },
+        {
+          "report": "capture/report.json",
+          "stream": "stream_display",
+          "status": "completed",
+          "streamErrors": [],
+          "reportedSaved": 12,
+          "savedFrameRows": 12,
+          "pngFiles": 12,
+          "missing": [],
+          "extra": [],
+          "duplicateSavedNames": 0,
+          "reportedCountMatchesRows": true,
+          "interpretation": "Zero saved frames or suspended callbacks are not a protection pass."
+        },
+        {
+          "report": "capture/report.json",
+          "stream": "stream_window",
+          "status": "completed",
+          "streamErrors": [],
+          "reportedSaved": 16,
+          "savedFrameRows": 16,
+          "pngFiles": 16,
+          "missing": [],
+          "extra": [],
+          "duplicateSavedNames": 0,
+          "reportedCountMatchesRows": true,
+          "interpretation": "Zero saved frames or suspended callbacks are not a protection pass."
+        },
+        {
+          "report": "hidden-source-capture/report.json",
+          "stream": "stream_application",
+          "status": "completed",
+          "streamErrors": [],
+          "reportedSaved": 0,
+          "savedFrameRows": 0,
+          "pngFiles": 0,
+          "missing": [],
+          "extra": [],
+          "duplicateSavedNames": 0,
+          "reportedCountMatchesRows": true,
+          "interpretation": "Zero saved frames or suspended callbacks are not a protection pass."
+        },
+        {
+          "report": "hidden-source-capture/report.json",
+          "stream": "stream_display",
+          "status": "completed",
+          "streamErrors": [],
+          "reportedSaved": 7,
+          "savedFrameRows": 7,
+          "pngFiles": 7,
+          "missing": [],
+          "extra": [],
+          "duplicateSavedNames": 0,
+          "reportedCountMatchesRows": true,
+          "interpretation": "Zero saved frames or suspended callbacks are not a protection pass."
+        },
+        {
+          "report": "hidden-source-capture/report.json",
+          "stream": "stream_window",
+          "status": "completed",
+          "streamErrors": [],
+          "reportedSaved": 0,
+          "savedFrameRows": 0,
+          "pngFiles": 0,
+          "missing": [],
+          "extra": [],
+          "duplicateSavedNames": 0,
+          "reportedCountMatchesRows": true,
+          "interpretation": "Zero saved frames or suspended callbacks are not a protection pass."
+        }
+      ],
+      "captureFailureOrSkippedEntries": [
+        {
+          "report": "hidden-source-capture/report.json",
+          "path": "coreGraphics.window",
+          "details": {
+            "status": "nil_image"
+          }
+        },
+        {
+          "report": "hidden-source-capture/report.json",
+          "path": "screenshot_rectangle",
+          "details": {
+            "reason": "No valid on-display target rectangle; an offscreen source is not a meaningful screen rectangle screenshot",
+            "status": "skipped"
+          }
+        },
+        {
+          "report": "hidden-source-capture/report.json",
+          "path": "screenshot_window",
+          "details": {
+            "code": -3811,
+            "domain": "com.apple.ScreenCaptureKit.SCStreamErrorDomain",
+            "message": "Failed to start stream due to audio/video capture failure",
+            "status": "error"
+          }
+        }
+      ]
+    },
+    {
+      "case": "keyboard/raster-baseline",
+      "summaryPath": "artifacts/native-keyboard-20261101T133448Z/raster-baseline/native-image-summary.json",
+      "summarySHA256": "3f21cc40a3989d759fc2482481f1889091ab482ac871f49f1c85384eef6b61b3",
+      "actualPNGCount": 51,
+      "groups": {
+        "external-system-capture": {
+          "images": 38,
+          "tokens": {
+            "exam_secret": 38,
+            "native_edit": 38,
+            "input_secret_prefix": 38,
+            "native_leak": 0,
+            "public_control": 38,
+            "edited": 0,
+            "keyboard": 38
+          },
+          "allTransparent": 0,
+          "ocrErrors": 0,
+          "imageErrors": 0
+        },
+        "native-source-reference": {
+          "images": 10,
+          "tokens": {
+            "exam_secret": 10,
+            "native_edit": 10,
+            "input_secret_prefix": 9,
+            "native_leak": 0,
+            "public_control": 0,
+            "edited": 0,
+            "keyboard": 9
+          },
+          "allTransparent": 0,
+          "ocrErrors": 0,
+          "imageErrors": 0
+        },
+        "own-recording-representative-frame": {
+          "images": 3,
+          "tokens": {
+            "exam_secret": 3,
+            "native_edit": 3,
+            "input_secret_prefix": 2,
+            "native_leak": 0,
+            "public_control": 0,
+            "edited": 0,
+            "keyboard": 2
+          },
+          "allTransparent": 0,
+          "ocrErrors": 0,
+          "imageErrors": 0
+        }
+      },
+      "ocrErrors": 0,
+      "imageErrors": 0,
+      "missingDeclaredPNGs": [],
+      "streamIntegrity": [
+        {
+          "report": "capture/report.json",
+          "stream": "stream_application",
+          "status": "completed",
+          "streamErrors": [],
+          "reportedSaved": 10,
+          "savedFrameRows": 10,
+          "pngFiles": 10,
+          "missing": [],
+          "extra": [],
+          "duplicateSavedNames": 0,
+          "reportedCountMatchesRows": true,
+          "interpretation": "Zero saved frames or suspended callbacks are not a protection pass."
+        },
+        {
+          "report": "capture/report.json",
+          "stream": "stream_display",
+          "status": "completed",
+          "streamErrors": [],
+          "reportedSaved": 11,
+          "savedFrameRows": 11,
+          "pngFiles": 11,
+          "missing": [],
+          "extra": [],
+          "duplicateSavedNames": 0,
+          "reportedCountMatchesRows": true,
+          "interpretation": "Zero saved frames or suspended callbacks are not a protection pass."
+        },
+        {
+          "report": "capture/report.json",
+          "stream": "stream_window",
+          "status": "completed",
+          "streamErrors": [],
+          "reportedSaved": 11,
+          "savedFrameRows": 11,
+          "pngFiles": 11,
+          "missing": [],
+          "extra": [],
+          "duplicateSavedNames": 0,
+          "reportedCountMatchesRows": true,
+          "interpretation": "Zero saved frames or suspended callbacks are not a protection pass."
+        }
+      ],
+      "captureFailureOrSkippedEntries": []
+    },
+    {
+      "case": "keyboard/raster-protected",
+      "summaryPath": "artifacts/native-keyboard-20261101T133448Z/raster-protected/native-image-summary.json",
+      "summarySHA256": "4ba3e38dafb41931fc8fa579388f1f4aff65cc85e88330590cdf94e6718f4b72",
+      "actualPNGCount": 52,
+      "groups": {
+        "external-system-capture": {
+          "images": 39,
+          "tokens": {
+            "exam_secret": 0,
+            "native_edit": 0,
+            "input_secret_prefix": 0,
+            "native_leak": 0,
+            "public_control": 39,
+            "edited": 0,
+            "keyboard": 0
+          },
+          "allTransparent": 0,
+          "ocrErrors": 0,
+          "imageErrors": 0
+        },
+        "native-source-reference": {
+          "images": 10,
+          "tokens": {
+            "exam_secret": 10,
+            "native_edit": 10,
+            "input_secret_prefix": 9,
+            "native_leak": 0,
+            "public_control": 0,
+            "edited": 0,
+            "keyboard": 9
+          },
+          "allTransparent": 0,
+          "ocrErrors": 0,
+          "imageErrors": 0
+        },
+        "own-recording-representative-frame": {
+          "images": 3,
+          "tokens": {
+            "exam_secret": 3,
+            "native_edit": 3,
+            "input_secret_prefix": 2,
+            "native_leak": 0,
+            "public_control": 0,
+            "edited": 0,
+            "keyboard": 2
+          },
+          "allTransparent": 0,
+          "ocrErrors": 0,
+          "imageErrors": 0
+        }
+      },
+      "ocrErrors": 0,
+      "imageErrors": 0,
+      "missingDeclaredPNGs": [],
+      "streamIntegrity": [
+        {
+          "report": "capture/report.json",
+          "stream": "stream_application",
+          "status": "completed",
+          "streamErrors": [],
+          "reportedSaved": 11,
+          "savedFrameRows": 11,
+          "pngFiles": 11,
+          "missing": [],
+          "extra": [],
+          "duplicateSavedNames": 0,
+          "reportedCountMatchesRows": true,
+          "interpretation": "Zero saved frames or suspended callbacks are not a protection pass."
+        },
+        {
+          "report": "capture/report.json",
+          "stream": "stream_display",
+          "status": "completed",
+          "streamErrors": [],
+          "reportedSaved": 11,
+          "savedFrameRows": 11,
+          "pngFiles": 11,
+          "missing": [],
+          "extra": [],
+          "duplicateSavedNames": 0,
+          "reportedCountMatchesRows": true,
+          "interpretation": "Zero saved frames or suspended callbacks are not a protection pass."
+        },
+        {
+          "report": "capture/report.json",
+          "stream": "stream_window",
+          "status": "completed",
+          "streamErrors": [],
+          "reportedSaved": 11,
+          "savedFrameRows": 11,
+          "pngFiles": 11,
+          "missing": [],
+          "extra": [],
+          "duplicateSavedNames": 0,
+          "reportedCountMatchesRows": true,
+          "interpretation": "Zero saved frames or suspended callbacks are not a protection pass."
+        }
+      ],
+      "captureFailureOrSkippedEntries": []
+    },
+    {
+      "case": "source-exposure",
+      "summaryPath": "artifacts/source-exposure-control-20261101T132024Z/native-image-summary.json",
+      "summarySHA256": "5c4adf672a65ea060f4da21a4d11fb60de8ddda9af5a56173941019ce4740a02",
+      "actualPNGCount": 25,
+      "groups": {
+        "external-source-window-control": {
+          "images": 14,
+          "tokens": {
+            "exam_secret": 7,
+            "native_edit": 7,
+            "input_secret_prefix": 7,
+            "native_leak": 0,
+            "public_control": 9,
+            "edited": 0,
+            "keyboard": 0
+          },
+          "allTransparent": 0,
+          "ocrErrors": 0,
+          "imageErrors": 0
+        },
+        "native-source-reference": {
+          "images": 8,
+          "tokens": {
+            "exam_secret": 8,
+            "native_edit": 8,
+            "input_secret_prefix": 7,
+            "native_leak": 0,
+            "public_control": 0,
+            "edited": 0,
+            "keyboard": 0
+          },
+          "allTransparent": 0,
+          "ocrErrors": 0,
+          "imageErrors": 0
+        },
+        "own-recording-representative-frame": {
+          "images": 3,
+          "tokens": {
+            "exam_secret": 3,
+            "native_edit": 3,
+            "input_secret_prefix": 2,
+            "native_leak": 0,
+            "public_control": 0,
+            "edited": 0,
+            "keyboard": 0
+          },
+          "allTransparent": 0,
+          "ocrErrors": 0,
+          "imageErrors": 0
+        }
+      },
+      "ocrErrors": 0,
+      "imageErrors": 0,
+      "missingDeclaredPNGs": [],
+      "streamIntegrity": [],
+      "captureFailureOrSkippedEntries": [
+        {
+          "report": "source-hidden-after-visible-cg/report.json",
+          "path": "coreGraphics.window",
+          "details": {
+            "status": "nil_image"
+          }
+        },
+        {
+          "report": "source-never-visible-cg/report.json",
+          "path": "coreGraphics.window",
+          "details": {
+            "status": "nil_image"
+          }
+        },
+        {
+          "report": "source-never-visible-screenshot/report.json",
+          "path": "screenshot_rectangle",
+          "details": {
+            "reason": "No valid on-display target rectangle; an offscreen source is not a meaningful screen rectangle screenshot",
+            "status": "skipped"
+          }
+        },
+        {
+          "report": "source-never-visible-screenshot/report.json",
+          "path": "screenshot_window",
+          "details": {
+            "code": -3811,
+            "domain": "com.apple.ScreenCaptureKit.SCStreamErrorDomain",
+            "message": "Failed to start stream due to audio/video capture failure",
+            "status": "error"
+          }
+        }
+      ]
+    },
+    {
+      "case": "ime/direct",
+      "summaryPath": "artifacts/native-ime-20261101T134127Z/direct/native-image-summary.json",
+      "summarySHA256": "3159c8453a2986b3dcb71b15f505a2dff6d0bb7a73b9e5408403fd3a6a9a8e5f",
+      "actualPNGCount": 16,
+      "groups": {
+        "external-system-capture": {
+          "images": 7,
+          "tokens": {
+            "exam_secret": 7,
+            "native_edit": 7,
+            "input_secret_prefix": 0,
+            "native_leak": 0,
+            "public_control": 7,
+            "chinese": 0,
+            "pinyin": 4
+          },
+          "allTransparent": 0,
+          "ocrErrors": 0,
+          "imageErrors": 0
+        },
+        "native-source-reference": {
+          "images": 6,
+          "tokens": {
+            "exam_secret": 6,
+            "native_edit": 6,
+            "input_secret_prefix": 0,
+            "native_leak": 0,
+            "public_control": 0,
+            "chinese": 0,
+            "pinyin": 1
+          },
+          "allTransparent": 0,
+          "ocrErrors": 0,
+          "imageErrors": 0
+        },
+        "own-recording-representative-frame": {
+          "images": 3,
+          "tokens": {
+            "exam_secret": 3,
+            "native_edit": 3,
+            "input_secret_prefix": 0,
+            "native_leak": 0,
+            "public_control": 0,
+            "chinese": 0,
+            "pinyin": 1
+          },
+          "allTransparent": 0,
+          "ocrErrors": 0,
+          "imageErrors": 0
+        }
+      },
+      "ocrErrors": 0,
+      "imageErrors": 0,
+      "missingDeclaredPNGs": [],
+      "streamIntegrity": [],
+      "captureFailureOrSkippedEntries": []
+    },
+    {
+      "case": "ime/raster-baseline",
+      "summaryPath": "artifacts/native-ime-20261101T134127Z/raster-baseline/native-image-summary.json",
+      "summarySHA256": "c2221ff955120867b001549d37c066b16dfe0e6429428712e4f259c673f3e43b",
+      "actualPNGCount": 16,
+      "groups": {
+        "external-system-capture": {
+          "images": 7,
+          "tokens": {
+            "exam_secret": 7,
+            "native_edit": 7,
+            "input_secret_prefix": 0,
+            "native_leak": 0,
+            "public_control": 7,
+            "chinese": 0,
+            "pinyin": 4
+          },
+          "allTransparent": 0,
+          "ocrErrors": 0,
+          "imageErrors": 0
+        },
+        "native-source-reference": {
+          "images": 6,
+          "tokens": {
+            "exam_secret": 6,
+            "native_edit": 6,
+            "input_secret_prefix": 0,
+            "native_leak": 0,
+            "public_control": 0,
+            "chinese": 0,
+            "pinyin": 1
+          },
+          "allTransparent": 0,
+          "ocrErrors": 0,
+          "imageErrors": 0
+        },
+        "own-recording-representative-frame": {
+          "images": 3,
+          "tokens": {
+            "exam_secret": 3,
+            "native_edit": 3,
+            "input_secret_prefix": 0,
+            "native_leak": 0,
+            "public_control": 0,
+            "chinese": 0,
+            "pinyin": 1
+          },
+          "allTransparent": 0,
+          "ocrErrors": 0,
+          "imageErrors": 0
+        }
+      },
+      "ocrErrors": 0,
+      "imageErrors": 0,
+      "missingDeclaredPNGs": [],
+      "streamIntegrity": [],
+      "captureFailureOrSkippedEntries": []
+    },
+    {
+      "case": "ime/raster-protected",
+      "summaryPath": "artifacts/native-ime-20261101T134127Z/raster-protected/native-image-summary.json",
+      "summarySHA256": "d009b55708cd83cf7a8b964a02472ad5e456413b35cd4bcb61bececfdfcb73a1",
+      "actualPNGCount": 16,
+      "groups": {
+        "external-system-capture": {
+          "images": 7,
+          "tokens": {
+            "exam_secret": 0,
+            "native_edit": 0,
+            "input_secret_prefix": 0,
+            "native_leak": 0,
+            "public_control": 7,
+            "chinese": 0,
+            "pinyin": 0
+          },
+          "allTransparent": 0,
+          "ocrErrors": 0,
+          "imageErrors": 0
+        },
+        "native-source-reference": {
+          "images": 6,
+          "tokens": {
+            "exam_secret": 6,
+            "native_edit": 6,
+            "input_secret_prefix": 0,
+            "native_leak": 0,
+            "public_control": 0,
+            "chinese": 0,
+            "pinyin": 1
+          },
+          "allTransparent": 0,
+          "ocrErrors": 0,
+          "imageErrors": 0
+        },
+        "own-recording-representative-frame": {
+          "images": 3,
+          "tokens": {
+            "exam_secret": 3,
+            "native_edit": 3,
+            "input_secret_prefix": 0,
+            "native_leak": 0,
+            "public_control": 0,
+            "chinese": 0,
+            "pinyin": 1
+          },
+          "allTransparent": 0,
+          "ocrErrors": 0,
+          "imageErrors": 0
+        }
+      },
+      "ocrErrors": 0,
+      "imageErrors": 0,
+      "missingDeclaredPNGs": [],
+      "streamIntegrity": [],
+      "captureFailureOrSkippedEntries": []
+    }
+  ],
+  "totalPNG": 398,
+  "imeChineseSupplement": "research/ime-roi-analysis-20261101T134127Z/ime-scoped-observations.json",
+  "knownValidityCautions": [
+    "main protected system-display.png lacks target presentation; exclude from successful protection observations.",
+    "main protected SCStream application had zero complete saved frames; no conclusion for this case.",
+    "keyboard protected SCStream application has 11 valid frames in a separate case; report separately.",
+    "Hidden-source API nil/error/zero frames are not protection successes.",
+    "Source displayed then hidden remains readable through targeted SCK screenshot window in source exposure control.",
+    "IME generic OCR missed Chinese positive controls; use zh-Hans scoped supplement and visual checks.",
+    "mixed final main case is excluded; earlier invalid controls are excluded.",
+    "Own recording representative PNGs do not establish full video completeness."
+  ]
+}

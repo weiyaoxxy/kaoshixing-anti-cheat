@@ -1,0 +1,26 @@
+D01-sharing-none	https://developer.apple.com/documentation/appkit/nswindow/sharingtype-swift.enum/none.md	saved D01-sharing-none.md
+D02-sharing-type	https://developer.apple.com/documentation/appkit/nswindow/sharingtype-swift.property.md	saved D02-sharing-type.md
+D03-forum-808016	https://developer.apple.com/forums/thread/808016	saved D03-forum-808016.html
+D04-clear-key-capture	https://developer.apple.com/documentation/avfoundation/avplayer/allowscaptureofclearkeyvideo.md	saved D04-clear-key-capture.md
+D05-clear-key-system	https://developer.apple.com/documentation/avfoundation/avcontentkeysystem/clearkey.md	saved D05-clear-key-system.md
+D06-clear-key-response	https://developer.apple.com/documentation/avfoundation/avcontentkeyresponse/contentkeyresponse(clearkeydata:initializationvector:).md	failed
+D07-hls-protection	https://developer.apple.com/documentation/http-live-streaming/using-content-protection-systems-with-hls.md	saved D07-hls-protection.md
+D08-tn2454	https://developer.apple.com/library/archive/technotes/tn2454/_index.html	saved D08-tn2454.html
+D09-hls-examples	https://developer.apple.com/streaming/examples/	saved D09-hls-examples.html
+D10-aac-overview	https://developer.apple.com/documentation/automaticassessmentconfiguration.md	saved D10-aac-overview.md
+D11-aac-entitlement	https://developer.apple.com/documentation/bundleresources/entitlements/com.apple.developer.automatic-assessment-configuration.md	saved D11-aac-entitlement.md
+D12-aac-distribution	https://developer.apple.com/documentation/automaticassessmentconfiguration/preparing-an-educational-assessment-app-for-distribution.md	saved D12-aac-distribution.md
+D13-aac-configuration	https://developer.apple.com/documentation/automaticassessmentconfiguration/aeassessmentconfiguration.md	saved D13-aac-configuration.md
+D14-aac-participant	https://developer.apple.com/documentation/automaticassessmentconfiguration/aeassessmentparticipantconfiguration.md	saved D14-aac-participant.md
+D15-aac-app	https://developer.apple.com/documentation/automaticassessmentconfiguration/aeassessmentapplication.md	saved D15-aac-app.md
+D16-aac-screenshots	https://developer.apple.com/documentation/automaticassessmentconfiguration/aeassessmentconfiguration/allowsscreenshots.md	saved D16-aac-screenshots.md
+D17-aac-session	https://developer.apple.com/documentation/automaticassessmentconfiguration/aeassessmentsession.md	saved D17-aac-session.md
+D18-hls-authoring	https://developer.apple.com/streaming/hls-authoring-specification-for-apple-devices.html	saved D18-hls-authoring.html
+D19-aac-network	https://developer.apple.com/documentation/automaticassessmentconfiguration/aeassessmentparticipantconfiguration/allowsnetworkaccess.md	saved D19-aac-network.md
+D20-aac-info	https://developer.apple.com/documentation/automaticassessmentconfiguration/aeassessmentparticipantconfiguration/configurationinfo.md	saved D20-aac-info.md
+D21-aac-signature	https://developer.apple.com/documentation/automaticassessmentconfiguration/aeassessmentapplication/requiressignaturevalidation.md	saved D21-aac-signature.md
+D22-aac-wwdc26	https://developer.apple.com/videos/play/wwdc2026/230/	saved D22-aac-wwdc26.html
+D23-aac-sample	https://developer.apple.com/documentation/automaticassessmentconfiguration/build-an-educational-assessment-app.md	saved D23-aac-sample.md
+D24-bento4-mp42hls	https://www.bento4.com/documentation/mp42hls/	failed
+D06-clear-key-response	https://developer.apple.com/documentation/avfoundation/avcontentkeyresponse/init(clearkeydata:initializationvector:).md	saved D06-clear-key-response.md
+D24-bento4-mp42hls	https://www.bento4.com/documentation/mp42hls/	saved D24-bento4-mp42hls.html (retry)

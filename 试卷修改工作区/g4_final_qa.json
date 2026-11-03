@@ -1,0 +1,22 @@
+{
+  "output": "/Users/weiyao/Desktop/试卷修改版/G4期中试卷（40%修改版）.docx",
+  "sha256": "ec26c8bb27bcfdfb9012df649fee536cb020beb45092b46593be4111eb291f10",
+  "pages": 4,
+  "visual_qa": "All 4 PNG pages inspected after the final rendering; Chinese text, all option blocks, images, and writing area are fully visible without clipping or overlap.",
+  "content_qa": "Every text paragraph matches the original plus the approved 14 question revisions exactly. Paragraph count preserved.",
+  "counting": {
+    "grammar": {
+      "total": 10,
+      "changed": 4
+    },
+    "word_order": {
+      "total": 5,
+      "changed": 2
+    },
+    "reading": {
+      "total": 20,
+      "changed": 8,
+      "subgroups": "4 groups × 5 questions; 2 changes in each group"
+    }
+  }
+}

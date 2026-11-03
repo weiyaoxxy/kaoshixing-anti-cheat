@@ -1,0 +1,82 @@
+{
+  "README.md": {
+    "bytes": 2402,
+    "sha256": "b9cac23457faeede5b83b200c8c14f5a57acf67a122b609e7fbaf31c888d1826"
+  },
+  "全部对话.json": {
+    "bytes": 478758,
+    "sha256": "aa8e1ccf046bffb3212d0b237296f776580422ec7a89f37f74283c61296d3fc7"
+  },
+  "全部对话.md": {
+    "bytes": 297309,
+    "sha256": "0831fd088ccfc0c9d1259e69c8e1eac34d9d30e23946bda202da5e4ac8361fbd"
+  },
+  "全部对话.txt": {
+    "bytes": 297309,
+    "sha256": "0831fd088ccfc0c9d1259e69c8e1eac34d9d30e23946bda202da5e4ac8361fbd"
+  },
+  "分会话/01_调研 macOS 防截屏并制作演示.md": {
+    "bytes": 50537,
+    "sha256": "0f7304d0c3765122a9b6c09d3959d17504478b13dfe2d861113d25c1cb8499ae"
+  },
+  "分会话/02_检查当前主机是否已下载考试星.md": {
+    "bytes": 2640,
+    "sha256": "bdee00477b8c8fb46223715236023c0af68c3763bf476e33c40e484cb75905b2"
+  },
+  "分会话/03_调研 macOS 防截屏并制作演示 (2).md": {
+    "bytes": 68408,
+    "sha256": "a5c193fd33c2034a4dd783085d5d7b24664113afd51b9abec6bcd4692108426e"
+  },
+  "分会话/04_回应问候.md": {
+    "bytes": 161821,
+    "sha256": "996b0445908a208a005cd5fad75bc32bb2edf10d2fbce0cbe512ea3948257046"
+  },
+  "分会话/05_阅读指定聊天对话串.md": {
+    "bytes": 1843,
+    "sha256": "3566b542e514b470486864630b275a2644c9e543e36500de5a91ebf6e6a1221f"
+  },
+  "分会话/06_修改试卷三类题型的40%内容.md": {
+    "bytes": 6682,
+    "sha256": "d4ed57dbb5c5863f74a89ca303b07ac44a2de8375d4c0f0279f7f70819df5e91"
+  },
+  "分会话/07_查找 ToDesk hook 与介入检测函数.md": {
+    "bytes": 2317,
+    "sha256": "7b918155a6f482d110977025039bbbc555d11e02bea0e0543726f448cb0f9b0e"
+  },
+  "分会话/08_你这边能把这段时间，关于这个项目的所有对话都导出来.md": {
+    "bytes": 1723,
+    "sha256": "08149c1aaf1d3fe2792f3d7de0575b40769b33af992106606f2fc506ddaf5462"
+  },
+  "阅读版.html": {
+    "bytes": 389761,
+    "sha256": "ff70f4abf67e5ce66126dac16170730b58ef49b791409337413ae726c0a4df9b"
+  },
+  "附件/130d957ba567_Weixin Image_20261102182028_310_2.jpg": {
+    "bytes": 837661,
+    "sha256": "130d957ba567e5c98fd02bf40f2a5c5ec33b7d53d438ab6ee96aa6d57e7a1174"
+  },
+  "附件/2ede64ee44cc_Screenshot 2026-11-02 at 12.21.38 PM.png": {
+    "bytes": 1544780,
+    "sha256": "2ede64ee44ccb6f184e9964f61f89d14021a0d2486535cc1821d73ecd8eb2e7e"
+  },
+  "附件/3ed80995760a_Screenshot 2026-11-02 at 6.18.28 PM.png": {
+    "bytes": 232437,
+    "sha256": "3ed80995760ad7e8981d086cf990a27aa99d1f58c9667f6dbf859ce7a42847b2"
+  },
+  "附件/5187da998166_Screenshot 2026-11-02 at 6.20.29 PM.png": {
+    "bytes": 1369462,
+    "sha256": "5187da998166ac29efbc75578753722e3b9bca006f8da6707fdc46dfb89ed943"
+  },
+  "附件/759ec642f879_Weixin Image_20261102151726_308_2.jpg": {
+    "bytes": 823832,
+    "sha256": "759ec642f8790d7c0a8025737b70ec5d5c508e2da306be3b8524ba61cb080789"
+  },
+  "附件/9d6a81ffd44c_Screenshot 2026-11-02 at 12.10.19 PM.png": {
+    "bytes": 1123178,
+    "sha256": "9d6a81ffd44c4d670213af43c1a94e2ffd8e3030d3a26e0e13562f0e2f183d6e"
+  },
+  "附件/d5323259a8fa_微信图片_20261101132644_234_1488.png": {
+    "bytes": 161023,
+    "sha256": "d5323259a8fad3d3584b52cf2fb8459556a1f34158fa6285d9866f5673d0cb78"
+  }
+}

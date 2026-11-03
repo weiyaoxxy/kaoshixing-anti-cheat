@@ -1,0 +1,304 @@
+{
+  "machOCount": 34,
+  "captureCandidates": [
+    {
+      "path": "Contents/Helpers/ToDesk_Screenwall_Helper.app/Contents/MacOS/ToDesk_Screenwall_Helper",
+      "app": "ToDesk.app",
+      "architectures": [
+        "x86_64",
+        "arm64"
+      ],
+      "hardenedRuntime": true,
+      "captureSymbols": [
+        "CGDisplayCreateImage",
+        "CGDisplayStreamCreate",
+        "CGDisplayStreamGetRunLoopSource",
+        "CGDisplayStreamShowCursor",
+        "CGDisplayStreamStart",
+        "CGDisplayStreamStop",
+        "CGDisplayStreamUpdateGetRects",
+        "CGRequestScreenCaptureAccess",
+        "CGWindowListCreateImage",
+        "CGWindowListCreateImageFromArray",
+        "SCContentFilter",
+        "SCScreenshotManager",
+        "SCShareableContent",
+        "SCStream"
+      ],
+      "captureStrings": [
+        "CGDisplayCreateImage",
+        "CGDisplayStreamUpdate",
+        "CGSHWCaptureWindowList",
+        "CGWindowListCreateImage",
+        "CGWindowListCreateImageFromArray",
+        "SCShareableContent",
+        "SCStream",
+        "addStreamOutput:type:sampleHandlerQueue:error:",
+        "captureImageWithFilter:configuration:completionHandler:",
+        "getShareableContentExcludingDesktopWindows:onScreenWindowsOnly:completionHandler:",
+        "getShareableContentWithCompletionHandler:",
+        "initWithFilter:configuration:delegate:",
+        "startCaptureWithCompletionHandler:",
+        "stopCaptureWithCompletionHandler:",
+        "stream:didOutputSampleBuffer:ofType:"
+      ]
+    },
+    {
+      "path": "Contents/Helpers/ToDesk_Session.app/Contents/MacOS/ToDesk_Session",
+      "app": "ToDesk.app",
+      "architectures": [
+        "x86_64",
+        "arm64"
+      ],
+      "hardenedRuntime": true,
+      "captureSymbols": [
+        "CGDisplayCreateImage",
+        "CGDisplayStreamCreate",
+        "CGDisplayStreamGetRunLoopSource",
+        "CGDisplayStreamShowCursor",
+        "CGDisplayStreamStart",
+        "CGDisplayStreamStop",
+        "CGDisplayStreamUpdateGetRects",
+        "CGRequestScreenCaptureAccess",
+        "CGWindowListCreateImage",
+        "CGWindowListCreateImageFromArray",
+        "SCContentFilter",
+        "SCScreenshotManager",
+        "SCShareableContent",
+        "SCStream"
+      ],
+      "captureStrings": [
+        "CGDisplayCreateImage",
+        "CGDisplayStreamUpdate",
+        "CGSHWCaptureWindowList",
+        "CGWindowListCreateImage",
+        "CGWindowListCreateImageFromArray",
+        "SCShareableContent",
+        "SCStream",
+        "addStreamOutput:type:sampleHandlerQueue:error:",
+        "captureImageWithFilter:configuration:completionHandler:",
+        "getShareableContentExcludingDesktopWindows:onScreenWindowsOnly:completionHandler:",
+        "getShareableContentWithCompletionHandler:",
+        "initWithFilter:configuration:delegate:",
+        "startCaptureWithCompletionHandler:",
+        "stopCaptureWithCompletionHandler:",
+        "stream:didOutputSampleBuffer:ofType:"
+      ]
+    },
+    {
+      "path": "Contents/MacOS/ToDesk",
+      "app": "ToDesk.app",
+      "architectures": [
+        "x86_64",
+        "arm64"
+      ],
+      "hardenedRuntime": true,
+      "captureSymbols": [
+        "CGDisplayCreateImage",
+        "CGDisplayStreamCreate",
+        "CGDisplayStreamGetRunLoopSource",
+        "CGDisplayStreamShowCursor",
+        "CGDisplayStreamStart",
+        "CGDisplayStreamStop",
+        "CGDisplayStreamUpdateGetRects",
+        "CGRequestScreenCaptureAccess",
+        "CGWindowListCreateImage",
+        "CGWindowListCreateImageFromArray",
+        "SCContentFilter",
+        "SCScreenshotManager",
+        "SCShareableContent",
+        "SCStream"
+      ],
+      "captureStrings": [
+        "CGDisplayCreateImage",
+        "CGDisplayStreamUpdate",
+        "CGSHWCaptureWindowList",
+        "CGWindowListCreateImage",
+        "CGWindowListCreateImageFromArray",
+        "SCShareableContent",
+        "SCStream",
+        "addStreamOutput:type:sampleHandlerQueue:error:",
+        "captureImageWithFilter:configuration:completionHandler:",
+        "getShareableContentExcludingDesktopWindows:onScreenWindowsOnly:completionHandler:",
+        "getShareableContentWithCompletionHandler:",
+        "initWithFilter:configuration:delegate:",
+        "startCaptureWithCompletionHandler:",
+        "stopCaptureWithCompletionHandler:",
+        "stream:didOutputSampleBuffer:ofType:"
+      ]
+    },
+    {
+      "path": "Contents/MacOS/ToDesk_Service",
+      "app": "ToDesk.app",
+      "architectures": [
+        "x86_64",
+        "arm64"
+      ],
+      "hardenedRuntime": true,
+      "captureSymbols": [
+        "CGDisplayCreateImage",
+        "CGDisplayStreamCreate",
+        "CGDisplayStreamGetRunLoopSource",
+        "CGDisplayStreamShowCursor",
+        "CGDisplayStreamStart",
+        "CGDisplayStreamStop",
+        "CGDisplayStreamUpdateGetRects",
+        "CGRequestScreenCaptureAccess",
+        "CGWindowListCreateImage",
+        "CGWindowListCreateImageFromArray",
+        "SCContentFilter",
+        "SCScreenshotManager",
+        "SCShareableContent",
+        "SCStream"
+      ],
+      "captureStrings": [
+        "CGDisplayCreateImage",
+        "CGDisplayStreamUpdate",
+        "CGSHWCaptureWindowList",
+        "CGWindowListCreateImage",
+        "CGWindowListCreateImageFromArray",
+        "SCShareableContent",
+        "SCStream",
+        "addStreamOutput:type:sampleHandlerQueue:error:",
+        "captureImageWithFilter:configuration:completionHandler:",
+        "getShareableContentExcludingDesktopWindows:onScreenWindowsOnly:completionHandler:",
+        "getShareableContentWithCompletionHandler:",
+        "initWithFilter:configuration:delegate:",
+        "startCaptureWithCompletionHandler:",
+        "stopCaptureWithCompletionHandler:",
+        "stream:didOutputSampleBuffer:ofType:"
+      ]
+    },
+    {
+      "path": "Contents/Frameworks/zrtc.framework/Versions/A/zrtc",
+      "app": "ToDesk.app",
+      "architectures": [
+        "x86_64",
+        "arm64"
+      ],
+      "hardenedRuntime": true,
+      "captureSymbols": [
+        "CGDisplayCreateImage",
+        "CGDisplayStreamCreate",
+        "CGDisplayStreamGetRunLoopSource",
+        "CGDisplayStreamShowCursor",
+        "CGDisplayStreamStart",
+        "CGDisplayStreamStop",
+        "CGDisplayStreamUpdateGetRects",
+        "CGWindowListCreateImage",
+        "CGWindowListCreateImageFromArray",
+        "SCContentFilter",
+        "SCShareableContent",
+        "SCStream"
+      ],
+      "captureStrings": [
+        "CGDisplayCreateImage",
+        "CGDisplayStream",
+        "CGDisplayStreamUpdate",
+        "SCShareableContent",
+        "SCStream",
+        "addStreamOutput:type:sampleHandlerQueue:error:",
+        "getShareableContentWithCompletionHandler:",
+        "initWithFilter:configuration:delegate:",
+        "startCaptureWithCompletionHandler:",
+        "stopCaptureWithCompletionHandler:",
+        "stream:didOutputSampleBuffer:ofType:"
+      ]
+    },
+    {
+      "path": "Contents/Helpers/UURemoteServer",
+      "app": "UURemote.app",
+      "architectures": [
+        "x86_64",
+        "arm64"
+      ],
+      "hardenedRuntime": true,
+      "captureSymbols": [
+        "CGPreflightScreenCaptureAccess",
+        "CGRequestScreenCaptureAccess",
+        "CGWindowListCreateImage"
+      ],
+      "captureStrings": []
+    },
+    {
+      "path": "Contents/Frameworks/libstreamer.dylib",
+      "app": "UURemote.app",
+      "architectures": [
+        "x86_64",
+        "arm64"
+      ],
+      "hardenedRuntime": true,
+      "captureSymbols": [
+        "CGDisplayStreamColorSpace",
+        "CGDisplayStreamCreateWithDispatchQueue",
+        "CGDisplayStreamMinimumFrameTime",
+        "CGDisplayStreamShowCursor",
+        "CGDisplayStreamStart",
+        "CGDisplayStreamStop",
+        "CGDisplayStreamUpdateGetRects",
+        "CGDisplayStreamYCbCrMatrix",
+        "CGDisplayStreamYCbCrMatrix_ITU_R_601_4",
+        "SCContentFilter",
+        "SCShareableContent",
+        "SCStream"
+      ],
+      "captureStrings": [
+        "CGDisplayStreamCreate",
+        "CGDisplayStreamStart",
+        "CGDisplayStreamUpdate",
+        "SCContentFilter",
+        "SCShareableContent",
+        "SCStream",
+        "addStreamOutput:type:sampleHandlerQueue:error:",
+        "getShareableContentExcludingDesktopWindows:onScreenWindowsOnly:completionHandler:",
+        "initWithFilter:configuration:delegate:",
+        "startCaptureWithCompletionHandler:",
+        "stopCaptureWithCompletionHandler:",
+        "stream:didOutputSampleBuffer:ofType:"
+      ]
+    },
+    {
+      "path": "Contents/MacOS/UURemoteDaemon",
+      "app": "UURemote.app",
+      "architectures": [
+        "x86_64",
+        "arm64"
+      ],
+      "hardenedRuntime": true,
+      "captureSymbols": [
+        "CGPreflightScreenCaptureAccess",
+        "CGRequestScreenCaptureAccess"
+      ],
+      "captureStrings": []
+    },
+    {
+      "path": "Contents/MacOS/UURemoteService",
+      "app": "UURemote.app",
+      "architectures": [
+        "x86_64",
+        "arm64"
+      ],
+      "hardenedRuntime": true,
+      "captureSymbols": [
+        "CGPreflightScreenCaptureAccess",
+        "CGRequestScreenCaptureAccess"
+      ],
+      "captureStrings": []
+    },
+    {
+      "path": "Contents/MacOS/UURemote",
+      "app": "UURemote.app",
+      "architectures": [
+        "x86_64",
+        "arm64"
+      ],
+      "hardenedRuntime": true,
+      "captureSymbols": [
+        "CGPreflightScreenCaptureAccess",
+        "CGWindowListCreateImage"
+      ],
+      "captureStrings": []
+    }
+  ],
+  "output": "/Users/weiyao/Desktop/考试星防作弊/Hook新方案_20261101/research/target-audit.json"
+}

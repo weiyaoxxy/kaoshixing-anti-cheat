@@ -1,0 +1,36 @@
+[
+  {
+    "document": "外研新思维英语少儿版3 -期中练习（40%修改版）.docx",
+    "modified": 12,
+    "total_assessed": 30,
+    "pages": 8,
+    "sha256": "84dd5068d97a95307b49d34de26d1dcdeb9348985157eaaf51e0b62d146852b2",
+    "changed_zip_parts": [
+      "word/document.xml"
+    ]
+  },
+  {
+    "document": "二年级期中测试（40%修改版）.docx",
+    "modified": 6,
+    "total_assessed": 15,
+    "pages": 4,
+    "sha256": "fb1e4f5d5131754772bdcf883b04d880c8c2daf69d083da054c708edfa455ba9",
+    "changed_zip_parts": [
+      "word/document.xml",
+      "word/footer1.xml",
+      "word/footer2.xml",
+      "word/footer3.xml",
+      "word/footer4.xml"
+    ]
+  },
+  {
+    "document": "G4期中试卷（40%修改版）.docx",
+    "modified": 14,
+    "total_assessed": 35,
+    "pages": 4,
+    "sha256": "ec26c8bb27bcfdfb9012df649fee536cb020beb45092b46593be4111eb291f10",
+    "changed_zip_parts": [
+      "word/document.xml"
+    ]
+  }
+]

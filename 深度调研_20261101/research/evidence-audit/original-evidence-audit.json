@@ -1,0 +1,926 @@
+{
+  "auditedAt": "2026-11-01T08:55:17.278060+00:00",
+  "sourceRoot": "/Users/weiyao/Desktop/考试星防作弊",
+  "method": "Read existing report.json, PNG byte hashes, and existing analysis-summary.json; no captures and no OCR rerun; original evidence not rewritten.",
+  "streamLifetimes": 18,
+  "savedSamples": 463,
+  "allCountsMatch": true,
+  "allPermissionsPreflightTrue": true,
+  "allSamplesValidComplete": true,
+  "allStreamErrorsEmpty": true,
+  "allRecordedOCRRowsPresent": true,
+  "streamRows": [
+    {
+      "report": "artifacts/matrix-20261101T082724Z/baseline/capture/report.json",
+      "path": "stream_display",
+      "reportSHA256": "53153d031cbf2cd9b422838873dfcb9e68600507c47be2f8bceb4f7fef85a98a",
+      "status": "completed",
+      "permissionBefore": true,
+      "permissionAfter": true,
+      "framesReportedSaved": 21,
+      "savedFrameEntries": 21,
+      "filesPresent": 21,
+      "missing": [],
+      "extra": [],
+      "duplicateFileNamesInReport": 0,
+      "sampleStatusCounts": {
+        "0": 21
+      },
+      "savedInvalidSamples": 0,
+      "streamErrors": [],
+      "ptsSpanSeconds": 2.0166480410844088,
+      "positiveMaxPTSGapSeconds": 0.10833233315497637,
+      "nonIncreasingPTSIntervals": 0,
+      "phaseCounts": {
+        "initial": 21
+      },
+      "phaseEvents": [],
+      "uniquePNGByteHashes": 21,
+      "largestIdenticalPNGGroup": 1
+    },
+    {
+      "report": "artifacts/matrix-20261101T082724Z/baseline/capture/report.json",
+      "path": "stream_window",
+      "reportSHA256": "53153d031cbf2cd9b422838873dfcb9e68600507c47be2f8bceb4f7fef85a98a",
+      "status": "completed",
+      "permissionBefore": true,
+      "permissionAfter": true,
+      "framesReportedSaved": 22,
+      "savedFrameEntries": 22,
+      "filesPresent": 22,
+      "missing": [],
+      "extra": [],
+      "duplicateFileNamesInReport": 0,
+      "sampleStatusCounts": {
+        "0": 22
+      },
+      "savedInvalidSamples": 0,
+      "streamErrors": [],
+      "ptsSpanSeconds": 2.1136377919465303,
+      "positiveMaxPTSGapSeconds": 0.10280283307656646,
+      "nonIncreasingPTSIntervals": 0,
+      "phaseCounts": {
+        "initial": 22
+      },
+      "phaseEvents": [],
+      "uniquePNGByteHashes": 22,
+      "largestIdenticalPNGGroup": 1
+    },
+    {
+      "report": "artifacts/matrix-20261101T082724Z/both/capture/report.json",
+      "path": "stream_display",
+      "reportSHA256": "b9eb6356a9849779489a1e6cdf2e1e5e34a1966ab2789f5dcae69d6e4e365822",
+      "status": "completed",
+      "permissionBefore": true,
+      "permissionAfter": true,
+      "framesReportedSaved": 21,
+      "savedFrameEntries": 21,
+      "filesPresent": 21,
+      "missing": [],
+      "extra": [],
+      "duplicateFileNamesInReport": 0,
+      "sampleStatusCounts": {
+        "0": 21
+      },
+      "savedInvalidSamples": 0,
+      "streamErrors": [],
+      "ptsSpanSeconds": 2.0333144580945373,
+      "positiveMaxPTSGapSeconds": 0.10833245795220137,
+      "nonIncreasingPTSIntervals": 0,
+      "phaseCounts": {
+        "initial": 21
+      },
+      "phaseEvents": [
+        {
+          "at": "2026-11-01T08:28:29Z",
+          "hostUptimeSeconds": 2422213.2735412917,
+          "phase": "initial"
+        }
+      ],
+      "uniquePNGByteHashes": 21,
+      "largestIdenticalPNGGroup": 1
+    },
+    {
+      "report": "artifacts/matrix-20261101T082724Z/both/capture/report.json",
+      "path": "stream_window",
+      "reportSHA256": "b9eb6356a9849779489a1e6cdf2e1e5e34a1966ab2789f5dcae69d6e4e365822",
+      "status": "completed",
+      "permissionBefore": true,
+      "permissionAfter": true,
+      "framesReportedSaved": 22,
+      "savedFrameEntries": 22,
+      "filesPresent": 22,
+      "missing": [],
+      "extra": [],
+      "duplicateFileNamesInReport": 0,
+      "sampleStatusCounts": {
+        "0": 22
+      },
+      "savedInvalidSamples": 0,
+      "streamErrors": [],
+      "ptsSpanSeconds": 2.1156872087158263,
+      "positiveMaxPTSGapSeconds": 0.10419466672465205,
+      "nonIncreasingPTSIntervals": 0,
+      "phaseCounts": {
+        "initial": 22
+      },
+      "phaseEvents": [
+        {
+          "at": "2026-11-01T08:28:27Z",
+          "hostUptimeSeconds": 2422210.9495426253,
+          "phase": "initial"
+        }
+      ],
+      "uniquePNGByteHashes": 1,
+      "largestIdenticalPNGGroup": 22
+    },
+    {
+      "report": "artifacts/matrix-20261101T082724Z/mixed/capture/report.json",
+      "path": "stream_display",
+      "reportSHA256": "292f3be441cb49cf6d46c50f32ef21a8010725bcd5f45a2e4b305779683e93bd",
+      "status": "completed",
+      "permissionBefore": true,
+      "permissionAfter": true,
+      "framesReportedSaved": 22,
+      "savedFrameEntries": 22,
+      "filesPresent": 22,
+      "missing": [],
+      "extra": [],
+      "duplicateFileNamesInReport": 0,
+      "sampleStatusCounts": {
+        "0": 22
+      },
+      "savedInvalidSamples": 0,
+      "streamErrors": [],
+      "ptsSpanSeconds": 2.1166468746960163,
+      "positiveMaxPTSGapSeconds": 0.10833233408629894,
+      "nonIncreasingPTSIntervals": 0,
+      "phaseCounts": {
+        "initial": 22
+      },
+      "phaseEvents": [
+        {
+          "at": "2026-11-01T08:28:50Z",
+          "hostUptimeSeconds": 2422233.794434375,
+          "phase": "initial"
+        }
+      ],
+      "uniquePNGByteHashes": 22,
+      "largestIdenticalPNGGroup": 1
+    },
+    {
+      "report": "artifacts/matrix-20261101T082724Z/mixed/capture/report.json",
+      "path": "stream_window",
+      "reportSHA256": "292f3be441cb49cf6d46c50f32ef21a8010725bcd5f45a2e4b305779683e93bd",
+      "status": "completed",
+      "permissionBefore": true,
+      "permissionAfter": true,
+      "framesReportedSaved": 21,
+      "savedFrameEntries": 21,
+      "filesPresent": 21,
+      "missing": [],
+      "extra": [],
+      "duplicateFileNamesInReport": 0,
+      "sampleStatusCounts": {
+        "0": 21
+      },
+      "savedInvalidSamples": 0,
+      "streamErrors": [],
+      "ptsSpanSeconds": 2.015063083730638,
+      "positiveMaxPTSGapSeconds": 0.10408583423122764,
+      "nonIncreasingPTSIntervals": 0,
+      "phaseCounts": {
+        "initial": 21
+      },
+      "phaseEvents": [
+        {
+          "at": "2026-11-01T08:28:47Z",
+          "hostUptimeSeconds": 2422231.4674617504,
+          "phase": "initial"
+        }
+      ],
+      "uniquePNGByteHashes": 1,
+      "largestIdenticalPNGGroup": 21
+    },
+    {
+      "report": "artifacts/matrix-20261101T082724Z/protected/capture/report.json",
+      "path": "stream_display",
+      "reportSHA256": "49491edb105b5bf9c627e4aab11cdac9bb0f1df4b2b9e592fa36465c6e6f4ed2",
+      "status": "completed",
+      "permissionBefore": true,
+      "permissionAfter": true,
+      "framesReportedSaved": 22,
+      "savedFrameEntries": 22,
+      "filesPresent": 22,
+      "missing": [],
+      "extra": [],
+      "duplicateFileNamesInReport": 0,
+      "sampleStatusCounts": {
+        "0": 22
+      },
+      "savedInvalidSamples": 0,
+      "streamErrors": [],
+      "ptsSpanSeconds": 2.1166469589807093,
+      "positiveMaxPTSGapSeconds": 0.10833225026726723,
+      "nonIncreasingPTSIntervals": 0,
+      "phaseCounts": {
+        "initial": 22
+      },
+      "phaseEvents": [
+        {
+          "at": "2026-11-01T08:28:09Z",
+          "hostUptimeSeconds": 2422193.3901830832,
+          "phase": "initial"
+        }
+      ],
+      "uniquePNGByteHashes": 22,
+      "largestIdenticalPNGGroup": 1
+    },
+    {
+      "report": "artifacts/matrix-20261101T082724Z/protected/capture/report.json",
+      "path": "stream_window",
+      "reportSHA256": "49491edb105b5bf9c627e4aab11cdac9bb0f1df4b2b9e592fa36465c6e6f4ed2",
+      "status": "completed",
+      "permissionBefore": true,
+      "permissionAfter": true,
+      "framesReportedSaved": 21,
+      "savedFrameEntries": 21,
+      "filesPresent": 21,
+      "missing": [],
+      "extra": [],
+      "duplicateFileNamesInReport": 0,
+      "sampleStatusCounts": {
+        "0": 21
+      },
+      "savedInvalidSamples": 0,
+      "streamErrors": [],
+      "ptsSpanSeconds": 2.015646332874894,
+      "positiveMaxPTSGapSeconds": 0.10467112483456731,
+      "nonIncreasingPTSIntervals": 0,
+      "phaseCounts": {
+        "initial": 21
+      },
+      "phaseEvents": [
+        {
+          "at": "2026-11-01T08:28:07Z",
+          "hostUptimeSeconds": 2422191.109655792,
+          "phase": "initial"
+        }
+      ],
+      "uniquePNGByteHashes": 1,
+      "largestIdenticalPNGGroup": 21
+    },
+    {
+      "report": "artifacts/matrix-20261101T082724Z/window-none/capture/report.json",
+      "path": "stream_display",
+      "reportSHA256": "7969b36d5790da5da9834f7e01f4f33cc38edd9d1cf4c315546c4a5a3507ea49",
+      "status": "completed",
+      "permissionBefore": true,
+      "permissionAfter": true,
+      "framesReportedSaved": 21,
+      "savedFrameEntries": 21,
+      "filesPresent": 21,
+      "missing": [],
+      "extra": [],
+      "duplicateFileNamesInReport": 0,
+      "sampleStatusCounts": {
+        "0": 21
+      },
+      "savedInvalidSamples": 0,
+      "streamErrors": [],
+      "ptsSpanSeconds": 2.033314375206828,
+      "positiveMaxPTSGapSeconds": 0.10833245841786265,
+      "nonIncreasingPTSIntervals": 0,
+      "phaseCounts": {
+        "initial": 21
+      },
+      "phaseEvents": [],
+      "uniquePNGByteHashes": 21,
+      "largestIdenticalPNGGroup": 1
+    },
+    {
+      "report": "artifacts/matrix-20261101T082724Z/window-none/capture/report.json",
+      "path": "stream_window",
+      "reportSHA256": "7969b36d5790da5da9834f7e01f4f33cc38edd9d1cf4c315546c4a5a3507ea49",
+      "status": "completed",
+      "permissionBefore": true,
+      "permissionAfter": true,
+      "framesReportedSaved": 21,
+      "savedFrameEntries": 21,
+      "filesPresent": 21,
+      "missing": [],
+      "extra": [],
+      "duplicateFileNamesInReport": 0,
+      "sampleStatusCounts": {
+        "0": 21
+      },
+      "savedInvalidSamples": 0,
+      "streamErrors": [],
+      "ptsSpanSeconds": 2.0178918330930173,
+      "positiveMaxPTSGapSeconds": 0.10480245808139443,
+      "nonIncreasingPTSIntervals": 0,
+      "phaseCounts": {
+        "initial": 21
+      },
+      "phaseEvents": [],
+      "uniquePNGByteHashes": 1,
+      "largestIdenticalPNGGroup": 21
+    },
+    {
+      "report": "artifacts/filter-update-protected/report.json",
+      "path": "stream_display",
+      "reportSHA256": "cbe340059baf75b5ef8624c96189d641bb306b08a47eedb8bb1b8fec79e9eabc",
+      "status": "completed",
+      "permissionBefore": true,
+      "permissionAfter": true,
+      "framesReportedSaved": 40,
+      "savedFrameEntries": 40,
+      "filesPresent": 40,
+      "missing": [],
+      "extra": [],
+      "duplicateFileNamesInReport": 0,
+      "sampleStatusCounts": {
+        "0": 40
+      },
+      "savedInvalidSamples": 0,
+      "streamErrors": [],
+      "ptsSpanSeconds": 3.937463582959026,
+      "positiveMaxPTSGapSeconds": 0.10833237506449223,
+      "nonIncreasingPTSIntervals": 0,
+      "phaseCounts": {
+        "initial": 20,
+        "after-update": 20
+      },
+      "phaseEvents": [
+        {
+          "at": "2026-11-01T08:30:47Z",
+          "hostUptimeSeconds": 2422351.595764042,
+          "phase": "initial"
+        },
+        {
+          "at": "2026-11-01T08:30:49Z",
+          "hostUptimeSeconds": 2422353.6960142083,
+          "phase": "update-requested"
+        },
+        {
+          "at": "2026-11-01T08:30:49Z",
+          "hostUptimeSeconds": 2422353.696223167,
+          "phase": "after-update"
+        }
+      ],
+      "uniquePNGByteHashes": 38,
+      "largestIdenticalPNGGroup": 2
+    },
+    {
+      "report": "artifacts/filter-update-protected/report.json",
+      "path": "stream_display_recreated",
+      "reportSHA256": "cbe340059baf75b5ef8624c96189d641bb306b08a47eedb8bb1b8fec79e9eabc",
+      "status": "completed",
+      "permissionBefore": true,
+      "permissionAfter": true,
+      "framesReportedSaved": 21,
+      "savedFrameEntries": 21,
+      "filesPresent": 21,
+      "missing": [],
+      "extra": [],
+      "duplicateFileNamesInReport": 0,
+      "sampleStatusCounts": {
+        "0": 21
+      },
+      "savedInvalidSamples": 0,
+      "streamErrors": [],
+      "ptsSpanSeconds": 2.0166479172185063,
+      "positiveMaxPTSGapSeconds": 0.10833233315497637,
+      "nonIncreasingPTSIntervals": 0,
+      "phaseCounts": {
+        "recreated": 21
+      },
+      "phaseEvents": [
+        {
+          "at": "2026-11-01T08:30:51Z",
+          "hostUptimeSeconds": 2422355.7280822503,
+          "phase": "recreated"
+        }
+      ],
+      "uniquePNGByteHashes": 21,
+      "largestIdenticalPNGGroup": 1
+    },
+    {
+      "report": "artifacts/filter-update-protected/report.json",
+      "path": "stream_window",
+      "reportSHA256": "cbe340059baf75b5ef8624c96189d641bb306b08a47eedb8bb1b8fec79e9eabc",
+      "status": "completed",
+      "permissionBefore": true,
+      "permissionAfter": true,
+      "framesReportedSaved": 43,
+      "savedFrameEntries": 43,
+      "filesPresent": 43,
+      "missing": [],
+      "extra": [],
+      "duplicateFileNamesInReport": 0,
+      "sampleStatusCounts": {
+        "0": 43
+      },
+      "savedInvalidSamples": 0,
+      "streamErrors": [],
+      "ptsSpanSeconds": 4.227960958145559,
+      "positiveMaxPTSGapSeconds": 0.10445616720244288,
+      "nonIncreasingPTSIntervals": 0,
+      "phaseCounts": {
+        "initial": 22,
+        "after-update": 21
+      },
+      "phaseEvents": [
+        {
+          "at": "2026-11-01T08:30:41Z",
+          "hostUptimeSeconds": 2422344.8600247917,
+          "phase": "initial"
+        },
+        {
+          "at": "2026-11-01T08:30:43Z",
+          "hostUptimeSeconds": 2422347.083574125,
+          "phase": "update-requested"
+        },
+        {
+          "at": "2026-11-01T08:30:43Z",
+          "hostUptimeSeconds": 2422347.0838150834,
+          "phase": "after-update"
+        }
+      ],
+      "uniquePNGByteHashes": 1,
+      "largestIdenticalPNGGroup": 43
+    },
+    {
+      "report": "artifacts/filter-update-protected/report.json",
+      "path": "stream_window_recreated",
+      "reportSHA256": "cbe340059baf75b5ef8624c96189d641bb306b08a47eedb8bb1b8fec79e9eabc",
+      "status": "completed",
+      "permissionBefore": true,
+      "permissionAfter": true,
+      "framesReportedSaved": 22,
+      "savedFrameEntries": 22,
+      "filesPresent": 22,
+      "missing": [],
+      "extra": [],
+      "duplicateFileNamesInReport": 0,
+      "sampleStatusCounts": {
+        "0": 22
+      },
+      "savedInvalidSamples": 0,
+      "streamErrors": [],
+      "ptsSpanSeconds": 2.1159357079304755,
+      "positiveMaxPTSGapSeconds": 0.1046544169075787,
+      "nonIncreasingPTSIntervals": 0,
+      "phaseCounts": {
+        "recreated": 22
+      },
+      "phaseEvents": [
+        {
+          "at": "2026-11-01T08:30:45Z",
+          "hostUptimeSeconds": 2422349.277963792,
+          "phase": "recreated"
+        }
+      ],
+      "uniquePNGByteHashes": 1,
+      "largestIdenticalPNGGroup": 22
+    },
+    {
+      "report": "artifacts/filter-update-window-none/report.json",
+      "path": "stream_display",
+      "reportSHA256": "0a50a85d1c755de10a39685cbb3ad89d35a83270f4ad1251e4d75af6d84f7875",
+      "status": "completed",
+      "permissionBefore": true,
+      "permissionAfter": true,
+      "framesReportedSaved": 39,
+      "savedFrameEntries": 39,
+      "filesPresent": 39,
+      "missing": [],
+      "extra": [],
+      "duplicateFileNamesInReport": 0,
+      "sampleStatusCounts": {
+        "0": 39
+      },
+      "savedInvalidSamples": 0,
+      "streamErrors": [],
+      "ptsSpanSeconds": 3.9082962912507355,
+      "positiveMaxPTSGapSeconds": 0.11666566599160433,
+      "nonIncreasingPTSIntervals": 0,
+      "phaseCounts": {
+        "initial": 20,
+        "after-update": 19
+      },
+      "phaseEvents": [
+        {
+          "at": "2026-11-01T08:36:45Z",
+          "hostUptimeSeconds": 2422709.333201042,
+          "phase": "initial"
+        },
+        {
+          "at": "2026-11-01T08:36:47Z",
+          "hostUptimeSeconds": 2422711.4366768333,
+          "phase": "update-requested"
+        },
+        {
+          "at": "2026-11-01T08:36:47Z",
+          "hostUptimeSeconds": 2422711.436857917,
+          "phase": "after-update"
+        }
+      ],
+      "uniquePNGByteHashes": 39,
+      "largestIdenticalPNGGroup": 1
+    },
+    {
+      "report": "artifacts/filter-update-window-none/report.json",
+      "path": "stream_display_recreated",
+      "reportSHA256": "0a50a85d1c755de10a39685cbb3ad89d35a83270f4ad1251e4d75af6d84f7875",
+      "status": "completed",
+      "permissionBefore": true,
+      "permissionAfter": true,
+      "framesReportedSaved": 21,
+      "savedFrameEntries": 21,
+      "filesPresent": 21,
+      "missing": [],
+      "extra": [],
+      "duplicateFileNamesInReport": 0,
+      "sampleStatusCounts": {
+        "0": 21
+      },
+      "savedInvalidSamples": 0,
+      "streamErrors": [],
+      "ptsSpanSeconds": 2.0666468339040875,
+      "positiveMaxPTSGapSeconds": 0.1166656669229269,
+      "nonIncreasingPTSIntervals": 0,
+      "phaseCounts": {
+        "recreated": 21
+      },
+      "phaseEvents": [
+        {
+          "at": "2026-11-01T08:36:49Z",
+          "hostUptimeSeconds": 2422713.5548445834,
+          "phase": "recreated"
+        }
+      ],
+      "uniquePNGByteHashes": 21,
+      "largestIdenticalPNGGroup": 1
+    },
+    {
+      "report": "artifacts/filter-update-window-none/report.json",
+      "path": "stream_window",
+      "reportSHA256": "0a50a85d1c755de10a39685cbb3ad89d35a83270f4ad1251e4d75af6d84f7875",
+      "status": "completed",
+      "permissionBefore": true,
+      "permissionAfter": true,
+      "framesReportedSaved": 42,
+      "savedFrameEntries": 42,
+      "filesPresent": 42,
+      "missing": [],
+      "extra": [],
+      "duplicateFileNamesInReport": 0,
+      "sampleStatusCounts": {
+        "0": 42
+      },
+      "savedInvalidSamples": 0,
+      "streamErrors": [],
+      "ptsSpanSeconds": 4.13084483332932,
+      "positiveMaxPTSGapSeconds": 0.10396595811471343,
+      "nonIncreasingPTSIntervals": 0,
+      "phaseCounts": {
+        "initial": 21,
+        "after-update": 21
+      },
+      "phaseEvents": [
+        {
+          "at": "2026-11-01T08:36:39Z",
+          "hostUptimeSeconds": 2422702.89249175,
+          "phase": "initial"
+        },
+        {
+          "at": "2026-11-01T08:36:41Z",
+          "hostUptimeSeconds": 2422705.0601847083,
+          "phase": "update-requested"
+        },
+        {
+          "at": "2026-11-01T08:36:41Z",
+          "hostUptimeSeconds": 2422705.060694,
+          "phase": "after-update"
+        }
+      ],
+      "uniquePNGByteHashes": 1,
+      "largestIdenticalPNGGroup": 42
+    },
+    {
+      "report": "artifacts/filter-update-window-none/report.json",
+      "path": "stream_window_recreated",
+      "reportSHA256": "0a50a85d1c755de10a39685cbb3ad89d35a83270f4ad1251e4d75af6d84f7875",
+      "status": "completed",
+      "permissionBefore": true,
+      "permissionAfter": true,
+      "framesReportedSaved": 21,
+      "savedFrameEntries": 21,
+      "filesPresent": 21,
+      "missing": [],
+      "extra": [],
+      "duplicateFileNamesInReport": 0,
+      "sampleStatusCounts": {
+        "0": 21
+      },
+      "savedInvalidSamples": 0,
+      "streamErrors": [],
+      "ptsSpanSeconds": 2.0128287919797003,
+      "positiveMaxPTSGapSeconds": 0.10466095805168152,
+      "nonIncreasingPTSIntervals": 0,
+      "phaseCounts": {
+        "recreated": 21
+      },
+      "phaseEvents": [
+        {
+          "at": "2026-11-01T08:36:43Z",
+          "hostUptimeSeconds": 2422707.1900417916,
+          "phase": "recreated"
+        }
+      ],
+      "uniquePNGByteHashes": 1,
+      "largestIdenticalPNGGroup": 21
+    }
+  ],
+  "analysisRows": [
+    {
+      "group": "matrix-20261101T082724Z",
+      "case": "baseline",
+      "path": "display",
+      "imagesReadable": 21,
+      "ocrFramesInspected": 21,
+      "ocrSecretDetectedFrames": 21,
+      "ocrNativeLeakDetectedFrames": 0,
+      "markerDetectedFrames": 21,
+      "allTransparentFrames": 0,
+      "roiPixelCountMin": 22528,
+      "roiPixelCountMax": 22528,
+      "frameErrors": [],
+      "ocrErrorRows": []
+    },
+    {
+      "group": "matrix-20261101T082724Z",
+      "case": "baseline",
+      "path": "window",
+      "imagesReadable": 22,
+      "ocrFramesInspected": 22,
+      "ocrSecretDetectedFrames": 22,
+      "ocrNativeLeakDetectedFrames": 0,
+      "markerDetectedFrames": 22,
+      "allTransparentFrames": 0,
+      "roiPixelCountMin": 22528,
+      "roiPixelCountMax": 22528,
+      "frameErrors": [],
+      "ocrErrorRows": []
+    },
+    {
+      "group": "matrix-20261101T082724Z",
+      "case": "both",
+      "path": "display",
+      "imagesReadable": 21,
+      "ocrFramesInspected": 21,
+      "ocrSecretDetectedFrames": 0,
+      "ocrNativeLeakDetectedFrames": 0,
+      "markerDetectedFrames": 0,
+      "allTransparentFrames": 0,
+      "roiPixelCountMin": 0,
+      "roiPixelCountMax": 0,
+      "frameErrors": [],
+      "ocrErrorRows": []
+    },
+    {
+      "group": "matrix-20261101T082724Z",
+      "case": "both",
+      "path": "window",
+      "imagesReadable": 22,
+      "ocrFramesInspected": 22,
+      "ocrSecretDetectedFrames": 0,
+      "ocrNativeLeakDetectedFrames": 0,
+      "markerDetectedFrames": 0,
+      "allTransparentFrames": 22,
+      "roiPixelCountMin": 0,
+      "roiPixelCountMax": 0,
+      "frameErrors": [],
+      "ocrErrorRows": []
+    },
+    {
+      "group": "matrix-20261101T082724Z",
+      "case": "mixed",
+      "path": "display",
+      "imagesReadable": 22,
+      "ocrFramesInspected": 22,
+      "ocrSecretDetectedFrames": 0,
+      "ocrNativeLeakDetectedFrames": 22,
+      "markerDetectedFrames": 0,
+      "allTransparentFrames": 0,
+      "roiPixelCountMin": 0,
+      "roiPixelCountMax": 0,
+      "frameErrors": [],
+      "ocrErrorRows": []
+    },
+    {
+      "group": "matrix-20261101T082724Z",
+      "case": "mixed",
+      "path": "window",
+      "imagesReadable": 21,
+      "ocrFramesInspected": 21,
+      "ocrSecretDetectedFrames": 0,
+      "ocrNativeLeakDetectedFrames": 0,
+      "markerDetectedFrames": 0,
+      "allTransparentFrames": 21,
+      "roiPixelCountMin": 0,
+      "roiPixelCountMax": 0,
+      "frameErrors": [],
+      "ocrErrorRows": []
+    },
+    {
+      "group": "matrix-20261101T082724Z",
+      "case": "protected",
+      "path": "display",
+      "imagesReadable": 22,
+      "ocrFramesInspected": 22,
+      "ocrSecretDetectedFrames": 0,
+      "ocrNativeLeakDetectedFrames": 0,
+      "markerDetectedFrames": 0,
+      "allTransparentFrames": 0,
+      "roiPixelCountMin": 0,
+      "roiPixelCountMax": 0,
+      "frameErrors": [],
+      "ocrErrorRows": []
+    },
+    {
+      "group": "matrix-20261101T082724Z",
+      "case": "protected",
+      "path": "window",
+      "imagesReadable": 21,
+      "ocrFramesInspected": 21,
+      "ocrSecretDetectedFrames": 0,
+      "ocrNativeLeakDetectedFrames": 0,
+      "markerDetectedFrames": 0,
+      "allTransparentFrames": 21,
+      "roiPixelCountMin": 0,
+      "roiPixelCountMax": 0,
+      "frameErrors": [],
+      "ocrErrorRows": []
+    },
+    {
+      "group": "matrix-20261101T082724Z",
+      "case": "window-none",
+      "path": "display",
+      "imagesReadable": 21,
+      "ocrFramesInspected": 21,
+      "ocrSecretDetectedFrames": 0,
+      "ocrNativeLeakDetectedFrames": 0,
+      "markerDetectedFrames": 0,
+      "allTransparentFrames": 0,
+      "roiPixelCountMin": 0,
+      "roiPixelCountMax": 0,
+      "frameErrors": [],
+      "ocrErrorRows": []
+    },
+    {
+      "group": "matrix-20261101T082724Z",
+      "case": "window-none",
+      "path": "window",
+      "imagesReadable": 21,
+      "ocrFramesInspected": 21,
+      "ocrSecretDetectedFrames": 0,
+      "ocrNativeLeakDetectedFrames": 0,
+      "markerDetectedFrames": 0,
+      "allTransparentFrames": 21,
+      "roiPixelCountMin": 0,
+      "roiPixelCountMax": 0,
+      "frameErrors": [],
+      "ocrErrorRows": []
+    },
+    {
+      "group": "filter-update-protected",
+      "case": "filter-update-protected",
+      "path": "display",
+      "imagesReadable": 40,
+      "ocrFramesInspected": 40,
+      "ocrSecretDetectedFrames": 0,
+      "ocrNativeLeakDetectedFrames": 0,
+      "markerDetectedFrames": 0,
+      "allTransparentFrames": 0,
+      "roiPixelCountMin": 0,
+      "roiPixelCountMax": 0,
+      "frameErrors": [],
+      "ocrErrorRows": []
+    },
+    {
+      "group": "filter-update-protected",
+      "case": "filter-update-protected",
+      "path": "display_recreated",
+      "imagesReadable": 21,
+      "ocrFramesInspected": 21,
+      "ocrSecretDetectedFrames": 0,
+      "ocrNativeLeakDetectedFrames": 0,
+      "markerDetectedFrames": 0,
+      "allTransparentFrames": 0,
+      "roiPixelCountMin": 0,
+      "roiPixelCountMax": 0,
+      "frameErrors": [],
+      "ocrErrorRows": []
+    },
+    {
+      "group": "filter-update-protected",
+      "case": "filter-update-protected",
+      "path": "window",
+      "imagesReadable": 43,
+      "ocrFramesInspected": 43,
+      "ocrSecretDetectedFrames": 0,
+      "ocrNativeLeakDetectedFrames": 0,
+      "markerDetectedFrames": 0,
+      "allTransparentFrames": 43,
+      "roiPixelCountMin": 0,
+      "roiPixelCountMax": 0,
+      "frameErrors": [],
+      "ocrErrorRows": []
+    },
+    {
+      "group": "filter-update-protected",
+      "case": "filter-update-protected",
+      "path": "window_recreated",
+      "imagesReadable": 22,
+      "ocrFramesInspected": 22,
+      "ocrSecretDetectedFrames": 0,
+      "ocrNativeLeakDetectedFrames": 0,
+      "markerDetectedFrames": 0,
+      "allTransparentFrames": 22,
+      "roiPixelCountMin": 0,
+      "roiPixelCountMax": 0,
+      "frameErrors": [],
+      "ocrErrorRows": []
+    },
+    {
+      "group": "filter-update-window-none",
+      "case": "filter-update-window-none",
+      "path": "display",
+      "imagesReadable": 39,
+      "ocrFramesInspected": 39,
+      "ocrSecretDetectedFrames": 0,
+      "ocrNativeLeakDetectedFrames": 0,
+      "markerDetectedFrames": 0,
+      "allTransparentFrames": 0,
+      "roiPixelCountMin": 0,
+      "roiPixelCountMax": 0,
+      "frameErrors": [],
+      "ocrErrorRows": []
+    },
+    {
+      "group": "filter-update-window-none",
+      "case": "filter-update-window-none",
+      "path": "display_recreated",
+      "imagesReadable": 21,
+      "ocrFramesInspected": 21,
+      "ocrSecretDetectedFrames": 0,
+      "ocrNativeLeakDetectedFrames": 0,
+      "markerDetectedFrames": 0,
+      "allTransparentFrames": 0,
+      "roiPixelCountMin": 0,
+      "roiPixelCountMax": 0,
+      "frameErrors": [],
+      "ocrErrorRows": []
+    },
+    {
+      "group": "filter-update-window-none",
+      "case": "filter-update-window-none",
+      "path": "window",
+      "imagesReadable": 42,
+      "ocrFramesInspected": 42,
+      "ocrSecretDetectedFrames": 0,
+      "ocrNativeLeakDetectedFrames": 0,
+      "markerDetectedFrames": 0,
+      "allTransparentFrames": 0,
+      "roiPixelCountMin": 0,
+      "roiPixelCountMax": 0,
+      "frameErrors": [],
+      "ocrErrorRows": []
+    },
+    {
+      "group": "filter-update-window-none",
+      "case": "filter-update-window-none",
+      "path": "window_recreated",
+      "imagesReadable": 21,
+      "ocrFramesInspected": 21,
+      "ocrSecretDetectedFrames": 0,
+      "ocrNativeLeakDetectedFrames": 0,
+      "markerDetectedFrames": 0,
+      "allTransparentFrames": 0,
+      "roiPixelCountMin": 0,
+      "roiPixelCountMax": 0,
+      "frameErrors": [],
+      "ocrErrorRows": []
+    }
+  ],
+  "originalDocumentSHA256": {
+    "docs/API依据.md": "7e4c44398fc31325f55ea40846af24a167dd61f20d9e8f12d48a5cfb9006fcc4",
+    "docs/DRM与系统路线.md": "371778cfa906288a51d12686de5b47348da3a7188d5472a1c4ff0728278a1089",
+    "docs/PoC设计与复现.md": "66257f00064dc393b7241318803f018c1eccf6c334c0cc3e1aa34937ee8a38ab",
+    "docs/实验矩阵与验收.md": "adbc1b9bd3b3e62e0bc662933b47c9a55654bcc295fe07d78a3b733ad31a8ec7",
+    "docs/技术预研报告.md": "81ed1bc8e725c2b0052b895073b1fbd2ed7af80f6daa118e20da83c2c821b82d",
+    "docs/本机测试结果.md": "382a2d6e40b541ad15925c7538e5b6930d31e68120de77be9d844f4e49afdcc7"
+  }
+}

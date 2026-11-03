@@ -1,0 +1,241 @@
+{
+  "scope": "ToDesk on this Mac; real remote observations are user reports, not captured remote screenshots",
+  "audit": {
+    "lines": 385,
+    "eventCounts": {
+      "image_loaded": 3,
+      "hook_installed": 45,
+      "capture_call": 4,
+      "sck_stream_frame": 332,
+      "capture_start_result": 1
+    },
+    "frameLogs": 332,
+    "imageFrameLogs": 234,
+    "noImageFrameLogs": 98,
+    "resultCounts": {},
+    "maxCallbackSequence": 19860,
+    "firstFrameHostTime": 2441184.4489940004,
+    "lastFrameHostTime": 2441531.5298533756,
+    "loadedProcesses": [
+      {
+        "configConfigured": 1,
+        "event": "image_loaded",
+        "executable": "/Applications/ToDesk.app/Contents/MacOS/ToDesk_Session_Proxy",
+        "hostTime": 2441180.938403917,
+        "mode": "audit",
+        "pid": 18912,
+        "uid": 501,
+        "version": "1.2"
+      },
+      {
+        "configConfigured": 1,
+        "event": "image_loaded",
+        "executable": "/Applications/ToDesk.app/Contents/MacOS/ToDesk_Session_Proxy",
+        "hostTime": 2441184.029937209,
+        "mode": "audit",
+        "pid": 19233,
+        "uid": 501,
+        "version": "1.2"
+      },
+      {
+        "configConfigured": 1,
+        "event": "image_loaded",
+        "executable": "/Applications/ToDesk.app/Contents/Helpers/ToDesk_Session.app/Contents/MacOS/ToDesk_Session",
+        "hostTime": 2441184.1190778757,
+        "mode": "audit",
+        "pid": 19317,
+        "uid": 501,
+        "version": "1.2"
+      }
+    ],
+    "captureCalls": [
+      {
+        "api": "SCStream.init",
+        "event": "capture_call",
+        "hostTime": 2441184.3958071256,
+        "mode": "audit",
+        "pid": 19317,
+        "scope": {
+          "bounds": {
+            "height": 982,
+            "width": 1512,
+            "x": 0,
+            "y": 0
+          },
+          "displayID": 1,
+          "kind": "display"
+        },
+        "uid": 501
+      },
+      {
+        "api": "SCStream.addStreamOutput",
+        "event": "capture_call",
+        "hostTime": 2441184.3959016255,
+        "mode": "audit",
+        "pid": 19317,
+        "type": 0,
+        "uid": 501
+      },
+      {
+        "api": "SCStream.startCapture",
+        "event": "capture_call",
+        "hostTime": 2441184.3959445837,
+        "mode": "audit",
+        "pid": 19317,
+        "uid": 501
+      },
+      {
+        "api": "SCStream.startCapture",
+        "errorCode": 0,
+        "errorDomain": "",
+        "event": "capture_start_result",
+        "hostTime": 2441184.4491872923,
+        "mode": "audit",
+        "pid": 19317,
+        "success": 1,
+        "uid": 501
+      },
+      {
+        "api": "SCStream.stopCapture",
+        "event": "capture_call",
+        "hostTime": 2441532.370273917,
+        "mode": "audit",
+        "pid": 19317,
+        "uid": 501
+      }
+    ]
+  },
+  "block": {
+    "lines": 367,
+    "eventCounts": {
+      "image_loaded": 2,
+      "hook_installed": 30,
+      "capture_call": 4,
+      "capture_start_result": 1,
+      "sck_stream_frame": 165,
+      "sck_stream_result": 165
+    },
+    "frameLogs": 165,
+    "imageFrameLogs": 130,
+    "noImageFrameLogs": 35,
+    "resultCounts": {
+      "redacted": 130,
+      "no_image_buffer": 35
+    },
+    "maxCallbackSequence": 9840,
+    "firstFrameHostTime": 2441633.6292800005,
+    "lastFrameHostTime": 2441806.1329475422,
+    "loadedProcesses": [
+      {
+        "configConfigured": 1,
+        "event": "image_loaded",
+        "executable": "/Applications/ToDesk.app/Contents/MacOS/ToDesk_Session_Proxy",
+        "hostTime": 2441631.328089042,
+        "mode": "block",
+        "pid": 32439,
+        "uid": 501,
+        "version": "1.2"
+      },
+      {
+        "configConfigured": 1,
+        "event": "image_loaded",
+        "executable": "/Applications/ToDesk.app/Contents/Helpers/ToDesk_Session.app/Contents/MacOS/ToDesk_Session",
+        "hostTime": 2441633.3450924587,
+        "mode": "block",
+        "pid": 32469,
+        "uid": 501,
+        "version": "1.2"
+      }
+    ],
+    "captureCalls": [
+      {
+        "api": "SCStream.init",
+        "event": "capture_call",
+        "hostTime": 2441633.573284042,
+        "mode": "block",
+        "pid": 32469,
+        "scope": {
+          "bounds": {
+            "height": 982,
+            "width": 1512,
+            "x": 0,
+            "y": 0
+          },
+          "displayID": 1,
+          "kind": "display"
+        },
+        "uid": 501
+      },
+      {
+        "api": "SCStream.addStreamOutput",
+        "event": "capture_call",
+        "hostTime": 2441633.573374834,
+        "mode": "block",
+        "pid": 32469,
+        "type": 0,
+        "uid": 501
+      },
+      {
+        "api": "SCStream.startCapture",
+        "event": "capture_call",
+        "hostTime": 2441633.5734057087,
+        "mode": "block",
+        "pid": 32469,
+        "uid": 501
+      },
+      {
+        "api": "SCStream.startCapture",
+        "errorCode": 0,
+        "errorDomain": "",
+        "event": "capture_start_result",
+        "hostTime": 2441633.613574834,
+        "mode": "block",
+        "pid": 32469,
+        "success": 1,
+        "uid": 501
+      },
+      {
+        "api": "SCStream.stopCapture",
+        "event": "capture_call",
+        "hostTime": 2441806.565092209,
+        "mode": "block",
+        "pid": 32469,
+        "uid": 501
+      }
+    ]
+  },
+  "humanAudit": {
+    "recordedAtUTC": "2026-11-01T13:50:28.003002+00:00",
+    "source": "user remote observation via ToDesk",
+    "mode": "audit",
+    "answer": "两个窗口内容都能看到，LIVE-TICK 在变化",
+    "examVisible": true,
+    "publicVisible": true,
+    "publicTickChanging": true
+  },
+  "humanBlock": {
+    "recordedAtUTC": "2026-11-01T13:55:01.156898+00:00",
+    "source": "user remote observation via ToDesk",
+    "mode": "block",
+    "answer": "考试区域已隐藏，右侧计数仍在变化",
+    "examHidden": true,
+    "publicTickChanging": true
+  },
+  "humanRecovery": {
+    "recordedAtUTC": "2026-11-01T13:59:18.850422+00:00",
+    "source": "user remote observation via ToDesk",
+    "mode": "restored-no-hook",
+    "answer": "考试内容已恢复可见，右侧计数正常变化",
+    "examVisible": true,
+    "publicTickChanging": true
+  },
+  "independentUnhookedScopeCheck": {
+    "probeReturnCode": 0,
+    "purpose": "Verify scope: an uninstrumented capture process remains able to capture native UI while ToDesk output is redacted.",
+    "secretDetected": true,
+    "width": 1700,
+    "height": 1444,
+    "ocrError": null
+  },
+  "originalFilesUnchanged": true
+}

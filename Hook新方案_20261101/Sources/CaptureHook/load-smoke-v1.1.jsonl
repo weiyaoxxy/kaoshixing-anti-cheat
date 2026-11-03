@@ -1,0 +1,17 @@
+{"configConfigured":0,"event":"image_loaded","executable":"\/Users\/weiyao\/Desktop\/考试星防作弊\/Hook新方案_20261101\/build\/HookLoadSmoke","hostTime":2440504.3683985006,"mode":"audit","pid":99752,"uid":501,"version":"1.1"}
+{"class":"SCContentFilter","event":"hook_installed","hostTime":2440504.3712617089,"mode":"audit","pid":99752,"selector":"initWithDesktopIndependentWindow:","uid":501}
+{"class":"SCContentFilter","event":"hook_installed","hostTime":2440504.371313584,"mode":"audit","pid":99752,"selector":"initWithDisplay:excludingWindows:","uid":501}
+{"class":"SCContentFilter","event":"hook_installed","hostTime":2440504.3713390836,"mode":"audit","pid":99752,"selector":"initWithDisplay:includingWindows:","uid":501}
+{"class":"SCContentFilter","event":"hook_installed","hostTime":2440504.3713616673,"mode":"audit","pid":99752,"selector":"initWithDisplay:includingApplications:exceptingWindows:","uid":501}
+{"class":"SCContentFilter","event":"hook_installed","hostTime":2440504.3713845839,"mode":"audit","pid":99752,"selector":"initWithDisplay:excludingApplications:exceptingWindows:","uid":501}
+{"class":"SCScreenshotManager","event":"hook_installed","hostTime":2440504.371415792,"mode":"audit","pid":99752,"selector":"captureImageWithFilter:configuration:completionHandler:","uid":501}
+{"class":"SCScreenshotManager","event":"hook_installed","hostTime":2440504.3714405005,"mode":"audit","pid":99752,"selector":"captureImageInRect:completionHandler:","uid":501}
+{"class":"SCScreenshotManager","event":"hook_installed","hostTime":2440504.3714606254,"mode":"audit","pid":99752,"selector":"captureSampleBufferWithFilter:configuration:completionHandler:","uid":501}
+{"class":"SCStream","event":"hook_installed","hostTime":2440504.3714817506,"mode":"audit","pid":99752,"selector":"initWithFilter:configuration:delegate:","uid":501}
+{"class":"SCStream","event":"hook_installed","hostTime":2440504.3715040837,"mode":"audit","pid":99752,"selector":"addStreamOutput:type:sampleHandlerQueue:error:","uid":501}
+{"class":"SCStream","event":"hook_installed","hostTime":2440504.3715273337,"mode":"audit","pid":99752,"selector":"removeStreamOutput:type:error:","uid":501}
+{"class":"SCStream","event":"hook_installed","hostTime":2440504.3715501255,"mode":"audit","pid":99752,"selector":"startCaptureWithCompletionHandler:","uid":501}
+{"class":"SCStream","event":"hook_installed","hostTime":2440504.3715695003,"mode":"audit","pid":99752,"selector":"stopCaptureWithCompletionHandler:","uid":501}
+{"class":"SCStream","event":"hook_installed","hostTime":2440504.3715937086,"mode":"audit","pid":99752,"selector":"updateContentFilter:completionHandler:","uid":501}
+{"class":"SCStream","event":"hook_installed","hostTime":2440504.3716231254,"mode":"audit","pid":99752,"selector":"updateConfiguration:completionHandler:","uid":501}
+{"boolean":true,"event":"log_self_test","finite":1.25,"hostTime":2440504.3718308755,"mode":"audit","negative":"-Infinity","nested":[{"nan":"NaN"}],"pid":99752,"positive":"Infinity","sanitizedFields":["$.negative","$.nested[0].nan","$.positive"],"uid":501}

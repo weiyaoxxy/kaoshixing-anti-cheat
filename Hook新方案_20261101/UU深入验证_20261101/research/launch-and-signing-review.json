@@ -1,0 +1,1016 @@
+{
+  "schemaVersion": 1,
+  "createdAtUTC": "2026-11-01T15:19:11.319071+00:00",
+  "reviewMode": "Read only. Did not launch/stop/resign third-party apps or change jobs. Only selected metadata and fixed-token string hits retained.",
+  "application": {
+    "path": "/Applications/UURemote.app",
+    "version": "4.40.0",
+    "build": "621"
+  },
+  "components": [
+    {
+      "path": "/Applications/UURemote.app/Contents/MacOS/UURemote",
+      "relativePath": "Contents/MacOS/UURemote",
+      "sha256": "235eb6415bc6828d05b87820869d40c9ebb5da268ebdd8ede8e4394c5f17f5e6",
+      "signatureMetadata": [
+        "Identifier=com.netease.uuremote",
+        "Format=app bundle with Mach-O universal (x86_64 arm64)",
+        "CodeDirectory v=20500 size=51328 flags=0x10000(runtime) hashes=1593+7 location=embedded",
+        "Authority=Developer ID Application: Hangzhou Bobo Technology Co Ltd (PU9BNSBJW7)",
+        "Authority=Developer ID Certification Authority",
+        "Authority=Apple Root CA",
+        "TeamIdentifier=PU9BNSBJW7",
+        "Runtime Version=26.2.0"
+      ],
+      "entitlements": {
+        "com.apple.security.device.audio-input": true,
+        "com.apple.security.device.bluetooth": true
+      },
+      "designatedRequirement": [
+        "designated => identifier \"com.netease.uuremote\" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = PU9BNSBJW7"
+      ],
+      "fixedTokenSubstringHits": [
+        "UURemoteServer",
+        "UURemoteService",
+        "UURemoteDaemon",
+        "com.uuremote.agent.controlled",
+        "com.uuremote.agent.controller",
+        "com.uuremote.daemon",
+        "-server",
+        "-user",
+        "launchServer",
+        "startService",
+        "NSTask",
+        "bundlePath",
+        "bundleURL",
+        "mainBundle",
+        "setArguments:",
+        "setExecutableURL:",
+        "launchAndReturnError:",
+        "NSXPCConnection",
+        "initWithMachServiceName:options:",
+        "initWithMachServiceName:"
+      ],
+      "fixedTokenExactLineHits": [
+        "com.uuremote.agent.controlled",
+        "com.uuremote.agent.controller",
+        "com.uuremote.daemon",
+        "bundlePath",
+        "bundleURL",
+        "mainBundle",
+        "setArguments:",
+        "setExecutableURL:",
+        "launchAndReturnError:",
+        "initWithMachServiceName:options:"
+      ],
+      "architectureLoadCommands": {
+        "arm64": {
+          "rpaths": [
+            "/usr/lib/swift",
+            "@executable_path/../Frameworks"
+          ],
+          "dependencies": [
+            "/usr/lib/libc++.1.dylib",
+            "/usr/lib/libicucore.A.dylib",
+            "/usr/lib/libz.1.dylib",
+            "/System/Library/Frameworks/AppKit.framework/Versions/C/AppKit",
+            "/System/Library/Frameworks/CFNetwork.framework/Versions/A/CFNetwork",
+            "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+            "/System/Library/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics",
+            "/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation",
+            "/System/Library/Frameworks/ImageIO.framework/Versions/A/ImageIO",
+            "/System/Library/Frameworks/QuartzCore.framework/Versions/A/QuartzCore",
+            "/System/Library/Frameworks/SystemConfiguration.framework/Versions/A/SystemConfiguration",
+            "/System/Library/Frameworks/WebKit.framework/Versions/A/WebKit",
+            "/System/Library/Frameworks/Combine.framework/Versions/A/Combine",
+            "/System/Library/Frameworks/SwiftUI.framework/Versions/A/SwiftUI",
+            "/System/Library/Frameworks/CoreAudio.framework/Versions/A/CoreAudio",
+            "/System/Library/Frameworks/VideoToolbox.framework/Versions/A/VideoToolbox",
+            "/System/Library/Frameworks/AudioToolbox.framework/Versions/A/AudioToolbox",
+            "/System/Library/Frameworks/AVFoundation.framework/Versions/A/AVFoundation",
+            "/System/Library/Frameworks/CoreMedia.framework/Versions/A/CoreMedia",
+            "/System/Library/Frameworks/AppTrackingTransparency.framework/Versions/A/AppTrackingTransparency",
+            "/System/Library/Frameworks/AdSupport.framework/Versions/A/AdSupport",
+            "@rpath/libstreamer.dylib",
+            "/usr/lib/libobjc.A.dylib",
+            "/usr/lib/libSystem.B.dylib",
+            "/System/Library/Frameworks/Accelerate.framework/Versions/A/Accelerate",
+            "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/ApplicationServices",
+            "/System/Library/Frameworks/Carbon.framework/Versions/A/Carbon",
+            "/System/Library/Frameworks/CoreData.framework/Versions/A/CoreData",
+            "/System/Library/Frameworks/CoreHaptics.framework/Versions/A/CoreHaptics",
+            "/System/Library/Frameworks/CoreImage.framework/Versions/A/CoreImage",
+            "/System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices",
+            "/System/Library/Frameworks/CoreText.framework/Versions/A/CoreText",
+            "/System/Library/Frameworks/CoreVideo.framework/Versions/A/CoreVideo",
+            "/System/Library/Frameworks/CryptoKit.framework/Versions/A/CryptoKit",
+            "/System/Library/Frameworks/GameController.framework/Versions/A/GameController",
+            "/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit",
+            "/System/Library/Frameworks/LocalAuthentication.framework/Versions/A/LocalAuthentication",
+            "/System/Library/Frameworks/Metal.framework/Versions/A/Metal",
+            "/System/Library/Frameworks/MetalKit.framework/Versions/A/MetalKit",
+            "/System/Library/Frameworks/MetricKit.framework/Versions/A/MetricKit",
+            "/System/Library/Frameworks/Network.framework/Versions/A/Network",
+            "/System/Library/Frameworks/Security.framework/Versions/A/Security",
+            "/System/Library/Frameworks/UserNotifications.framework/Versions/A/UserNotifications",
+            "/usr/lib/libcompression.dylib",
+            "/usr/lib/libsqlite3.dylib",
+            "/usr/lib/swift/libswiftAVFoundation.dylib",
+            "/usr/lib/swift/libswiftCompression.dylib",
+            "/usr/lib/swift/libswiftCore.dylib",
+            "/usr/lib/swift/libswiftCoreAudio.dylib",
+            "/usr/lib/swift/libswiftCoreFoundation.dylib",
+            "/usr/lib/swift/libswiftCoreImage.dylib",
+            "/usr/lib/swift/libswiftCoreLocation.dylib",
+            "/usr/lib/swift/libswiftCoreMIDI.dylib",
+            "/usr/lib/swift/libswiftCoreMedia.dylib",
+            "/usr/lib/swift/libswiftDarwin.dylib",
+            "/usr/lib/swift/libswiftDispatch.dylib",
+            "/usr/lib/swift/libswiftIOKit.dylib",
+            "/usr/lib/swift/libswiftMapKit.dylib",
+            "/usr/lib/swift/libswiftMetal.dylib",
+            "/usr/lib/swift/libswiftMetalKit.dylib",
+            "/usr/lib/swift/libswiftMetricKit.dylib",
+            "/usr/lib/swift/libswiftModelIO.dylib",
+            "/usr/lib/swift/libswiftOSLog.dylib",
+            "/usr/lib/swift/libswiftObjectiveC.dylib",
+            "/usr/lib/swift/libswiftQuartzCore.dylib",
+            "/usr/lib/swift/libswiftSpatial.dylib",
+            "/usr/lib/swift/libswiftUniformTypeIdentifiers.dylib",
+            "/usr/lib/swift/libswiftXPC.dylib",
+            "/usr/lib/swift/libswift_StringProcessing.dylib",
+            "/usr/lib/swift/libswiftos.dylib",
+            "/usr/lib/swift/libswiftsimd.dylib",
+            "@rpath/libswift_Concurrency.dylib",
+            "/usr/lib/swift/libswiftAppKit.dylib",
+            "/usr/lib/swift/libswiftCoreGraphics.dylib",
+            "/usr/lib/swift/libswiftFoundation.dylib",
+            "/usr/lib/swift/libswiftNetwork.dylib"
+          ],
+          "minimumOS": [
+            "11.0"
+          ],
+          "sdk": [
+            "26.2"
+          ]
+        },
+        "x86_64": {
+          "rpaths": [
+            "/usr/lib/swift",
+            "@executable_path/../Frameworks"
+          ],
+          "dependencies": [
+            "/usr/lib/libc++.1.dylib",
+            "/usr/lib/libicucore.A.dylib",
+            "/usr/lib/libz.1.dylib",
+            "/System/Library/Frameworks/AppKit.framework/Versions/C/AppKit",
+            "/System/Library/Frameworks/CFNetwork.framework/Versions/A/CFNetwork",
+            "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+            "/System/Library/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics",
+            "/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation",
+            "/System/Library/Frameworks/ImageIO.framework/Versions/A/ImageIO",
+            "/System/Library/Frameworks/QuartzCore.framework/Versions/A/QuartzCore",
+            "/System/Library/Frameworks/SystemConfiguration.framework/Versions/A/SystemConfiguration",
+            "/System/Library/Frameworks/WebKit.framework/Versions/A/WebKit",
+            "/System/Library/Frameworks/Combine.framework/Versions/A/Combine",
+            "/System/Library/Frameworks/SwiftUI.framework/Versions/A/SwiftUI",
+            "/System/Library/Frameworks/CoreAudio.framework/Versions/A/CoreAudio",
+            "/System/Library/Frameworks/VideoToolbox.framework/Versions/A/VideoToolbox",
+            "/System/Library/Frameworks/AudioToolbox.framework/Versions/A/AudioToolbox",
+            "/System/Library/Frameworks/AVFoundation.framework/Versions/A/AVFoundation",
+            "/System/Library/Frameworks/CoreMedia.framework/Versions/A/CoreMedia",
+            "/System/Library/Frameworks/AppTrackingTransparency.framework/Versions/A/AppTrackingTransparency",
+            "/System/Library/Frameworks/AdSupport.framework/Versions/A/AdSupport",
+            "@rpath/libstreamer.dylib",
+            "/usr/lib/libobjc.A.dylib",
+            "/usr/lib/libSystem.B.dylib",
+            "/System/Library/Frameworks/Accelerate.framework/Versions/A/Accelerate",
+            "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/ApplicationServices",
+            "/System/Library/Frameworks/Carbon.framework/Versions/A/Carbon",
+            "/System/Library/Frameworks/CoreData.framework/Versions/A/CoreData",
+            "/System/Library/Frameworks/CoreHaptics.framework/Versions/A/CoreHaptics",
+            "/System/Library/Frameworks/CoreImage.framework/Versions/A/CoreImage",
+            "/System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices",
+            "/System/Library/Frameworks/CoreText.framework/Versions/A/CoreText",
+            "/System/Library/Frameworks/CoreVideo.framework/Versions/A/CoreVideo",
+            "/System/Library/Frameworks/CryptoKit.framework/Versions/A/CryptoKit",
+            "/System/Library/Frameworks/GameController.framework/Versions/A/GameController",
+            "/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit",
+            "/System/Library/Frameworks/LocalAuthentication.framework/Versions/A/LocalAuthentication",
+            "/System/Library/Frameworks/Metal.framework/Versions/A/Metal",
+            "/System/Library/Frameworks/MetalKit.framework/Versions/A/MetalKit",
+            "/System/Library/Frameworks/MetricKit.framework/Versions/A/MetricKit",
+            "/System/Library/Frameworks/Network.framework/Versions/A/Network",
+            "/System/Library/Frameworks/Security.framework/Versions/A/Security",
+            "/System/Library/Frameworks/UserNotifications.framework/Versions/A/UserNotifications",
+            "/usr/lib/libcompression.dylib",
+            "/usr/lib/libsqlite3.dylib",
+            "/usr/lib/swift/libswiftAVFoundation.dylib",
+            "/usr/lib/swift/libswiftCompression.dylib",
+            "/usr/lib/swift/libswiftCore.dylib",
+            "/usr/lib/swift/libswiftCoreAudio.dylib",
+            "/usr/lib/swift/libswiftCoreFoundation.dylib",
+            "/usr/lib/swift/libswiftCoreImage.dylib",
+            "/usr/lib/swift/libswiftCoreLocation.dylib",
+            "/usr/lib/swift/libswiftCoreMIDI.dylib",
+            "/usr/lib/swift/libswiftCoreMedia.dylib",
+            "/usr/lib/swift/libswiftDarwin.dylib",
+            "/usr/lib/swift/libswiftDispatch.dylib",
+            "/usr/lib/swift/libswiftIOKit.dylib",
+            "/usr/lib/swift/libswiftMapKit.dylib",
+            "/usr/lib/swift/libswiftMetal.dylib",
+            "/usr/lib/swift/libswiftMetalKit.dylib",
+            "/usr/lib/swift/libswiftMetricKit.dylib",
+            "/usr/lib/swift/libswiftModelIO.dylib",
+            "/usr/lib/swift/libswiftOSLog.dylib",
+            "/usr/lib/swift/libswiftObjectiveC.dylib",
+            "/usr/lib/swift/libswiftQuartzCore.dylib",
+            "/usr/lib/swift/libswiftSpatial.dylib",
+            "/usr/lib/swift/libswiftUniformTypeIdentifiers.dylib",
+            "/usr/lib/swift/libswiftXPC.dylib",
+            "/usr/lib/swift/libswift_StringProcessing.dylib",
+            "/usr/lib/swift/libswiftos.dylib",
+            "/usr/lib/swift/libswiftsimd.dylib",
+            "@rpath/libswift_Concurrency.dylib",
+            "/usr/lib/swift/libswiftAppKit.dylib",
+            "/usr/lib/swift/libswiftCoreGraphics.dylib",
+            "/usr/lib/swift/libswiftFoundation.dylib",
+            "/usr/lib/swift/libswiftNetwork.dylib"
+          ],
+          "minimumOS": [
+            "11.0"
+          ],
+          "sdk": [
+            "26.2"
+          ]
+        }
+      }
+    },
+    {
+      "path": "/Applications/UURemote.app/Contents/MacOS/UURemoteService",
+      "relativePath": "Contents/MacOS/UURemoteService",
+      "sha256": "a9f8ba82d37a8fa545323aeb311ad2316fea8ff86304ae13f00632098731af0a",
+      "signatureMetadata": [
+        "Identifier=com.netease.uuremote.agent",
+        "Format=Mach-O universal (x86_64 arm64)",
+        "CodeDirectory v=20500 size=17990 flags=0x10000(runtime) hashes=551+7 location=embedded",
+        "Authority=Developer ID Application: Hangzhou Bobo Technology Co Ltd (PU9BNSBJW7)",
+        "Authority=Developer ID Certification Authority",
+        "Authority=Apple Root CA",
+        "TeamIdentifier=PU9BNSBJW7",
+        "Runtime Version=26.2.0"
+      ],
+      "entitlements": {},
+      "designatedRequirement": [
+        "designated => identifier \"com.netease.uuremote.agent\" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = PU9BNSBJW7"
+      ],
+      "fixedTokenSubstringHits": [
+        "UURemoteService",
+        "com.uuremote.agent.controlled",
+        "com.uuremote.agent.controller",
+        "com.uuremote.daemon",
+        "-agent",
+        "-server",
+        "-user",
+        "launchServer",
+        "NSTask",
+        "bundlePath",
+        "bundleURL",
+        "mainBundle",
+        "setArguments:",
+        "setExecutableURL:",
+        "launchAndReturnError:",
+        "NSXPCConnection",
+        "NSXPCListener",
+        "listener:shouldAcceptNewConnection:",
+        "initWithMachServiceName:options:",
+        "initWithMachServiceName:"
+      ],
+      "fixedTokenExactLineHits": [
+        "UURemoteService",
+        "com.uuremote.agent.controlled",
+        "com.uuremote.agent.controller",
+        "com.uuremote.daemon",
+        "bundlePath",
+        "bundleURL",
+        "mainBundle",
+        "setArguments:",
+        "setExecutableURL:",
+        "launchAndReturnError:",
+        "listener:shouldAcceptNewConnection:",
+        "initWithMachServiceName:options:",
+        "initWithMachServiceName:"
+      ],
+      "architectureLoadCommands": {
+        "arm64": {
+          "rpaths": [
+            "/usr/lib/swift",
+            "@executable_path/../Frameworks",
+            "@executable_path/"
+          ],
+          "dependencies": [
+            "/usr/lib/libc++.1.dylib",
+            "/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation",
+            "/System/Library/Frameworks/AppTrackingTransparency.framework/Versions/A/AppTrackingTransparency",
+            "/System/Library/Frameworks/AdSupport.framework/Versions/A/AdSupport",
+            "/System/Library/Frameworks/CFNetwork.framework/Versions/A/CFNetwork",
+            "/usr/lib/libz.1.dylib",
+            "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+            "/System/Library/Frameworks/SystemConfiguration.framework/Versions/A/SystemConfiguration",
+            "/System/Library/Frameworks/AppKit.framework/Versions/C/AppKit",
+            "/usr/lib/libobjc.A.dylib",
+            "/usr/lib/libSystem.B.dylib",
+            "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/ApplicationServices",
+            "/System/Library/Frameworks/Combine.framework/Versions/A/Combine",
+            "/System/Library/Frameworks/CoreData.framework/Versions/A/CoreData",
+            "/System/Library/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics",
+            "/System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices",
+            "/System/Library/Frameworks/CoreVideo.framework/Versions/A/CoreVideo",
+            "/System/Library/Frameworks/CryptoKit.framework/Versions/A/CryptoKit",
+            "/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit",
+            "/System/Library/Frameworks/ImageIO.framework/Versions/A/ImageIO",
+            "/System/Library/Frameworks/MetricKit.framework/Versions/A/MetricKit",
+            "/System/Library/Frameworks/Security.framework/Versions/A/Security",
+            "/System/Library/Frameworks/WebKit.framework/Versions/A/WebKit",
+            "/usr/lib/libsqlite3.dylib",
+            "/usr/lib/swift/libswiftCore.dylib",
+            "/usr/lib/swift/libswiftCoreFoundation.dylib",
+            "/usr/lib/swift/libswiftCoreImage.dylib",
+            "/usr/lib/swift/libswiftDarwin.dylib",
+            "/usr/lib/swift/libswiftDispatch.dylib",
+            "/usr/lib/swift/libswiftIOKit.dylib",
+            "/usr/lib/swift/libswiftMetal.dylib",
+            "/usr/lib/swift/libswiftMetricKit.dylib",
+            "/usr/lib/swift/libswiftOSLog.dylib",
+            "/usr/lib/swift/libswiftObjectiveC.dylib",
+            "/usr/lib/swift/libswiftQuartzCore.dylib",
+            "/usr/lib/swift/libswiftUniformTypeIdentifiers.dylib",
+            "/usr/lib/swift/libswiftXPC.dylib",
+            "/usr/lib/swift/libswiftos.dylib",
+            "/usr/lib/swift/libswiftsimd.dylib",
+            "@rpath/libswift_Concurrency.dylib",
+            "/usr/lib/swift/libswiftFoundation.dylib",
+            "/usr/lib/swift/libswiftNetwork.dylib",
+            "/usr/lib/swift/libswiftCoreGraphics.dylib"
+          ],
+          "minimumOS": [
+            "11.0"
+          ],
+          "sdk": [
+            "26.2"
+          ]
+        },
+        "x86_64": {
+          "rpaths": [
+            "/usr/lib/swift",
+            "@executable_path/../Frameworks",
+            "@executable_path/"
+          ],
+          "dependencies": [
+            "/usr/lib/libc++.1.dylib",
+            "/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation",
+            "/System/Library/Frameworks/AppTrackingTransparency.framework/Versions/A/AppTrackingTransparency",
+            "/System/Library/Frameworks/AdSupport.framework/Versions/A/AdSupport",
+            "/System/Library/Frameworks/CFNetwork.framework/Versions/A/CFNetwork",
+            "/usr/lib/libz.1.dylib",
+            "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+            "/System/Library/Frameworks/SystemConfiguration.framework/Versions/A/SystemConfiguration",
+            "/System/Library/Frameworks/AppKit.framework/Versions/C/AppKit",
+            "/usr/lib/libobjc.A.dylib",
+            "/usr/lib/libSystem.B.dylib",
+            "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/ApplicationServices",
+            "/System/Library/Frameworks/Combine.framework/Versions/A/Combine",
+            "/System/Library/Frameworks/CoreData.framework/Versions/A/CoreData",
+            "/System/Library/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics",
+            "/System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices",
+            "/System/Library/Frameworks/CoreVideo.framework/Versions/A/CoreVideo",
+            "/System/Library/Frameworks/CryptoKit.framework/Versions/A/CryptoKit",
+            "/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit",
+            "/System/Library/Frameworks/ImageIO.framework/Versions/A/ImageIO",
+            "/System/Library/Frameworks/MetricKit.framework/Versions/A/MetricKit",
+            "/System/Library/Frameworks/Security.framework/Versions/A/Security",
+            "/System/Library/Frameworks/WebKit.framework/Versions/A/WebKit",
+            "/usr/lib/libsqlite3.dylib",
+            "/usr/lib/swift/libswiftCore.dylib",
+            "/usr/lib/swift/libswiftCoreFoundation.dylib",
+            "/usr/lib/swift/libswiftCoreImage.dylib",
+            "/usr/lib/swift/libswiftDarwin.dylib",
+            "/usr/lib/swift/libswiftDispatch.dylib",
+            "/usr/lib/swift/libswiftIOKit.dylib",
+            "/usr/lib/swift/libswiftMetal.dylib",
+            "/usr/lib/swift/libswiftMetricKit.dylib",
+            "/usr/lib/swift/libswiftOSLog.dylib",
+            "/usr/lib/swift/libswiftObjectiveC.dylib",
+            "/usr/lib/swift/libswiftQuartzCore.dylib",
+            "/usr/lib/swift/libswiftUniformTypeIdentifiers.dylib",
+            "/usr/lib/swift/libswiftXPC.dylib",
+            "/usr/lib/swift/libswiftos.dylib",
+            "/usr/lib/swift/libswiftsimd.dylib",
+            "@rpath/libswift_Concurrency.dylib",
+            "/usr/lib/swift/libswiftFoundation.dylib",
+            "/usr/lib/swift/libswiftNetwork.dylib",
+            "/usr/lib/swift/libswiftCoreGraphics.dylib"
+          ],
+          "minimumOS": [
+            "11.0"
+          ],
+          "sdk": [
+            "26.2"
+          ]
+        }
+      }
+    },
+    {
+      "path": "/Applications/UURemote.app/Contents/Helpers/UURemoteServer",
+      "relativePath": "Contents/Helpers/UURemoteServer",
+      "sha256": "992666aa2617983dcfd9f8d0e8f1cc8b9cf30f3fd18c02d24cd6d5f4ca6774aa",
+      "signatureMetadata": [
+        "Identifier=com.netease.uuremote.server",
+        "Format=Mach-O universal (x86_64 arm64)",
+        "CodeDirectory v=20500 size=23719 flags=0x10000(runtime) hashes=730+7 location=embedded",
+        "Authority=Developer ID Application: Hangzhou Bobo Technology Co Ltd (PU9BNSBJW7)",
+        "Authority=Developer ID Certification Authority",
+        "Authority=Apple Root CA",
+        "TeamIdentifier=PU9BNSBJW7",
+        "Runtime Version=26.2.0"
+      ],
+      "entitlements": {
+        "com.apple.security.device.audio-input": true
+      },
+      "designatedRequirement": [
+        "designated => identifier \"com.netease.uuremote.server\" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = PU9BNSBJW7"
+      ],
+      "fixedTokenSubstringHits": [
+        "UURemoteServer",
+        "com.uuremote.agent.controlled",
+        "com.uuremote.agent.controller",
+        "com.uuremote.daemon",
+        "-server",
+        "-user",
+        "-session",
+        "NSTask",
+        "bundlePath",
+        "bundleURL",
+        "mainBundle",
+        "setArguments:",
+        "setExecutableURL:",
+        "launchAndReturnError:",
+        "NSXPCConnection",
+        "initWithMachServiceName:options:",
+        "initWithMachServiceName:"
+      ],
+      "fixedTokenExactLineHits": [
+        "UURemoteServer",
+        "com.uuremote.agent.controlled",
+        "com.uuremote.agent.controller",
+        "com.uuremote.daemon",
+        "bundlePath",
+        "bundleURL",
+        "mainBundle",
+        "setArguments:",
+        "setExecutableURL:",
+        "launchAndReturnError:",
+        "initWithMachServiceName:options:"
+      ],
+      "architectureLoadCommands": {
+        "arm64": {
+          "rpaths": [
+            "/usr/lib/swift",
+            "@executable_path/../Frameworks",
+            "@executable_path/"
+          ],
+          "dependencies": [
+            "/usr/lib/libc++.1.dylib",
+            "/System/Library/Frameworks/CFNetwork.framework/Versions/A/CFNetwork",
+            "/usr/lib/libz.1.dylib",
+            "/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation",
+            "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+            "/System/Library/Frameworks/SystemConfiguration.framework/Versions/A/SystemConfiguration",
+            "/System/Library/Frameworks/AppTrackingTransparency.framework/Versions/A/AppTrackingTransparency",
+            "/System/Library/Frameworks/AdSupport.framework/Versions/A/AdSupport",
+            "@rpath/libstreamer.dylib",
+            "/System/Library/Frameworks/AppKit.framework/Versions/C/AppKit",
+            "/usr/lib/libobjc.A.dylib",
+            "/usr/lib/libSystem.B.dylib",
+            "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/ApplicationServices",
+            "/System/Library/Frameworks/Carbon.framework/Versions/A/Carbon",
+            "/System/Library/Frameworks/ColorSync.framework/Versions/A/ColorSync",
+            "/System/Library/Frameworks/Combine.framework/Versions/A/Combine",
+            "/System/Library/Frameworks/CoreAudio.framework/Versions/A/CoreAudio",
+            "/System/Library/Frameworks/CoreData.framework/Versions/A/CoreData",
+            "/System/Library/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics",
+            "/System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices",
+            "/System/Library/Frameworks/CoreVideo.framework/Versions/A/CoreVideo",
+            "/System/Library/Frameworks/CryptoKit.framework/Versions/A/CryptoKit",
+            "/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit",
+            "/System/Library/Frameworks/ImageIO.framework/Versions/A/ImageIO",
+            "/System/Library/Frameworks/MetricKit.framework/Versions/A/MetricKit",
+            "/System/Library/Frameworks/OpenDirectory.framework/Versions/A/OpenDirectory",
+            "/System/Library/Frameworks/Security.framework/Versions/A/Security",
+            "/System/Library/Frameworks/WebKit.framework/Versions/A/WebKit",
+            "/usr/lib/libcompression.dylib",
+            "/usr/lib/libsqlite3.dylib",
+            "/usr/lib/swift/libswiftCompression.dylib",
+            "/usr/lib/swift/libswiftCore.dylib",
+            "/usr/lib/swift/libswiftCoreAudio.dylib",
+            "/usr/lib/swift/libswiftCoreFoundation.dylib",
+            "/usr/lib/swift/libswiftCoreImage.dylib",
+            "/usr/lib/swift/libswiftCoreMIDI.dylib",
+            "/usr/lib/swift/libswiftDarwin.dylib",
+            "/usr/lib/swift/libswiftDispatch.dylib",
+            "/usr/lib/swift/libswiftIOKit.dylib",
+            "/usr/lib/swift/libswiftMetal.dylib",
+            "/usr/lib/swift/libswiftMetricKit.dylib",
+            "/usr/lib/swift/libswiftOSLog.dylib",
+            "/usr/lib/swift/libswiftObjectiveC.dylib",
+            "/usr/lib/swift/libswiftQuartzCore.dylib",
+            "/usr/lib/swift/libswiftUniformTypeIdentifiers.dylib",
+            "/usr/lib/swift/libswiftXPC.dylib",
+            "/usr/lib/swift/libswiftos.dylib",
+            "/usr/lib/swift/libswiftsimd.dylib",
+            "@rpath/libswift_Concurrency.dylib",
+            "/usr/lib/swift/libswiftFoundation.dylib",
+            "/usr/lib/swift/libswiftNetwork.dylib",
+            "/usr/lib/swift/libswiftCoreGraphics.dylib"
+          ],
+          "minimumOS": [
+            "11.0"
+          ],
+          "sdk": [
+            "26.2"
+          ]
+        },
+        "x86_64": {
+          "rpaths": [
+            "/usr/lib/swift",
+            "@executable_path/../Frameworks",
+            "@executable_path/"
+          ],
+          "dependencies": [
+            "/usr/lib/libc++.1.dylib",
+            "/System/Library/Frameworks/CFNetwork.framework/Versions/A/CFNetwork",
+            "/usr/lib/libz.1.dylib",
+            "/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation",
+            "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+            "/System/Library/Frameworks/SystemConfiguration.framework/Versions/A/SystemConfiguration",
+            "/System/Library/Frameworks/AppTrackingTransparency.framework/Versions/A/AppTrackingTransparency",
+            "/System/Library/Frameworks/AdSupport.framework/Versions/A/AdSupport",
+            "@rpath/libstreamer.dylib",
+            "/System/Library/Frameworks/AppKit.framework/Versions/C/AppKit",
+            "/usr/lib/libobjc.A.dylib",
+            "/usr/lib/libSystem.B.dylib",
+            "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/ApplicationServices",
+            "/System/Library/Frameworks/Carbon.framework/Versions/A/Carbon",
+            "/System/Library/Frameworks/ColorSync.framework/Versions/A/ColorSync",
+            "/System/Library/Frameworks/Combine.framework/Versions/A/Combine",
+            "/System/Library/Frameworks/CoreAudio.framework/Versions/A/CoreAudio",
+            "/System/Library/Frameworks/CoreData.framework/Versions/A/CoreData",
+            "/System/Library/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics",
+            "/System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices",
+            "/System/Library/Frameworks/CoreVideo.framework/Versions/A/CoreVideo",
+            "/System/Library/Frameworks/CryptoKit.framework/Versions/A/CryptoKit",
+            "/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit",
+            "/System/Library/Frameworks/ImageIO.framework/Versions/A/ImageIO",
+            "/System/Library/Frameworks/MetricKit.framework/Versions/A/MetricKit",
+            "/System/Library/Frameworks/OpenDirectory.framework/Versions/A/OpenDirectory",
+            "/System/Library/Frameworks/Security.framework/Versions/A/Security",
+            "/System/Library/Frameworks/WebKit.framework/Versions/A/WebKit",
+            "/usr/lib/libcompression.dylib",
+            "/usr/lib/libsqlite3.dylib",
+            "/usr/lib/swift/libswiftCompression.dylib",
+            "/usr/lib/swift/libswiftCore.dylib",
+            "/usr/lib/swift/libswiftCoreAudio.dylib",
+            "/usr/lib/swift/libswiftCoreFoundation.dylib",
+            "/usr/lib/swift/libswiftCoreImage.dylib",
+            "/usr/lib/swift/libswiftCoreMIDI.dylib",
+            "/usr/lib/swift/libswiftDarwin.dylib",
+            "/usr/lib/swift/libswiftDispatch.dylib",
+            "/usr/lib/swift/libswiftIOKit.dylib",
+            "/usr/lib/swift/libswiftMetal.dylib",
+            "/usr/lib/swift/libswiftMetricKit.dylib",
+            "/usr/lib/swift/libswiftOSLog.dylib",
+            "/usr/lib/swift/libswiftObjectiveC.dylib",
+            "/usr/lib/swift/libswiftQuartzCore.dylib",
+            "/usr/lib/swift/libswiftUniformTypeIdentifiers.dylib",
+            "/usr/lib/swift/libswiftXPC.dylib",
+            "/usr/lib/swift/libswiftos.dylib",
+            "/usr/lib/swift/libswiftsimd.dylib",
+            "@rpath/libswift_Concurrency.dylib",
+            "/usr/lib/swift/libswiftFoundation.dylib",
+            "/usr/lib/swift/libswiftNetwork.dylib",
+            "/usr/lib/swift/libswiftCoreGraphics.dylib"
+          ],
+          "minimumOS": [
+            "11.0"
+          ],
+          "sdk": [
+            "26.2"
+          ]
+        }
+      }
+    },
+    {
+      "path": "/Applications/UURemote.app/Contents/MacOS/UURemoteDaemon",
+      "relativePath": "Contents/MacOS/UURemoteDaemon",
+      "sha256": "14a5ffe066832f267edfc8c3905b28b2f8c25d661b1be4815dca813e0f861eb3",
+      "signatureMetadata": [
+        "Identifier=com.netease.uuremote.daemon",
+        "Format=Mach-O universal (x86_64 arm64)",
+        "CodeDirectory v=20500 size=17799 flags=0x10000(runtime) hashes=545+7 location=embedded",
+        "Authority=Developer ID Application: Hangzhou Bobo Technology Co Ltd (PU9BNSBJW7)",
+        "Authority=Developer ID Certification Authority",
+        "Authority=Apple Root CA",
+        "TeamIdentifier=PU9BNSBJW7",
+        "Runtime Version=26.2.0"
+      ],
+      "entitlements": {},
+      "designatedRequirement": [
+        "designated => identifier \"com.netease.uuremote.daemon\" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = PU9BNSBJW7"
+      ],
+      "fixedTokenSubstringHits": [
+        "UURemoteServer",
+        "UURemoteService",
+        "UURemoteDaemon",
+        "Contents/Helpers/UURemoteServer",
+        "/Applications/UURemote.app",
+        "Contents/MacOS/UURemoteService",
+        "com.uuremote.agent.controlled",
+        "com.uuremote.agent.controller",
+        "com.uuremote.daemon",
+        "-agent",
+        "-server",
+        "-daemon",
+        "-user",
+        "bundlePath",
+        "mainBundle",
+        "setArguments:",
+        "launchAndReturnError:",
+        "NSXPCConnection",
+        "NSXPCListener",
+        "listener:shouldAcceptNewConnection:",
+        "initWithMachServiceName:"
+      ],
+      "fixedTokenExactLineHits": [
+        "UURemoteDaemon",
+        "/Applications/UURemote.app",
+        "com.uuremote.agent.controlled",
+        "com.uuremote.agent.controller",
+        "com.uuremote.daemon",
+        "bundlePath",
+        "mainBundle",
+        "setArguments:",
+        "launchAndReturnError:",
+        "listener:shouldAcceptNewConnection:",
+        "initWithMachServiceName:"
+      ],
+      "architectureLoadCommands": {
+        "arm64": {
+          "rpaths": [
+            "/usr/lib/swift",
+            "@executable_path/../Frameworks",
+            "@executable_path/"
+          ],
+          "dependencies": [
+            "/usr/lib/libc++.1.dylib",
+            "/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation",
+            "/System/Library/Frameworks/AppTrackingTransparency.framework/Versions/A/AppTrackingTransparency",
+            "/System/Library/Frameworks/AdSupport.framework/Versions/A/AdSupport",
+            "/System/Library/Frameworks/CFNetwork.framework/Versions/A/CFNetwork",
+            "/usr/lib/libz.1.dylib",
+            "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+            "/System/Library/Frameworks/SystemConfiguration.framework/Versions/A/SystemConfiguration",
+            "/usr/lib/libobjc.A.dylib",
+            "/usr/lib/libSystem.B.dylib",
+            "/System/Library/Frameworks/AppKit.framework/Versions/C/AppKit",
+            "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/ApplicationServices",
+            "/System/Library/Frameworks/Combine.framework/Versions/A/Combine",
+            "/System/Library/Frameworks/CoreData.framework/Versions/A/CoreData",
+            "/System/Library/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics",
+            "/System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices",
+            "/System/Library/Frameworks/CoreVideo.framework/Versions/A/CoreVideo",
+            "/System/Library/Frameworks/CryptoKit.framework/Versions/A/CryptoKit",
+            "/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit",
+            "/System/Library/Frameworks/ImageIO.framework/Versions/A/ImageIO",
+            "/System/Library/Frameworks/MetricKit.framework/Versions/A/MetricKit",
+            "/System/Library/Frameworks/Security.framework/Versions/A/Security",
+            "/System/Library/Frameworks/WebKit.framework/Versions/A/WebKit",
+            "/usr/lib/libsqlite3.dylib",
+            "/usr/lib/swift/libswiftCore.dylib",
+            "/usr/lib/swift/libswiftCoreFoundation.dylib",
+            "/usr/lib/swift/libswiftCoreImage.dylib",
+            "/usr/lib/swift/libswiftDarwin.dylib",
+            "/usr/lib/swift/libswiftDispatch.dylib",
+            "/usr/lib/swift/libswiftIOKit.dylib",
+            "/usr/lib/swift/libswiftMetal.dylib",
+            "/usr/lib/swift/libswiftMetricKit.dylib",
+            "/usr/lib/swift/libswiftOSLog.dylib",
+            "/usr/lib/swift/libswiftObjectiveC.dylib",
+            "/usr/lib/swift/libswiftQuartzCore.dylib",
+            "/usr/lib/swift/libswiftUniformTypeIdentifiers.dylib",
+            "/usr/lib/swift/libswiftXPC.dylib",
+            "/usr/lib/swift/libswiftos.dylib",
+            "/usr/lib/swift/libswiftsimd.dylib",
+            "@rpath/libswift_Concurrency.dylib",
+            "/usr/lib/swift/libswiftFoundation.dylib",
+            "/usr/lib/swift/libswiftNetwork.dylib",
+            "/usr/lib/swift/libswiftCoreGraphics.dylib"
+          ],
+          "minimumOS": [
+            "11.0"
+          ],
+          "sdk": [
+            "26.2"
+          ]
+        },
+        "x86_64": {
+          "rpaths": [
+            "/usr/lib/swift",
+            "@executable_path/../Frameworks",
+            "@executable_path/"
+          ],
+          "dependencies": [
+            "/usr/lib/libc++.1.dylib",
+            "/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation",
+            "/System/Library/Frameworks/AppTrackingTransparency.framework/Versions/A/AppTrackingTransparency",
+            "/System/Library/Frameworks/AdSupport.framework/Versions/A/AdSupport",
+            "/System/Library/Frameworks/CFNetwork.framework/Versions/A/CFNetwork",
+            "/usr/lib/libz.1.dylib",
+            "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+            "/System/Library/Frameworks/SystemConfiguration.framework/Versions/A/SystemConfiguration",
+            "/usr/lib/libobjc.A.dylib",
+            "/usr/lib/libSystem.B.dylib",
+            "/System/Library/Frameworks/AppKit.framework/Versions/C/AppKit",
+            "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/ApplicationServices",
+            "/System/Library/Frameworks/Combine.framework/Versions/A/Combine",
+            "/System/Library/Frameworks/CoreData.framework/Versions/A/CoreData",
+            "/System/Library/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics",
+            "/System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices",
+            "/System/Library/Frameworks/CoreVideo.framework/Versions/A/CoreVideo",
+            "/System/Library/Frameworks/CryptoKit.framework/Versions/A/CryptoKit",
+            "/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit",
+            "/System/Library/Frameworks/ImageIO.framework/Versions/A/ImageIO",
+            "/System/Library/Frameworks/MetricKit.framework/Versions/A/MetricKit",
+            "/System/Library/Frameworks/Security.framework/Versions/A/Security",
+            "/System/Library/Frameworks/WebKit.framework/Versions/A/WebKit",
+            "/usr/lib/libsqlite3.dylib",
+            "/usr/lib/swift/libswiftCore.dylib",
+            "/usr/lib/swift/libswiftCoreFoundation.dylib",
+            "/usr/lib/swift/libswiftCoreImage.dylib",
+            "/usr/lib/swift/libswiftDarwin.dylib",
+            "/usr/lib/swift/libswiftDispatch.dylib",
+            "/usr/lib/swift/libswiftIOKit.dylib",
+            "/usr/lib/swift/libswiftMetal.dylib",
+            "/usr/lib/swift/libswiftMetricKit.dylib",
+            "/usr/lib/swift/libswiftOSLog.dylib",
+            "/usr/lib/swift/libswiftObjectiveC.dylib",
+            "/usr/lib/swift/libswiftQuartzCore.dylib",
+            "/usr/lib/swift/libswiftUniformTypeIdentifiers.dylib",
+            "/usr/lib/swift/libswiftXPC.dylib",
+            "/usr/lib/swift/libswiftos.dylib",
+            "/usr/lib/swift/libswiftsimd.dylib",
+            "@rpath/libswift_Concurrency.dylib",
+            "/usr/lib/swift/libswiftFoundation.dylib",
+            "/usr/lib/swift/libswiftNetwork.dylib",
+            "/usr/lib/swift/libswiftCoreGraphics.dylib"
+          ],
+          "minimumOS": [
+            "11.0"
+          ],
+          "sdk": [
+            "26.2"
+          ]
+        }
+      }
+    },
+    {
+      "path": "/Applications/UURemote.app/Contents/Frameworks/libstreamer.dylib",
+      "relativePath": "Contents/Frameworks/libstreamer.dylib",
+      "sha256": "2964a0307c2c508667c250688492a39326e3d11b2eb403cbeebabfcfd67d3e3a",
+      "signatureMetadata": [
+        "Identifier=libstreamer-55554944e7d08e0d7e0e383885c088c330dafcda",
+        "Format=Mach-O universal (x86_64 arm64)",
+        "CodeDirectory v=20500 size=24288 flags=0x10000(runtime) hashes=752+2 location=embedded",
+        "Authority=Developer ID Application: Hangzhou Bobo Technology Co Ltd (PU9BNSBJW7)",
+        "Authority=Developer ID Certification Authority",
+        "Authority=Apple Root CA",
+        "TeamIdentifier=PU9BNSBJW7",
+        "Runtime Version=26.2.0"
+      ],
+      "entitlements": {},
+      "designatedRequirement": [
+        "designated => identifier \"libstreamer-55554944e7d08e0d7e0e383885c088c330dafcda\" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = PU9BNSBJW7"
+      ],
+      "fixedTokenSubstringHits": [],
+      "fixedTokenExactLineHits": [],
+      "architectureLoadCommands": {
+        "arm64": {
+          "rpaths": [
+            "@loader_path/../lib"
+          ],
+          "dependencies": [
+            "@rpath/libstreamer.dylib",
+            "/System/Library/Frameworks/AppKit.framework/Versions/C/AppKit",
+            "/System/Library/Frameworks/AudioToolbox.framework/Versions/A/AudioToolbox",
+            "/System/Library/Frameworks/VideoToolbox.framework/Versions/A/VideoToolbox",
+            "/System/Library/Frameworks/CoreMedia.framework/Versions/A/CoreMedia",
+            "/System/Library/Frameworks/CoreVideo.framework/Versions/A/CoreVideo",
+            "/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit",
+            "/System/Library/Frameworks/Network.framework/Versions/A/Network",
+            "/System/Library/Frameworks/Metal.framework/Versions/A/Metal",
+            "/System/Library/Frameworks/MetalKit.framework/Versions/A/MetalKit",
+            "/System/Library/Frameworks/QuartzCore.framework/Versions/A/QuartzCore",
+            "/System/Library/Frameworks/ScreenCaptureKit.framework/Versions/A/ScreenCaptureKit",
+            "/System/Library/Frameworks/IOSurface.framework/Versions/A/IOSurface",
+            "/System/Library/Frameworks/AVFoundation.framework/Versions/A/AVFoundation",
+            "/usr/lib/libSystem.B.dylib",
+            "/System/Library/Frameworks/AudioUnit.framework/Versions/A/AudioUnit",
+            "/System/Library/Frameworks/CoreAudio.framework/Versions/A/CoreAudio",
+            "/usr/lib/libc++.1.dylib",
+            "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+            "/System/Library/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics",
+            "/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation",
+            "/usr/lib/libobjc.A.dylib"
+          ],
+          "minimumOS": [
+            "11.0"
+          ],
+          "sdk": [
+            "26.2"
+          ]
+        },
+        "x86_64": {
+          "rpaths": [
+            "@loader_path/../lib"
+          ],
+          "dependencies": [
+            "@rpath/libstreamer.dylib",
+            "/System/Library/Frameworks/AppKit.framework/Versions/C/AppKit",
+            "/System/Library/Frameworks/AudioToolbox.framework/Versions/A/AudioToolbox",
+            "/System/Library/Frameworks/VideoToolbox.framework/Versions/A/VideoToolbox",
+            "/System/Library/Frameworks/CoreMedia.framework/Versions/A/CoreMedia",
+            "/System/Library/Frameworks/CoreVideo.framework/Versions/A/CoreVideo",
+            "/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit",
+            "/System/Library/Frameworks/Network.framework/Versions/A/Network",
+            "/System/Library/Frameworks/Metal.framework/Versions/A/Metal",
+            "/System/Library/Frameworks/MetalKit.framework/Versions/A/MetalKit",
+            "/System/Library/Frameworks/QuartzCore.framework/Versions/A/QuartzCore",
+            "/System/Library/Frameworks/ScreenCaptureKit.framework/Versions/A/ScreenCaptureKit",
+            "/System/Library/Frameworks/IOSurface.framework/Versions/A/IOSurface",
+            "/System/Library/Frameworks/AVFoundation.framework/Versions/A/AVFoundation",
+            "/usr/lib/libSystem.B.dylib",
+            "/System/Library/Frameworks/AudioUnit.framework/Versions/A/AudioUnit",
+            "/System/Library/Frameworks/CoreAudio.framework/Versions/A/CoreAudio",
+            "/usr/lib/libc++.1.dylib",
+            "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+            "/System/Library/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics",
+            "/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation",
+            "/usr/lib/libobjc.A.dylib"
+          ],
+          "minimumOS": [
+            "11.0"
+          ],
+          "sdk": [
+            "26.2"
+          ]
+        }
+      }
+    }
+  ],
+  "launchItems": [
+    {
+      "path": "/Library/LaunchAgents/com.netease.uuremote.agent.plist",
+      "sha256": "3d0534d286a10e87da17c04305211dc5a7914df86fafe4ad3876291d2872e21c",
+      "selectedMetadata": {
+        "Label": "com.netease.uuremote.agent",
+        "RunAtLoad": true,
+        "KeepAlive": true,
+        "LimitLoadToSessionType": [
+          "LoginWindow",
+          "Aqua"
+        ],
+        "ProcessType": "Interactive",
+        "MachServices": {
+          "com.uuremote.agent.controlled": true,
+          "com.uuremote.agent.controller": true
+        },
+        "AssociatedBundleIdentifiers": [
+          "com.netease.uuremote"
+        ],
+        "programArguments": [
+          "/Applications/UURemote.app/Contents/MacOS/UURemoteService",
+          "-agent"
+        ]
+      }
+    },
+    {
+      "path": "/Library/LaunchDaemons/com.netease.uuremote.daemon.plist",
+      "sha256": "12cb1847b31172c9be896356d5dee80680d87b137d452fd6169ddc8529d1f463",
+      "selectedMetadata": {
+        "Label": "com.netease.uuremote.daemon",
+        "RunAtLoad": true,
+        "KeepAlive": true,
+        "MachServices": {
+          "com.uuremote.daemon": true
+        },
+        "AssociatedBundleIdentifiers": [
+          "com.netease.uuremote"
+        ],
+        "programArguments": [
+          "/Applications/UURemote.app/Contents/MacOS/UURemoteDaemon",
+          "-daemon"
+        ]
+      }
+    }
+  ],
+  "priorLiveEvidence": {
+    "samplePath": "../../artifacts/uu-live-connected-20261101T144107Z/server-sample.txt",
+    "serverPID": 84053,
+    "parentServicePID": 84016,
+    "architecture": "ARM64",
+    "actualCaptureObserved": "SCK receive callback -> libstreamer ScreenCapturerSck::OnReceiveVideoSampleBuffer -> DesktopScreenCapturer::OnFrameCallback -> IOSurfaceFrame::CopyFrom, with unidentified intervening stack frames",
+    "notProved": "Unique backend, complete startup arguments, exact IPC protocol, copied-bundle startup, copied-bundle capture or hook success"
+  },
+  "interpretation": {
+    "rpath": "Full copied bundle retains Server -> ../Frameworks/libstreamer.dylib relative resolution; static compatibility only, not observed copy loading.",
+    "agentArgument": "-agent is confirmed by original LaunchAgent ProgramArguments. Other option-looking substring hits are not validated command-line arguments.",
+    "launchChain": "Original launchd user agent -> original Service -> original Server is observed. Service has NSTask/executableURL/launchServer-related substring clues; it is not proven to choose the Server from its own copied bundle.",
+    "ipc": "User agent registers fixed com.uuremote.agent.controlled/controller names. Original root daemon has fixed original application path strings. A copy in the same bootstrap namespace can conflict or use original peers; exact behavior unverified.",
+    "signing": "Ad-hoc changes code identity and does not preserve vendor Team ID. Runtime plus allow-DYLD and disable-LV on each actual instrumented host is a proposed local diagnostic condition, not an observed result.",
+    "tcc": "Re-signing changes identity; original screen-recording/Accessibility consent must not be assumed inherited. Precise reauthorization behavior remains untested.",
+    "isolation": "A copied bundle isolates files only; it may still share account, preferences, network identity, Mach services, and root-daemon IPC."
+  },
+  "minimalMatrix": [
+    {
+      "id": "M0",
+      "target": "Original-signature full copy Server; reuse installed-original GUI/Service controls",
+      "library": "minimal witness",
+      "meaning": "Negative startup loading control; preserve original job and process."
+    },
+    {
+      "id": "M1",
+      "target": "Fresh full copy; instrumented Server host ad-hoc + runtime + existing entitlements + allow-DYLD + disable-LV",
+      "library": "minimal witness",
+      "meaning": "Use absolute copied Server path, constructor event plus mapping and resolved libstreamer path; no real-session claim."
+    },
+    {
+      "id": "M2",
+      "target": "Same controlled copy configuration",
+      "library": "CaptureHook audit",
+      "meaning": "Only after witness stability; verify actual SCK API callbacks if a legitimate session can be established."
+    },
+    {
+      "id": "M3",
+      "target": "Same actual copied capture process and connected session",
+      "library": "CaptureHook block",
+      "meaning": "Baseline/block/recovery remote observation plus public counter and independent unhooked control; moving windows still separate validation."
+    },
+    {
+      "id": "Mdiag",
+      "target": "Separate diagnostic copy only, ad-hoc without runtime",
+      "library": "minimal witness",
+      "meaning": "Optional if M1 is blocked; distinguishes a relaxed copy environment, not default-security or production feasibility."
+    }
+  ],
+  "recommendedFirstLaunch": "Explicit copied Contents/Helpers/UURemoteServer path with witness environment, using no unverified connection arguments; early exit still may support constructor-load result only. Do not use open -a UURemote or original job for isolation.",
+  "serviceFallback": "Copied Service is a later unverified route only. Running it with -agent in the existing GUI namespace may collide with the original MachServices; changing just the job label is not sufficient isolation. Do not patch original daemon or vendor authentication to force a session.",
+  "officialReferences": [
+    {
+      "title": "Hardened Runtime",
+      "url": "https://developer.apple.com/documentation/security/hardened-runtime",
+      "localSnapshot": "../../research/deployment-official/hardened-runtime.md",
+      "reused": true
+    },
+    {
+      "title": "Allow DYLD environment variables",
+      "url": "https://developer.apple.com/documentation/bundleresources/entitlements/com.apple.security.cs.allow-dyld-environment-variables",
+      "localSnapshot": "../../research/deployment-official/allow-dyld.md",
+      "reused": true
+    },
+    {
+      "title": "Disable Library Validation",
+      "url": "https://developer.apple.com/documentation/bundleresources/entitlements/com.apple.security.cs.disable-library-validation",
+      "localSnapshot": "../../research/deployment-official/disable-library-validation.md",
+      "reused": true
+    },
+    {
+      "title": "Creating distribution-signed code for macOS",
+      "url": "https://developer.apple.com/documentation/xcode/creating-distribution-signed-code-for-the-mac",
+      "localSnapshot": "distribution-signing.md"
+    },
+    {
+      "title": "TN3127: Inside Code Signing: Requirements",
+      "url": "https://developer.apple.com/documentation/technotes/tn3127-inside-code-signing-requirements",
+      "localSnapshot": "tn3127-requirements.md"
+    },
+    {
+      "title": "NSXPCConnection.setCodeSigningRequirement",
+      "url": "https://developer.apple.com/documentation/foundation/nsxpcconnection/setcodesigningrequirement(_:)",
+      "localSnapshot": "xpc-peer-requirement.md"
+    },
+    {
+      "title": "Apple-installed codesign manual",
+      "localPath": "/usr/share/man/man1/codesign.1",
+      "sha256": "c7295369c65a83bd44603a10e27a1c5176c8268af1aeea9828b067b9271a28c2"
+    }
+  ]
+}

@@ -1,0 +1,121 @@
+{
+  "offlineOnly": true,
+  "interactiveChecks": [
+    {
+      "batch": "native-final-v03-20261101T133147Z",
+      "mode": "direct",
+      "checks": 8,
+      "passed": 8
+    },
+    {
+      "batch": "native-final-v03-20261101T133147Z",
+      "mode": "raster-baseline",
+      "checks": 8,
+      "passed": 8
+    },
+    {
+      "batch": "native-final-v03-20261101T133147Z",
+      "mode": "raster-protected",
+      "checks": 8,
+      "passed": 8
+    },
+    {
+      "batch": "native-keyboard-20261101T133448Z",
+      "mode": "raster-baseline",
+      "checks": 8,
+      "passed": 8
+    },
+    {
+      "batch": "native-keyboard-20261101T133448Z",
+      "mode": "raster-protected",
+      "checks": 8,
+      "passed": 8
+    }
+  ],
+  "externalSamples": [
+    {
+      "batch": "native-final-v03-20261101T133147Z",
+      "mode": "direct",
+      "actual": 55,
+      "publicTokenPresent": 55,
+      "examTokenPresent": 55,
+      "nativeEditTokenPresent": 55,
+      "inputPrefixPresent": 55
+    },
+    {
+      "batch": "native-final-v03-20261101T133147Z",
+      "mode": "raster-baseline",
+      "actual": 56,
+      "publicTokenPresent": 56,
+      "examTokenPresent": 56,
+      "nativeEditTokenPresent": 56,
+      "inputPrefixPresent": 56
+    },
+    {
+      "batch": "native-final-v03-20261101T133147Z",
+      "mode": "raster-protected",
+      "actual": 36,
+      "publicTokenPresent": 35,
+      "examTokenPresent": 0,
+      "nativeEditTokenPresent": 0,
+      "inputPrefixPresent": 0
+    },
+    {
+      "batch": "native-keyboard-20261101T133448Z",
+      "mode": "raster-baseline",
+      "actual": 38,
+      "publicTokenPresent": 38,
+      "examTokenPresent": 38,
+      "nativeEditTokenPresent": 38,
+      "inputPrefixPresent": 38
+    },
+    {
+      "batch": "native-keyboard-20261101T133448Z",
+      "mode": "raster-protected",
+      "actual": 39,
+      "publicTokenPresent": 39,
+      "examTokenPresent": 0,
+      "nativeEditTokenPresent": 0,
+      "inputPrefixPresent": 0
+    }
+  ],
+  "errors": [],
+  "totalInteractiveChecks": 40,
+  "totalInteractivePassed": 40,
+  "protectedValidImageObservations": 74,
+  "previousDocumentsChecked": 20,
+  "videoCount": 9,
+  "decodedFrames": 2980,
+  "deliverableHashes": {
+    "Sources/NativeControlDemo/main.swift": "b256ce232aeba98257de5b87d6061f516fe910eb6c5bfd91eac1b2fd9cf72c77",
+    "build/NativeControlDemo.app/Contents/MacOS/NativeControlDemo": "0cbe3e4fafc0cc30b2877940f7c4f814815d2e2748365a5e571f79020a6b4aa1",
+    "交付报告/原生控件保护_专项验证报告_v1.0.docx": "6e2272998cf74a96bd87faadb8585861648197f6cc23554423f9b1a619dadcfb"
+  },
+  "scope": "Counts prove saved evidence consistency, not universal capture prevention. Candidate-window leakage and excluded samples remain material findings.",
+  "wordEmbeddedImages": 7,
+  "wordBytes": 866303,
+  "wordSHA256": "6e2272998cf74a96bd87faadb8585861648197f6cc23554423f9b1a619dadcfb",
+  "renderedPages": 11,
+  "visualQA": {
+    "allPagesReviewed": true,
+    "directory": "交付报告/最终排版校验",
+    "reviewedFirstRenderPages": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "finalChangedPagesReinspected": [
+      6,
+      8
+    ],
+    "unchangedPagesSHA256Matched": true
+  }
+}

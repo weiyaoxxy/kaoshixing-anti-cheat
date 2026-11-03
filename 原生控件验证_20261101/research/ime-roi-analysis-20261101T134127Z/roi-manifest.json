@@ -1,0 +1,596 @@
+[
+  {
+    "source": "/Users/weiyao/Desktop/考试星防作弊/原生控件验证_20261101/artifacts/native-ime-20261101T134127Z/direct/capture-composition/sck-screenshot-display.png",
+    "sourceSHA256": "80ec3ec121a0a795ee7332df5119ec1ed7c84b49457636311cb1767390e6affe",
+    "mode": "direct",
+    "relative": "capture-composition/sck-screenshot-display.png",
+    "role": "candidate-region",
+    "candidateCGWindowBounds": {
+      "Height": 28,
+      "Width": 397,
+      "X": 320,
+      "Y": 369
+    },
+    "cropPixels": [
+      640,
+      738,
+      1434,
+      794
+    ],
+    "crop": "/Users/weiyao/Desktop/考试星防作弊/原生控件验证_20261101/research/ime-roi-analysis-20261101T134127Z/direct--capture-composition--sck-screenshot-display--candidate.png",
+    "upscaled2x": "/Users/weiyao/Desktop/考试星防作弊/原生控件验证_20261101/research/ime-roi-analysis-20261101T134127Z/direct--capture-composition--sck-screenshot-display--candidate--2x.png",
+    "RGBExtrema": [
+      [
+        36,
+        255
+      ],
+      [
+        37,
+        255
+      ],
+      [
+        38,
+        255
+      ]
+    ]
+  },
+  {
+    "source": "/Users/weiyao/Desktop/考试星防作弊/原生控件验证_20261101/artifacts/native-ime-20261101T134127Z/direct/capture-composition/sck-screenshot-rectangle.png",
+    "sourceSHA256": "2400bea63be83034eb16c56165ba44c3e8addd8f558325cb2637d8c47fa2b6dc",
+    "mode": "direct",
+    "relative": "capture-composition/sck-screenshot-rectangle.png",
+    "role": "candidate-region",
+    "candidateCGWindowBounds": {
+      "Height": 28,
+      "Width": 397,
+      "X": 320,
+      "Y": 369
+    },
+    "cropPixels": [
+      28,
+      532,
+      822,
+      588
+    ],
+    "crop": "/Users/weiyao/Desktop/考试星防作弊/原生控件验证_20261101/research/ime-roi-analysis-20261101T134127Z/direct--capture-composition--sck-screenshot-rectangle--candidate.png",
+    "upscaled2x": "/Users/weiyao/Desktop/考试星防作弊/原生控件验证_20261101/research/ime-roi-analysis-20261101T134127Z/direct--capture-composition--sck-screenshot-rectangle--candidate--2x.png",
+    "RGBExtrema": [
+      [
+        36,
+        255
+      ],
+      [
+        37,
+        255
+      ],
+      [
+        38,
+        255
+      ]
+    ]
+  },
+  {
+    "source": "/Users/weiyao/Desktop/考试星防作弊/原生控件验证_20261101/artifacts/native-ime-20261101T134127Z/direct/capture-composition/sck-screenshot-window.png",
+    "sourceSHA256": "bebc50083615a5cc1d1e7b45aaf7820d4e8bd0f93312520a940e5869ae91d309",
+    "mode": "direct",
+    "relative": "capture-composition/sck-screenshot-window.png",
+    "role": "candidate-region",
+    "candidateCGWindowBounds": {
+      "Height": 28,
+      "Width": 397,
+      "X": 320,
+      "Y": 369
+    },
+    "cropPixels": [
+      28,
+      532,
+      822,
+      588
+    ],
+    "crop": "/Users/weiyao/Desktop/考试星防作弊/原生控件验证_20261101/research/ime-roi-analysis-20261101T134127Z/direct--capture-composition--sck-screenshot-window--candidate.png",
+    "upscaled2x": "/Users/weiyao/Desktop/考试星防作弊/原生控件验证_20261101/research/ime-roi-analysis-20261101T134127Z/direct--capture-composition--sck-screenshot-window--candidate--2x.png",
+    "RGBExtrema": [
+      [
+        139,
+        255
+      ],
+      [
+        170,
+        255
+      ],
+      [
+        239,
+        255
+      ]
+    ]
+  },
+  {
+    "source": "/Users/weiyao/Desktop/考试星防作弊/原生控件验证_20261101/artifacts/native-ime-20261101T134127Z/direct/system-composition-display.png",
+    "sourceSHA256": "a78f8286251205764314a4e199864de95b03fc87146fb4c7943c19fb8f7386d7",
+    "mode": "direct",
+    "relative": "system-composition-display.png",
+    "role": "candidate-region",
+    "candidateCGWindowBounds": {
+      "Height": 28,
+      "Width": 397,
+      "X": 320,
+      "Y": 369
+    },
+    "cropPixels": [
+      640,
+      738,
+      1434,
+      794
+    ],
+    "crop": "/Users/weiyao/Desktop/考试星防作弊/原生控件验证_20261101/research/ime-roi-analysis-20261101T134127Z/direct--system-composition-display--candidate.png",
+    "upscaled2x": "/Users/weiyao/Desktop/考试星防作弊/原生控件验证_20261101/research/ime-roi-analysis-20261101T134127Z/direct--system-composition-display--candidate--2x.png",
+    "RGBExtrema": [
+      [
+        36,
+        255
+      ],
+      [
+        37,
+        255
+      ],
+      [
+        38,
+        255
+      ]
+    ]
+  },
+  {
+    "source": "/Users/weiyao/Desktop/考试星防作弊/原生控件验证_20261101/artifacts/native-ime-20261101T134127Z/direct/03-commit-source.png",
+    "sourceSHA256": "f09d9fc005fb2ffac55284e8be54b798d1f4f8835dfc0d555812919b58b00e6b",
+    "mode": "direct",
+    "relative": "03-commit-source.png",
+    "role": "native-field-committed",
+    "cropPixels": [
+      48,
+      216,
+      1728,
+      292
+    ],
+    "crop": "/Users/weiyao/Desktop/考试星防作弊/原生控件验证_20261101/research/ime-roi-analysis-20261101T134127Z/direct--03-commit-source--field.png",
+    "upscaled2x": "/Users/weiyao/Desktop/考试星防作弊/原生控件验证_20261101/research/ime-roi-analysis-20261101T134127Z/direct--03-commit-source--field--2x.png",
+    "RGBExtrema": [
+      [
+        0,
+        255
+      ],
+      [
+        39,
+        255
+      ],
+      [
+        39,
+        255
+      ]
+    ]
+  },
+  {
+    "source": "/Users/weiyao/Desktop/考试星防作弊/原生控件验证_20261101/artifacts/native-ime-20261101T134127Z/direct/video-frames/self-recording-3FD43F28-end.png",
+    "sourceSHA256": "592e782fb651854555a0def169a8332da5e4b3da593abea926fade7f96c0dde5",
+    "mode": "direct",
+    "relative": "video-frames/self-recording-3FD43F28-end.png",
+    "role": "native-field-committed",
+    "cropPixels": [
+      48,
+      216,
+      1728,
+      292
+    ],
+    "crop": "/Users/weiyao/Desktop/考试星防作弊/原生控件验证_20261101/research/ime-roi-analysis-20261101T134127Z/direct--self-recording-3FD43F28-end--field.png",
+    "upscaled2x": "/Users/weiyao/Desktop/考试星防作弊/原生控件验证_20261101/research/ime-roi-analysis-20261101T134127Z/direct--self-recording-3FD43F28-end--field--2x.png",
+    "RGBExtrema": [
+      [
+        8,
+        255
+      ],
+      [
+        31,
+        255
+      ],
+      [
+        31,
+        255
+      ]
+    ]
+  },
+  {
+    "source": "/Users/weiyao/Desktop/考试星防作弊/原生控件验证_20261101/artifacts/native-ime-20261101T134127Z/raster-baseline/capture-composition/sck-screenshot-display.png",
+    "sourceSHA256": "9adc724ee240310111042f3608b4b2232d2a59cfa2ac3450cb33ea346197bdd7",
+    "mode": "raster-baseline",
+    "relative": "capture-composition/sck-screenshot-display.png",
+    "role": "candidate-region",
+    "candidateCGWindowBounds": {
+      "Height": 28,
+      "Width": 397,
+      "X": 320,
+      "Y": 369
+    },
+    "cropPixels": [
+      640,
+      738,
+      1434,
+      794
+    ],
+    "crop": "/Users/weiyao/Desktop/考试星防作弊/原生控件验证_20261101/research/ime-roi-analysis-20261101T134127Z/raster-baseline--capture-composition--sck-screenshot-display--candidate.png",
+    "upscaled2x": "/Users/weiyao/Desktop/考试星防作弊/原生控件验证_20261101/research/ime-roi-analysis-20261101T134127Z/raster-baseline--capture-composition--sck-screenshot-display--candidate--2x.png",
+    "RGBExtrema": [
+      [
+        37,
+        255
+      ],
+      [
+        37,
+        255
+      ],
+      [
+        38,
+        255
+      ]
+    ]
+  },
+  {
+    "source": "/Users/weiyao/Desktop/考试星防作弊/原生控件验证_20261101/artifacts/native-ime-20261101T134127Z/raster-baseline/capture-composition/sck-screenshot-rectangle.png",
+    "sourceSHA256": "c730c83de03f874c9e2b7f494b6972614f5c39d47be6e1fade5736f734dbafd2",
+    "mode": "raster-baseline",
+    "relative": "capture-composition/sck-screenshot-rectangle.png",
+    "role": "candidate-region",
+    "candidateCGWindowBounds": {
+      "Height": 28,
+      "Width": 397,
+      "X": 320,
+      "Y": 369
+    },
+    "cropPixels": [
+      28,
+      532,
+      822,
+      588
+    ],
+    "crop": "/Users/weiyao/Desktop/考试星防作弊/原生控件验证_20261101/research/ime-roi-analysis-20261101T134127Z/raster-baseline--capture-composition--sck-screenshot-rectangle--candidate.png",
+    "upscaled2x": "/Users/weiyao/Desktop/考试星防作弊/原生控件验证_20261101/research/ime-roi-analysis-20261101T134127Z/raster-baseline--capture-composition--sck-screenshot-rectangle--candidate--2x.png",
+    "RGBExtrema": [
+      [
+        37,
+        255
+      ],
+      [
+        37,
+        255
+      ],
+      [
+        38,
+        255
+      ]
+    ]
+  },
+  {
+    "source": "/Users/weiyao/Desktop/考试星防作弊/原生控件验证_20261101/artifacts/native-ime-20261101T134127Z/raster-baseline/capture-composition/sck-screenshot-window.png",
+    "sourceSHA256": "df0dad9f572889944bf6fb2d656b94181eace949f7e2f6c33451d19430a24b7c",
+    "mode": "raster-baseline",
+    "relative": "capture-composition/sck-screenshot-window.png",
+    "role": "candidate-region",
+    "candidateCGWindowBounds": {
+      "Height": 28,
+      "Width": 397,
+      "X": 320,
+      "Y": 369
+    },
+    "cropPixels": [
+      28,
+      532,
+      822,
+      588
+    ],
+    "crop": "/Users/weiyao/Desktop/考试星防作弊/原生控件验证_20261101/research/ime-roi-analysis-20261101T134127Z/raster-baseline--capture-composition--sck-screenshot-window--candidate.png",
+    "upscaled2x": "/Users/weiyao/Desktop/考试星防作弊/原生控件验证_20261101/research/ime-roi-analysis-20261101T134127Z/raster-baseline--capture-composition--sck-screenshot-window--candidate--2x.png",
+    "RGBExtrema": [
+      [
+        224,
+        255
+      ],
+      [
+        226,
+        255
+      ],
+      [
+        230,
+        255
+      ]
+    ]
+  },
+  {
+    "source": "/Users/weiyao/Desktop/考试星防作弊/原生控件验证_20261101/artifacts/native-ime-20261101T134127Z/raster-baseline/system-composition-display.png",
+    "sourceSHA256": "c96b7440761ac068c9c556805617d2c8f47581e31f640d40150f239772f29d81",
+    "mode": "raster-baseline",
+    "relative": "system-composition-display.png",
+    "role": "candidate-region",
+    "candidateCGWindowBounds": {
+      "Height": 28,
+      "Width": 397,
+      "X": 320,
+      "Y": 369
+    },
+    "cropPixels": [
+      640,
+      738,
+      1434,
+      794
+    ],
+    "crop": "/Users/weiyao/Desktop/考试星防作弊/原生控件验证_20261101/research/ime-roi-analysis-20261101T134127Z/raster-baseline--system-composition-display--candidate.png",
+    "upscaled2x": "/Users/weiyao/Desktop/考试星防作弊/原生控件验证_20261101/research/ime-roi-analysis-20261101T134127Z/raster-baseline--system-composition-display--candidate--2x.png",
+    "RGBExtrema": [
+      [
+        37,
+        255
+      ],
+      [
+        37,
+        255
+      ],
+      [
+        38,
+        255
+      ]
+    ]
+  },
+  {
+    "source": "/Users/weiyao/Desktop/考试星防作弊/原生控件验证_20261101/artifacts/native-ime-20261101T134127Z/raster-baseline/03-commit-source.png",
+    "sourceSHA256": "622512687c81135038acc41b08af016f0d7db308ac554b5bff0c562e53cf6e74",
+    "mode": "raster-baseline",
+    "relative": "03-commit-source.png",
+    "role": "native-field-committed",
+    "cropPixels": [
+      48,
+      216,
+      1728,
+      292
+    ],
+    "crop": "/Users/weiyao/Desktop/考试星防作弊/原生控件验证_20261101/research/ime-roi-analysis-20261101T134127Z/raster-baseline--03-commit-source--field.png",
+    "upscaled2x": "/Users/weiyao/Desktop/考试星防作弊/原生控件验证_20261101/research/ime-roi-analysis-20261101T134127Z/raster-baseline--03-commit-source--field--2x.png",
+    "RGBExtrema": [
+      [
+        0,
+        255
+      ],
+      [
+        0,
+        255
+      ],
+      [
+        0,
+        255
+      ]
+    ]
+  },
+  {
+    "source": "/Users/weiyao/Desktop/考试星防作弊/原生控件验证_20261101/artifacts/native-ime-20261101T134127Z/raster-baseline/video-frames/self-recording-8C1BC712-end.png",
+    "sourceSHA256": "d6eb028cd15e4d3675196e5075545f453ba31ced18fb3a90742159b3f72a9d95",
+    "mode": "raster-baseline",
+    "relative": "video-frames/self-recording-8C1BC712-end.png",
+    "role": "native-field-committed",
+    "cropPixels": [
+      48,
+      216,
+      1728,
+      292
+    ],
+    "crop": "/Users/weiyao/Desktop/考试星防作弊/原生控件验证_20261101/research/ime-roi-analysis-20261101T134127Z/raster-baseline--self-recording-8C1BC712-end--field.png",
+    "upscaled2x": "/Users/weiyao/Desktop/考试星防作弊/原生控件验证_20261101/research/ime-roi-analysis-20261101T134127Z/raster-baseline--self-recording-8C1BC712-end--field--2x.png",
+    "RGBExtrema": [
+      [
+        31,
+        255
+      ],
+      [
+        31,
+        255
+      ],
+      [
+        31,
+        255
+      ]
+    ]
+  },
+  {
+    "source": "/Users/weiyao/Desktop/考试星防作弊/原生控件验证_20261101/artifacts/native-ime-20261101T134127Z/raster-protected/capture-composition/sck-screenshot-display.png",
+    "sourceSHA256": "c17aae4c0ceb6aa16f33e857eab10ae4570ac96ba321bc6e64b2ef0f9a5f43ff",
+    "mode": "raster-protected",
+    "relative": "capture-composition/sck-screenshot-display.png",
+    "role": "candidate-region",
+    "candidateCGWindowBounds": {
+      "Height": 28,
+      "Width": 397,
+      "X": 320,
+      "Y": 369
+    },
+    "cropPixels": [
+      640,
+      738,
+      1434,
+      794
+    ],
+    "crop": "/Users/weiyao/Desktop/考试星防作弊/原生控件验证_20261101/research/ime-roi-analysis-20261101T134127Z/raster-protected--capture-composition--sck-screenshot-display--candidate.png",
+    "upscaled2x": "/Users/weiyao/Desktop/考试星防作弊/原生控件验证_20261101/research/ime-roi-analysis-20261101T134127Z/raster-protected--capture-composition--sck-screenshot-display--candidate--2x.png",
+    "RGBExtrema": [
+      [
+        0,
+        255
+      ],
+      [
+        0,
+        255
+      ],
+      [
+        0,
+        255
+      ]
+    ]
+  },
+  {
+    "source": "/Users/weiyao/Desktop/考试星防作弊/原生控件验证_20261101/artifacts/native-ime-20261101T134127Z/raster-protected/capture-composition/sck-screenshot-rectangle.png",
+    "sourceSHA256": "2525f5f35c6c21fa406f188bbd09feef43d013983a9c2c10385d3b49748df73f",
+    "mode": "raster-protected",
+    "relative": "capture-composition/sck-screenshot-rectangle.png",
+    "role": "candidate-region",
+    "candidateCGWindowBounds": {
+      "Height": 28,
+      "Width": 397,
+      "X": 320,
+      "Y": 369
+    },
+    "cropPixels": [
+      28,
+      532,
+      822,
+      588
+    ],
+    "crop": "/Users/weiyao/Desktop/考试星防作弊/原生控件验证_20261101/research/ime-roi-analysis-20261101T134127Z/raster-protected--capture-composition--sck-screenshot-rectangle--candidate.png",
+    "upscaled2x": "/Users/weiyao/Desktop/考试星防作弊/原生控件验证_20261101/research/ime-roi-analysis-20261101T134127Z/raster-protected--capture-composition--sck-screenshot-rectangle--candidate--2x.png",
+    "RGBExtrema": [
+      [
+        0,
+        255
+      ],
+      [
+        0,
+        255
+      ],
+      [
+        0,
+        255
+      ]
+    ]
+  },
+  {
+    "source": "/Users/weiyao/Desktop/考试星防作弊/原生控件验证_20261101/artifacts/native-ime-20261101T134127Z/raster-protected/capture-composition/sck-screenshot-window.png",
+    "sourceSHA256": "c9eea51f5976d9aa0f8b631e1d5ad804da2a8f378418363060432383f46a0714",
+    "mode": "raster-protected",
+    "relative": "capture-composition/sck-screenshot-window.png",
+    "role": "candidate-region",
+    "candidateCGWindowBounds": {
+      "Height": 28,
+      "Width": 397,
+      "X": 320,
+      "Y": 369
+    },
+    "cropPixels": [
+      28,
+      532,
+      822,
+      588
+    ],
+    "crop": "/Users/weiyao/Desktop/考试星防作弊/原生控件验证_20261101/research/ime-roi-analysis-20261101T134127Z/raster-protected--capture-composition--sck-screenshot-window--candidate.png",
+    "upscaled2x": "/Users/weiyao/Desktop/考试星防作弊/原生控件验证_20261101/research/ime-roi-analysis-20261101T134127Z/raster-protected--capture-composition--sck-screenshot-window--candidate--2x.png",
+    "RGBExtrema": [
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ]
+    ]
+  },
+  {
+    "source": "/Users/weiyao/Desktop/考试星防作弊/原生控件验证_20261101/artifacts/native-ime-20261101T134127Z/raster-protected/system-composition-display.png",
+    "sourceSHA256": "ca15732925aaefa913e8b88e5e8b7108d62c81960ffc730155b480bb58556fd1",
+    "mode": "raster-protected",
+    "relative": "system-composition-display.png",
+    "role": "candidate-region",
+    "candidateCGWindowBounds": {
+      "Height": 28,
+      "Width": 397,
+      "X": 320,
+      "Y": 369
+    },
+    "cropPixels": [
+      640,
+      738,
+      1434,
+      794
+    ],
+    "crop": "/Users/weiyao/Desktop/考试星防作弊/原生控件验证_20261101/research/ime-roi-analysis-20261101T134127Z/raster-protected--system-composition-display--candidate.png",
+    "upscaled2x": "/Users/weiyao/Desktop/考试星防作弊/原生控件验证_20261101/research/ime-roi-analysis-20261101T134127Z/raster-protected--system-composition-display--candidate--2x.png",
+    "RGBExtrema": [
+      [
+        0,
+        255
+      ],
+      [
+        0,
+        255
+      ],
+      [
+        0,
+        255
+      ]
+    ]
+  },
+  {
+    "source": "/Users/weiyao/Desktop/考试星防作弊/原生控件验证_20261101/artifacts/native-ime-20261101T134127Z/raster-protected/03-commit-source.png",
+    "sourceSHA256": "611f247e23c555cf53492c04900ee49f293b2df85bfa3e64d9c1a8dd6678f1db",
+    "mode": "raster-protected",
+    "relative": "03-commit-source.png",
+    "role": "native-field-committed",
+    "cropPixels": [
+      48,
+      216,
+      1728,
+      292
+    ],
+    "crop": "/Users/weiyao/Desktop/考试星防作弊/原生控件验证_20261101/research/ime-roi-analysis-20261101T134127Z/raster-protected--03-commit-source--field.png",
+    "upscaled2x": "/Users/weiyao/Desktop/考试星防作弊/原生控件验证_20261101/research/ime-roi-analysis-20261101T134127Z/raster-protected--03-commit-source--field--2x.png",
+    "RGBExtrema": [
+      [
+        39,
+        255
+      ],
+      [
+        39,
+        255
+      ],
+      [
+        39,
+        255
+      ]
+    ]
+  },
+  {
+    "source": "/Users/weiyao/Desktop/考试星防作弊/原生控件验证_20261101/artifacts/native-ime-20261101T134127Z/raster-protected/video-frames/self-recording-D7697107-end.png",
+    "sourceSHA256": "e6cd67225b0c62c0530727392bb74dccaec2bfa4d23c9d074f0f24e82b447a26",
+    "mode": "raster-protected",
+    "relative": "video-frames/self-recording-D7697107-end.png",
+    "role": "native-field-committed",
+    "cropPixels": [
+      48,
+      216,
+      1728,
+      292
+    ],
+    "crop": "/Users/weiyao/Desktop/考试星防作弊/原生控件验证_20261101/research/ime-roi-analysis-20261101T134127Z/raster-protected--self-recording-D7697107-end--field.png",
+    "upscaled2x": "/Users/weiyao/Desktop/考试星防作弊/原生控件验证_20261101/research/ime-roi-analysis-20261101T134127Z/raster-protected--self-recording-D7697107-end--field--2x.png",
+    "RGBExtrema": [
+      [
+        31,
+        255
+      ],
+      [
+        31,
+        255
+      ],
+      [
+        31,
+        255
+      ]
+    ]
+  }
+]

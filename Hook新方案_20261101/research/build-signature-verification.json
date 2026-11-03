@@ -1,0 +1,27 @@
+[
+  {
+    "file": "build/NativeExamHookDemo.app",
+    "returnCode": 0,
+    "stderr": ""
+  },
+  {
+    "file": "build/CaptureProbe",
+    "returnCode": 0,
+    "stderr": ""
+  },
+  {
+    "file": "build/DisplayStreamProbe",
+    "returnCode": 0,
+    "stderr": ""
+  },
+  {
+    "file": "build/libCaptureHook.dylib",
+    "returnCode": 0,
+    "stderr": ""
+  },
+  {
+    "file": "build/libLoadWitness.dylib",
+    "returnCode": 0,
+    "stderr": ""
+  }
+]

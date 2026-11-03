@@ -1,0 +1,41 @@
+{
+  "process": "ToDesk_Session",
+  "pid": 77126,
+  "method": "sample 2 seconds, read-only stacks",
+  "source": "research/todesk-session-before-hook-sample.txt",
+  "observedStackFrames": [
+    {
+      "line": 680,
+      "text": "+         8 webrtc::ScreenCapturerSck::CaptureFrame()  (in zrtc) + 1492  [0x10d27b7a8]"
+    },
+    {
+      "line": 1127,
+      "text": "17 Thread_<multiple>   DispatchQueue_428: com.screenCaptureKit.screenSampleHandlerQueue  (serial)"
+    },
+    {
+      "line": 1193,
+      "text": "+                     ! : 4 __59-[SCStream(SCContentSharing) startRemoteVideoReceiveQueue:]_block_invoke  (in ScreenCaptureKit) + 2588  [0x23b43b208]"
+    },
+    {
+      "line": 1195,
+      "text": "+                     ! : |   1 webrtc::ScreenCapturerSck::OnNewPixelBuffer(__CVBuffer*, __CFDictionary const*)  (in zrtc) + 680  [0x10d27df24]"
+    },
+    {
+      "line": 1199,
+      "text": "+                     ! : |   1 webrtc::ScreenCapturerSck::OnNewPixelBuffer(__CVBuffer*, __CFDictionary const*)  (in zrtc) + 1012  [0x10d27e070]"
+    },
+    {
+      "line": 1201,
+      "text": "+                     ! : |   1 webrtc::ScreenCapturerSck::OnNewPixelBuffer(__CVBuffer*, __CFDictionary const*)  (in zrtc) + 1104  [0x10d27e0cc]"
+    },
+    {
+      "line": 1217,
+      "text": "+                     ! : |   1 webrtc::ScreenCapturerSck::OnNewPixelBuffer(__CVBuffer*, __CFDictionary const*)  (in zrtc) + 1092  [0x10d27e0c0]"
+    },
+    {
+      "line": 1218,
+      "text": "+                     ! : 1 __59-[SCStream(SCContentSharing) startRemoteVideoReceiveQueue:]_block_invoke  (in ScreenCaptureKit) + 320  [0x23b43a92c]"
+    }
+  ],
+  "conclusion": "Active ScreenCaptureKit frame path observed in this session; not merely linked symbols. No hook has yet been applied to this process."
+}

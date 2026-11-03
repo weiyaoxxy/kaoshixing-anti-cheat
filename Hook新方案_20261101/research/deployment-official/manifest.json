@@ -1,0 +1,37 @@
+[
+  {
+    "name": "hardened-runtime",
+    "url": "https://developer.apple.com/documentation/security/hardened-runtime.md",
+    "returnCode": 0,
+    "characters": 4464,
+    "fetchedAtUTC": "2026-11-01T14:14:55.016124+00:00"
+  },
+  {
+    "name": "allow-dyld",
+    "url": "https://developer.apple.com/documentation/bundleresources/entitlements/com.apple.security.cs.allow-dyld-environment-variables.md",
+    "returnCode": 0,
+    "characters": 1823,
+    "fetchedAtUTC": "2026-11-01T14:14:55.022619+00:00"
+  },
+  {
+    "name": "disable-library-validation",
+    "url": "https://developer.apple.com/documentation/bundleresources/entitlements/com.apple.security.cs.disable-library-validation.md",
+    "returnCode": 0,
+    "characters": 2048,
+    "fetchedAtUTC": "2026-11-01T14:14:55.016045+00:00"
+  },
+  {
+    "name": "debugger",
+    "url": "https://developer.apple.com/documentation/bundleresources/entitlements/com.apple.security.cs.debugger.md",
+    "returnCode": 0,
+    "characters": 2009,
+    "fetchedAtUTC": "2026-11-01T14:14:55.016095+00:00"
+  },
+  {
+    "name": "frame-info",
+    "url": "https://developer.apple.com/documentation/screencapturekit/scstreamframeinfo.md",
+    "returnCode": 0,
+    "characters": 3631,
+    "fetchedAtUTC": "2026-11-01T14:14:54.718283+00:00"
+  }
+]

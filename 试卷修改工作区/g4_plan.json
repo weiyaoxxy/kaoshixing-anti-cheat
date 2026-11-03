@@ -1,0 +1,223 @@
+{
+  "source": "/Users/weiyao/Desktop/G4期中试卷.docx",
+  "counting": {
+    "grammar": {
+      "total": 10,
+      "changed": 4
+    },
+    "word_order": {
+      "total": 5,
+      "changed": 2
+    },
+    "reading": {
+      "total": 20,
+      "changed": 8,
+      "subgroups": "4 groups × 5 questions; 2 changes in each group"
+    }
+  },
+  "items": [
+    {
+      "section": "Part 2 II 语法选择",
+      "number": 1,
+      "concept": "一般现在时一般疑问句助动词 Do（主语 you），like doing",
+      "answer": "B. Do",
+      "replacements": [
+        {
+          "paragraph_index": 48,
+          "old": "(    ) 1. ______ you like playing on the playground?",
+          "new": "(    ) 1. ______ you like reading storybooks?"
+        }
+      ]
+    },
+    {
+      "section": "Part 2 II 语法选择",
+      "number": 4,
+      "concept": "一般过去时 be 动词单数 Was；be scared of",
+      "answer": "A. Was",
+      "replacements": [
+        {
+          "paragraph_index": 56,
+          "old": "(    ) 4. ______ he scared of anything?",
+          "new": "(    ) 4. ______ she scared of the dog?"
+        }
+      ]
+    },
+    {
+      "section": "Part 2 II 语法选择",
+      "number": 5,
+      "concept": "Does 后接动词原形 find",
+      "answer": "B. find",
+      "replacements": [
+        {
+          "paragraph_index": 58,
+          "old": "(    ) 5. Does he _______ much treasure?",
+          "new": "(    ) 5. Does Tom _______ any treasure?"
+        }
+      ]
+    },
+    {
+      "section": "Part 2 II 语法选择",
+      "number": 7,
+      "concept": "动词后人称代词宾格 her（双宾语句型）",
+      "answer": "A. her",
+      "replacements": [
+        {
+          "paragraph_index": 62,
+          "old": "(    ) 7. Tell ______ the story please.",
+          "new": "(    ) 7. Please give ______ the book."
+        }
+      ]
+    },
+    {
+      "section": "Part 2 III 连词成句",
+      "number": 2,
+      "concept": "一般过去时 had 陈述句；a + 单数食物名词、some + 饮品；and 连接",
+      "answer": "She had a banana and some juice.",
+      "replacements": [
+        {
+          "paragraph_index": 75,
+          "old": "had/ sandwich/ a/ and/ milk/ some/ I / .",
+          "new": "had/ banana/ a/ and/ juice/ some/ She/ ."
+        }
+      ]
+    },
+    {
+      "section": "Part 2 III 连词成句",
+      "number": 5,
+      "concept": "Did + 主语 + 动词原形的一般过去时一般疑问句；have fun",
+      "answer": "Did she have fun at school?",
+      "replacements": [
+        {
+          "paragraph_index": 81,
+          "old": "have/ school/ you/ fun/ Did/ in/ ?",
+          "new": "have/ school/ she/ fun/ Did/ at/ ?"
+        }
+      ]
+    },
+    {
+      "section": "Part 3 I 完形阅读",
+      "number": 1,
+      "concept": "when 引导时间状语从句；阅读上下文时序",
+      "answer": "A. when",
+      "replacements": [
+        {
+          "paragraph_index": 88,
+          "old": "Greg and Danny wanted a quiet pet   1   they were 70. But they got Giotto. He is very active. When Giotto first   2   people skateboarding in the park, he was so excited.",
+          "new": "Greg and Danny were 70   1   they got Giotto. They wanted a quiet pet, but he is very active. When Giotto first   2   people skateboarding in the park, he was so excited."
+        }
+      ]
+    },
+    {
+      "section": "Part 3 I 完形阅读",
+      "number": 3,
+      "concept": "for 表示受益对象（为 Giotto 做滑板），原考点与选项不变",
+      "answer": "A. for",
+      "replacements": [
+        {
+          "paragraph_index": 89,
+          "old": "They bought a cheap skateboard   3   Giotto. Soon they found kid’s skateboards were not good for dogs’ paws. So Greg made a new strong board just for Giotto.",
+          "new": "They bought Giotto a cheap skateboard. Soon they found kid’s skateboards were not good for dogs’ paws. So Greg made a new strong board   3   Giotto."
+        }
+      ]
+    },
+    {
+      "section": "Part 3 II 长颈鹿阅读选择",
+      "number": 3,
+      "concept": "定位数字信息；how many 提问数量，原群体数量替换为进食小时数",
+      "answer": "C. 16–20",
+      "replacements": [
+        {
+          "paragraph_index": 112,
+          "old": "(    ) 3. How many giraffes are there in a group usually? ",
+          "new": "(    ) 3. How many hours do giraffes eat every day? "
+        }
+      ]
+    },
+    {
+      "section": "Part 3 II 长颈鹿阅读选择",
+      "number": 4,
+      "concept": "定位身体部位与功能的关系；仍考长颈帮助取得高处树叶",
+      "answer": "A. With their long necks",
+      "replacements": [
+        {
+          "paragraph_index": 114,
+          "old": "(    ) 4. What helps giraffes get high leaves? ",
+          "new": "(    ) 4. How do giraffes get leaves high up in trees? "
+        },
+        {
+          "paragraph_index": 115,
+          "old": "A. Their long necks B. Their long legs C. Their big feet",
+          "new": "A. With their long necks B. With their long legs C. With their big feet"
+        }
+      ]
+    },
+    {
+      "section": "Part 3 III 全运会阅读判断",
+      "number": 2,
+      "concept": "核对吉祥物原型动物的明确事实；更改陈述使答案从 F 变为 T",
+      "answer": "T",
+      "replacements": [
+        {
+          "paragraph_index": 134,
+          "old": "(    ) 2. The mascots are from American white dolphin. ",
+          "new": "(    ) 2. The mascots are from the Chinese white dolphin. "
+        }
+      ]
+    },
+    {
+      "section": "Part 3 III 全运会阅读判断",
+      "number": 4,
+      "concept": "核对头部水形图案特征的明确事实；从形状核对改为颜色核对",
+      "answer": "F",
+      "replacements": [
+        {
+          "paragraph_index": 136,
+          "old": "(    ) 4. There are three spots on the mascots’ heads. ",
+          "new": "(    ) 4. The three water shapes on the mascots’ heads are the same colour. "
+        }
+      ]
+    },
+    {
+      "section": "Part 3 IV 香蕉车阅读选择",
+      "number": 1,
+      "concept": "定位数字信息（制作年数换为载客人数），无推理层级变化",
+      "answer": "B. Four people",
+      "replacements": [
+        {
+          "paragraph_index": 155,
+          "old": "(    ) 1. How long did Steve spend making the banana car? ",
+          "new": "(    ) 1. How many people can the banana car take? "
+        },
+        {
+          "paragraph_index": 156,
+          "old": "A. One year B. Two and a half years  C. Three years",
+          "new": "A. Three people B. Four people C. Five people"
+        }
+      ]
+    },
+    {
+      "section": "Part 3 IV 香蕉车阅读选择",
+      "number": 2,
+      "concept": "定位人物活动的明确细节（免费乘车换为购物内容）",
+      "answer": "A. Fresh bananas",
+      "replacements": [
+        {
+          "paragraph_index": 157,
+          "old": "(    ) 2. What can people do in Steve’s banana car? ",
+          "new": "(    ) 2. What does Steve buy when he drives to the shop? "
+        },
+        {
+          "paragraph_index": 158,
+          "old": "A. Have lunch B. Watch animals C. Have a free ride",
+          "new": "A. Fresh bananas B. Toy cars C. New clothes"
+        }
+      ]
+    }
+  ],
+  "note": "所有替换的段落编号均基于 //w:body//w:p（包含嵌套文本框段落），从0计数。只改上述范围；不改听力、图片填词及作文。保留原阅读文章，只有完形第1、3小题需局部改变文章句式和空格位置。",
+  "quality_notes": [
+    "第II阅读Q3保留原选项6–12/14–19/16–20，新答案改为C；第IV阅读Q1答案仍B，但数值信息由年数改为人数。",
+    "全文已有原始语病例如听力Where lost the phone?与kid’s skateboards，非本次修改范围；本方案不额外扩张改题数。",
+    "若需极严格保持阅读每题事实知识点，可以把II第3、IV第1、IV第2改为同一事实的等难度问法；当前方案保持阅读能力考点不变，增加题目新颖性。"
+  ]
+}

@@ -1,0 +1,327 @@
+Local SDK evidence captured 2026-11-01
+SDK: /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk
+
+System/Library/Frameworks/Metal.framework/Headers/MTLResource.h
+58:  @enum MTLStorageMode
+59:  @abstract Describes location and CPU mapping of MTLTexture.
+60:  @constant MTLStorageModeShared
+61:  In this mode, CPU and device will nominally both use the same underlying memory when accessing the contents of the texture resource.
+62:  However, coherency is only guaranteed at command buffer boundaries to minimize the required flushing of CPU and GPU caches.
+63:  This is the default storage mode for iOS Textures.
+64: 
+65:  @constant MTLStorageModeManaged
+66:  This mode relaxes the coherency requirements and requires that the developer make explicit requests to maintain
+67:  coherency between a CPU and GPU version of the texture resource.  In order for CPU to access up to date GPU results,
+68:  first, a blit synchronizations must be completed (see synchronize methods of MTLBlitCommandEncoder).
+69:  Blit overhead is only incurred if GPU has modified the resource.
+70:  This is the default storage mode for OS X Textures.
+71: 
+72:  @constant MTLStorageModePrivate
+73:  This mode allows the texture resource data to be kept entirely to GPU (or driver) private memory that will never be accessed by the CPU directly, so no
+74:  conherency of any kind must be maintained.
+75:  
+76:  @constant MTLStorageModeMemoryless
+77:  This mode allows creation of resources that do not have a GPU or CPU memory backing, but do have on-chip storage for TBDR
+78:  devices. The contents of the on-chip storage is undefined and does not persist, but its configuration is controlled by the
+79:  MTLTexture descriptor. Textures created with MTLStorageModeMemoryless dont have an IOAccelResource at any point in their
+80:  lifetime. The only way to populate such resource is to perform rendering operations on it. Blit operations are disallowed.
+81: */
+82: typedef NS_ENUM(NSUInteger, MTLStorageMode)
+83: {
+84:     MTLStorageModeShared  = 0,
+85:     MTLStorageModeManaged API_AVAILABLE(macos(10.11), macCatalyst(13.0)) API_UNAVAILABLE(ios) = 1,
+86:     MTLStorageModePrivate = 2,
+87:     MTLStorageModeMemoryless API_AVAILABLE(macos(11.0), macCatalyst(14.0), ios(10.0)) = 3,
+88: } API_AVAILABLE(macos(10.11), ios(9.0));
+
+System/Library/Frameworks/IOSurface.framework/Headers/IOSurfaceRef.h
+100: /* kIOSurfaceIsGlobal   - CFBoolean     If true, the IOSurface may be looked up by any task in the system by its ID. */
+101: extern const CFStringRef kIOSurfaceIsGlobal                                 API_DEPRECATED("Global surfaces are insecure",macos(10.6,10.11), ios(11.0,11.0), watchos(4.0,4.0), tvos(11.0,11.0));
+
+System/Library/Frameworks/IOSurface.framework/Headers/IOSurfaceRef.h
+337: /* This call lets you get a mach_port_t that holds a reference to the IOSurface. This is useful 
+338:    if you need to atomically or securely pass an IOSurface to another task without making the surface global to
+339:    the entire system.  The returned port must be deallocated with mach_port_deallocate or the equivalent.  
+340:    Note: Any live mach ports created from an IOSurfaceRef implicity increase the IOSurface's global use
+341:    count by one until the port is deleted. */
+342: mach_port_t IOSurfaceCreateMachPort(IOSurfaceRef buffer)
+343:     API_AVAILABLE(macos(10.6), ios(11.0), watchos(4.0), tvos(11.0));
+344: 
+345: /* This call lets you take a mach_port_t created via IOSurfaceCreatePort() and recreate an IOSurfaceRef from it.
+346:    Note: This call does NOT destroy the port. */
+347: IOSurfaceRef _Nullable IOSurfaceLookupFromMachPort(mach_port_t port) CF_RETURNS_RETAINED
+348:     API_AVAILABLE(macos(10.6), ios(11.0), watchos(4.0), tvos(11.0));
+
+usr/include/EndpointSecurity/ESClient.h
+628:  * Initialise a new es_client_t and connect to the ES subsystem
+629:  * @param client Out param. On success this will be set to point to the newly allocated es_client_t.
+630:  * @param handler The handler block that will be run on all messages sent to this client
+631:  * @return es_new_client_result_t indicating success or a specific error.
+632:  * @discussion Messages are handled strictly serially and in the order they are delivered.
+633:  *             Returning control from the handler causes the next available message to be dequeued.
+634:  *             Messages can be responded to out of order by returning control before calling es_respond_*.
+635:  *             The es_message_t is only guaranteed to live as long as the scope it is passed into.
+636:  *             The memory for the given es_message_t is NOT owned by clients and it must not be freed.
+637:  *             For out of order responding the handler must retain the message with es_retain_message.
+638:  *             Callers are required to be entitled with com.apple.developer.endpoint-security.client.
+639:  *             The application calling this interface must also be approved by users via Transparency, Consent & Control
+640:  *             (TCC) mechanisms using the Privacy Preferences pane and adding the application to Full Disk Access.
+641:  *             When a new client is successfully created, all cached results are automatically cleared.
+642:  *
+643:  * @note When a new client is initialized, there will be a set of paths and a subset of `es_event_type_t` events that are
+644:  *       automatically muted by default. Generally, most AUTH event variants are muted but NOTIFY event variants will
+645:  *       still be sent to the client. The set of paths muted by default are ones that can have an extremely negative impact to
+646:  *       end users if their AUTH events are not allowed in a timely manner (for example, executable paths for processes
+647:  *       that are monitored by the watchdogd daemon). It is important to understand that this list is *not* exhaustive and
+648:  *       developers using the EndpointSecurity framework can still interfere with critical system components and must use
+649:  *       caution to limit user impact. The set of default muted paths and event types may change across macOS releases.
+650:  *       It is possible to both inspect and unmute the set of default muted paths and associated event types using the
+651:  *       appropriate mute-related API, however it is not recommended to unmute these items.
+652:  *
+653:  * @note The only supported way to check if an application is properly TCC authorized for Full Disk Access
+654:  *       is to call es_new_client and handling ES_NEW_CLIENT_RESULT_ERR_NOT_PERMITTED in a way appropriate
+655:  *       to your application.  Most applications will want to ask the user for TCC authorization when
+656:  *       es_new_client returns ES_NEW_CLIENT_RESULT_ERR_NOT_PERMITTED.
+657:  *       To direct the user to the Full Disk Access section in System Settings, applications can use the following URLs:
+658:  *       `x-apple.systempreferences:com.apple.settings.PrivacySecurity.extension?Privacy_AllFiles` (macOS 13 and later)
+659:  *       `x-apple.systempreferences:com.apple.preference.security?Privacy_AllFiles` (until macOS 12)
+660:  *       Applications are advised to use the new URL in macOS 13 as the old one may stop working in a future release.
+661:  *
+662:  * @see es_retain_message
+663:  * @see es_release_message
+664:  * @see es_new_client_result_t
+665:  * @see es_muted_paths_events
+666:  * @see es_unmute_path_events
+667:  */
+668: OS_EXPORT
+669: API_AVAILABLE(macos(10.15))
+670: API_UNAVAILABLE(ios)
+671: API_UNAVAILABLE(tvos, watchos)
+672: es_new_client_result_t es_new_client(es_client_t *_Nullable *_Nonnull client, es_handler_block_t _Nonnull handler);
+
+usr/include/EndpointSecurity/ESMessage.h
+1632: 
+1633: /**
+1634:  * @brief Notification that Screen Sharing has attached to a graphical session.
+1635:  *
+1636:  * @field success               True iff Screen Sharing successfully attached.
+1637:  * @field source_address_type   Type of source address.
+1638:  * @field source_address        Optional.  Source address of connection, or NULL.
+1639:  *                              Depending on the transport used, the source
+1640:  *                              address may or may not be available.
+1641:  * @field viewer_appleid        Optional.  For screen sharing initiated using an
+1642:  *                              Apple ID (e.g., from Messages or FaceTime), this
+1643:  *                              is the viewer's (client's) Apple ID.  It is not
+1644:  *                              necessarily the Apple ID that invited the screen
+1645:  *                              sharing.  NULL if unavailable.
+1646:  * @field authentication_type   Type of authentication.
+1647:  * @field authentication_username  Optional.  Username used for authentication to
+1648:  *                              Screen Sharing.  NULL if authentication type doesn't
+1649:  *                              use an username (e.g. simple VNC password).
+1650:  * @field session_username      Optional.  Username of the loginwindow session if
+1651:  *                              available,  NULL otherwise.
+1652:  * @field existing_session      True iff there was an existing user session.
+1653:  * @field graphical_session_id  Graphical session id of the screen shared.
+1654:  *
+1655:  * @note This event type does not support caching (notify-only).
+1656:  * @discussion This event is not emitted when a screensharing session has the same source and destination address.
+1657:  * For example if device A is acting as a NAT gateway for device B, then a screensharing session from B -> A would not emit an
+1658:  * event.
+1659:  */
+1660: typedef struct {
+1661: 	bool success;
+1662: 	es_address_type_t source_address_type;
+1663: 	es_string_token_t source_address;
+1664: 	es_string_token_t viewer_appleid;
+1665: 	es_string_token_t authentication_type;
+1666: 	es_string_token_t authentication_username;
+1667: 	es_string_token_t session_username;
+1668: 	bool existing_session;
+1669: 	es_graphical_session_id_t graphical_session_id;
+1670: } es_event_screensharing_attach_t;
+1671: 
+1672: /**
+1673:  * @brief Notification that Screen Sharing has detached from a graphical session.
+1674:  *
+1675:  * @field source_address_type   Type of source address.
+1676:  * @field source_address        Optional.  Source address of connection, or NULL.
+1677:  *                              Depending on the transport used, the source
+1678:  *                              address may or may not be available.
+1679:  * @field viewer_appleid        Optional.  For screen sharing initiated using an
+1680:  *                              Apple ID (e.g., from Messages or FaceTime), this
+1681:  *                              is the viewer's (client's) Apple ID.  It is not
+1682:  *                              necessarily the Apple ID that invited the screen
+1683:  *                              sharing.  NULL if unavailable.
+1684:  * @field graphical_session_id  Graphical session id of the screen shared.
+1685:  *
+1686:  * @note This event type does not support caching (notify-only).
+1687:  * @discussion This event is not emitted when a screensharing session has the same source and destination address.
+1688:  */
+1689: typedef struct {
+1690: 	es_address_type_t source_address_type;
+1691: 	es_string_token_t source_address;
+1692: 	es_string_token_t viewer_appleid;
+1693: 	es_graphical_session_id_t graphical_session_id;
+1694: } es_event_screensharing_detach_t;
+
+Endpoint Security complete event identifiers (current public SDK):
+ES_EVENT_TYPE_AUTH_EXEC,
+ES_EVENT_TYPE_AUTH_OPEN,
+ES_EVENT_TYPE_AUTH_KEXTLOAD,
+ES_EVENT_TYPE_AUTH_MMAP,
+ES_EVENT_TYPE_AUTH_MPROTECT,
+ES_EVENT_TYPE_AUTH_MOUNT,
+ES_EVENT_TYPE_AUTH_RENAME,
+ES_EVENT_TYPE_AUTH_SIGNAL,
+ES_EVENT_TYPE_AUTH_UNLINK,
+ES_EVENT_TYPE_NOTIFY_EXEC,
+ES_EVENT_TYPE_NOTIFY_OPEN,
+ES_EVENT_TYPE_NOTIFY_FORK,
+ES_EVENT_TYPE_NOTIFY_CLOSE,
+ES_EVENT_TYPE_NOTIFY_CREATE,
+ES_EVENT_TYPE_NOTIFY_EXCHANGEDATA,
+ES_EVENT_TYPE_NOTIFY_EXIT,
+ES_EVENT_TYPE_NOTIFY_GET_TASK,
+ES_EVENT_TYPE_NOTIFY_KEXTLOAD,
+ES_EVENT_TYPE_NOTIFY_KEXTUNLOAD,
+ES_EVENT_TYPE_NOTIFY_LINK,
+ES_EVENT_TYPE_NOTIFY_MMAP,
+ES_EVENT_TYPE_NOTIFY_MPROTECT,
+ES_EVENT_TYPE_NOTIFY_MOUNT,
+ES_EVENT_TYPE_NOTIFY_UNMOUNT,
+ES_EVENT_TYPE_NOTIFY_IOKIT_OPEN,
+ES_EVENT_TYPE_NOTIFY_RENAME,
+ES_EVENT_TYPE_NOTIFY_SETATTRLIST,
+ES_EVENT_TYPE_NOTIFY_SETEXTATTR,
+ES_EVENT_TYPE_NOTIFY_SETFLAGS,
+ES_EVENT_TYPE_NOTIFY_SETMODE,
+ES_EVENT_TYPE_NOTIFY_SETOWNER,
+ES_EVENT_TYPE_NOTIFY_SIGNAL,
+ES_EVENT_TYPE_NOTIFY_UNLINK,
+ES_EVENT_TYPE_NOTIFY_WRITE,
+ES_EVENT_TYPE_AUTH_FILE_PROVIDER_MATERIALIZE,
+ES_EVENT_TYPE_NOTIFY_FILE_PROVIDER_MATERIALIZE,
+ES_EVENT_TYPE_AUTH_FILE_PROVIDER_UPDATE,
+ES_EVENT_TYPE_NOTIFY_FILE_PROVIDER_UPDATE,
+ES_EVENT_TYPE_AUTH_READLINK,
+ES_EVENT_TYPE_NOTIFY_READLINK,
+ES_EVENT_TYPE_AUTH_TRUNCATE,
+ES_EVENT_TYPE_NOTIFY_TRUNCATE,
+ES_EVENT_TYPE_AUTH_LINK,
+ES_EVENT_TYPE_NOTIFY_LOOKUP,
+ES_EVENT_TYPE_AUTH_CREATE,
+ES_EVENT_TYPE_AUTH_SETATTRLIST,
+ES_EVENT_TYPE_AUTH_SETEXTATTR,
+ES_EVENT_TYPE_AUTH_SETFLAGS,
+ES_EVENT_TYPE_AUTH_SETMODE,
+ES_EVENT_TYPE_AUTH_SETOWNER,
+ES_EVENT_TYPE_AUTH_CHDIR,
+ES_EVENT_TYPE_NOTIFY_CHDIR,
+ES_EVENT_TYPE_AUTH_GETATTRLIST,
+ES_EVENT_TYPE_NOTIFY_GETATTRLIST,
+ES_EVENT_TYPE_NOTIFY_STAT,
+ES_EVENT_TYPE_NOTIFY_ACCESS,
+ES_EVENT_TYPE_AUTH_CHROOT,
+ES_EVENT_TYPE_NOTIFY_CHROOT,
+ES_EVENT_TYPE_AUTH_UTIMES,
+ES_EVENT_TYPE_NOTIFY_UTIMES,
+ES_EVENT_TYPE_AUTH_CLONE,
+ES_EVENT_TYPE_NOTIFY_CLONE,
+ES_EVENT_TYPE_NOTIFY_FCNTL,
+ES_EVENT_TYPE_AUTH_GETEXTATTR,
+ES_EVENT_TYPE_NOTIFY_GETEXTATTR,
+ES_EVENT_TYPE_AUTH_LISTEXTATTR,
+ES_EVENT_TYPE_NOTIFY_LISTEXTATTR,
+ES_EVENT_TYPE_AUTH_READDIR,
+ES_EVENT_TYPE_NOTIFY_READDIR,
+ES_EVENT_TYPE_AUTH_DELETEEXTATTR,
+ES_EVENT_TYPE_NOTIFY_DELETEEXTATTR,
+ES_EVENT_TYPE_AUTH_FSGETPATH,
+ES_EVENT_TYPE_NOTIFY_FSGETPATH,
+ES_EVENT_TYPE_NOTIFY_DUP,
+ES_EVENT_TYPE_AUTH_SETTIME,
+ES_EVENT_TYPE_NOTIFY_SETTIME,
+ES_EVENT_TYPE_NOTIFY_UIPC_BIND,
+ES_EVENT_TYPE_AUTH_UIPC_BIND,
+ES_EVENT_TYPE_NOTIFY_UIPC_CONNECT,
+ES_EVENT_TYPE_AUTH_UIPC_CONNECT,
+ES_EVENT_TYPE_AUTH_EXCHANGEDATA,
+ES_EVENT_TYPE_AUTH_SETACL,
+ES_EVENT_TYPE_NOTIFY_SETACL,
+ES_EVENT_TYPE_NOTIFY_PTY_GRANT,
+ES_EVENT_TYPE_NOTIFY_PTY_CLOSE,
+ES_EVENT_TYPE_AUTH_PROC_CHECK,
+ES_EVENT_TYPE_NOTIFY_PROC_CHECK,
+ES_EVENT_TYPE_AUTH_GET_TASK,
+ES_EVENT_TYPE_AUTH_SEARCHFS,
+ES_EVENT_TYPE_NOTIFY_SEARCHFS,
+ES_EVENT_TYPE_AUTH_FCNTL,
+ES_EVENT_TYPE_AUTH_IOKIT_OPEN,
+ES_EVENT_TYPE_AUTH_PROC_SUSPEND_RESUME,
+ES_EVENT_TYPE_NOTIFY_PROC_SUSPEND_RESUME,
+ES_EVENT_TYPE_NOTIFY_CS_INVALIDATED,
+ES_EVENT_TYPE_NOTIFY_GET_TASK_NAME,
+ES_EVENT_TYPE_NOTIFY_TRACE,
+ES_EVENT_TYPE_NOTIFY_REMOTE_THREAD_CREATE,
+ES_EVENT_TYPE_AUTH_REMOUNT,
+ES_EVENT_TYPE_NOTIFY_REMOUNT,
+ES_EVENT_TYPE_AUTH_GET_TASK_READ,
+ES_EVENT_TYPE_NOTIFY_GET_TASK_READ,
+ES_EVENT_TYPE_NOTIFY_GET_TASK_INSPECT,
+ES_EVENT_TYPE_NOTIFY_SETUID,
+ES_EVENT_TYPE_NOTIFY_SETGID,
+ES_EVENT_TYPE_NOTIFY_SETEUID,
+ES_EVENT_TYPE_NOTIFY_SETEGID,
+ES_EVENT_TYPE_NOTIFY_SETREUID,
+ES_EVENT_TYPE_NOTIFY_SETREGID,
+ES_EVENT_TYPE_AUTH_COPYFILE,
+ES_EVENT_TYPE_NOTIFY_COPYFILE,
+ES_EVENT_TYPE_NOTIFY_AUTHENTICATION,
+ES_EVENT_TYPE_NOTIFY_XP_MALWARE_DETECTED,
+ES_EVENT_TYPE_NOTIFY_XP_MALWARE_REMEDIATED,
+ES_EVENT_TYPE_NOTIFY_LW_SESSION_LOGIN,
+ES_EVENT_TYPE_NOTIFY_LW_SESSION_LOGOUT,
+ES_EVENT_TYPE_NOTIFY_LW_SESSION_LOCK,
+ES_EVENT_TYPE_NOTIFY_LW_SESSION_UNLOCK,
+ES_EVENT_TYPE_NOTIFY_SCREENSHARING_ATTACH,
+ES_EVENT_TYPE_NOTIFY_SCREENSHARING_DETACH,
+ES_EVENT_TYPE_NOTIFY_OPENSSH_LOGIN,
+ES_EVENT_TYPE_NOTIFY_OPENSSH_LOGOUT,
+ES_EVENT_TYPE_NOTIFY_LOGIN_LOGIN,
+ES_EVENT_TYPE_NOTIFY_LOGIN_LOGOUT,
+ES_EVENT_TYPE_NOTIFY_BTM_LAUNCH_ITEM_ADD,
+ES_EVENT_TYPE_NOTIFY_BTM_LAUNCH_ITEM_REMOVE,
+ES_EVENT_TYPE_NOTIFY_PROFILE_ADD,
+ES_EVENT_TYPE_NOTIFY_PROFILE_REMOVE,
+ES_EVENT_TYPE_NOTIFY_SU,
+ES_EVENT_TYPE_NOTIFY_AUTHORIZATION_PETITION,
+ES_EVENT_TYPE_NOTIFY_AUTHORIZATION_JUDGEMENT,
+ES_EVENT_TYPE_NOTIFY_SUDO,
+ES_EVENT_TYPE_NOTIFY_OD_GROUP_ADD,
+ES_EVENT_TYPE_NOTIFY_OD_GROUP_REMOVE,
+ES_EVENT_TYPE_NOTIFY_OD_GROUP_SET,
+ES_EVENT_TYPE_NOTIFY_OD_MODIFY_PASSWORD,
+ES_EVENT_TYPE_NOTIFY_OD_DISABLE_USER,
+ES_EVENT_TYPE_NOTIFY_OD_ENABLE_USER,
+ES_EVENT_TYPE_NOTIFY_OD_ATTRIBUTE_VALUE_ADD,
+ES_EVENT_TYPE_NOTIFY_OD_ATTRIBUTE_VALUE_REMOVE,
+ES_EVENT_TYPE_NOTIFY_OD_ATTRIBUTE_SET,
+ES_EVENT_TYPE_NOTIFY_OD_CREATE_USER,
+ES_EVENT_TYPE_NOTIFY_OD_CREATE_GROUP,
+ES_EVENT_TYPE_NOTIFY_OD_DELETE_USER,
+ES_EVENT_TYPE_NOTIFY_OD_DELETE_GROUP,
+ES_EVENT_TYPE_NOTIFY_XPC_CONNECT,
+ES_EVENT_TYPE_NOTIFY_GATEKEEPER_USER_OVERRIDE,
+ES_EVENT_TYPE_NOTIFY_TCC_MODIFY,
+ES_EVENT_TYPE_RESERVED_0,
+ES_EVENT_TYPE_RESERVED_1,
+ES_EVENT_TYPE_RESERVED_2,
+ES_EVENT_TYPE_RESERVED_3,
+ES_EVENT_TYPE_RESERVED_4,
+ES_EVENT_TYPE_RESERVED_5,
+ES_EVENT_TYPE_RESERVED_6,
+ES_EVENT_TYPE_RESERVED_7,
+ES_EVENT_TYPE_RESERVED_8,
+ES_EVENT_TYPE_LAST
+Public SkyLight.framework in SDK: False
+Public WindowServer.framework in SDK: False

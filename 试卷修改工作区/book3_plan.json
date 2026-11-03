@@ -1,0 +1,219 @@
+{
+  "source": "/Users/weiyao/Desktop/外研新思维英语少儿版3 -期中练习.docx",
+  "counting": {
+    "grammar": {
+      "total": 15,
+      "changed": 6,
+      "subgroups": "Part6 4/10; Part8 2/5 (examples excluded)"
+    },
+    "word_order": {
+      "total": 5,
+      "changed": 2
+    },
+    "reading": {
+      "total": 10,
+      "changed": 4,
+      "subgroups": "2/5 in each passage"
+    }
+  },
+  "items": [
+    {
+      "section": "Part 6 语法选择",
+      "number": 2,
+      "concept": "Is there any + 不可数名词",
+      "answer": "C. rice",
+      "replacements": [
+        {
+          "paragraph_index": 209,
+          "old": "in the picnic basket",
+          "new": "in the lunch box"
+        },
+        {
+          "paragraph_index": 210,
+          "old": "rolls",
+          "new": "eggs"
+        },
+        {
+          "paragraph_index": 210,
+          "old": "tomatoes",
+          "new": "apples"
+        },
+        {
+          "paragraph_index": 210,
+          "old": "cheese",
+          "new": "rice"
+        }
+      ]
+    },
+    {
+      "section": "Part 6 语法选择",
+      "number": 3,
+      "concept": "like + 动名词",
+      "answer": "A. reading",
+      "replacements": [
+        {
+          "paragraph_index": 212,
+          "old": "to some stories",
+          "new": "storybooks"
+        },
+        {
+          "paragraph_index": 213,
+          "old": "listening",
+          "new": "reading"
+        },
+        {
+          "paragraph_index": 213,
+          "old": "listens",
+          "new": "reads"
+        },
+        {
+          "paragraph_index": 213,
+          "old": "listen",
+          "new": "read"
+        }
+      ]
+    },
+    {
+      "section": "Part 6 语法选择",
+      "number": 8,
+      "concept": "第三人称单数一般现在时否定式",
+      "answer": "A. doesn’t like",
+      "replacements": [
+        {
+          "paragraph_index": 227,
+          "old": "She ______ running. She thinks it is boring.",
+          "new": "He ______ swimming. He thinks it is boring."
+        }
+      ]
+    },
+    {
+      "section": "Part 6 语法选择",
+      "number": 10,
+      "concept": "There are + 复数名词",
+      "answer": "B. There are",
+      "replacements": [
+        {
+          "paragraph_index": 231,
+          "old": "some flowers in the garden",
+          "new": "some books in the bookcase"
+        }
+      ]
+    },
+    {
+      "section": "Part 7 连词成句",
+      "number": 3,
+      "concept": "并列主语与are；形容词性物主代词+复数名词",
+      "answer": "Ben and Jack are my brothers.",
+      "replacements": [
+        {
+          "paragraph_index": 241,
+          "old": "are / Amy / Claire / my / and / cousins",
+          "new": "are / Ben / Jack / my / and / brothers"
+        }
+      ]
+    },
+    {
+      "section": "Part 7 连词成句",
+      "number": 4,
+      "concept": "be not good at + 动名词",
+      "answer": "Tom is not good at swimming.",
+      "replacements": [
+        {
+          "paragraph_index": 243,
+          "old": "Lily / is / not / at / snorkelling / good",
+          "new": "Tom / is / not / at / swimming / good"
+        }
+      ]
+    },
+    {
+      "section": "Part 8 短文语法选择",
+      "number": 4,
+      "concept": "一般现在时第三人称单数have→has",
+      "answer": "has",
+      "replacements": [
+        {
+          "paragraph_index": 250,
+          "old": "a lot of work to do and gets home late",
+          "new": "dinner at the company and gets home late"
+        }
+      ]
+    },
+    {
+      "section": "Part 8 短文语法选择",
+      "number": 6,
+      "concept": "be good at + 动名词",
+      "answer": "making",
+      "replacements": [
+        {
+          "paragraph_index": 250,
+          "old": "(make, makes, making) sandwiches",
+          "new": "(make, makes, making) cakes"
+        }
+      ]
+    },
+    {
+      "section": "Part 9 阅读判断",
+      "number": 2,
+      "concept": "根据短文核对教室特征",
+      "answer": "F",
+      "replacements": [
+        {
+          "paragraph_index": 256,
+          "old": "Tom's classroom is very clean.",
+          "new": "Tom's classroom is dirty."
+        }
+      ]
+    },
+    {
+      "section": "Part 9 阅读判断",
+      "number": 4,
+      "concept": "根据短文核对人数",
+      "answer": "T",
+      "replacements": [
+        {
+          "paragraph_index": 258,
+          "old": "twenty-four girls",
+          "new": "twenty-two girls"
+        }
+      ]
+    },
+    {
+      "section": "Part 9 阅读选择",
+      "number": 1,
+      "concept": "定位并提取明确细节信息",
+      "answer": "C. twelve",
+      "replacements": [
+        {
+          "paragraph_index": 263,
+          "old": "Lucy and Lily are ______.",
+          "new": "Lucy and Lily are ______ years old."
+        },
+        {
+          "paragraph_index": 264,
+          "old": "A. brothers       B. sisters       C. friends       D. boys",
+          "new": "A. ten       B. eleven       C. twelve       D. thirteen"
+        }
+      ]
+    },
+    {
+      "section": "Part 9 阅读选择",
+      "number": 4,
+      "concept": "定位所属物品与所在位置",
+      "answer": "A. It’s on the clothes line.",
+      "replacements": [
+        {
+          "paragraph_index": 273,
+          "old": "Where's Lucy's skirt?",
+          "new": "Where's Lily's coat?"
+        }
+      ]
+    }
+  ],
+  "proofreading": [
+    {
+      "paragraph_index": 262,
+      "old": "Lily. They are twins",
+      "new": "Lucy and Lily are sisters. They are twins"
+    }
+  ]
+}

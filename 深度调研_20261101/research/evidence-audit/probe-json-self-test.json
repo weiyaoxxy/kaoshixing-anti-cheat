@@ -1,0 +1,41 @@
+{
+  "boolean" : true,
+  "finiteRect" : {
+    "height" : 4,
+    "width" : 3,
+    "x" : 1,
+    "y" : 2
+  },
+  "infiniteRect" : {
+    "height" : 1.7976931348623157e+308,
+    "width" : 1.7976931348623157e+308,
+    "x" : -8.9884656743115785e+307,
+    "y" : -8.9884656743115785e+307
+  },
+  "jsonEncodingPolicy" : "Non-finite numeric values are encoded as NaN\/+Infinity\/-Infinity strings, never zero. CGRect non-finite coordinates additionally name nonFiniteFields.",
+  "jsonSanitizedPaths" : [
+    "$.nested[0].nan",
+    "$.nested[0].negativeInfinity",
+    "$.nested[0].positiveInfinity"
+  ],
+  "nested" : [
+    {
+      "finite" : 7.5,
+      "nan" : "NaN",
+      "negativeInfinity" : "-Infinity",
+      "positiveInfinity" : "+Infinity"
+    }
+  ],
+  "nullRect" : {
+    "height" : 0,
+    "isInfinite" : false,
+    "isNull" : true,
+    "nonFiniteFields" : [
+      "x",
+      "y"
+    ],
+    "width" : 0,
+    "x" : "+Infinity",
+    "y" : "+Infinity"
+  }
+}

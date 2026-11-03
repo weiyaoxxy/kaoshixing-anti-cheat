@@ -1,0 +1,13 @@
+{
+  "sudoNonInteractiveAvailable": false,
+  "sudoResult": "sudo: a password is required",
+  "todeskServicePID": 78215,
+  "todeskServiceUID": 0,
+  "sampleAttempt": {
+    "tool": "sample",
+    "durationSeconds": 1,
+    "returnCode": 255,
+    "result": "insufficient privileges; no stack sample obtained"
+  },
+  "interpretation": "Root-owned ToDesk Service cannot be assumed instrumented by a separately launched user GUI. No elevation, service replacement or security-policy changes performed."
+}

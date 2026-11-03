@@ -1,0 +1,14 @@
+{
+  "recordedAtUTC": "2026-11-01T08:55:56.950438+00:00",
+  "sha256": {
+    "README.md": "3ffe620515efc34abce364f0d985b168b2b91ce8f631a3497d322bbc59abd826",
+    "docs/API依据.md": "7e4c44398fc31325f55ea40846af24a167dd61f20d9e8f12d48a5cfb9006fcc4",
+    "docs/DRM与系统路线.md": "371778cfa906288a51d12686de5b47348da3a7188d5472a1c4ff0728278a1089",
+    "docs/PoC设计与复现.md": "66257f00064dc393b7241318803f018c1eccf6c334c0cc3e1aa34937ee8a38ab",
+    "docs/evidence-overview.png": "2c80aab5b6a3c167f3f3e6e221c77be16705f5fb04f8e4cf6096cf7a21282468",
+    "docs/实验矩阵与验收.md": "adbc1b9bd3b3e62e0bc662933b47c9a55654bcc295fe07d78a3b733ad31a8ec7",
+    "docs/技术预研报告.md": "81ed1bc8e725c2b0052b895073b1fbd2ed7af80f6daa118e20da83c2c821b82d",
+    "docs/本机测试结果.md": "382a2d6e40b541ad15925c7538e5b6930d31e68120de77be9d844f4e49afdcc7"
+  },
+  "note": "Previous documents remain in the original folder; all new report content goes under this deep research folder."
+}

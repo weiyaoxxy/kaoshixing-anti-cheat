@@ -1,0 +1,2903 @@
+{
+  "launchItems": [
+    {
+      "path": "/Library/LaunchAgents/com.netease.uuremote.agent.plist",
+      "label": "com.netease.uuremote.agent",
+      "program": "/Applications/UURemote.app/Contents/MacOS/UURemoteService",
+      "keepAlive": true,
+      "runAtLoad": true,
+      "userName": null
+    },
+    {
+      "path": "/Library/LaunchAgents/com.youqu.todesk.startup.plist",
+      "label": "com.youqu.todesk.client.startup",
+      "program": "/usr/bin/open",
+      "keepAlive": false,
+      "runAtLoad": true,
+      "userName": null
+    },
+    {
+      "path": "/Library/LaunchAgents/com.youqu.todesk.session.plist",
+      "label": "com.youqu.todesk.desktop",
+      "program": "/Applications/ToDesk.app/Contents/MacOS/ToDesk_Session_Proxy",
+      "keepAlive": true,
+      "runAtLoad": true,
+      "userName": null
+    },
+    {
+      "path": "/Library/LaunchDaemons/com.youqu.todesk.UninstallerHelper.plist",
+      "label": "com.youqu.todesk.UninstallerHelper",
+      "program": "/Library/PrivilegedHelperTools/com.youqu.todesk.UninstallerHelper",
+      "keepAlive": null,
+      "runAtLoad": null,
+      "userName": null
+    },
+    {
+      "path": "/Library/LaunchDaemons/com.youqu.todesk.UninstallerWatcher.plist",
+      "label": "com.youqu.todesk.UninstallerWatcher",
+      "program": "/Library/Application Support/ToDesk/ToDeskUninstaller.app/Contents/Helpers/com.youqu.todesk.UninstallerStarter",
+      "keepAlive": null,
+      "runAtLoad": null,
+      "userName": null
+    },
+    {
+      "path": "/Library/LaunchDaemons/com.netease.uuremote.daemon.plist",
+      "label": "com.netease.uuremote.daemon",
+      "program": "/Applications/UURemote.app/Contents/MacOS/UURemoteDaemon",
+      "keepAlive": true,
+      "runAtLoad": true,
+      "userName": null
+    },
+    {
+      "path": "/Library/LaunchDaemons/com.youqu.todesk.service.plist",
+      "label": "com.youqu.todesk.service",
+      "program": "/Applications/ToDesk.app/Contents/MacOS/ToDesk_Service",
+      "keepAlive": true,
+      "runAtLoad": true,
+      "userName": null
+    }
+  ],
+  "createdAtUTC": "2026-11-01T13:25:03.379642+00:00",
+  "mode": "read-only static inspection; no runtime attach/injection or launch/stop",
+  "applications": [
+    {
+      "path": "/Applications/ToDesk.app",
+      "bundleID": "com.youqu.todesk.mac",
+      "version": "5.2.3.0",
+      "build": "2943"
+    },
+    {
+      "path": "/Applications/UURemote.app",
+      "bundleID": "com.netease.uuremote",
+      "version": "4.40.0",
+      "build": "621"
+    }
+  ],
+  "processSnapshot": [
+    {
+      "pid": 3980,
+      "uid": 0,
+      "executable": "/Applications/UURemote.app/Contents/MacOS/UURemoteDaemon"
+    },
+    {
+      "pid": 77126,
+      "uid": 501,
+      "executable": "/Applications/ToDesk.app/Contents/Helpers/ToDesk_Session.app/Contents/MacOS/ToDesk_Session"
+    },
+    {
+      "pid": 78215,
+      "uid": 0,
+      "executable": "/Applications/ToDesk.app/Contents/MacOS/ToDesk_Service"
+    },
+    {
+      "pid": 78332,
+      "uid": 501,
+      "executable": "/Applications/ToDesk.app/Contents/MacOS/ToDesk_Session_Proxy"
+    },
+    {
+      "pid": 81381,
+      "uid": 501,
+      "executable": "/Applications/ToDesk.app/Contents/MacOS/ToDesk"
+    },
+    {
+      "pid": 84366,
+      "uid": 501,
+      "executable": "/Applications/UURemote.app/Contents/MacOS/UURemoteService"
+    },
+    {
+      "pid": 89133,
+      "uid": 501,
+      "executable": "/Applications/UURemote.app/Contents/MacOS/UURemote"
+    },
+    {
+      "pid": 89157,
+      "uid": 501,
+      "executable": "/Applications/UURemote.app/Contents/Helpers/UURemoteServer"
+    }
+  ],
+  "systemIntegrityProtection": {
+    "returnCode": 0,
+    "stdout": "System Integrity Protection status: enabled.",
+    "stderr": ""
+  },
+  "os": "ProductName:\t\tmacOS\nProductVersion:\t\t26.6.2\nBuildVersion:\t\t25G83",
+  "machOCount": 34,
+  "components": [
+    {
+      "app": "ToDesk.app",
+      "path": "/Applications/ToDesk.app/Contents/Helpers/ToDesk_Screenwall_Helper.app/Contents/MacOS/ToDesk_Screenwall_Helper",
+      "relativePath": "Contents/Helpers/ToDesk_Screenwall_Helper.app/Contents/MacOS/ToDesk_Screenwall_Helper",
+      "bytes": 98860384,
+      "sha256": "4273a5540a0676281df7cdfb3d2cbb1ef5eff0adecea79350e90e61b32ea36a3",
+      "runningInstances": [],
+      "architectures": [
+        "x86_64",
+        "arm64"
+      ],
+      "architectureReadReturnCode": 0,
+      "signatureMetadataReadReturnCode": 0,
+      "codeDirectory": "CodeDirectory v=20500 size=360809 flags=0x10000(runtime) hashes=11264+7 location=embedded",
+      "signatureIdentifier": "com.youqu.todesk.RenderHelper",
+      "teamIdentifier": "KM56KD59W4",
+      "runtimeVersion": "26.2.0",
+      "hardenedRuntimeFlag": true,
+      "entitlementsReadReturnCode": 0,
+      "entitlementsParse": "parsed",
+      "selectedEntitlements": {
+        "com.apple.security.get-task-allow": null,
+        "com.apple.security.cs.allow-dyld-environment-variables": true,
+        "com.apple.security.cs.disable-library-validation": true,
+        "com.apple.security.cs.disable-executable-page-protection": true,
+        "com.apple.security.cs.allow-unsigned-executable-memory": true,
+        "com.apple.security.cs.allow-jit": true,
+        "com.apple.security.app-sandbox": null
+      },
+      "linkedLibraries": [
+        "/System/Library/Frameworks/AVFoundation.framework/Versions/A/AVFoundation",
+        "/System/Library/Frameworks/Accelerate.framework/Versions/A/Accelerate",
+        "/System/Library/Frameworks/AppKit.framework/Versions/C/AppKit",
+        "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/ApplicationServices",
+        "/System/Library/Frameworks/AudioToolbox.framework/Versions/A/AudioToolbox",
+        "/System/Library/Frameworks/AudioUnit.framework/Versions/A/AudioUnit",
+        "/System/Library/Frameworks/CFNetwork.framework/Versions/A/CFNetwork",
+        "/System/Library/Frameworks/Carbon.framework/Versions/A/Carbon",
+        "/System/Library/Frameworks/Cocoa.framework/Versions/A/Cocoa",
+        "/System/Library/Frameworks/CoreAudio.framework/Versions/A/CoreAudio",
+        "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+        "/System/Library/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics",
+        "/System/Library/Frameworks/CoreHaptics.framework/Versions/A/CoreHaptics",
+        "/System/Library/Frameworks/CoreImage.framework/Versions/A/CoreImage",
+        "/System/Library/Frameworks/CoreMedia.framework/Versions/A/CoreMedia",
+        "/System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices",
+        "/System/Library/Frameworks/CoreText.framework/Versions/A/CoreText",
+        "/System/Library/Frameworks/CoreVideo.framework/Versions/A/CoreVideo",
+        "/System/Library/Frameworks/DiskArbitration.framework/Versions/A/DiskArbitration",
+        "/System/Library/Frameworks/ForceFeedback.framework/Versions/A/ForceFeedback",
+        "/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation",
+        "/System/Library/Frameworks/GameController.framework/Versions/A/GameController",
+        "/System/Library/Frameworks/IOBluetooth.framework/Versions/A/IOBluetooth",
+        "/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit",
+        "/System/Library/Frameworks/IOSurface.framework/Versions/A/IOSurface",
+        "/System/Library/Frameworks/ImageIO.framework/Versions/A/ImageIO",
+        "/System/Library/Frameworks/Metal.framework/Versions/A/Metal",
+        "/System/Library/Frameworks/MetalKit.framework/Versions/A/MetalKit",
+        "/System/Library/Frameworks/OpenGL.framework/Versions/A/OpenGL",
+        "/System/Library/Frameworks/PDFKit.framework/Versions/A/PDFKit",
+        "/System/Library/Frameworks/Quartz.framework/Versions/A/Quartz",
+        "/System/Library/Frameworks/QuartzCore.framework/Versions/A/QuartzCore",
+        "/System/Library/Frameworks/ScreenCaptureKit.framework/Versions/A/ScreenCaptureKit",
+        "/System/Library/Frameworks/Security.framework/Versions/A/Security",
+        "/System/Library/Frameworks/SystemConfiguration.framework/Versions/A/SystemConfiguration",
+        "/usr/lib/libSystem.B.dylib",
+        "/usr/lib/libc++.1.dylib",
+        "/usr/lib/libobjc.A.dylib",
+        "/usr/lib/libresolv.9.dylib",
+        "@rpath/Breakpad.framework/Versions/A/Breakpad",
+        "@rpath/zrtc.framework/zrtc"
+      ],
+      "otoolReturnCode": 0,
+      "undefinedCaptureSymbolTokens": [
+        "CGDisplayCreateImage",
+        "CGDisplayStreamCreate",
+        "CGDisplayStreamGetRunLoopSource",
+        "CGDisplayStreamShowCursor",
+        "CGDisplayStreamStart",
+        "CGDisplayStreamStop",
+        "CGDisplayStreamUpdateGetRects",
+        "CGRequestScreenCaptureAccess",
+        "CGWindowListCreateImage",
+        "CGWindowListCreateImageFromArray",
+        "SCContentFilter",
+        "SCScreenshotManager",
+        "SCShareableContent",
+        "SCStream"
+      ],
+      "nmReturnCode": 0,
+      "undefinedCaptureSymbolTokensByArchitecture": {
+        "x86_64": {
+          "returnCode": 0,
+          "tokens": [
+            "CGDisplayCreateImage",
+            "CGDisplayStreamCreate",
+            "CGDisplayStreamGetRunLoopSource",
+            "CGDisplayStreamShowCursor",
+            "CGDisplayStreamStart",
+            "CGDisplayStreamStop",
+            "CGDisplayStreamUpdateGetRects",
+            "CGRequestScreenCaptureAccess",
+            "CGWindowListCreateImage",
+            "CGWindowListCreateImageFromArray",
+            "SCContentFilter",
+            "SCScreenshotManager",
+            "SCShareableContent",
+            "SCStream"
+          ]
+        },
+        "arm64": {
+          "returnCode": 0,
+          "tokens": [
+            "CGDisplayCreateImage",
+            "CGDisplayStreamCreate",
+            "CGDisplayStreamGetRunLoopSource",
+            "CGDisplayStreamShowCursor",
+            "CGDisplayStreamStart",
+            "CGDisplayStreamStop",
+            "CGDisplayStreamUpdateGetRects",
+            "CGRequestScreenCaptureAccess",
+            "CGWindowListCreateImage",
+            "CGWindowListCreateImageFromArray",
+            "SCContentFilter",
+            "SCScreenshotManager",
+            "SCShareableContent",
+            "SCStream"
+          ]
+        }
+      },
+      "captureStringTokens": [
+        "CGDisplayCreateImage",
+        "CGDisplayStreamUpdate",
+        "CGSHWCaptureWindowList",
+        "CGWindowListCreateImage",
+        "CGWindowListCreateImageFromArray",
+        "SCShareableContent",
+        "SCStream",
+        "addStreamOutput:type:sampleHandlerQueue:error:",
+        "captureImageWithFilter:configuration:completionHandler:",
+        "getShareableContentExcludingDesktopWindows:onScreenWindowsOnly:completionHandler:",
+        "getShareableContentWithCompletionHandler:",
+        "initWithFilter:configuration:delegate:",
+        "startCaptureWithCompletionHandler:",
+        "stopCaptureWithCompletionHandler:",
+        "stream:didOutputSampleBuffer:ofType:"
+      ],
+      "stringsReturnCode": 0
+    },
+    {
+      "app": "ToDesk.app",
+      "path": "/Applications/ToDesk.app/Contents/Helpers/ToDesk_Session.app/Contents/MacOS/ToDesk_Session",
+      "relativePath": "Contents/Helpers/ToDesk_Session.app/Contents/MacOS/ToDesk_Session",
+      "bytes": 97524912,
+      "sha256": "12843d1339a4c613ea5e3d7c8b6255fcdc59f4d9d8de85a9755924ca1d480dab",
+      "runningInstances": [
+        {
+          "pid": 77126,
+          "uid": 501,
+          "executable": "/Applications/ToDesk.app/Contents/Helpers/ToDesk_Session.app/Contents/MacOS/ToDesk_Session"
+        }
+      ],
+      "architectures": [
+        "x86_64",
+        "arm64"
+      ],
+      "architectureReadReturnCode": 0,
+      "signatureMetadataReadReturnCode": 0,
+      "codeDirectory": "CodeDirectory v=20500 size=355814 flags=0x10000(runtime) hashes=11108+7 location=embedded",
+      "signatureIdentifier": "com.youqu.todesk.mac.tdsvc",
+      "teamIdentifier": "KM56KD59W4",
+      "runtimeVersion": "26.2.0",
+      "hardenedRuntimeFlag": true,
+      "entitlementsReadReturnCode": 0,
+      "entitlementsParse": "parsed",
+      "selectedEntitlements": {
+        "com.apple.security.get-task-allow": null,
+        "com.apple.security.cs.allow-dyld-environment-variables": true,
+        "com.apple.security.cs.disable-library-validation": true,
+        "com.apple.security.cs.disable-executable-page-protection": true,
+        "com.apple.security.cs.allow-unsigned-executable-memory": true,
+        "com.apple.security.cs.allow-jit": true,
+        "com.apple.security.app-sandbox": null
+      },
+      "linkedLibraries": [
+        "/System/Library/Frameworks/AVFoundation.framework/Versions/A/AVFoundation",
+        "/System/Library/Frameworks/Accelerate.framework/Versions/A/Accelerate",
+        "/System/Library/Frameworks/AppKit.framework/Versions/C/AppKit",
+        "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/ApplicationServices",
+        "/System/Library/Frameworks/AudioToolbox.framework/Versions/A/AudioToolbox",
+        "/System/Library/Frameworks/AudioUnit.framework/Versions/A/AudioUnit",
+        "/System/Library/Frameworks/CFNetwork.framework/Versions/A/CFNetwork",
+        "/System/Library/Frameworks/Carbon.framework/Versions/A/Carbon",
+        "/System/Library/Frameworks/Cocoa.framework/Versions/A/Cocoa",
+        "/System/Library/Frameworks/CoreAudio.framework/Versions/A/CoreAudio",
+        "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+        "/System/Library/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics",
+        "/System/Library/Frameworks/CoreHaptics.framework/Versions/A/CoreHaptics",
+        "/System/Library/Frameworks/CoreImage.framework/Versions/A/CoreImage",
+        "/System/Library/Frameworks/CoreMedia.framework/Versions/A/CoreMedia",
+        "/System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices",
+        "/System/Library/Frameworks/CoreText.framework/Versions/A/CoreText",
+        "/System/Library/Frameworks/CoreVideo.framework/Versions/A/CoreVideo",
+        "/System/Library/Frameworks/DiskArbitration.framework/Versions/A/DiskArbitration",
+        "/System/Library/Frameworks/ForceFeedback.framework/Versions/A/ForceFeedback",
+        "/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation",
+        "/System/Library/Frameworks/GameController.framework/Versions/A/GameController",
+        "/System/Library/Frameworks/IOBluetooth.framework/Versions/A/IOBluetooth",
+        "/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit",
+        "/System/Library/Frameworks/IOSurface.framework/Versions/A/IOSurface",
+        "/System/Library/Frameworks/ImageIO.framework/Versions/A/ImageIO",
+        "/System/Library/Frameworks/Metal.framework/Versions/A/Metal",
+        "/System/Library/Frameworks/MetalKit.framework/Versions/A/MetalKit",
+        "/System/Library/Frameworks/OpenGL.framework/Versions/A/OpenGL",
+        "/System/Library/Frameworks/PDFKit.framework/Versions/A/PDFKit",
+        "/System/Library/Frameworks/Quartz.framework/Versions/A/Quartz",
+        "/System/Library/Frameworks/QuartzCore.framework/Versions/A/QuartzCore",
+        "/System/Library/Frameworks/ScreenCaptureKit.framework/Versions/A/ScreenCaptureKit",
+        "/System/Library/Frameworks/Security.framework/Versions/A/Security",
+        "/System/Library/Frameworks/ServiceManagement.framework/Versions/A/ServiceManagement",
+        "/System/Library/Frameworks/SystemConfiguration.framework/Versions/A/SystemConfiguration",
+        "/usr/lib/libSystem.B.dylib",
+        "/usr/lib/libc++.1.dylib",
+        "/usr/lib/libobjc.A.dylib",
+        "/usr/lib/libresolv.9.dylib",
+        "@rpath/Breakpad.framework/Versions/A/Breakpad",
+        "@rpath/zrtc.framework/zrtc"
+      ],
+      "otoolReturnCode": 0,
+      "undefinedCaptureSymbolTokens": [
+        "CGDisplayCreateImage",
+        "CGDisplayStreamCreate",
+        "CGDisplayStreamGetRunLoopSource",
+        "CGDisplayStreamShowCursor",
+        "CGDisplayStreamStart",
+        "CGDisplayStreamStop",
+        "CGDisplayStreamUpdateGetRects",
+        "CGRequestScreenCaptureAccess",
+        "CGWindowListCreateImage",
+        "CGWindowListCreateImageFromArray",
+        "SCContentFilter",
+        "SCScreenshotManager",
+        "SCShareableContent",
+        "SCStream"
+      ],
+      "nmReturnCode": 0,
+      "undefinedCaptureSymbolTokensByArchitecture": {
+        "x86_64": {
+          "returnCode": 0,
+          "tokens": [
+            "CGDisplayCreateImage",
+            "CGDisplayStreamCreate",
+            "CGDisplayStreamGetRunLoopSource",
+            "CGDisplayStreamShowCursor",
+            "CGDisplayStreamStart",
+            "CGDisplayStreamStop",
+            "CGDisplayStreamUpdateGetRects",
+            "CGRequestScreenCaptureAccess",
+            "CGWindowListCreateImage",
+            "CGWindowListCreateImageFromArray",
+            "SCContentFilter",
+            "SCScreenshotManager",
+            "SCShareableContent",
+            "SCStream"
+          ]
+        },
+        "arm64": {
+          "returnCode": 0,
+          "tokens": [
+            "CGDisplayCreateImage",
+            "CGDisplayStreamCreate",
+            "CGDisplayStreamGetRunLoopSource",
+            "CGDisplayStreamShowCursor",
+            "CGDisplayStreamStart",
+            "CGDisplayStreamStop",
+            "CGDisplayStreamUpdateGetRects",
+            "CGRequestScreenCaptureAccess",
+            "CGWindowListCreateImage",
+            "CGWindowListCreateImageFromArray",
+            "SCContentFilter",
+            "SCScreenshotManager",
+            "SCShareableContent",
+            "SCStream"
+          ]
+        }
+      },
+      "captureStringTokens": [
+        "CGDisplayCreateImage",
+        "CGDisplayStreamUpdate",
+        "CGSHWCaptureWindowList",
+        "CGWindowListCreateImage",
+        "CGWindowListCreateImageFromArray",
+        "SCShareableContent",
+        "SCStream",
+        "addStreamOutput:type:sampleHandlerQueue:error:",
+        "captureImageWithFilter:configuration:completionHandler:",
+        "getShareableContentExcludingDesktopWindows:onScreenWindowsOnly:completionHandler:",
+        "getShareableContentWithCompletionHandler:",
+        "initWithFilter:configuration:delegate:",
+        "startCaptureWithCompletionHandler:",
+        "stopCaptureWithCompletionHandler:",
+        "stream:didOutputSampleBuffer:ofType:"
+      ],
+      "stringsReturnCode": 0
+    },
+    {
+      "app": "ToDesk.app",
+      "path": "/Applications/ToDesk.app/Contents/Frameworks/zulerLog.framework/Versions/A/zulerLog",
+      "relativePath": "Contents/Frameworks/zulerLog.framework/Versions/A/zulerLog",
+      "bytes": 365344,
+      "sha256": "9815754e211b212f20c30ef962f1d3af32c9c9096e208ba93624a1dc21987577",
+      "runningInstances": [],
+      "architectures": [
+        "x86_64",
+        "arm64"
+      ],
+      "architectureReadReturnCode": 0,
+      "signatureMetadataReadReturnCode": 0,
+      "codeDirectory": "CodeDirectory v=20500 size=1536 flags=0x10000(runtime) hashes=41+3 location=embedded",
+      "signatureIdentifier": "com.example.zulerLog",
+      "teamIdentifier": "KM56KD59W4",
+      "runtimeVersion": "26.2.0",
+      "hardenedRuntimeFlag": true,
+      "entitlementsReadReturnCode": 0,
+      "entitlementsParse": "no-output",
+      "selectedEntitlements": {
+        "com.apple.security.get-task-allow": null,
+        "com.apple.security.cs.allow-dyld-environment-variables": null,
+        "com.apple.security.cs.disable-library-validation": null,
+        "com.apple.security.cs.disable-executable-page-protection": null,
+        "com.apple.security.cs.allow-unsigned-executable-memory": null,
+        "com.apple.security.cs.allow-jit": null,
+        "com.apple.security.app-sandbox": null
+      },
+      "linkedLibraries": [
+        "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+        "/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation",
+        "/System/Library/Frameworks/SystemConfiguration.framework/Versions/A/SystemConfiguration",
+        "/usr/lib/libSystem.B.dylib",
+        "/usr/lib/libc++.1.dylib",
+        "/usr/lib/libz.1.dylib",
+        "@rpath/zulerLog.framework/Versions/A/zulerLog"
+      ],
+      "otoolReturnCode": 0,
+      "undefinedCaptureSymbolTokens": [],
+      "nmReturnCode": 0,
+      "undefinedCaptureSymbolTokensByArchitecture": {
+        "x86_64": {
+          "returnCode": 0,
+          "tokens": []
+        },
+        "arm64": {
+          "returnCode": 0,
+          "tokens": []
+        }
+      },
+      "captureStringTokens": [],
+      "stringsReturnCode": 0
+    },
+    {
+      "app": "ToDesk.app",
+      "path": "/Applications/ToDesk.app/Contents/MacOS/ToDesk",
+      "relativePath": "Contents/MacOS/ToDesk",
+      "bytes": 206994272,
+      "sha256": "72c3e094473369415a5c04abdbe611ecd6bffe9b87b7dbbd3d70b7cc94db88a6",
+      "runningInstances": [
+        {
+          "pid": 81381,
+          "uid": 501,
+          "executable": "/Applications/ToDesk.app/Contents/MacOS/ToDesk"
+        }
+      ],
+      "architectures": [
+        "x86_64",
+        "arm64"
+      ],
+      "architectureReadReturnCode": 0,
+      "signatureMetadataReadReturnCode": 0,
+      "codeDirectory": "CodeDirectory v=20500 size=772224 flags=0x10000(runtime) hashes=24121+7 location=embedded",
+      "signatureIdentifier": "com.youqu.todesk.mac",
+      "teamIdentifier": "KM56KD59W4",
+      "runtimeVersion": "26.2.0",
+      "hardenedRuntimeFlag": true,
+      "entitlementsReadReturnCode": 0,
+      "entitlementsParse": "parsed",
+      "selectedEntitlements": {
+        "com.apple.security.get-task-allow": null,
+        "com.apple.security.cs.allow-dyld-environment-variables": true,
+        "com.apple.security.cs.disable-library-validation": true,
+        "com.apple.security.cs.disable-executable-page-protection": true,
+        "com.apple.security.cs.allow-unsigned-executable-memory": true,
+        "com.apple.security.cs.allow-jit": true,
+        "com.apple.security.app-sandbox": null
+      },
+      "linkedLibraries": [
+        "/System/Library/Frameworks/AVFoundation.framework/Versions/A/AVFoundation",
+        "/System/Library/Frameworks/Accelerate.framework/Versions/A/Accelerate",
+        "/System/Library/Frameworks/AppKit.framework/Versions/C/AppKit",
+        "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/ApplicationServices",
+        "/System/Library/Frameworks/AudioToolbox.framework/Versions/A/AudioToolbox",
+        "/System/Library/Frameworks/AudioUnit.framework/Versions/A/AudioUnit",
+        "/System/Library/Frameworks/CFNetwork.framework/Versions/A/CFNetwork",
+        "/System/Library/Frameworks/Carbon.framework/Versions/A/Carbon",
+        "/System/Library/Frameworks/Cocoa.framework/Versions/A/Cocoa",
+        "/System/Library/Frameworks/CoreAudio.framework/Versions/A/CoreAudio",
+        "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+        "/System/Library/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics",
+        "/System/Library/Frameworks/CoreHaptics.framework/Versions/A/CoreHaptics",
+        "/System/Library/Frameworks/CoreImage.framework/Versions/A/CoreImage",
+        "/System/Library/Frameworks/CoreMedia.framework/Versions/A/CoreMedia",
+        "/System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices",
+        "/System/Library/Frameworks/CoreText.framework/Versions/A/CoreText",
+        "/System/Library/Frameworks/CoreVideo.framework/Versions/A/CoreVideo",
+        "/System/Library/Frameworks/DiskArbitration.framework/Versions/A/DiskArbitration",
+        "/System/Library/Frameworks/ForceFeedback.framework/Versions/A/ForceFeedback",
+        "/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation",
+        "/System/Library/Frameworks/GameController.framework/Versions/A/GameController",
+        "/System/Library/Frameworks/IOBluetooth.framework/Versions/A/IOBluetooth",
+        "/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit",
+        "/System/Library/Frameworks/IOSurface.framework/Versions/A/IOSurface",
+        "/System/Library/Frameworks/ImageIO.framework/Versions/A/ImageIO",
+        "/System/Library/Frameworks/Metal.framework/Versions/A/Metal",
+        "/System/Library/Frameworks/MetalKit.framework/Versions/A/MetalKit",
+        "/System/Library/Frameworks/OpenGL.framework/Versions/A/OpenGL",
+        "/System/Library/Frameworks/PDFKit.framework/Versions/A/PDFKit",
+        "/System/Library/Frameworks/Quartz.framework/Versions/A/Quartz",
+        "/System/Library/Frameworks/QuartzCore.framework/Versions/A/QuartzCore",
+        "/System/Library/Frameworks/ScreenCaptureKit.framework/Versions/A/ScreenCaptureKit",
+        "/System/Library/Frameworks/Security.framework/Versions/A/Security",
+        "/System/Library/Frameworks/ServiceManagement.framework/Versions/A/ServiceManagement",
+        "/System/Library/Frameworks/SystemConfiguration.framework/Versions/A/SystemConfiguration",
+        "/System/Library/Frameworks/UserNotifications.framework/Versions/A/UserNotifications",
+        "/System/Library/Frameworks/WebKit.framework/Versions/A/WebKit",
+        "/usr/lib/libSystem.B.dylib",
+        "/usr/lib/libc++.1.dylib",
+        "/usr/lib/libobjc.A.dylib",
+        "/usr/lib/libresolv.9.dylib",
+        "@rpath/Breakpad.framework/Versions/A/Breakpad",
+        "@rpath/Sparkle.framework/Versions/A/Sparkle",
+        "@rpath/zagent.framework/Versions/A/zagent",
+        "@rpath/zrtc.framework/zrtc"
+      ],
+      "otoolReturnCode": 0,
+      "undefinedCaptureSymbolTokens": [
+        "CGDisplayCreateImage",
+        "CGDisplayStreamCreate",
+        "CGDisplayStreamGetRunLoopSource",
+        "CGDisplayStreamShowCursor",
+        "CGDisplayStreamStart",
+        "CGDisplayStreamStop",
+        "CGDisplayStreamUpdateGetRects",
+        "CGRequestScreenCaptureAccess",
+        "CGWindowListCreateImage",
+        "CGWindowListCreateImageFromArray",
+        "SCContentFilter",
+        "SCScreenshotManager",
+        "SCShareableContent",
+        "SCStream"
+      ],
+      "nmReturnCode": 0,
+      "undefinedCaptureSymbolTokensByArchitecture": {
+        "x86_64": {
+          "returnCode": 0,
+          "tokens": [
+            "CGDisplayCreateImage",
+            "CGDisplayStreamCreate",
+            "CGDisplayStreamGetRunLoopSource",
+            "CGDisplayStreamShowCursor",
+            "CGDisplayStreamStart",
+            "CGDisplayStreamStop",
+            "CGDisplayStreamUpdateGetRects",
+            "CGRequestScreenCaptureAccess",
+            "CGWindowListCreateImage",
+            "CGWindowListCreateImageFromArray",
+            "SCContentFilter",
+            "SCScreenshotManager",
+            "SCShareableContent",
+            "SCStream"
+          ]
+        },
+        "arm64": {
+          "returnCode": 0,
+          "tokens": [
+            "CGDisplayCreateImage",
+            "CGDisplayStreamCreate",
+            "CGDisplayStreamGetRunLoopSource",
+            "CGDisplayStreamShowCursor",
+            "CGDisplayStreamStart",
+            "CGDisplayStreamStop",
+            "CGDisplayStreamUpdateGetRects",
+            "CGRequestScreenCaptureAccess",
+            "CGWindowListCreateImage",
+            "CGWindowListCreateImageFromArray",
+            "SCContentFilter",
+            "SCScreenshotManager",
+            "SCShareableContent",
+            "SCStream"
+          ]
+        }
+      },
+      "captureStringTokens": [
+        "CGDisplayCreateImage",
+        "CGDisplayStreamUpdate",
+        "CGSHWCaptureWindowList",
+        "CGWindowListCreateImage",
+        "CGWindowListCreateImageFromArray",
+        "SCShareableContent",
+        "SCStream",
+        "addStreamOutput:type:sampleHandlerQueue:error:",
+        "captureImageWithFilter:configuration:completionHandler:",
+        "getShareableContentExcludingDesktopWindows:onScreenWindowsOnly:completionHandler:",
+        "getShareableContentWithCompletionHandler:",
+        "initWithFilter:configuration:delegate:",
+        "startCaptureWithCompletionHandler:",
+        "stopCaptureWithCompletionHandler:",
+        "stream:didOutputSampleBuffer:ofType:"
+      ],
+      "stringsReturnCode": 0
+    },
+    {
+      "app": "ToDesk.app",
+      "path": "/Applications/ToDesk.app/Contents/MacOS/ToDesk_Session_Proxy",
+      "relativePath": "Contents/MacOS/ToDesk_Session_Proxy",
+      "bytes": 996160,
+      "sha256": "3548c4b100e6dc4087fc191a66de83cedae42721e9bee95a77ab2a59f62dea6a",
+      "runningInstances": [
+        {
+          "pid": 78332,
+          "uid": 501,
+          "executable": "/Applications/ToDesk.app/Contents/MacOS/ToDesk_Session_Proxy"
+        }
+      ],
+      "architectures": [
+        "x86_64",
+        "arm64"
+      ],
+      "architectureReadReturnCode": 0,
+      "signatureMetadataReadReturnCode": 0,
+      "codeDirectory": "CodeDirectory v=20500 size=3712 flags=0x10000(runtime) hashes=105+7 location=embedded",
+      "signatureIdentifier": "ToDesk_Session_Proxy",
+      "teamIdentifier": "KM56KD59W4",
+      "runtimeVersion": "26.2.0",
+      "hardenedRuntimeFlag": true,
+      "entitlementsReadReturnCode": 0,
+      "entitlementsParse": "parsed",
+      "selectedEntitlements": {
+        "com.apple.security.get-task-allow": null,
+        "com.apple.security.cs.allow-dyld-environment-variables": true,
+        "com.apple.security.cs.disable-library-validation": true,
+        "com.apple.security.cs.disable-executable-page-protection": true,
+        "com.apple.security.cs.allow-unsigned-executable-memory": true,
+        "com.apple.security.cs.allow-jit": true,
+        "com.apple.security.app-sandbox": null
+      },
+      "linkedLibraries": [
+        "/System/Library/Frameworks/AppKit.framework/Versions/C/AppKit",
+        "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/ApplicationServices",
+        "/System/Library/Frameworks/AudioToolbox.framework/Versions/A/AudioToolbox",
+        "/System/Library/Frameworks/AudioUnit.framework/Versions/A/AudioUnit",
+        "/System/Library/Frameworks/CoreAudio.framework/Versions/A/CoreAudio",
+        "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+        "/System/Library/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics",
+        "/System/Library/Frameworks/CoreMedia.framework/Versions/A/CoreMedia",
+        "/System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices",
+        "/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation",
+        "/System/Library/Frameworks/IOBluetooth.framework/Versions/A/IOBluetooth",
+        "/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit",
+        "/System/Library/Frameworks/Metal.framework/Versions/A/Metal",
+        "/System/Library/Frameworks/Security.framework/Versions/A/Security",
+        "/System/Library/Frameworks/ServiceManagement.framework/Versions/A/ServiceManagement",
+        "/System/Library/Frameworks/SystemConfiguration.framework/Versions/A/SystemConfiguration",
+        "/usr/lib/libSystem.B.dylib",
+        "/usr/lib/libc++.1.dylib",
+        "/usr/lib/libobjc.A.dylib"
+      ],
+      "otoolReturnCode": 0,
+      "undefinedCaptureSymbolTokens": [],
+      "nmReturnCode": 0,
+      "undefinedCaptureSymbolTokensByArchitecture": {
+        "x86_64": {
+          "returnCode": 0,
+          "tokens": []
+        },
+        "arm64": {
+          "returnCode": 0,
+          "tokens": []
+        }
+      },
+      "captureStringTokens": [],
+      "stringsReturnCode": 0
+    },
+    {
+      "app": "ToDesk.app",
+      "path": "/Applications/ToDesk.app/Contents/MacOS/updater",
+      "relativePath": "Contents/MacOS/updater",
+      "bytes": 10333680,
+      "sha256": "719fe72b3bebb95f8413087406b1c9ef1eb8725820f44df00b7d0804364330b8",
+      "runningInstances": [],
+      "architectures": [
+        "x86_64",
+        "arm64"
+      ],
+      "architectureReadReturnCode": 0,
+      "signatureMetadataReadReturnCode": 0,
+      "codeDirectory": "CodeDirectory v=20500 size=37875 flags=0x10000(runtime) hashes=1173+7 location=embedded",
+      "signatureIdentifier": "updater",
+      "teamIdentifier": "KM56KD59W4",
+      "runtimeVersion": "26.2.0",
+      "hardenedRuntimeFlag": true,
+      "entitlementsReadReturnCode": 0,
+      "entitlementsParse": "parsed",
+      "selectedEntitlements": {
+        "com.apple.security.get-task-allow": null,
+        "com.apple.security.cs.allow-dyld-environment-variables": true,
+        "com.apple.security.cs.disable-library-validation": true,
+        "com.apple.security.cs.disable-executable-page-protection": true,
+        "com.apple.security.cs.allow-unsigned-executable-memory": true,
+        "com.apple.security.cs.allow-jit": true,
+        "com.apple.security.app-sandbox": null
+      },
+      "linkedLibraries": [
+        "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+        "/System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices",
+        "/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation",
+        "/System/Library/Frameworks/Security.framework/Versions/A/Security",
+        "/System/Library/Frameworks/SystemConfiguration.framework/Versions/A/SystemConfiguration",
+        "/usr/lib/libSystem.B.dylib",
+        "/usr/lib/libc++.1.dylib",
+        "/usr/lib/libobjc.A.dylib"
+      ],
+      "otoolReturnCode": 0,
+      "undefinedCaptureSymbolTokens": [],
+      "nmReturnCode": 0,
+      "undefinedCaptureSymbolTokensByArchitecture": {
+        "x86_64": {
+          "returnCode": 0,
+          "tokens": []
+        },
+        "arm64": {
+          "returnCode": 0,
+          "tokens": []
+        }
+      },
+      "captureStringTokens": [],
+      "stringsReturnCode": 0
+    },
+    {
+      "app": "ToDesk.app",
+      "path": "/Applications/ToDesk.app/Contents/MacOS/ToDesk_Service",
+      "relativePath": "Contents/MacOS/ToDesk_Service",
+      "bytes": 99012416,
+      "sha256": "82522ce303badb24e4b1a435114cdee7f99a20852c2dca6ed0d6311cfe716359",
+      "runningInstances": [
+        {
+          "pid": 78215,
+          "uid": 0,
+          "executable": "/Applications/ToDesk.app/Contents/MacOS/ToDesk_Service"
+        }
+      ],
+      "architectures": [
+        "x86_64",
+        "arm64"
+      ],
+      "architectureReadReturnCode": 0,
+      "signatureMetadataReadReturnCode": 0,
+      "codeDirectory": "CodeDirectory v=20500 size=361338 flags=0x10000(runtime) hashes=11281+7 location=embedded",
+      "signatureIdentifier": "ToDesk_Service",
+      "teamIdentifier": "KM56KD59W4",
+      "runtimeVersion": "26.2.0",
+      "hardenedRuntimeFlag": true,
+      "entitlementsReadReturnCode": 0,
+      "entitlementsParse": "parsed",
+      "selectedEntitlements": {
+        "com.apple.security.get-task-allow": null,
+        "com.apple.security.cs.allow-dyld-environment-variables": true,
+        "com.apple.security.cs.disable-library-validation": true,
+        "com.apple.security.cs.disable-executable-page-protection": true,
+        "com.apple.security.cs.allow-unsigned-executable-memory": true,
+        "com.apple.security.cs.allow-jit": true,
+        "com.apple.security.app-sandbox": null
+      },
+      "linkedLibraries": [
+        "/System/Library/Frameworks/AVFoundation.framework/Versions/A/AVFoundation",
+        "/System/Library/Frameworks/Accelerate.framework/Versions/A/Accelerate",
+        "/System/Library/Frameworks/AppKit.framework/Versions/C/AppKit",
+        "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/ApplicationServices",
+        "/System/Library/Frameworks/AudioToolbox.framework/Versions/A/AudioToolbox",
+        "/System/Library/Frameworks/AudioUnit.framework/Versions/A/AudioUnit",
+        "/System/Library/Frameworks/CFNetwork.framework/Versions/A/CFNetwork",
+        "/System/Library/Frameworks/Carbon.framework/Versions/A/Carbon",
+        "/System/Library/Frameworks/Cocoa.framework/Versions/A/Cocoa",
+        "/System/Library/Frameworks/CoreAudio.framework/Versions/A/CoreAudio",
+        "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+        "/System/Library/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics",
+        "/System/Library/Frameworks/CoreHaptics.framework/Versions/A/CoreHaptics",
+        "/System/Library/Frameworks/CoreImage.framework/Versions/A/CoreImage",
+        "/System/Library/Frameworks/CoreMedia.framework/Versions/A/CoreMedia",
+        "/System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices",
+        "/System/Library/Frameworks/CoreText.framework/Versions/A/CoreText",
+        "/System/Library/Frameworks/CoreVideo.framework/Versions/A/CoreVideo",
+        "/System/Library/Frameworks/DiskArbitration.framework/Versions/A/DiskArbitration",
+        "/System/Library/Frameworks/ForceFeedback.framework/Versions/A/ForceFeedback",
+        "/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation",
+        "/System/Library/Frameworks/GameController.framework/Versions/A/GameController",
+        "/System/Library/Frameworks/IOBluetooth.framework/Versions/A/IOBluetooth",
+        "/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit",
+        "/System/Library/Frameworks/IOSurface.framework/Versions/A/IOSurface",
+        "/System/Library/Frameworks/ImageIO.framework/Versions/A/ImageIO",
+        "/System/Library/Frameworks/Metal.framework/Versions/A/Metal",
+        "/System/Library/Frameworks/MetalKit.framework/Versions/A/MetalKit",
+        "/System/Library/Frameworks/OpenGL.framework/Versions/A/OpenGL",
+        "/System/Library/Frameworks/PDFKit.framework/Versions/A/PDFKit",
+        "/System/Library/Frameworks/Quartz.framework/Versions/A/Quartz",
+        "/System/Library/Frameworks/QuartzCore.framework/Versions/A/QuartzCore",
+        "/System/Library/Frameworks/ScreenCaptureKit.framework/Versions/A/ScreenCaptureKit",
+        "/System/Library/Frameworks/Security.framework/Versions/A/Security",
+        "/System/Library/Frameworks/ServiceManagement.framework/Versions/A/ServiceManagement",
+        "/System/Library/Frameworks/SystemConfiguration.framework/Versions/A/SystemConfiguration",
+        "/usr/lib/libSystem.B.dylib",
+        "/usr/lib/libbsm.0.dylib",
+        "/usr/lib/libc++.1.dylib",
+        "/usr/lib/libobjc.A.dylib",
+        "/usr/lib/libresolv.9.dylib",
+        "@rpath/Breakpad.framework/Versions/A/Breakpad",
+        "@rpath/zrtc.framework/zrtc"
+      ],
+      "otoolReturnCode": 0,
+      "undefinedCaptureSymbolTokens": [
+        "CGDisplayCreateImage",
+        "CGDisplayStreamCreate",
+        "CGDisplayStreamGetRunLoopSource",
+        "CGDisplayStreamShowCursor",
+        "CGDisplayStreamStart",
+        "CGDisplayStreamStop",
+        "CGDisplayStreamUpdateGetRects",
+        "CGRequestScreenCaptureAccess",
+        "CGWindowListCreateImage",
+        "CGWindowListCreateImageFromArray",
+        "SCContentFilter",
+        "SCScreenshotManager",
+        "SCShareableContent",
+        "SCStream"
+      ],
+      "nmReturnCode": 0,
+      "undefinedCaptureSymbolTokensByArchitecture": {
+        "x86_64": {
+          "returnCode": 0,
+          "tokens": [
+            "CGDisplayCreateImage",
+            "CGDisplayStreamCreate",
+            "CGDisplayStreamGetRunLoopSource",
+            "CGDisplayStreamShowCursor",
+            "CGDisplayStreamStart",
+            "CGDisplayStreamStop",
+            "CGDisplayStreamUpdateGetRects",
+            "CGRequestScreenCaptureAccess",
+            "CGWindowListCreateImage",
+            "CGWindowListCreateImageFromArray",
+            "SCContentFilter",
+            "SCScreenshotManager",
+            "SCShareableContent",
+            "SCStream"
+          ]
+        },
+        "arm64": {
+          "returnCode": 0,
+          "tokens": [
+            "CGDisplayCreateImage",
+            "CGDisplayStreamCreate",
+            "CGDisplayStreamGetRunLoopSource",
+            "CGDisplayStreamShowCursor",
+            "CGDisplayStreamStart",
+            "CGDisplayStreamStop",
+            "CGDisplayStreamUpdateGetRects",
+            "CGRequestScreenCaptureAccess",
+            "CGWindowListCreateImage",
+            "CGWindowListCreateImageFromArray",
+            "SCContentFilter",
+            "SCScreenshotManager",
+            "SCShareableContent",
+            "SCStream"
+          ]
+        }
+      },
+      "captureStringTokens": [
+        "CGDisplayCreateImage",
+        "CGDisplayStreamUpdate",
+        "CGSHWCaptureWindowList",
+        "CGWindowListCreateImage",
+        "CGWindowListCreateImageFromArray",
+        "SCShareableContent",
+        "SCStream",
+        "addStreamOutput:type:sampleHandlerQueue:error:",
+        "captureImageWithFilter:configuration:completionHandler:",
+        "getShareableContentExcludingDesktopWindows:onScreenWindowsOnly:completionHandler:",
+        "getShareableContentWithCompletionHandler:",
+        "initWithFilter:configuration:delegate:",
+        "startCaptureWithCompletionHandler:",
+        "stopCaptureWithCompletionHandler:",
+        "stream:didOutputSampleBuffer:ofType:"
+      ],
+      "stringsReturnCode": 0
+    },
+    {
+      "app": "ToDesk.app",
+      "path": "/Applications/ToDesk.app/Contents/MacOS/CrashReport",
+      "relativePath": "Contents/MacOS/CrashReport",
+      "bytes": 1326624,
+      "sha256": "92c5bd565f3af7f1b7570c8350cd244d3a8a88272583f8c6761b3c034c6984bd",
+      "runningInstances": [],
+      "architectures": [
+        "x86_64",
+        "arm64"
+      ],
+      "architectureReadReturnCode": 0,
+      "signatureMetadataReadReturnCode": 0,
+      "codeDirectory": "CodeDirectory v=20500 size=5143 flags=0x10000(runtime) hashes=150+7 location=embedded",
+      "signatureIdentifier": "CrashReport",
+      "teamIdentifier": "KM56KD59W4",
+      "runtimeVersion": "26.2.0",
+      "hardenedRuntimeFlag": true,
+      "entitlementsReadReturnCode": 0,
+      "entitlementsParse": "parsed",
+      "selectedEntitlements": {
+        "com.apple.security.get-task-allow": null,
+        "com.apple.security.cs.allow-dyld-environment-variables": true,
+        "com.apple.security.cs.disable-library-validation": true,
+        "com.apple.security.cs.disable-executable-page-protection": true,
+        "com.apple.security.cs.allow-unsigned-executable-memory": true,
+        "com.apple.security.cs.allow-jit": true,
+        "com.apple.security.app-sandbox": null
+      },
+      "linkedLibraries": [
+        "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+        "/System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices",
+        "/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation",
+        "/System/Library/Frameworks/Security.framework/Versions/A/Security",
+        "/System/Library/Frameworks/SystemConfiguration.framework/Versions/A/SystemConfiguration",
+        "/usr/lib/libSystem.B.dylib",
+        "/usr/lib/libc++.1.dylib",
+        "/usr/lib/libobjc.A.dylib"
+      ],
+      "otoolReturnCode": 0,
+      "undefinedCaptureSymbolTokens": [],
+      "nmReturnCode": 0,
+      "undefinedCaptureSymbolTokensByArchitecture": {
+        "x86_64": {
+          "returnCode": 0,
+          "tokens": []
+        },
+        "arm64": {
+          "returnCode": 0,
+          "tokens": []
+        }
+      },
+      "captureStringTokens": [],
+      "stringsReturnCode": 0
+    },
+    {
+      "app": "ToDesk.app",
+      "path": "/Applications/ToDesk.app/Contents/MacOS/todesk-mcp",
+      "relativePath": "Contents/MacOS/todesk-mcp",
+      "bytes": 7743552,
+      "sha256": "cc6032775bf6cc14f61f622d2caee903499050436cc1f96e88a5e185e22fd170",
+      "runningInstances": [],
+      "architectures": [
+        "x86_64",
+        "arm64"
+      ],
+      "architectureReadReturnCode": 0,
+      "signatureMetadataReadReturnCode": 0,
+      "codeDirectory": "CodeDirectory v=20500 size=27702 flags=0x10000(runtime) hashes=855+7 location=embedded",
+      "signatureIdentifier": "todesk-mcp",
+      "teamIdentifier": "KM56KD59W4",
+      "runtimeVersion": "26.2.0",
+      "hardenedRuntimeFlag": true,
+      "entitlementsReadReturnCode": 0,
+      "entitlementsParse": "parsed",
+      "selectedEntitlements": {
+        "com.apple.security.get-task-allow": null,
+        "com.apple.security.cs.allow-dyld-environment-variables": true,
+        "com.apple.security.cs.disable-library-validation": true,
+        "com.apple.security.cs.disable-executable-page-protection": true,
+        "com.apple.security.cs.allow-unsigned-executable-memory": true,
+        "com.apple.security.cs.allow-jit": true,
+        "com.apple.security.app-sandbox": null
+      },
+      "linkedLibraries": [
+        "/System/Library/Frameworks/AVFoundation.framework/Versions/A/AVFoundation",
+        "/System/Library/Frameworks/AppKit.framework/Versions/C/AppKit",
+        "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/ApplicationServices",
+        "/System/Library/Frameworks/AudioToolbox.framework/Versions/A/AudioToolbox",
+        "/System/Library/Frameworks/Carbon.framework/Versions/A/Carbon",
+        "/System/Library/Frameworks/CoreAudio.framework/Versions/A/CoreAudio",
+        "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+        "/System/Library/Frameworks/CoreImage.framework/Versions/A/CoreImage",
+        "/System/Library/Frameworks/CoreMedia.framework/Versions/A/CoreMedia",
+        "/System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices",
+        "/System/Library/Frameworks/CoreVideo.framework/Versions/A/CoreVideo",
+        "/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation",
+        "/System/Library/Frameworks/ImageIO.framework/Versions/A/ImageIO",
+        "/System/Library/Frameworks/QuartzCore.framework/Versions/A/QuartzCore",
+        "/System/Library/Frameworks/ScreenCaptureKit.framework/Versions/A/ScreenCaptureKit",
+        "/System/Library/Frameworks/Security.framework/Versions/A/Security",
+        "/System/Library/Frameworks/SystemConfiguration.framework/Versions/A/SystemConfiguration",
+        "/usr/lib/libSystem.B.dylib",
+        "/usr/lib/libc++.1.dylib",
+        "/usr/lib/libobjc.A.dylib",
+        "@rpath/zrtc.framework/zrtc"
+      ],
+      "otoolReturnCode": 0,
+      "undefinedCaptureSymbolTokens": [],
+      "nmReturnCode": 0,
+      "undefinedCaptureSymbolTokensByArchitecture": {
+        "x86_64": {
+          "returnCode": 0,
+          "tokens": []
+        },
+        "arm64": {
+          "returnCode": 0,
+          "tokens": []
+        }
+      },
+      "captureStringTokens": [],
+      "stringsReturnCode": 0
+    },
+    {
+      "app": "ToDesk.app",
+      "path": "/Applications/ToDesk.app/Contents/Frameworks/zrtc.framework/Versions/A/zrtc",
+      "relativePath": "Contents/Frameworks/zrtc.framework/Versions/A/zrtc",
+      "bytes": 72369376,
+      "sha256": "e34a8418d855b75f40a4a2b3932eb5cfc9386de83bfbe3823cb746851ad6cb04",
+      "runningInstances": [],
+      "architectures": [
+        "x86_64",
+        "arm64"
+      ],
+      "architectureReadReturnCode": 0,
+      "signatureMetadataReadReturnCode": 0,
+      "codeDirectory": "CodeDirectory v=20500 size=249785 flags=0x10000(runtime) hashes=7799+3 location=embedded",
+      "signatureIdentifier": "org.zrtc.zrtc",
+      "teamIdentifier": "KM56KD59W4",
+      "runtimeVersion": "26.2.0",
+      "hardenedRuntimeFlag": true,
+      "entitlementsReadReturnCode": 0,
+      "entitlementsParse": "no-output",
+      "selectedEntitlements": {
+        "com.apple.security.get-task-allow": null,
+        "com.apple.security.cs.allow-dyld-environment-variables": null,
+        "com.apple.security.cs.disable-library-validation": null,
+        "com.apple.security.cs.disable-executable-page-protection": null,
+        "com.apple.security.cs.allow-unsigned-executable-memory": null,
+        "com.apple.security.cs.allow-jit": null,
+        "com.apple.security.app-sandbox": null
+      },
+      "linkedLibraries": [
+        "/System/Library/Frameworks/AVFoundation.framework/Versions/A/AVFoundation",
+        "/System/Library/Frameworks/AppKit.framework/Versions/C/AppKit",
+        "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/ApplicationServices",
+        "/System/Library/Frameworks/AudioToolbox.framework/Versions/A/AudioToolbox",
+        "/System/Library/Frameworks/CoreAudio.framework/Versions/A/CoreAudio",
+        "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+        "/System/Library/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics",
+        "/System/Library/Frameworks/CoreMedia.framework/Versions/A/CoreMedia",
+        "/System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices",
+        "/System/Library/Frameworks/CoreText.framework/Versions/A/CoreText",
+        "/System/Library/Frameworks/CoreVideo.framework/Versions/A/CoreVideo",
+        "/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation",
+        "/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit",
+        "/System/Library/Frameworks/IOSurface.framework/Versions/A/IOSurface",
+        "/System/Library/Frameworks/Metal.framework/Versions/A/Metal",
+        "/System/Library/Frameworks/MetalKit.framework/Versions/A/MetalKit",
+        "/System/Library/Frameworks/OpenDirectory.framework/Versions/A/OpenDirectory",
+        "/System/Library/Frameworks/OpenGL.framework/Versions/A/OpenGL",
+        "/System/Library/Frameworks/QuartzCore.framework/Versions/A/QuartzCore",
+        "/System/Library/Frameworks/ScreenCaptureKit.framework/Versions/A/ScreenCaptureKit",
+        "/System/Library/Frameworks/Security.framework/Versions/A/Security",
+        "/System/Library/Frameworks/SystemConfiguration.framework/Versions/A/SystemConfiguration",
+        "/System/Library/Frameworks/VideoToolbox.framework/Versions/A/VideoToolbox",
+        "/usr/lib/libSystem.B.dylib",
+        "/usr/lib/libbsm.0.dylib",
+        "/usr/lib/libc++.1.dylib",
+        "/usr/lib/libiconv.2.dylib",
+        "/usr/lib/libobjc.A.dylib",
+        "/usr/lib/libpmenergy.dylib",
+        "/usr/lib/libpmsample.dylib",
+        "@rpath/zrtc.framework/zrtc",
+        "@rpath/zulerLog.framework/Versions/A/zulerLog"
+      ],
+      "otoolReturnCode": 0,
+      "undefinedCaptureSymbolTokens": [
+        "CGDisplayCreateImage",
+        "CGDisplayStreamCreate",
+        "CGDisplayStreamGetRunLoopSource",
+        "CGDisplayStreamShowCursor",
+        "CGDisplayStreamStart",
+        "CGDisplayStreamStop",
+        "CGDisplayStreamUpdateGetRects",
+        "CGWindowListCreateImage",
+        "CGWindowListCreateImageFromArray",
+        "SCContentFilter",
+        "SCShareableContent",
+        "SCStream"
+      ],
+      "nmReturnCode": 0,
+      "undefinedCaptureSymbolTokensByArchitecture": {
+        "x86_64": {
+          "returnCode": 0,
+          "tokens": [
+            "CGDisplayCreateImage",
+            "CGDisplayStreamCreate",
+            "CGDisplayStreamGetRunLoopSource",
+            "CGDisplayStreamShowCursor",
+            "CGDisplayStreamStart",
+            "CGDisplayStreamStop",
+            "CGDisplayStreamUpdateGetRects",
+            "CGWindowListCreateImage",
+            "CGWindowListCreateImageFromArray",
+            "SCContentFilter",
+            "SCShareableContent",
+            "SCStream"
+          ]
+        },
+        "arm64": {
+          "returnCode": 0,
+          "tokens": [
+            "CGDisplayCreateImage",
+            "CGDisplayStreamCreate",
+            "CGDisplayStreamGetRunLoopSource",
+            "CGDisplayStreamShowCursor",
+            "CGDisplayStreamStart",
+            "CGDisplayStreamStop",
+            "CGDisplayStreamUpdateGetRects",
+            "CGWindowListCreateImage",
+            "CGWindowListCreateImageFromArray",
+            "SCContentFilter",
+            "SCShareableContent",
+            "SCStream"
+          ]
+        }
+      },
+      "captureStringTokens": [
+        "CGDisplayCreateImage",
+        "CGDisplayStream",
+        "CGDisplayStreamUpdate",
+        "SCShareableContent",
+        "SCStream",
+        "addStreamOutput:type:sampleHandlerQueue:error:",
+        "getShareableContentWithCompletionHandler:",
+        "initWithFilter:configuration:delegate:",
+        "startCaptureWithCompletionHandler:",
+        "stopCaptureWithCompletionHandler:",
+        "stream:didOutputSampleBuffer:ofType:"
+      ],
+      "stringsReturnCode": 0
+    },
+    {
+      "app": "ToDesk.app",
+      "path": "/Applications/ToDesk.app/Contents/XPCServices/ToDesk_XPCHelper.xpc/Contents/MacOS/ToDesk_XPCHelper",
+      "relativePath": "Contents/XPCServices/ToDesk_XPCHelper.xpc/Contents/MacOS/ToDesk_XPCHelper",
+      "bytes": 207792,
+      "sha256": "5b50f3145d4e09685e7084ca039f5c5fe175fdd8c4600bbcd0834773933d51d9",
+      "runningInstances": [],
+      "architectures": [
+        "x86_64",
+        "arm64"
+      ],
+      "architectureReadReturnCode": 0,
+      "signatureMetadataReadReturnCode": 0,
+      "codeDirectory": "CodeDirectory v=20500 size=1059 flags=0x10000(runtime) hashes=22+7 location=embedded",
+      "signatureIdentifier": "com.youqu.todesk.helper",
+      "teamIdentifier": "KM56KD59W4",
+      "runtimeVersion": "26.2.0",
+      "hardenedRuntimeFlag": true,
+      "entitlementsReadReturnCode": 0,
+      "entitlementsParse": "parsed",
+      "selectedEntitlements": {
+        "com.apple.security.get-task-allow": null,
+        "com.apple.security.cs.allow-dyld-environment-variables": true,
+        "com.apple.security.cs.disable-library-validation": true,
+        "com.apple.security.cs.disable-executable-page-protection": true,
+        "com.apple.security.cs.allow-unsigned-executable-memory": true,
+        "com.apple.security.cs.allow-jit": true,
+        "com.apple.security.app-sandbox": null
+      },
+      "linkedLibraries": [
+        "/System/Library/Frameworks/AudioToolbox.framework/Versions/A/AudioToolbox",
+        "/System/Library/Frameworks/AudioUnit.framework/Versions/A/AudioUnit",
+        "/System/Library/Frameworks/CoreAudio.framework/Versions/A/CoreAudio",
+        "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+        "/System/Library/Frameworks/CoreMedia.framework/Versions/A/CoreMedia",
+        "/System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices",
+        "/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation",
+        "/System/Library/Frameworks/IOBluetooth.framework/Versions/A/IOBluetooth",
+        "/System/Library/Frameworks/Security.framework/Versions/A/Security",
+        "/System/Library/Frameworks/SystemConfiguration.framework/Versions/A/SystemConfiguration",
+        "/usr/lib/libSystem.B.dylib",
+        "/usr/lib/libc++.1.dylib",
+        "/usr/lib/libobjc.A.dylib"
+      ],
+      "otoolReturnCode": 0,
+      "undefinedCaptureSymbolTokens": [],
+      "nmReturnCode": 0,
+      "undefinedCaptureSymbolTokensByArchitecture": {
+        "x86_64": {
+          "returnCode": 0,
+          "tokens": []
+        },
+        "arm64": {
+          "returnCode": 0,
+          "tokens": []
+        }
+      },
+      "captureStringTokens": [],
+      "stringsReturnCode": 0
+    },
+    {
+      "app": "ToDesk.app",
+      "path": "/Applications/ToDesk.app/Contents/Frameworks/Breakpad.framework/Versions/A/Breakpad",
+      "relativePath": "Contents/Frameworks/Breakpad.framework/Versions/A/Breakpad",
+      "bytes": 215056,
+      "sha256": "0c370f0d5d62887277ced00b9203666de2f1947160685f2f7c5464bec53a1f60",
+      "runningInstances": [],
+      "architectures": [
+        "x86_64",
+        "arm64"
+      ],
+      "architectureReadReturnCode": 0,
+      "signatureMetadataReadReturnCode": 0,
+      "codeDirectory": "CodeDirectory v=20500 size=1002 flags=0x10000(runtime) hashes=24+3 location=embedded",
+      "signatureIdentifier": "com.googlecode.google-breakpad",
+      "teamIdentifier": "KM56KD59W4",
+      "runtimeVersion": "26.2.0",
+      "hardenedRuntimeFlag": true,
+      "entitlementsReadReturnCode": 0,
+      "entitlementsParse": "no-output",
+      "selectedEntitlements": {
+        "com.apple.security.get-task-allow": null,
+        "com.apple.security.cs.allow-dyld-environment-variables": null,
+        "com.apple.security.cs.disable-library-validation": null,
+        "com.apple.security.cs.disable-executable-page-protection": null,
+        "com.apple.security.cs.allow-unsigned-executable-memory": null,
+        "com.apple.security.cs.allow-jit": null,
+        "com.apple.security.app-sandbox": null
+      },
+      "linkedLibraries": [
+        "/System/Library/Frameworks/Cocoa.framework/Versions/A/Cocoa",
+        "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+        "/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation",
+        "/usr/lib/libSystem.B.dylib",
+        "/usr/lib/libc++.1.dylib",
+        "/usr/lib/libobjc.A.dylib",
+        "@rpath/Breakpad.framework/Resources/breakpadUtilities.dylib",
+        "@rpath/Breakpad.framework/Versions/A/Breakpad"
+      ],
+      "otoolReturnCode": 0,
+      "undefinedCaptureSymbolTokens": [],
+      "nmReturnCode": 0,
+      "undefinedCaptureSymbolTokensByArchitecture": {
+        "x86_64": {
+          "returnCode": 0,
+          "tokens": []
+        },
+        "arm64": {
+          "returnCode": 0,
+          "tokens": []
+        }
+      },
+      "captureStringTokens": [],
+      "stringsReturnCode": 0
+    },
+    {
+      "app": "ToDesk.app",
+      "path": "/Applications/ToDesk.app/Contents/Frameworks/Breakpad.framework/Versions/A/Frameworks/breakpadUtilities.dylib",
+      "relativePath": "Contents/Frameworks/Breakpad.framework/Versions/A/Frameworks/breakpadUtilities.dylib",
+      "bytes": 334896,
+      "sha256": "066b68b1b45d0163e234446a582d7c6948c8edf31367175d5558ee680d9f9b94",
+      "runningInstances": [],
+      "architectures": [
+        "x86_64",
+        "arm64"
+      ],
+      "architectureReadReturnCode": 0,
+      "signatureMetadataReadReturnCode": 0,
+      "codeDirectory": "CodeDirectory v=20500 size=1373 flags=0x10000(runtime) hashes=37+2 location=embedded",
+      "signatureIdentifier": "breakpadUtilities",
+      "teamIdentifier": "KM56KD59W4",
+      "runtimeVersion": "26.2.0",
+      "hardenedRuntimeFlag": true,
+      "entitlementsReadReturnCode": 0,
+      "entitlementsParse": "no-output",
+      "selectedEntitlements": {
+        "com.apple.security.get-task-allow": null,
+        "com.apple.security.cs.allow-dyld-environment-variables": null,
+        "com.apple.security.cs.disable-library-validation": null,
+        "com.apple.security.cs.disable-executable-page-protection": null,
+        "com.apple.security.cs.allow-unsigned-executable-memory": null,
+        "com.apple.security.cs.allow-jit": null,
+        "com.apple.security.app-sandbox": null
+      },
+      "linkedLibraries": [
+        "/System/Library/Frameworks/Carbon.framework/Versions/A/Carbon",
+        "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+        "/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation",
+        "/usr/lib/libSystem.B.dylib",
+        "/usr/lib/libc++.1.dylib",
+        "/usr/lib/libobjc.A.dylib",
+        "@rpath/Breakpad.framework/Resources/breakpadUtilities.dylib"
+      ],
+      "otoolReturnCode": 0,
+      "undefinedCaptureSymbolTokens": [],
+      "nmReturnCode": 0,
+      "undefinedCaptureSymbolTokensByArchitecture": {
+        "x86_64": {
+          "returnCode": 0,
+          "tokens": []
+        },
+        "arm64": {
+          "returnCode": 0,
+          "tokens": []
+        }
+      },
+      "captureStringTokens": [],
+      "stringsReturnCode": 0
+    },
+    {
+      "app": "ToDesk.app",
+      "path": "/Applications/ToDesk.app/Contents/Frameworks/Sparkle.framework/Versions/A/Sparkle",
+      "relativePath": "Contents/Frameworks/Sparkle.framework/Versions/A/Sparkle",
+      "bytes": 883648,
+      "sha256": "8085ab17badf356086c97a73b7ced163ba6c197aea788c65007ddd25fd7e5399",
+      "runningInstances": [],
+      "architectures": [
+        "x86_64",
+        "arm64"
+      ],
+      "architectureReadReturnCode": 0,
+      "signatureMetadataReadReturnCode": 0,
+      "codeDirectory": "CodeDirectory v=20500 size=3367 flags=0x10000(runtime) hashes=98+3 location=embedded",
+      "signatureIdentifier": "org.sparkle-project.Sparkle",
+      "teamIdentifier": "KM56KD59W4",
+      "runtimeVersion": "26.2.0",
+      "hardenedRuntimeFlag": true,
+      "entitlementsReadReturnCode": 0,
+      "entitlementsParse": "no-output",
+      "selectedEntitlements": {
+        "com.apple.security.get-task-allow": null,
+        "com.apple.security.cs.allow-dyld-environment-variables": null,
+        "com.apple.security.cs.disable-library-validation": null,
+        "com.apple.security.cs.disable-executable-page-protection": null,
+        "com.apple.security.cs.allow-unsigned-executable-memory": null,
+        "com.apple.security.cs.allow-jit": null,
+        "com.apple.security.app-sandbox": null
+      },
+      "linkedLibraries": [
+        "/System/Library/Frameworks/AppKit.framework/Versions/C/AppKit",
+        "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+        "/System/Library/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics",
+        "/System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices",
+        "/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation",
+        "/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit",
+        "/System/Library/Frameworks/ImageIO.framework/Versions/A/ImageIO",
+        "/System/Library/Frameworks/Security.framework/Versions/A/Security",
+        "/System/Library/Frameworks/ServiceManagement.framework/Versions/A/ServiceManagement",
+        "/System/Library/Frameworks/SystemConfiguration.framework/Versions/A/SystemConfiguration",
+        "/System/Library/Frameworks/UniformTypeIdentifiers.framework/Versions/A/UniformTypeIdentifiers",
+        "/System/Library/Frameworks/WebKit.framework/Versions/A/WebKit",
+        "/usr/lib/libSystem.B.dylib",
+        "/usr/lib/libcompression.dylib",
+        "/usr/lib/libobjc.A.dylib",
+        "@rpath/Sparkle.framework/Versions/A/Sparkle"
+      ],
+      "otoolReturnCode": 0,
+      "undefinedCaptureSymbolTokens": [],
+      "nmReturnCode": 0,
+      "undefinedCaptureSymbolTokensByArchitecture": {
+        "x86_64": {
+          "returnCode": 0,
+          "tokens": []
+        },
+        "arm64": {
+          "returnCode": 0,
+          "tokens": []
+        }
+      },
+      "captureStringTokens": [],
+      "stringsReturnCode": 0
+    },
+    {
+      "app": "ToDesk.app",
+      "path": "/Applications/ToDesk.app/Contents/Frameworks/zagent.framework/Versions/A/zagent",
+      "relativePath": "Contents/Frameworks/zagent.framework/Versions/A/zagent",
+      "bytes": 16745744,
+      "sha256": "c9662569b7a57e45857ead0b09fa452c422787e019e6dac00015f491b39d86ac",
+      "runningInstances": [],
+      "architectures": [
+        "x86_64",
+        "arm64"
+      ],
+      "architectureReadReturnCode": 0,
+      "signatureMetadataReadReturnCode": 0,
+      "codeDirectory": "CodeDirectory v=20500 size=62204 flags=0x10000(runtime) hashes=1937+3 location=embedded",
+      "signatureIdentifier": "com.zuler.zagent",
+      "teamIdentifier": "KM56KD59W4",
+      "runtimeVersion": "26.2.0",
+      "hardenedRuntimeFlag": true,
+      "entitlementsReadReturnCode": 0,
+      "entitlementsParse": "no-output",
+      "selectedEntitlements": {
+        "com.apple.security.get-task-allow": null,
+        "com.apple.security.cs.allow-dyld-environment-variables": null,
+        "com.apple.security.cs.disable-library-validation": null,
+        "com.apple.security.cs.disable-executable-page-protection": null,
+        "com.apple.security.cs.allow-unsigned-executable-memory": null,
+        "com.apple.security.cs.allow-jit": null,
+        "com.apple.security.app-sandbox": null
+      },
+      "linkedLibraries": [
+        "/System/Library/Frameworks/AppKit.framework/Versions/C/AppKit",
+        "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/ApplicationServices",
+        "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+        "/System/Library/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics",
+        "/System/Library/Frameworks/CoreText.framework/Versions/A/CoreText",
+        "/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation",
+        "/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit",
+        "/System/Library/Frameworks/OpenDirectory.framework/Versions/A/OpenDirectory",
+        "/System/Library/Frameworks/Security.framework/Versions/A/Security",
+        "/usr/lib/libSystem.B.dylib",
+        "/usr/lib/libbsm.0.dylib",
+        "/usr/lib/libiconv.2.dylib",
+        "/usr/lib/libobjc.A.dylib",
+        "/usr/lib/libpmenergy.dylib",
+        "/usr/lib/libpmsample.dylib",
+        "@rpath/zagent.framework/Versions/A/zagent"
+      ],
+      "otoolReturnCode": 0,
+      "undefinedCaptureSymbolTokens": [],
+      "nmReturnCode": 0,
+      "undefinedCaptureSymbolTokensByArchitecture": {
+        "x86_64": {
+          "returnCode": 0,
+          "tokens": []
+        },
+        "arm64": {
+          "returnCode": 0,
+          "tokens": []
+        }
+      },
+      "captureStringTokens": [],
+      "stringsReturnCode": 0
+    },
+    {
+      "app": "ToDesk.app",
+      "path": "/Applications/ToDesk.app/Contents/Frameworks/Sparkle.framework/Versions/A/XPCServices/Installer.xpc/Contents/MacOS/Installer",
+      "relativePath": "Contents/Frameworks/Sparkle.framework/Versions/A/XPCServices/Installer.xpc/Contents/MacOS/Installer",
+      "bytes": 227040,
+      "sha256": "47e4ae3907fe71587739f3e789ae6be8d78155a89dae46fb3a7997f4da7d801a",
+      "runningInstances": [],
+      "architectures": [
+        "x86_64",
+        "arm64"
+      ],
+      "architectureReadReturnCode": 0,
+      "signatureMetadataReadReturnCode": 0,
+      "codeDirectory": "CodeDirectory v=20500 size=1105 flags=0x10000(runtime) hashes=23+7 location=embedded",
+      "signatureIdentifier": "org.sparkle-project.InstallerLauncher",
+      "teamIdentifier": "KM56KD59W4",
+      "runtimeVersion": "26.2.0",
+      "hardenedRuntimeFlag": true,
+      "entitlementsReadReturnCode": 0,
+      "entitlementsParse": "parsed",
+      "selectedEntitlements": {
+        "com.apple.security.get-task-allow": null,
+        "com.apple.security.cs.allow-dyld-environment-variables": true,
+        "com.apple.security.cs.disable-library-validation": true,
+        "com.apple.security.cs.disable-executable-page-protection": true,
+        "com.apple.security.cs.allow-unsigned-executable-memory": true,
+        "com.apple.security.cs.allow-jit": true,
+        "com.apple.security.app-sandbox": null
+      },
+      "linkedLibraries": [
+        "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+        "/System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices",
+        "/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation",
+        "/System/Library/Frameworks/ImageIO.framework/Versions/A/ImageIO",
+        "/System/Library/Frameworks/Security.framework/Versions/A/Security",
+        "/System/Library/Frameworks/ServiceManagement.framework/Versions/A/ServiceManagement",
+        "/System/Library/Frameworks/SystemConfiguration.framework/Versions/A/SystemConfiguration",
+        "/System/Library/Frameworks/UniformTypeIdentifiers.framework/Versions/A/UniformTypeIdentifiers",
+        "/usr/lib/libSystem.B.dylib",
+        "/usr/lib/libobjc.A.dylib"
+      ],
+      "otoolReturnCode": 0,
+      "undefinedCaptureSymbolTokens": [],
+      "nmReturnCode": 0,
+      "undefinedCaptureSymbolTokensByArchitecture": {
+        "x86_64": {
+          "returnCode": 0,
+          "tokens": []
+        },
+        "arm64": {
+          "returnCode": 0,
+          "tokens": []
+        }
+      },
+      "captureStringTokens": [],
+      "stringsReturnCode": 0
+    },
+    {
+      "app": "ToDesk.app",
+      "path": "/Applications/ToDesk.app/Contents/Frameworks/Sparkle.framework/Versions/A/XPCServices/Downloader.xpc/Contents/MacOS/Downloader",
+      "relativePath": "Contents/Frameworks/Sparkle.framework/Versions/A/XPCServices/Downloader.xpc/Contents/MacOS/Downloader",
+      "bytes": 172272,
+      "sha256": "5603975b60858e00cd14fff920623f4dbcc0238ac5af143e3a7d7467dec32993",
+      "runningInstances": [],
+      "architectures": [
+        "x86_64",
+        "arm64"
+      ],
+      "architectureReadReturnCode": 0,
+      "signatureMetadataReadReturnCode": 0,
+      "codeDirectory": "CodeDirectory v=20500 size=913 flags=0x10000(runtime) hashes=17+7 location=embedded",
+      "signatureIdentifier": "org.sparkle-project.DownloaderService",
+      "teamIdentifier": "KM56KD59W4",
+      "runtimeVersion": "26.2.0",
+      "hardenedRuntimeFlag": true,
+      "entitlementsReadReturnCode": 0,
+      "entitlementsParse": "parsed",
+      "selectedEntitlements": {
+        "com.apple.security.get-task-allow": null,
+        "com.apple.security.cs.allow-dyld-environment-variables": true,
+        "com.apple.security.cs.disable-library-validation": true,
+        "com.apple.security.cs.disable-executable-page-protection": true,
+        "com.apple.security.cs.allow-unsigned-executable-memory": true,
+        "com.apple.security.cs.allow-jit": true,
+        "com.apple.security.app-sandbox": null
+      },
+      "linkedLibraries": [
+        "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+        "/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation",
+        "/usr/lib/libSystem.B.dylib",
+        "/usr/lib/libobjc.A.dylib"
+      ],
+      "otoolReturnCode": 0,
+      "undefinedCaptureSymbolTokens": [],
+      "nmReturnCode": 0,
+      "undefinedCaptureSymbolTokensByArchitecture": {
+        "x86_64": {
+          "returnCode": 0,
+          "tokens": []
+        },
+        "arm64": {
+          "returnCode": 0,
+          "tokens": []
+        }
+      },
+      "captureStringTokens": [],
+      "stringsReturnCode": 0
+    },
+    {
+      "app": "ToDesk.app",
+      "path": "/Applications/ToDesk.app/Contents/Frameworks/Breakpad.framework/Versions/A/Resources/crash_report_sender.app/Contents/MacOS/crash_report_sender",
+      "relativePath": "Contents/Frameworks/Breakpad.framework/Versions/A/Resources/crash_report_sender.app/Contents/MacOS/crash_report_sender",
+      "bytes": 275008,
+      "sha256": "50c95af7f639cbb6af644fcac6fd1a55bdfe90735302493574f87f1436cc11b4",
+      "runningInstances": [],
+      "architectures": [
+        "x86_64",
+        "arm64"
+      ],
+      "architectureReadReturnCode": 0,
+      "signatureMetadataReadReturnCode": 0,
+      "codeDirectory": "CodeDirectory v=20500 size=1356 flags=0x10000(runtime) hashes=31+7 location=embedded",
+      "signatureIdentifier": "com.Breakpad.crash_report_sender",
+      "teamIdentifier": "KM56KD59W4",
+      "runtimeVersion": "26.2.0",
+      "hardenedRuntimeFlag": true,
+      "entitlementsReadReturnCode": 0,
+      "entitlementsParse": "parsed",
+      "selectedEntitlements": {
+        "com.apple.security.get-task-allow": null,
+        "com.apple.security.cs.allow-dyld-environment-variables": null,
+        "com.apple.security.cs.disable-library-validation": null,
+        "com.apple.security.cs.disable-executable-page-protection": null,
+        "com.apple.security.cs.allow-unsigned-executable-memory": null,
+        "com.apple.security.cs.allow-jit": null,
+        "com.apple.security.app-sandbox": null
+      },
+      "linkedLibraries": [
+        "/System/Library/Frameworks/AppKit.framework/Versions/C/AppKit",
+        "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+        "/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation",
+        "/System/Library/Frameworks/SystemConfiguration.framework/Versions/A/SystemConfiguration",
+        "/usr/lib/libSystem.B.dylib",
+        "/usr/lib/libc++.1.dylib",
+        "/usr/lib/libobjc.A.dylib"
+      ],
+      "otoolReturnCode": 0,
+      "undefinedCaptureSymbolTokens": [],
+      "nmReturnCode": 0,
+      "undefinedCaptureSymbolTokensByArchitecture": {
+        "x86_64": {
+          "returnCode": 0,
+          "tokens": []
+        },
+        "arm64": {
+          "returnCode": 0,
+          "tokens": []
+        }
+      },
+      "captureStringTokens": [],
+      "stringsReturnCode": 0
+    },
+    {
+      "app": "ToDesk.app",
+      "path": "/Applications/ToDesk.app/Contents/Frameworks/Breakpad.framework/Versions/A/Resources/breakpadUtilities.dylib",
+      "relativePath": "Contents/Frameworks/Breakpad.framework/Versions/A/Resources/breakpadUtilities.dylib",
+      "bytes": 334928,
+      "sha256": "25f7281be61afd591faa7f9fa86bd2b18264fd37c98d78486b2246ab089216af",
+      "runningInstances": [],
+      "architectures": [
+        "x86_64",
+        "arm64"
+      ],
+      "architectureReadReturnCode": 0,
+      "signatureMetadataReadReturnCode": 0,
+      "codeDirectory": "CodeDirectory v=20400 size=1365 flags=0x0(none) hashes=37+2 location=embedded",
+      "signatureIdentifier": "breakpadUtilities",
+      "teamIdentifier": "KM56KD59W4",
+      "runtimeVersion": null,
+      "hardenedRuntimeFlag": false,
+      "entitlementsReadReturnCode": 0,
+      "entitlementsParse": "no-output",
+      "selectedEntitlements": {
+        "com.apple.security.get-task-allow": null,
+        "com.apple.security.cs.allow-dyld-environment-variables": null,
+        "com.apple.security.cs.disable-library-validation": null,
+        "com.apple.security.cs.disable-executable-page-protection": null,
+        "com.apple.security.cs.allow-unsigned-executable-memory": null,
+        "com.apple.security.cs.allow-jit": null,
+        "com.apple.security.app-sandbox": null
+      },
+      "linkedLibraries": [
+        "/System/Library/Frameworks/Carbon.framework/Versions/A/Carbon",
+        "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+        "/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation",
+        "/usr/lib/libSystem.B.dylib",
+        "/usr/lib/libc++.1.dylib",
+        "/usr/lib/libobjc.A.dylib",
+        "@rpath/Breakpad.framework/Resources/breakpadUtilities.dylib"
+      ],
+      "otoolReturnCode": 0,
+      "undefinedCaptureSymbolTokens": [],
+      "nmReturnCode": 0,
+      "undefinedCaptureSymbolTokensByArchitecture": {
+        "x86_64": {
+          "returnCode": 0,
+          "tokens": []
+        },
+        "arm64": {
+          "returnCode": 0,
+          "tokens": []
+        }
+      },
+      "captureStringTokens": [],
+      "stringsReturnCode": 0
+    },
+    {
+      "app": "ToDesk.app",
+      "path": "/Applications/ToDesk.app/Contents/Frameworks/Breakpad.framework/Versions/A/Resources/Inspector",
+      "relativePath": "Contents/Frameworks/Breakpad.framework/Versions/A/Resources/Inspector",
+      "bytes": 146528,
+      "sha256": "91b02f195f6ba13b981124c793d69ae9aa44ef6b2946aaf5d78fec28db3f6574",
+      "runningInstances": [],
+      "architectures": [
+        "x86_64",
+        "arm64"
+      ],
+      "architectureReadReturnCode": 0,
+      "signatureMetadataReadReturnCode": 0,
+      "codeDirectory": "CodeDirectory v=20500 size=862 flags=0x10000(runtime) hashes=15+7 location=embedded",
+      "signatureIdentifier": "Inspector-55554944fa30eb1a2ef73e7d8f548ec88714fc73",
+      "teamIdentifier": "KM56KD59W4",
+      "runtimeVersion": "26.2.0",
+      "hardenedRuntimeFlag": true,
+      "entitlementsReadReturnCode": 0,
+      "entitlementsParse": "parsed",
+      "selectedEntitlements": {
+        "com.apple.security.get-task-allow": null,
+        "com.apple.security.cs.allow-dyld-environment-variables": null,
+        "com.apple.security.cs.disable-library-validation": null,
+        "com.apple.security.cs.disable-executable-page-protection": null,
+        "com.apple.security.cs.allow-unsigned-executable-memory": null,
+        "com.apple.security.cs.allow-jit": null,
+        "com.apple.security.app-sandbox": null
+      },
+      "linkedLibraries": [
+        "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+        "/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation",
+        "/usr/lib/libSystem.B.dylib",
+        "/usr/lib/libc++.1.dylib",
+        "/usr/lib/libobjc.A.dylib",
+        "@executable_path/../Resources/breakpadUtilities.dylib"
+      ],
+      "otoolReturnCode": 0,
+      "undefinedCaptureSymbolTokens": [],
+      "nmReturnCode": 0,
+      "undefinedCaptureSymbolTokensByArchitecture": {
+        "x86_64": {
+          "returnCode": 0,
+          "tokens": []
+        },
+        "arm64": {
+          "returnCode": 0,
+          "tokens": []
+        }
+      },
+      "captureStringTokens": [],
+      "stringsReturnCode": 0
+    },
+    {
+      "app": "ToDesk.app",
+      "path": "/Applications/ToDesk.app/Contents/Frameworks/Sparkle.framework/Versions/A/Autoupdate",
+      "relativePath": "Contents/Frameworks/Sparkle.framework/Versions/A/Autoupdate",
+      "bytes": 697200,
+      "sha256": "5ddbdd1af4c33f0003e6e39716e74c1c9222c3bdfa704e0e0192e45ac07b01be",
+      "runningInstances": [],
+      "architectures": [
+        "x86_64",
+        "arm64"
+      ],
+      "architectureReadReturnCode": 0,
+      "signatureMetadataReadReturnCode": 0,
+      "codeDirectory": "CodeDirectory v=20500 size=2806 flags=0x10000(runtime) hashes=77+7 location=embedded",
+      "signatureIdentifier": "Autoupdate",
+      "teamIdentifier": "KM56KD59W4",
+      "runtimeVersion": "26.2.0",
+      "hardenedRuntimeFlag": true,
+      "entitlementsReadReturnCode": 0,
+      "entitlementsParse": "parsed",
+      "selectedEntitlements": {
+        "com.apple.security.get-task-allow": null,
+        "com.apple.security.cs.allow-dyld-environment-variables": true,
+        "com.apple.security.cs.disable-library-validation": true,
+        "com.apple.security.cs.disable-executable-page-protection": true,
+        "com.apple.security.cs.allow-unsigned-executable-memory": true,
+        "com.apple.security.cs.allow-jit": true,
+        "com.apple.security.app-sandbox": null
+      },
+      "linkedLibraries": [
+        "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+        "/System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices",
+        "/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation",
+        "/System/Library/Frameworks/Security.framework/Versions/A/Security",
+        "/usr/lib/libSystem.B.dylib",
+        "/usr/lib/libbz2.1.0.dylib",
+        "/usr/lib/libcompression.dylib",
+        "/usr/lib/libobjc.A.dylib",
+        "/usr/lib/libxar.1.dylib",
+        "/usr/lib/libz.1.dylib"
+      ],
+      "otoolReturnCode": 0,
+      "undefinedCaptureSymbolTokens": [],
+      "nmReturnCode": 0,
+      "undefinedCaptureSymbolTokensByArchitecture": {
+        "x86_64": {
+          "returnCode": 0,
+          "tokens": []
+        },
+        "arm64": {
+          "returnCode": 0,
+          "tokens": []
+        }
+      },
+      "captureStringTokens": [],
+      "stringsReturnCode": 0
+    },
+    {
+      "app": "ToDesk.app",
+      "path": "/Applications/ToDesk.app/Contents/Frameworks/Sparkle.framework/Versions/A/Updater.app/Contents/MacOS/Updater",
+      "relativePath": "Contents/Frameworks/Sparkle.framework/Versions/A/Updater.app/Contents/MacOS/Updater",
+      "bytes": 293536,
+      "sha256": "6cd62d96964ee889db7ebe320ce787e532622bd99964b0e6d5d8f4bd185242f0",
+      "runningInstances": [],
+      "architectures": [
+        "x86_64",
+        "arm64"
+      ],
+      "architectureReadReturnCode": 0,
+      "signatureMetadataReadReturnCode": 0,
+      "codeDirectory": "CodeDirectory v=20500 size=1359 flags=0x10000(runtime) hashes=31+7 location=embedded",
+      "signatureIdentifier": "org.sparkle-project.Sparkle.Updater",
+      "teamIdentifier": "KM56KD59W4",
+      "runtimeVersion": "26.2.0",
+      "hardenedRuntimeFlag": true,
+      "entitlementsReadReturnCode": 0,
+      "entitlementsParse": "parsed",
+      "selectedEntitlements": {
+        "com.apple.security.get-task-allow": null,
+        "com.apple.security.cs.allow-dyld-environment-variables": true,
+        "com.apple.security.cs.disable-library-validation": true,
+        "com.apple.security.cs.disable-executable-page-protection": true,
+        "com.apple.security.cs.allow-unsigned-executable-memory": true,
+        "com.apple.security.cs.allow-jit": true,
+        "com.apple.security.app-sandbox": null
+      },
+      "linkedLibraries": [
+        "/System/Library/Frameworks/AppKit.framework/Versions/C/AppKit",
+        "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/ApplicationServices",
+        "/System/Library/Frameworks/Cocoa.framework/Versions/A/Cocoa",
+        "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+        "/System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices",
+        "/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation",
+        "/System/Library/Frameworks/Security.framework/Versions/A/Security",
+        "/System/Library/Frameworks/UniformTypeIdentifiers.framework/Versions/A/UniformTypeIdentifiers",
+        "/usr/lib/libSystem.B.dylib",
+        "/usr/lib/libobjc.A.dylib"
+      ],
+      "otoolReturnCode": 0,
+      "undefinedCaptureSymbolTokens": [],
+      "nmReturnCode": 0,
+      "undefinedCaptureSymbolTokensByArchitecture": {
+        "x86_64": {
+          "returnCode": 0,
+          "tokens": []
+        },
+        "arm64": {
+          "returnCode": 0,
+          "tokens": []
+        }
+      },
+      "captureStringTokens": [],
+      "stringsReturnCode": 0
+    },
+    {
+      "app": "UURemote.app",
+      "path": "/Applications/UURemote.app/Contents/Helpers/tmux/uuyc-mux",
+      "relativePath": "Contents/Helpers/tmux/uuyc-mux",
+      "bytes": 2410960,
+      "sha256": "f87105fa7d8f0e585d8f0b97d6f84bb6f9c80c5e123adb216d71601fefdbf3b7",
+      "runningInstances": [],
+      "architectures": [
+        "x86_64",
+        "arm64"
+      ],
+      "architectureReadReturnCode": 0,
+      "signatureMetadataReadReturnCode": 0,
+      "codeDirectory": "CodeDirectory v=20500 size=2484 flags=0x10000(runtime) hashes=72+2 location=embedded",
+      "signatureIdentifier": "uuyc-mux",
+      "teamIdentifier": "PU9BNSBJW7",
+      "runtimeVersion": "15.2.0",
+      "hardenedRuntimeFlag": true,
+      "entitlementsReadReturnCode": 0,
+      "entitlementsParse": "no-output",
+      "selectedEntitlements": {
+        "com.apple.security.get-task-allow": null,
+        "com.apple.security.cs.allow-dyld-environment-variables": null,
+        "com.apple.security.cs.disable-library-validation": null,
+        "com.apple.security.cs.disable-executable-page-protection": null,
+        "com.apple.security.cs.allow-unsigned-executable-memory": null,
+        "com.apple.security.cs.allow-jit": null,
+        "com.apple.security.app-sandbox": null
+      },
+      "linkedLibraries": [
+        "/usr/lib/libSystem.B.dylib",
+        "/usr/lib/libncurses.5.4.dylib",
+        "/usr/lib/libresolv.9.dylib"
+      ],
+      "otoolReturnCode": 0,
+      "undefinedCaptureSymbolTokens": [],
+      "nmReturnCode": 0,
+      "undefinedCaptureSymbolTokensByArchitecture": {
+        "x86_64": {
+          "returnCode": 0,
+          "tokens": []
+        },
+        "arm64": {
+          "returnCode": 0,
+          "tokens": []
+        }
+      },
+      "captureStringTokens": [],
+      "stringsReturnCode": 0
+    },
+    {
+      "app": "UURemote.app",
+      "path": "/Applications/UURemote.app/Contents/Helpers/UURemoteUpdater.app/Contents/Frameworks/libswift_Concurrency.dylib",
+      "relativePath": "Contents/Helpers/UURemoteUpdater.app/Contents/Frameworks/libswift_Concurrency.dylib",
+      "bytes": 1121504,
+      "sha256": "fe9ed73cef3f739c93525db160dea5d8fb29050d918b3f54ad8da8e85adcd4d2",
+      "runningInstances": [],
+      "architectures": [
+        "x86_64",
+        "arm64"
+      ],
+      "architectureReadReturnCode": 0,
+      "signatureMetadataReadReturnCode": 0,
+      "codeDirectory": "CodeDirectory v=20500 size=1265 flags=0x10000(runtime) hashes=33+2 location=embedded",
+      "signatureIdentifier": "com.apple.dt.runtime.swiftConcurrency",
+      "teamIdentifier": "PU9BNSBJW7",
+      "runtimeVersion": "13.0.0",
+      "hardenedRuntimeFlag": true,
+      "entitlementsReadReturnCode": 0,
+      "entitlementsParse": "no-output",
+      "selectedEntitlements": {
+        "com.apple.security.get-task-allow": null,
+        "com.apple.security.cs.allow-dyld-environment-variables": null,
+        "com.apple.security.cs.disable-library-validation": null,
+        "com.apple.security.cs.disable-executable-page-protection": null,
+        "com.apple.security.cs.allow-unsigned-executable-memory": null,
+        "com.apple.security.cs.allow-jit": null,
+        "com.apple.security.app-sandbox": null
+      },
+      "linkedLibraries": [
+        "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+        "/usr/lib/libSystem.B.dylib",
+        "/usr/lib/libc++.1.dylib",
+        "/usr/lib/libobjc.A.dylib",
+        "/usr/lib/swift/libswiftCore.dylib",
+        "@rpath/libswiftCore.dylib",
+        "@rpath/libswift_Concurrency.dylib"
+      ],
+      "otoolReturnCode": 0,
+      "undefinedCaptureSymbolTokens": [],
+      "nmReturnCode": 0,
+      "undefinedCaptureSymbolTokensByArchitecture": {
+        "x86_64": {
+          "returnCode": 0,
+          "tokens": []
+        },
+        "arm64": {
+          "returnCode": 0,
+          "tokens": []
+        }
+      },
+      "captureStringTokens": [],
+      "stringsReturnCode": 0
+    },
+    {
+      "app": "UURemote.app",
+      "path": "/Applications/UURemote.app/Contents/Helpers/UURemoteUpdater.app/Contents/XPCServices/UURemoteHelper.xpc/Contents/MacOS/UURemoteHelper",
+      "relativePath": "Contents/Helpers/UURemoteUpdater.app/Contents/XPCServices/UURemoteHelper.xpc/Contents/MacOS/UURemoteHelper",
+      "bytes": 2340320,
+      "sha256": "01549d757e0e9380a8ca27eadba6c78e01eaf7f764a612fb742c520196a8bdaf",
+      "runningInstances": [],
+      "architectures": [
+        "x86_64",
+        "arm64"
+      ],
+      "architectureReadReturnCode": 0,
+      "signatureMetadataReadReturnCode": 0,
+      "codeDirectory": "CodeDirectory v=20500 size=2535 flags=0x10000(runtime) hashes=68+7 location=embedded",
+      "signatureIdentifier": "com.netease.uuremote.helper",
+      "teamIdentifier": "PU9BNSBJW7",
+      "runtimeVersion": "26.2.0",
+      "hardenedRuntimeFlag": true,
+      "entitlementsReadReturnCode": 0,
+      "entitlementsParse": "parsed",
+      "selectedEntitlements": {
+        "com.apple.security.get-task-allow": null,
+        "com.apple.security.cs.allow-dyld-environment-variables": null,
+        "com.apple.security.cs.disable-library-validation": null,
+        "com.apple.security.cs.disable-executable-page-protection": null,
+        "com.apple.security.cs.allow-unsigned-executable-memory": null,
+        "com.apple.security.cs.allow-jit": null,
+        "com.apple.security.app-sandbox": false
+      },
+      "linkedLibraries": [
+        "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+        "/System/Library/Frameworks/CryptoKit.framework/Versions/A/CryptoKit",
+        "/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation",
+        "/System/Library/Frameworks/Security.framework/Versions/A/Security",
+        "/System/Library/Frameworks/SystemConfiguration.framework/Versions/A/SystemConfiguration",
+        "/usr/lib/libSystem.B.dylib",
+        "/usr/lib/libc++.1.dylib",
+        "/usr/lib/libobjc.A.dylib",
+        "/usr/lib/libz.1.dylib",
+        "/usr/lib/swift/libswiftCore.dylib",
+        "/usr/lib/swift/libswiftCoreFoundation.dylib",
+        "/usr/lib/swift/libswiftCoreImage.dylib",
+        "/usr/lib/swift/libswiftDarwin.dylib",
+        "/usr/lib/swift/libswiftDispatch.dylib",
+        "/usr/lib/swift/libswiftFoundation.dylib",
+        "/usr/lib/swift/libswiftIOKit.dylib",
+        "/usr/lib/swift/libswiftMetal.dylib",
+        "/usr/lib/swift/libswiftOSLog.dylib",
+        "/usr/lib/swift/libswiftObjectiveC.dylib",
+        "/usr/lib/swift/libswiftQuartzCore.dylib",
+        "/usr/lib/swift/libswiftUniformTypeIdentifiers.dylib",
+        "/usr/lib/swift/libswiftXPC.dylib",
+        "/usr/lib/swift/libswiftos.dylib",
+        "/usr/lib/swift/libswiftsimd.dylib"
+      ],
+      "otoolReturnCode": 0,
+      "undefinedCaptureSymbolTokens": [],
+      "nmReturnCode": 0,
+      "undefinedCaptureSymbolTokensByArchitecture": {
+        "x86_64": {
+          "returnCode": 0,
+          "tokens": []
+        },
+        "arm64": {
+          "returnCode": 0,
+          "tokens": []
+        }
+      },
+      "captureStringTokens": [],
+      "stringsReturnCode": 0
+    },
+    {
+      "app": "UURemote.app",
+      "path": "/Applications/UURemote.app/Contents/Helpers/uuyc-cli",
+      "relativePath": "Contents/Helpers/uuyc-cli",
+      "bytes": 1892320,
+      "sha256": "0c1464393bf579cad83e16c19dfbf4fcc2fd4db0aa9c1205695a4df8681f2ade",
+      "runningInstances": [],
+      "architectures": [
+        "x86_64",
+        "arm64"
+      ],
+      "architectureReadReturnCode": 0,
+      "signatureMetadataReadReturnCode": 0,
+      "codeDirectory": "CodeDirectory v=20500 size=2132 flags=0x10000(runtime) hashes=56+7 location=embedded",
+      "signatureIdentifier": "uuyc-cli",
+      "teamIdentifier": "PU9BNSBJW7",
+      "runtimeVersion": "26.2.0",
+      "hardenedRuntimeFlag": true,
+      "entitlementsReadReturnCode": 0,
+      "entitlementsParse": "parsed",
+      "selectedEntitlements": {
+        "com.apple.security.get-task-allow": null,
+        "com.apple.security.cs.allow-dyld-environment-variables": null,
+        "com.apple.security.cs.disable-library-validation": null,
+        "com.apple.security.cs.disable-executable-page-protection": null,
+        "com.apple.security.cs.allow-unsigned-executable-memory": null,
+        "com.apple.security.cs.allow-jit": null,
+        "com.apple.security.app-sandbox": null
+      },
+      "linkedLibraries": [
+        "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+        "/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation",
+        "/usr/lib/libSystem.B.dylib",
+        "/usr/lib/libc++.1.dylib",
+        "/usr/lib/libobjc.A.dylib",
+        "/usr/lib/swift/libswiftCore.dylib",
+        "/usr/lib/swift/libswiftCoreFoundation.dylib",
+        "/usr/lib/swift/libswiftDarwin.dylib",
+        "/usr/lib/swift/libswiftDispatch.dylib",
+        "/usr/lib/swift/libswiftFoundation.dylib",
+        "/usr/lib/swift/libswiftIOKit.dylib",
+        "/usr/lib/swift/libswiftObjectiveC.dylib",
+        "/usr/lib/swift/libswiftXPC.dylib",
+        "/usr/lib/swift/libswiftos.dylib",
+        "@rpath/libswift_Concurrency.dylib"
+      ],
+      "otoolReturnCode": 0,
+      "undefinedCaptureSymbolTokens": [],
+      "nmReturnCode": 0,
+      "undefinedCaptureSymbolTokensByArchitecture": {
+        "x86_64": {
+          "returnCode": 0,
+          "tokens": []
+        },
+        "arm64": {
+          "returnCode": 0,
+          "tokens": []
+        }
+      },
+      "captureStringTokens": [],
+      "stringsReturnCode": 0
+    },
+    {
+      "app": "UURemote.app",
+      "path": "/Applications/UURemote.app/Contents/Helpers/UURemoteServer",
+      "relativePath": "Contents/Helpers/UURemoteServer",
+      "bytes": 24614720,
+      "sha256": "992666aa2617983dcfd9f8d0e8f1cc8b9cf30f3fd18c02d24cd6d5f4ca6774aa",
+      "runningInstances": [
+        {
+          "pid": 89157,
+          "uid": 501,
+          "executable": "/Applications/UURemote.app/Contents/Helpers/UURemoteServer"
+        }
+      ],
+      "architectures": [
+        "x86_64",
+        "arm64"
+      ],
+      "architectureReadReturnCode": 0,
+      "signatureMetadataReadReturnCode": 0,
+      "codeDirectory": "CodeDirectory v=20500 size=23719 flags=0x10000(runtime) hashes=730+7 location=embedded",
+      "signatureIdentifier": "com.netease.uuremote.server",
+      "teamIdentifier": "PU9BNSBJW7",
+      "runtimeVersion": "26.2.0",
+      "hardenedRuntimeFlag": true,
+      "entitlementsReadReturnCode": 0,
+      "entitlementsParse": "parsed",
+      "selectedEntitlements": {
+        "com.apple.security.get-task-allow": null,
+        "com.apple.security.cs.allow-dyld-environment-variables": null,
+        "com.apple.security.cs.disable-library-validation": null,
+        "com.apple.security.cs.disable-executable-page-protection": null,
+        "com.apple.security.cs.allow-unsigned-executable-memory": null,
+        "com.apple.security.cs.allow-jit": null,
+        "com.apple.security.app-sandbox": null
+      },
+      "linkedLibraries": [
+        "/System/Library/Frameworks/AdSupport.framework/Versions/A/AdSupport",
+        "/System/Library/Frameworks/AppKit.framework/Versions/C/AppKit",
+        "/System/Library/Frameworks/AppTrackingTransparency.framework/Versions/A/AppTrackingTransparency",
+        "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/ApplicationServices",
+        "/System/Library/Frameworks/CFNetwork.framework/Versions/A/CFNetwork",
+        "/System/Library/Frameworks/Carbon.framework/Versions/A/Carbon",
+        "/System/Library/Frameworks/ColorSync.framework/Versions/A/ColorSync",
+        "/System/Library/Frameworks/Combine.framework/Versions/A/Combine",
+        "/System/Library/Frameworks/CoreAudio.framework/Versions/A/CoreAudio",
+        "/System/Library/Frameworks/CoreData.framework/Versions/A/CoreData",
+        "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+        "/System/Library/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics",
+        "/System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices",
+        "/System/Library/Frameworks/CoreVideo.framework/Versions/A/CoreVideo",
+        "/System/Library/Frameworks/CryptoKit.framework/Versions/A/CryptoKit",
+        "/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation",
+        "/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit",
+        "/System/Library/Frameworks/ImageIO.framework/Versions/A/ImageIO",
+        "/System/Library/Frameworks/MetricKit.framework/Versions/A/MetricKit",
+        "/System/Library/Frameworks/OpenDirectory.framework/Versions/A/OpenDirectory",
+        "/System/Library/Frameworks/Security.framework/Versions/A/Security",
+        "/System/Library/Frameworks/SystemConfiguration.framework/Versions/A/SystemConfiguration",
+        "/System/Library/Frameworks/WebKit.framework/Versions/A/WebKit",
+        "/usr/lib/libSystem.B.dylib",
+        "/usr/lib/libc++.1.dylib",
+        "/usr/lib/libcompression.dylib",
+        "/usr/lib/libobjc.A.dylib",
+        "/usr/lib/libsqlite3.dylib",
+        "/usr/lib/libz.1.dylib",
+        "/usr/lib/swift/libswiftCompression.dylib",
+        "/usr/lib/swift/libswiftCore.dylib",
+        "/usr/lib/swift/libswiftCoreAudio.dylib",
+        "/usr/lib/swift/libswiftCoreFoundation.dylib",
+        "/usr/lib/swift/libswiftCoreGraphics.dylib",
+        "/usr/lib/swift/libswiftCoreImage.dylib",
+        "/usr/lib/swift/libswiftCoreMIDI.dylib",
+        "/usr/lib/swift/libswiftDarwin.dylib",
+        "/usr/lib/swift/libswiftDispatch.dylib",
+        "/usr/lib/swift/libswiftFoundation.dylib",
+        "/usr/lib/swift/libswiftIOKit.dylib",
+        "/usr/lib/swift/libswiftMetal.dylib",
+        "/usr/lib/swift/libswiftMetricKit.dylib",
+        "/usr/lib/swift/libswiftNetwork.dylib",
+        "/usr/lib/swift/libswiftOSLog.dylib",
+        "/usr/lib/swift/libswiftObjectiveC.dylib",
+        "/usr/lib/swift/libswiftQuartzCore.dylib",
+        "/usr/lib/swift/libswiftUniformTypeIdentifiers.dylib",
+        "/usr/lib/swift/libswiftXPC.dylib",
+        "/usr/lib/swift/libswiftos.dylib",
+        "/usr/lib/swift/libswiftsimd.dylib",
+        "@rpath/libstreamer.dylib",
+        "@rpath/libswift_Concurrency.dylib"
+      ],
+      "otoolReturnCode": 0,
+      "undefinedCaptureSymbolTokens": [
+        "CGPreflightScreenCaptureAccess",
+        "CGRequestScreenCaptureAccess",
+        "CGWindowListCreateImage"
+      ],
+      "nmReturnCode": 0,
+      "undefinedCaptureSymbolTokensByArchitecture": {
+        "x86_64": {
+          "returnCode": 0,
+          "tokens": [
+            "CGPreflightScreenCaptureAccess",
+            "CGRequestScreenCaptureAccess",
+            "CGWindowListCreateImage"
+          ]
+        },
+        "arm64": {
+          "returnCode": 0,
+          "tokens": [
+            "CGPreflightScreenCaptureAccess",
+            "CGRequestScreenCaptureAccess",
+            "CGWindowListCreateImage"
+          ]
+        }
+      },
+      "captureStringTokens": [],
+      "stringsReturnCode": 0
+    },
+    {
+      "app": "UURemote.app",
+      "path": "/Applications/UURemote.app/Contents/Frameworks/libstreamer.dylib",
+      "relativePath": "Contents/Frameworks/libstreamer.dylib",
+      "bytes": 26067248,
+      "sha256": "2964a0307c2c508667c250688492a39326e3d11b2eb403cbeebabfcfd67d3e3a",
+      "runningInstances": [],
+      "architectures": [
+        "x86_64",
+        "arm64"
+      ],
+      "architectureReadReturnCode": 0,
+      "signatureMetadataReadReturnCode": 0,
+      "codeDirectory": "CodeDirectory v=20500 size=24288 flags=0x10000(runtime) hashes=752+2 location=embedded",
+      "signatureIdentifier": "libstreamer-55554944e7d08e0d7e0e383885c088c330dafcda",
+      "teamIdentifier": "PU9BNSBJW7",
+      "runtimeVersion": "26.2.0",
+      "hardenedRuntimeFlag": true,
+      "entitlementsReadReturnCode": 0,
+      "entitlementsParse": "no-output",
+      "selectedEntitlements": {
+        "com.apple.security.get-task-allow": null,
+        "com.apple.security.cs.allow-dyld-environment-variables": null,
+        "com.apple.security.cs.disable-library-validation": null,
+        "com.apple.security.cs.disable-executable-page-protection": null,
+        "com.apple.security.cs.allow-unsigned-executable-memory": null,
+        "com.apple.security.cs.allow-jit": null,
+        "com.apple.security.app-sandbox": null
+      },
+      "linkedLibraries": [
+        "/System/Library/Frameworks/AVFoundation.framework/Versions/A/AVFoundation",
+        "/System/Library/Frameworks/AppKit.framework/Versions/C/AppKit",
+        "/System/Library/Frameworks/AudioToolbox.framework/Versions/A/AudioToolbox",
+        "/System/Library/Frameworks/AudioUnit.framework/Versions/A/AudioUnit",
+        "/System/Library/Frameworks/CoreAudio.framework/Versions/A/CoreAudio",
+        "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+        "/System/Library/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics",
+        "/System/Library/Frameworks/CoreMedia.framework/Versions/A/CoreMedia",
+        "/System/Library/Frameworks/CoreVideo.framework/Versions/A/CoreVideo",
+        "/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation",
+        "/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit",
+        "/System/Library/Frameworks/IOSurface.framework/Versions/A/IOSurface",
+        "/System/Library/Frameworks/Metal.framework/Versions/A/Metal",
+        "/System/Library/Frameworks/MetalKit.framework/Versions/A/MetalKit",
+        "/System/Library/Frameworks/Network.framework/Versions/A/Network",
+        "/System/Library/Frameworks/QuartzCore.framework/Versions/A/QuartzCore",
+        "/System/Library/Frameworks/ScreenCaptureKit.framework/Versions/A/ScreenCaptureKit",
+        "/System/Library/Frameworks/VideoToolbox.framework/Versions/A/VideoToolbox",
+        "/usr/lib/libSystem.B.dylib",
+        "/usr/lib/libc++.1.dylib",
+        "/usr/lib/libobjc.A.dylib",
+        "@rpath/libstreamer.dylib"
+      ],
+      "otoolReturnCode": 0,
+      "undefinedCaptureSymbolTokens": [
+        "CGDisplayStreamColorSpace",
+        "CGDisplayStreamCreateWithDispatchQueue",
+        "CGDisplayStreamMinimumFrameTime",
+        "CGDisplayStreamShowCursor",
+        "CGDisplayStreamStart",
+        "CGDisplayStreamStop",
+        "CGDisplayStreamUpdateGetRects",
+        "CGDisplayStreamYCbCrMatrix",
+        "CGDisplayStreamYCbCrMatrix_ITU_R_601_4",
+        "SCContentFilter",
+        "SCShareableContent",
+        "SCStream"
+      ],
+      "nmReturnCode": 0,
+      "undefinedCaptureSymbolTokensByArchitecture": {
+        "x86_64": {
+          "returnCode": 0,
+          "tokens": [
+            "CGDisplayStreamColorSpace",
+            "CGDisplayStreamCreateWithDispatchQueue",
+            "CGDisplayStreamMinimumFrameTime",
+            "CGDisplayStreamShowCursor",
+            "CGDisplayStreamStart",
+            "CGDisplayStreamStop",
+            "CGDisplayStreamUpdateGetRects",
+            "CGDisplayStreamYCbCrMatrix",
+            "CGDisplayStreamYCbCrMatrix_ITU_R_601_4",
+            "SCContentFilter",
+            "SCShareableContent",
+            "SCStream"
+          ]
+        },
+        "arm64": {
+          "returnCode": 0,
+          "tokens": [
+            "CGDisplayStreamColorSpace",
+            "CGDisplayStreamCreateWithDispatchQueue",
+            "CGDisplayStreamMinimumFrameTime",
+            "CGDisplayStreamShowCursor",
+            "CGDisplayStreamStart",
+            "CGDisplayStreamStop",
+            "CGDisplayStreamUpdateGetRects",
+            "CGDisplayStreamYCbCrMatrix",
+            "CGDisplayStreamYCbCrMatrix_ITU_R_601_4",
+            "SCContentFilter",
+            "SCShareableContent",
+            "SCStream"
+          ]
+        }
+      },
+      "captureStringTokens": [
+        "CGDisplayStreamCreate",
+        "CGDisplayStreamStart",
+        "CGDisplayStreamUpdate",
+        "SCContentFilter",
+        "SCShareableContent",
+        "SCStream",
+        "addStreamOutput:type:sampleHandlerQueue:error:",
+        "getShareableContentExcludingDesktopWindows:onScreenWindowsOnly:completionHandler:",
+        "initWithFilter:configuration:delegate:",
+        "startCaptureWithCompletionHandler:",
+        "stopCaptureWithCompletionHandler:",
+        "stream:didOutputSampleBuffer:ofType:"
+      ],
+      "stringsReturnCode": 0
+    },
+    {
+      "app": "UURemote.app",
+      "path": "/Applications/UURemote.app/Contents/Frameworks/libswift_Concurrency.dylib",
+      "relativePath": "Contents/Frameworks/libswift_Concurrency.dylib",
+      "bytes": 1121504,
+      "sha256": "3f08f5ea0b0745f83262bc127d47dbf081824889baf1ca852ce74e97127f4a2c",
+      "runningInstances": [],
+      "architectures": [
+        "x86_64",
+        "arm64"
+      ],
+      "architectureReadReturnCode": 0,
+      "signatureMetadataReadReturnCode": 0,
+      "codeDirectory": "CodeDirectory v=20500 size=1265 flags=0x10000(runtime) hashes=33+2 location=embedded",
+      "signatureIdentifier": "com.apple.dt.runtime.swiftConcurrency",
+      "teamIdentifier": "PU9BNSBJW7",
+      "runtimeVersion": "13.0.0",
+      "hardenedRuntimeFlag": true,
+      "entitlementsReadReturnCode": 0,
+      "entitlementsParse": "no-output",
+      "selectedEntitlements": {
+        "com.apple.security.get-task-allow": null,
+        "com.apple.security.cs.allow-dyld-environment-variables": null,
+        "com.apple.security.cs.disable-library-validation": null,
+        "com.apple.security.cs.disable-executable-page-protection": null,
+        "com.apple.security.cs.allow-unsigned-executable-memory": null,
+        "com.apple.security.cs.allow-jit": null,
+        "com.apple.security.app-sandbox": null
+      },
+      "linkedLibraries": [
+        "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+        "/usr/lib/libSystem.B.dylib",
+        "/usr/lib/libc++.1.dylib",
+        "/usr/lib/libobjc.A.dylib",
+        "/usr/lib/swift/libswiftCore.dylib",
+        "@rpath/libswiftCore.dylib",
+        "@rpath/libswift_Concurrency.dylib"
+      ],
+      "otoolReturnCode": 0,
+      "undefinedCaptureSymbolTokens": [],
+      "nmReturnCode": 0,
+      "undefinedCaptureSymbolTokensByArchitecture": {
+        "x86_64": {
+          "returnCode": 0,
+          "tokens": []
+        },
+        "arm64": {
+          "returnCode": 0,
+          "tokens": []
+        }
+      },
+      "captureStringTokens": [],
+      "stringsReturnCode": 0
+    },
+    {
+      "app": "UURemote.app",
+      "path": "/Applications/UURemote.app/Contents/Helpers/UURemoteUpdater.app/Contents/MacOS/UURemoteUpdater",
+      "relativePath": "Contents/Helpers/UURemoteUpdater.app/Contents/MacOS/UURemoteUpdater",
+      "bytes": 9488544,
+      "sha256": "774409afc29adfb214bcb84e6dd43386f5df98df5ad0b7e6114fc120f57437d3",
+      "runningInstances": [],
+      "architectures": [
+        "x86_64",
+        "arm64"
+      ],
+      "architectureReadReturnCode": 0,
+      "signatureMetadataReadReturnCode": 0,
+      "codeDirectory": "CodeDirectory v=20500 size=9352 flags=0x10000(runtime) hashes=281+7 location=embedded",
+      "signatureIdentifier": "com.netease.uuremote.updater",
+      "teamIdentifier": "PU9BNSBJW7",
+      "runtimeVersion": "26.2.0",
+      "hardenedRuntimeFlag": true,
+      "entitlementsReadReturnCode": 0,
+      "entitlementsParse": "parsed",
+      "selectedEntitlements": {
+        "com.apple.security.get-task-allow": null,
+        "com.apple.security.cs.allow-dyld-environment-variables": null,
+        "com.apple.security.cs.disable-library-validation": null,
+        "com.apple.security.cs.disable-executable-page-protection": null,
+        "com.apple.security.cs.allow-unsigned-executable-memory": null,
+        "com.apple.security.cs.allow-jit": null,
+        "com.apple.security.app-sandbox": null
+      },
+      "linkedLibraries": [
+        "/System/Library/Frameworks/AdSupport.framework/Versions/A/AdSupport",
+        "/System/Library/Frameworks/AppKit.framework/Versions/C/AppKit",
+        "/System/Library/Frameworks/AppTrackingTransparency.framework/Versions/A/AppTrackingTransparency",
+        "/System/Library/Frameworks/CFNetwork.framework/Versions/A/CFNetwork",
+        "/System/Library/Frameworks/Combine.framework/Versions/A/Combine",
+        "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+        "/System/Library/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics",
+        "/System/Library/Frameworks/CoreImage.framework/Versions/A/CoreImage",
+        "/System/Library/Frameworks/CoreText.framework/Versions/A/CoreText",
+        "/System/Library/Frameworks/CryptoKit.framework/Versions/A/CryptoKit",
+        "/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation",
+        "/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit",
+        "/System/Library/Frameworks/QuartzCore.framework/Versions/A/QuartzCore",
+        "/System/Library/Frameworks/Security.framework/Versions/A/Security",
+        "/System/Library/Frameworks/SystemConfiguration.framework/Versions/A/SystemConfiguration",
+        "/System/Library/Frameworks/WebKit.framework/Versions/A/WebKit",
+        "/usr/lib/libSystem.B.dylib",
+        "/usr/lib/libc++.1.dylib",
+        "/usr/lib/libicucore.A.dylib",
+        "/usr/lib/libobjc.A.dylib",
+        "/usr/lib/libsqlite3.dylib",
+        "/usr/lib/libz.1.dylib",
+        "/usr/lib/swift/libswiftAppKit.dylib",
+        "/usr/lib/swift/libswiftCore.dylib",
+        "/usr/lib/swift/libswiftCoreFoundation.dylib",
+        "/usr/lib/swift/libswiftCoreGraphics.dylib",
+        "/usr/lib/swift/libswiftCoreImage.dylib",
+        "/usr/lib/swift/libswiftDarwin.dylib",
+        "/usr/lib/swift/libswiftDispatch.dylib",
+        "/usr/lib/swift/libswiftFoundation.dylib",
+        "/usr/lib/swift/libswiftIOKit.dylib",
+        "/usr/lib/swift/libswiftMetal.dylib",
+        "/usr/lib/swift/libswiftOSLog.dylib",
+        "/usr/lib/swift/libswiftObjectiveC.dylib",
+        "/usr/lib/swift/libswiftQuartzCore.dylib",
+        "/usr/lib/swift/libswiftSpatial.dylib",
+        "/usr/lib/swift/libswiftUniformTypeIdentifiers.dylib",
+        "/usr/lib/swift/libswiftXPC.dylib",
+        "/usr/lib/swift/libswiftos.dylib",
+        "/usr/lib/swift/libswiftsimd.dylib",
+        "@rpath/libswift_Concurrency.dylib"
+      ],
+      "otoolReturnCode": 0,
+      "undefinedCaptureSymbolTokens": [],
+      "nmReturnCode": 0,
+      "undefinedCaptureSymbolTokensByArchitecture": {
+        "x86_64": {
+          "returnCode": 0,
+          "tokens": []
+        },
+        "arm64": {
+          "returnCode": 0,
+          "tokens": []
+        }
+      },
+      "captureStringTokens": [],
+      "stringsReturnCode": 0
+    },
+    {
+      "app": "UURemote.app",
+      "path": "/Applications/UURemote.app/Contents/MacOS/UURemoteDaemon",
+      "relativePath": "Contents/MacOS/UURemoteDaemon",
+      "bytes": 18355040,
+      "sha256": "14a5ffe066832f267edfc8c3905b28b2f8c25d661b1be4815dca813e0f861eb3",
+      "runningInstances": [
+        {
+          "pid": 3980,
+          "uid": 0,
+          "executable": "/Applications/UURemote.app/Contents/MacOS/UURemoteDaemon"
+        }
+      ],
+      "architectures": [
+        "x86_64",
+        "arm64"
+      ],
+      "architectureReadReturnCode": 0,
+      "signatureMetadataReadReturnCode": 0,
+      "codeDirectory": "CodeDirectory v=20500 size=17799 flags=0x10000(runtime) hashes=545+7 location=embedded",
+      "signatureIdentifier": "com.netease.uuremote.daemon",
+      "teamIdentifier": "PU9BNSBJW7",
+      "runtimeVersion": "26.2.0",
+      "hardenedRuntimeFlag": true,
+      "entitlementsReadReturnCode": 0,
+      "entitlementsParse": "parsed",
+      "selectedEntitlements": {
+        "com.apple.security.get-task-allow": null,
+        "com.apple.security.cs.allow-dyld-environment-variables": null,
+        "com.apple.security.cs.disable-library-validation": null,
+        "com.apple.security.cs.disable-executable-page-protection": null,
+        "com.apple.security.cs.allow-unsigned-executable-memory": null,
+        "com.apple.security.cs.allow-jit": null,
+        "com.apple.security.app-sandbox": null
+      },
+      "linkedLibraries": [
+        "/System/Library/Frameworks/AdSupport.framework/Versions/A/AdSupport",
+        "/System/Library/Frameworks/AppKit.framework/Versions/C/AppKit",
+        "/System/Library/Frameworks/AppTrackingTransparency.framework/Versions/A/AppTrackingTransparency",
+        "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/ApplicationServices",
+        "/System/Library/Frameworks/CFNetwork.framework/Versions/A/CFNetwork",
+        "/System/Library/Frameworks/Combine.framework/Versions/A/Combine",
+        "/System/Library/Frameworks/CoreData.framework/Versions/A/CoreData",
+        "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+        "/System/Library/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics",
+        "/System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices",
+        "/System/Library/Frameworks/CoreVideo.framework/Versions/A/CoreVideo",
+        "/System/Library/Frameworks/CryptoKit.framework/Versions/A/CryptoKit",
+        "/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation",
+        "/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit",
+        "/System/Library/Frameworks/ImageIO.framework/Versions/A/ImageIO",
+        "/System/Library/Frameworks/MetricKit.framework/Versions/A/MetricKit",
+        "/System/Library/Frameworks/Security.framework/Versions/A/Security",
+        "/System/Library/Frameworks/SystemConfiguration.framework/Versions/A/SystemConfiguration",
+        "/System/Library/Frameworks/WebKit.framework/Versions/A/WebKit",
+        "/usr/lib/libSystem.B.dylib",
+        "/usr/lib/libc++.1.dylib",
+        "/usr/lib/libobjc.A.dylib",
+        "/usr/lib/libsqlite3.dylib",
+        "/usr/lib/libz.1.dylib",
+        "/usr/lib/swift/libswiftCore.dylib",
+        "/usr/lib/swift/libswiftCoreFoundation.dylib",
+        "/usr/lib/swift/libswiftCoreGraphics.dylib",
+        "/usr/lib/swift/libswiftCoreImage.dylib",
+        "/usr/lib/swift/libswiftDarwin.dylib",
+        "/usr/lib/swift/libswiftDispatch.dylib",
+        "/usr/lib/swift/libswiftFoundation.dylib",
+        "/usr/lib/swift/libswiftIOKit.dylib",
+        "/usr/lib/swift/libswiftMetal.dylib",
+        "/usr/lib/swift/libswiftMetricKit.dylib",
+        "/usr/lib/swift/libswiftNetwork.dylib",
+        "/usr/lib/swift/libswiftOSLog.dylib",
+        "/usr/lib/swift/libswiftObjectiveC.dylib",
+        "/usr/lib/swift/libswiftQuartzCore.dylib",
+        "/usr/lib/swift/libswiftUniformTypeIdentifiers.dylib",
+        "/usr/lib/swift/libswiftXPC.dylib",
+        "/usr/lib/swift/libswiftos.dylib",
+        "/usr/lib/swift/libswiftsimd.dylib",
+        "@rpath/libswift_Concurrency.dylib"
+      ],
+      "otoolReturnCode": 0,
+      "undefinedCaptureSymbolTokens": [
+        "CGPreflightScreenCaptureAccess",
+        "CGRequestScreenCaptureAccess"
+      ],
+      "nmReturnCode": 0,
+      "undefinedCaptureSymbolTokensByArchitecture": {
+        "x86_64": {
+          "returnCode": 0,
+          "tokens": [
+            "CGPreflightScreenCaptureAccess",
+            "CGRequestScreenCaptureAccess"
+          ]
+        },
+        "arm64": {
+          "returnCode": 0,
+          "tokens": [
+            "CGPreflightScreenCaptureAccess",
+            "CGRequestScreenCaptureAccess"
+          ]
+        }
+      },
+      "captureStringTokens": [],
+      "stringsReturnCode": 0
+    },
+    {
+      "app": "UURemote.app",
+      "path": "/Applications/UURemote.app/Contents/MacOS/UURemoteService",
+      "relativePath": "Contents/MacOS/UURemoteService",
+      "bytes": 18556576,
+      "sha256": "a9f8ba82d37a8fa545323aeb311ad2316fea8ff86304ae13f00632098731af0a",
+      "runningInstances": [
+        {
+          "pid": 84366,
+          "uid": 501,
+          "executable": "/Applications/UURemote.app/Contents/MacOS/UURemoteService"
+        }
+      ],
+      "architectures": [
+        "x86_64",
+        "arm64"
+      ],
+      "architectureReadReturnCode": 0,
+      "signatureMetadataReadReturnCode": 0,
+      "codeDirectory": "CodeDirectory v=20500 size=17990 flags=0x10000(runtime) hashes=551+7 location=embedded",
+      "signatureIdentifier": "com.netease.uuremote.agent",
+      "teamIdentifier": "PU9BNSBJW7",
+      "runtimeVersion": "26.2.0",
+      "hardenedRuntimeFlag": true,
+      "entitlementsReadReturnCode": 0,
+      "entitlementsParse": "parsed",
+      "selectedEntitlements": {
+        "com.apple.security.get-task-allow": null,
+        "com.apple.security.cs.allow-dyld-environment-variables": null,
+        "com.apple.security.cs.disable-library-validation": null,
+        "com.apple.security.cs.disable-executable-page-protection": null,
+        "com.apple.security.cs.allow-unsigned-executable-memory": null,
+        "com.apple.security.cs.allow-jit": null,
+        "com.apple.security.app-sandbox": null
+      },
+      "linkedLibraries": [
+        "/System/Library/Frameworks/AdSupport.framework/Versions/A/AdSupport",
+        "/System/Library/Frameworks/AppKit.framework/Versions/C/AppKit",
+        "/System/Library/Frameworks/AppTrackingTransparency.framework/Versions/A/AppTrackingTransparency",
+        "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/ApplicationServices",
+        "/System/Library/Frameworks/CFNetwork.framework/Versions/A/CFNetwork",
+        "/System/Library/Frameworks/Combine.framework/Versions/A/Combine",
+        "/System/Library/Frameworks/CoreData.framework/Versions/A/CoreData",
+        "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+        "/System/Library/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics",
+        "/System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices",
+        "/System/Library/Frameworks/CoreVideo.framework/Versions/A/CoreVideo",
+        "/System/Library/Frameworks/CryptoKit.framework/Versions/A/CryptoKit",
+        "/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation",
+        "/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit",
+        "/System/Library/Frameworks/ImageIO.framework/Versions/A/ImageIO",
+        "/System/Library/Frameworks/MetricKit.framework/Versions/A/MetricKit",
+        "/System/Library/Frameworks/Security.framework/Versions/A/Security",
+        "/System/Library/Frameworks/SystemConfiguration.framework/Versions/A/SystemConfiguration",
+        "/System/Library/Frameworks/WebKit.framework/Versions/A/WebKit",
+        "/usr/lib/libSystem.B.dylib",
+        "/usr/lib/libc++.1.dylib",
+        "/usr/lib/libobjc.A.dylib",
+        "/usr/lib/libsqlite3.dylib",
+        "/usr/lib/libz.1.dylib",
+        "/usr/lib/swift/libswiftCore.dylib",
+        "/usr/lib/swift/libswiftCoreFoundation.dylib",
+        "/usr/lib/swift/libswiftCoreGraphics.dylib",
+        "/usr/lib/swift/libswiftCoreImage.dylib",
+        "/usr/lib/swift/libswiftDarwin.dylib",
+        "/usr/lib/swift/libswiftDispatch.dylib",
+        "/usr/lib/swift/libswiftFoundation.dylib",
+        "/usr/lib/swift/libswiftIOKit.dylib",
+        "/usr/lib/swift/libswiftMetal.dylib",
+        "/usr/lib/swift/libswiftMetricKit.dylib",
+        "/usr/lib/swift/libswiftNetwork.dylib",
+        "/usr/lib/swift/libswiftOSLog.dylib",
+        "/usr/lib/swift/libswiftObjectiveC.dylib",
+        "/usr/lib/swift/libswiftQuartzCore.dylib",
+        "/usr/lib/swift/libswiftUniformTypeIdentifiers.dylib",
+        "/usr/lib/swift/libswiftXPC.dylib",
+        "/usr/lib/swift/libswiftos.dylib",
+        "/usr/lib/swift/libswiftsimd.dylib",
+        "@rpath/libswift_Concurrency.dylib"
+      ],
+      "otoolReturnCode": 0,
+      "undefinedCaptureSymbolTokens": [
+        "CGPreflightScreenCaptureAccess",
+        "CGRequestScreenCaptureAccess"
+      ],
+      "nmReturnCode": 0,
+      "undefinedCaptureSymbolTokensByArchitecture": {
+        "x86_64": {
+          "returnCode": 0,
+          "tokens": [
+            "CGPreflightScreenCaptureAccess",
+            "CGRequestScreenCaptureAccess"
+          ]
+        },
+        "arm64": {
+          "returnCode": 0,
+          "tokens": [
+            "CGPreflightScreenCaptureAccess",
+            "CGRequestScreenCaptureAccess"
+          ]
+        }
+      },
+      "captureStringTokens": [],
+      "stringsReturnCode": 0
+    },
+    {
+      "app": "UURemote.app",
+      "path": "/Applications/UURemote.app/Contents/MacOS/UURemote",
+      "relativePath": "Contents/MacOS/UURemote",
+      "bytes": 54114944,
+      "sha256": "235eb6415bc6828d05b87820869d40c9ebb5da268ebdd8ede8e4394c5f17f5e6",
+      "runningInstances": [
+        {
+          "pid": 89133,
+          "uid": 501,
+          "executable": "/Applications/UURemote.app/Contents/MacOS/UURemote"
+        }
+      ],
+      "architectures": [
+        "x86_64",
+        "arm64"
+      ],
+      "architectureReadReturnCode": 0,
+      "signatureMetadataReadReturnCode": 0,
+      "codeDirectory": "CodeDirectory v=20500 size=51328 flags=0x10000(runtime) hashes=1593+7 location=embedded",
+      "signatureIdentifier": "com.netease.uuremote",
+      "teamIdentifier": "PU9BNSBJW7",
+      "runtimeVersion": "26.2.0",
+      "hardenedRuntimeFlag": true,
+      "entitlementsReadReturnCode": 0,
+      "entitlementsParse": "parsed",
+      "selectedEntitlements": {
+        "com.apple.security.get-task-allow": null,
+        "com.apple.security.cs.allow-dyld-environment-variables": null,
+        "com.apple.security.cs.disable-library-validation": null,
+        "com.apple.security.cs.disable-executable-page-protection": null,
+        "com.apple.security.cs.allow-unsigned-executable-memory": null,
+        "com.apple.security.cs.allow-jit": null,
+        "com.apple.security.app-sandbox": null
+      },
+      "linkedLibraries": [
+        "/System/Library/Frameworks/AVFoundation.framework/Versions/A/AVFoundation",
+        "/System/Library/Frameworks/Accelerate.framework/Versions/A/Accelerate",
+        "/System/Library/Frameworks/AdSupport.framework/Versions/A/AdSupport",
+        "/System/Library/Frameworks/AppKit.framework/Versions/C/AppKit",
+        "/System/Library/Frameworks/AppTrackingTransparency.framework/Versions/A/AppTrackingTransparency",
+        "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/ApplicationServices",
+        "/System/Library/Frameworks/AudioToolbox.framework/Versions/A/AudioToolbox",
+        "/System/Library/Frameworks/CFNetwork.framework/Versions/A/CFNetwork",
+        "/System/Library/Frameworks/Carbon.framework/Versions/A/Carbon",
+        "/System/Library/Frameworks/Combine.framework/Versions/A/Combine",
+        "/System/Library/Frameworks/CoreAudio.framework/Versions/A/CoreAudio",
+        "/System/Library/Frameworks/CoreData.framework/Versions/A/CoreData",
+        "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+        "/System/Library/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics",
+        "/System/Library/Frameworks/CoreHaptics.framework/Versions/A/CoreHaptics",
+        "/System/Library/Frameworks/CoreImage.framework/Versions/A/CoreImage",
+        "/System/Library/Frameworks/CoreMedia.framework/Versions/A/CoreMedia",
+        "/System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices",
+        "/System/Library/Frameworks/CoreText.framework/Versions/A/CoreText",
+        "/System/Library/Frameworks/CoreVideo.framework/Versions/A/CoreVideo",
+        "/System/Library/Frameworks/CryptoKit.framework/Versions/A/CryptoKit",
+        "/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation",
+        "/System/Library/Frameworks/GameController.framework/Versions/A/GameController",
+        "/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit",
+        "/System/Library/Frameworks/ImageIO.framework/Versions/A/ImageIO",
+        "/System/Library/Frameworks/LocalAuthentication.framework/Versions/A/LocalAuthentication",
+        "/System/Library/Frameworks/Metal.framework/Versions/A/Metal",
+        "/System/Library/Frameworks/MetalKit.framework/Versions/A/MetalKit",
+        "/System/Library/Frameworks/MetricKit.framework/Versions/A/MetricKit",
+        "/System/Library/Frameworks/Network.framework/Versions/A/Network",
+        "/System/Library/Frameworks/QuartzCore.framework/Versions/A/QuartzCore",
+        "/System/Library/Frameworks/Security.framework/Versions/A/Security",
+        "/System/Library/Frameworks/SwiftUI.framework/Versions/A/SwiftUI",
+        "/System/Library/Frameworks/SystemConfiguration.framework/Versions/A/SystemConfiguration",
+        "/System/Library/Frameworks/UserNotifications.framework/Versions/A/UserNotifications",
+        "/System/Library/Frameworks/VideoToolbox.framework/Versions/A/VideoToolbox",
+        "/System/Library/Frameworks/WebKit.framework/Versions/A/WebKit",
+        "/usr/lib/libSystem.B.dylib",
+        "/usr/lib/libc++.1.dylib",
+        "/usr/lib/libcompression.dylib",
+        "/usr/lib/libicucore.A.dylib",
+        "/usr/lib/libobjc.A.dylib",
+        "/usr/lib/libsqlite3.dylib",
+        "/usr/lib/libz.1.dylib",
+        "/usr/lib/swift/libswiftAVFoundation.dylib",
+        "/usr/lib/swift/libswiftAppKit.dylib",
+        "/usr/lib/swift/libswiftCompression.dylib",
+        "/usr/lib/swift/libswiftCore.dylib",
+        "/usr/lib/swift/libswiftCoreAudio.dylib",
+        "/usr/lib/swift/libswiftCoreFoundation.dylib",
+        "/usr/lib/swift/libswiftCoreGraphics.dylib",
+        "/usr/lib/swift/libswiftCoreImage.dylib",
+        "/usr/lib/swift/libswiftCoreLocation.dylib",
+        "/usr/lib/swift/libswiftCoreMIDI.dylib",
+        "/usr/lib/swift/libswiftCoreMedia.dylib",
+        "/usr/lib/swift/libswiftDarwin.dylib",
+        "/usr/lib/swift/libswiftDispatch.dylib",
+        "/usr/lib/swift/libswiftFoundation.dylib",
+        "/usr/lib/swift/libswiftIOKit.dylib",
+        "/usr/lib/swift/libswiftMapKit.dylib",
+        "/usr/lib/swift/libswiftMetal.dylib",
+        "/usr/lib/swift/libswiftMetalKit.dylib",
+        "/usr/lib/swift/libswiftMetricKit.dylib",
+        "/usr/lib/swift/libswiftModelIO.dylib",
+        "/usr/lib/swift/libswiftNetwork.dylib",
+        "/usr/lib/swift/libswiftOSLog.dylib",
+        "/usr/lib/swift/libswiftObjectiveC.dylib",
+        "/usr/lib/swift/libswiftQuartzCore.dylib",
+        "/usr/lib/swift/libswiftSpatial.dylib",
+        "/usr/lib/swift/libswiftUniformTypeIdentifiers.dylib",
+        "/usr/lib/swift/libswiftXPC.dylib",
+        "/usr/lib/swift/libswift_StringProcessing.dylib",
+        "/usr/lib/swift/libswiftos.dylib",
+        "/usr/lib/swift/libswiftsimd.dylib",
+        "@rpath/libstreamer.dylib",
+        "@rpath/libswift_Concurrency.dylib"
+      ],
+      "otoolReturnCode": 0,
+      "undefinedCaptureSymbolTokens": [
+        "CGPreflightScreenCaptureAccess",
+        "CGWindowListCreateImage"
+      ],
+      "nmReturnCode": 0,
+      "undefinedCaptureSymbolTokensByArchitecture": {
+        "x86_64": {
+          "returnCode": 0,
+          "tokens": [
+            "CGPreflightScreenCaptureAccess",
+            "CGWindowListCreateImage"
+          ]
+        },
+        "arm64": {
+          "returnCode": 0,
+          "tokens": [
+            "CGPreflightScreenCaptureAccess",
+            "CGWindowListCreateImage"
+          ]
+        }
+      },
+      "captureStringTokens": [],
+      "stringsReturnCode": 0
+    },
+    {
+      "app": "UURemote.app",
+      "path": "/Applications/UURemote.app/Contents/XPCServices/UURemoteHelper.xpc/Contents/MacOS/UURemoteHelper",
+      "relativePath": "Contents/XPCServices/UURemoteHelper.xpc/Contents/MacOS/UURemoteHelper",
+      "bytes": 2340320,
+      "sha256": "97e554a83723432780098a356a16e203655805e5e0cf4ec966cdc5c2298f45f9",
+      "runningInstances": [],
+      "architectures": [
+        "x86_64",
+        "arm64"
+      ],
+      "architectureReadReturnCode": 0,
+      "signatureMetadataReadReturnCode": 0,
+      "codeDirectory": "CodeDirectory v=20500 size=2535 flags=0x10000(runtime) hashes=68+7 location=embedded",
+      "signatureIdentifier": "com.netease.uuremote.helper",
+      "teamIdentifier": "PU9BNSBJW7",
+      "runtimeVersion": "26.2.0",
+      "hardenedRuntimeFlag": true,
+      "entitlementsReadReturnCode": 0,
+      "entitlementsParse": "parsed",
+      "selectedEntitlements": {
+        "com.apple.security.get-task-allow": null,
+        "com.apple.security.cs.allow-dyld-environment-variables": null,
+        "com.apple.security.cs.disable-library-validation": null,
+        "com.apple.security.cs.disable-executable-page-protection": null,
+        "com.apple.security.cs.allow-unsigned-executable-memory": null,
+        "com.apple.security.cs.allow-jit": null,
+        "com.apple.security.app-sandbox": false
+      },
+      "linkedLibraries": [
+        "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+        "/System/Library/Frameworks/CryptoKit.framework/Versions/A/CryptoKit",
+        "/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation",
+        "/System/Library/Frameworks/Security.framework/Versions/A/Security",
+        "/System/Library/Frameworks/SystemConfiguration.framework/Versions/A/SystemConfiguration",
+        "/usr/lib/libSystem.B.dylib",
+        "/usr/lib/libc++.1.dylib",
+        "/usr/lib/libobjc.A.dylib",
+        "/usr/lib/libz.1.dylib",
+        "/usr/lib/swift/libswiftCore.dylib",
+        "/usr/lib/swift/libswiftCoreFoundation.dylib",
+        "/usr/lib/swift/libswiftCoreImage.dylib",
+        "/usr/lib/swift/libswiftDarwin.dylib",
+        "/usr/lib/swift/libswiftDispatch.dylib",
+        "/usr/lib/swift/libswiftFoundation.dylib",
+        "/usr/lib/swift/libswiftIOKit.dylib",
+        "/usr/lib/swift/libswiftMetal.dylib",
+        "/usr/lib/swift/libswiftOSLog.dylib",
+        "/usr/lib/swift/libswiftObjectiveC.dylib",
+        "/usr/lib/swift/libswiftQuartzCore.dylib",
+        "/usr/lib/swift/libswiftUniformTypeIdentifiers.dylib",
+        "/usr/lib/swift/libswiftXPC.dylib",
+        "/usr/lib/swift/libswiftos.dylib",
+        "/usr/lib/swift/libswiftsimd.dylib"
+      ],
+      "otoolReturnCode": 0,
+      "undefinedCaptureSymbolTokens": [],
+      "nmReturnCode": 0,
+      "undefinedCaptureSymbolTokensByArchitecture": {
+        "x86_64": {
+          "returnCode": 0,
+          "tokens": []
+        },
+        "arm64": {
+          "returnCode": 0,
+          "tokens": []
+        }
+      },
+      "captureStringTokens": [],
+      "stringsReturnCode": 0
+    }
+  ],
+  "interpretation": [
+    "Undefined imports, framework linkage and matching string tokens are static clues, not evidence of executed capture calls.",
+    "Selected entitlement null means the inspected entitlement plist did not contain the key; inspect entitlementsParse before interpreting.",
+    "CodeDirectory runtime flags plus exceptions inform possible launch-time experiments; they do not prove successful injection, active backend, or frame redaction.",
+    "A new process inherits environment only through its launch path; starting a GUI process with a hook does not automatically instrument already-running privileged services."
+  ]
+}

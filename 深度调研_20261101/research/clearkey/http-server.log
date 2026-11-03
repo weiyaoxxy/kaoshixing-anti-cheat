@@ -1,0 +1,29 @@
+127.0.0.1 - - [01/Nov/2026 14:25:01] "GET /plain/stream.m3u8 HTTP/1.1" 200 -
+127.0.0.1 - - [01/Nov/2026 14:25:01] "GET /plain/stream.m3u8 HTTP/1.1" 200 -
+127.0.0.1 - - [01/Nov/2026 14:25:01] "GET /plain/segment-0.ts HTTP/1.1" 200 -
+127.0.0.1 - - [01/Nov/2026 14:25:01] "GET /plain/segment-1.ts HTTP/1.1" 200 -
+127.0.0.1 - - [01/Nov/2026 14:25:01] "GET /plain/segment-2.ts HTTP/1.1" 200 -
+127.0.0.1 - - [01/Nov/2026 14:25:01] "GET /plain/segment-3.ts HTTP/1.1" 200 -
+127.0.0.1 - - [01/Nov/2026 14:25:01] "GET /plain/segment-4.ts HTTP/1.1" 200 -
+127.0.0.1 - - [01/Nov/2026 14:25:01] "GET /plain/segment-5.ts HTTP/1.1" 200 -
+127.0.0.1 - - [01/Nov/2026 14:25:33] "GET /encrypted/stream.m3u8 HTTP/1.1" 200 -
+127.0.0.1 - - [01/Nov/2026 14:25:33] "GET /encrypted/stream.m3u8 HTTP/1.1" 200 -
+127.0.0.1 - - [01/Nov/2026 14:25:33] "GET /encrypted/segment-0.ts HTTP/1.1" 200 -
+127.0.0.1 - - [01/Nov/2026 14:25:33] "GET /encrypted/key.bin HTTP/1.1" 200 -
+127.0.0.1 - - [01/Nov/2026 14:25:33] "GET /encrypted/segment-1.ts HTTP/1.1" 200 -
+127.0.0.1 - - [01/Nov/2026 14:25:33] "GET /encrypted/segment-2.ts HTTP/1.1" 200 -
+127.0.0.1 - - [01/Nov/2026 14:25:33] "GET /encrypted/segment-3.ts HTTP/1.1" 200 -
+127.0.0.1 - - [01/Nov/2026 14:25:33] "GET /encrypted/segment-4.ts HTTP/1.1" 200 -
+127.0.0.1 - - [01/Nov/2026 14:25:33] "GET /encrypted/segment-5.ts HTTP/1.1" 200 -
+127.0.0.1 - - [01/Nov/2026 14:26:03] "GET /encrypted/stream.m3u8 HTTP/1.1" 200 -
+127.0.0.1 - - [01/Nov/2026 14:26:03] "GET /encrypted/stream.m3u8 HTTP/1.1" 200 -
+127.0.0.1 - - [01/Nov/2026 14:26:03] "GET /encrypted/segment-0.ts HTTP/1.1" 200 -
+127.0.0.1 - - [01/Nov/2026 14:26:03] "GET /encrypted/key.bin HTTP/1.1" 200 -
+127.0.0.1 - - [01/Nov/2026 14:26:03] "GET /encrypted/segment-1.ts HTTP/1.1" 200 -
+127.0.0.1 - - [01/Nov/2026 14:26:03] "GET /encrypted/segment-2.ts HTTP/1.1" 200 -
+127.0.0.1 - - [01/Nov/2026 14:26:03] "GET /encrypted/segment-3.ts HTTP/1.1" 200 -
+127.0.0.1 - - [01/Nov/2026 14:26:03] "GET /encrypted/segment-4.ts HTTP/1.1" 200 -
+127.0.0.1 - - [01/Nov/2026 14:26:03] "GET /encrypted/segment-5.ts HTTP/1.1" 200 -
+Serving HTTP on 127.0.0.1 port 8766 (http://127.0.0.1:8766/) ...
+
+Keyboard interrupt received, exiting.

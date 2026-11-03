@@ -1,0 +1,6 @@
+{
+  "source": "/Users/weiyao/Desktop/考试星防作弊/深度调研_20261101/build/InspectMedia",
+  "destination": "/Users/weiyao/Desktop/考试星防作弊/原生控件验证_20261101/build/InspectMedia",
+  "sha256": "bfcb68882aec960cb8f4b2d2c0245a412c24d46f38383fd3c008a2b5a04f111c",
+  "purpose": "Reuse the previously built Vision PNG OCR / representative movie-frame inspector; native token matching added in analysis script."
+}

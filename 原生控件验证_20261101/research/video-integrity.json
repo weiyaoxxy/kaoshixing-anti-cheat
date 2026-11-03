@@ -1,0 +1,445 @@
+{
+  "files": [
+    {
+      "video": "/Users/weiyao/Desktop/考试星防作弊/原生控件验证_20261101/artifacts/native-final-v03-20261101T133147Z/direct/self-recording-F4E192C0.mp4",
+      "sha256": "1f7dbcdc9df55b9d9dd6a0dabbaf139382642b9078ca9437c8e2228b2762f206",
+      "metadata": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1800,
+            "height": 1000,
+            "duration": "19.590000",
+            "nb_frames": "456"
+          }
+        ]
+      },
+      "fullDecodeReturnCode": 0,
+      "fullDecodeErrors": "",
+      "frameProbeErrors": "",
+      "inputFrameCount": 456,
+      "nonIncreasingPTS": 0,
+      "representativeFrames": [
+        {
+          "label": "start",
+          "requestedSeconds": 0.5,
+          "firstInputPTSAtOrAfterRequest": 0.506667,
+          "path": "/Users/weiyao/Desktop/考试星防作弊/原生控件验证_20261101/artifacts/native-final-v03-20261101T133147Z/direct/video-frames/self-recording-F4E192C0-start.png",
+          "returnCode": 0,
+          "errors": ""
+        },
+        {
+          "label": "middle",
+          "requestedSeconds": 9.795,
+          "firstInputPTSAtOrAfterRequest": 9.806667,
+          "path": "/Users/weiyao/Desktop/考试星防作弊/原生控件验证_20261101/artifacts/native-final-v03-20261101T133147Z/direct/video-frames/self-recording-F4E192C0-middle.png",
+          "returnCode": 0,
+          "errors": ""
+        },
+        {
+          "label": "end",
+          "requestedSeconds": 19.39,
+          "firstInputPTSAtOrAfterRequest": 19.406667,
+          "path": "/Users/weiyao/Desktop/考试星防作弊/原生控件验证_20261101/artifacts/native-final-v03-20261101T133147Z/direct/video-frames/self-recording-F4E192C0-end.png",
+          "returnCode": 0,
+          "errors": ""
+        }
+      ],
+      "scope": "All video frames decoded; OCR/content interpretation is only on the three selected representative frames, not the complete movie."
+    },
+    {
+      "video": "/Users/weiyao/Desktop/考试星防作弊/原生控件验证_20261101/artifacts/native-final-v03-20261101T133147Z/raster-baseline/self-recording-66C5621B.mp4",
+      "sha256": "2d4f0684274a28a723b470f450a87f0f8f6e368d0f54f0d661427c4b65d2a4fc",
+      "metadata": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1800,
+            "height": 1000,
+            "duration": "22.326667",
+            "nb_frames": "584"
+          }
+        ]
+      },
+      "fullDecodeReturnCode": 0,
+      "fullDecodeErrors": "",
+      "frameProbeErrors": "",
+      "inputFrameCount": 584,
+      "nonIncreasingPTS": 0,
+      "representativeFrames": [
+        {
+          "label": "start",
+          "requestedSeconds": 0.5,
+          "firstInputPTSAtOrAfterRequest": 0.543333,
+          "path": "/Users/weiyao/Desktop/考试星防作弊/原生控件验证_20261101/artifacts/native-final-v03-20261101T133147Z/raster-baseline/video-frames/self-recording-66C5621B-start.png",
+          "returnCode": 0,
+          "errors": ""
+        },
+        {
+          "label": "middle",
+          "requestedSeconds": 11.1633335,
+          "firstInputPTSAtOrAfterRequest": 11.193333,
+          "path": "/Users/weiyao/Desktop/考试星防作弊/原生控件验证_20261101/artifacts/native-final-v03-20261101T133147Z/raster-baseline/video-frames/self-recording-66C5621B-middle.png",
+          "returnCode": 0,
+          "errors": ""
+        },
+        {
+          "label": "end",
+          "requestedSeconds": 22.126667,
+          "firstInputPTSAtOrAfterRequest": 22.143333,
+          "path": "/Users/weiyao/Desktop/考试星防作弊/原生控件验证_20261101/artifacts/native-final-v03-20261101T133147Z/raster-baseline/video-frames/self-recording-66C5621B-end.png",
+          "returnCode": 0,
+          "errors": ""
+        }
+      ],
+      "scope": "All video frames decoded; OCR/content interpretation is only on the three selected representative frames, not the complete movie."
+    },
+    {
+      "video": "/Users/weiyao/Desktop/考试星防作弊/原生控件验证_20261101/artifacts/native-final-v03-20261101T133147Z/raster-protected/self-recording-37B058CE.mp4",
+      "sha256": "10ffd6acc9ad01811627526e44e05ea5305b1ffd90d86f6e3dba2c0ef5b6ae97",
+      "metadata": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1800,
+            "height": 1000,
+            "duration": "23.078333",
+            "nb_frames": "600"
+          }
+        ]
+      },
+      "fullDecodeReturnCode": 0,
+      "fullDecodeErrors": "",
+      "frameProbeErrors": "",
+      "inputFrameCount": 600,
+      "nonIncreasingPTS": 0,
+      "representativeFrames": [
+        {
+          "label": "start",
+          "requestedSeconds": 0.5,
+          "firstInputPTSAtOrAfterRequest": 0.541667,
+          "path": "/Users/weiyao/Desktop/考试星防作弊/原生控件验证_20261101/artifacts/native-final-v03-20261101T133147Z/raster-protected/video-frames/self-recording-37B058CE-start.png",
+          "returnCode": 0,
+          "errors": ""
+        },
+        {
+          "label": "middle",
+          "requestedSeconds": 11.5391665,
+          "firstInputPTSAtOrAfterRequest": 11.541667,
+          "path": "/Users/weiyao/Desktop/考试星防作弊/原生控件验证_20261101/artifacts/native-final-v03-20261101T133147Z/raster-protected/video-frames/self-recording-37B058CE-middle.png",
+          "returnCode": 0,
+          "errors": ""
+        },
+        {
+          "label": "end",
+          "requestedSeconds": 22.878333,
+          "firstInputPTSAtOrAfterRequest": 22.891667,
+          "path": "/Users/weiyao/Desktop/考试星防作弊/原生控件验证_20261101/artifacts/native-final-v03-20261101T133147Z/raster-protected/video-frames/self-recording-37B058CE-end.png",
+          "returnCode": 0,
+          "errors": ""
+        }
+      ],
+      "scope": "All video frames decoded; OCR/content interpretation is only on the three selected representative frames, not the complete movie."
+    },
+    {
+      "video": "/Users/weiyao/Desktop/考试星防作弊/原生控件验证_20261101/artifacts/native-ime-20261101T134127Z/direct/self-recording-3FD43F28.mp4",
+      "sha256": "fe2dad6ba40f4afcec045b10f329d679de9601c45ee52c0e9eaaddd8ba64adab",
+      "metadata": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1800,
+            "height": 1000,
+            "duration": "8.010000",
+            "nb_frames": "172"
+          }
+        ]
+      },
+      "fullDecodeReturnCode": 0,
+      "fullDecodeErrors": "",
+      "frameProbeErrors": "",
+      "inputFrameCount": 172,
+      "nonIncreasingPTS": 0,
+      "representativeFrames": [
+        {
+          "label": "start",
+          "requestedSeconds": 0.5,
+          "firstInputPTSAtOrAfterRequest": 0.523333,
+          "path": "/Users/weiyao/Desktop/考试星防作弊/原生控件验证_20261101/artifacts/native-ime-20261101T134127Z/direct/video-frames/self-recording-3FD43F28-start.png",
+          "returnCode": 0,
+          "errors": ""
+        },
+        {
+          "label": "middle",
+          "requestedSeconds": 4.005,
+          "firstInputPTSAtOrAfterRequest": 4.023333,
+          "path": "/Users/weiyao/Desktop/考试星防作弊/原生控件验证_20261101/artifacts/native-ime-20261101T134127Z/direct/video-frames/self-recording-3FD43F28-middle.png",
+          "returnCode": 0,
+          "errors": ""
+        },
+        {
+          "label": "end",
+          "requestedSeconds": 7.81,
+          "firstInputPTSAtOrAfterRequest": 7.823333,
+          "path": "/Users/weiyao/Desktop/考试星防作弊/原生控件验证_20261101/artifacts/native-ime-20261101T134127Z/direct/video-frames/self-recording-3FD43F28-end.png",
+          "returnCode": 0,
+          "errors": ""
+        }
+      ],
+      "scope": "All video frames decoded; OCR/content interpretation is only on the three selected representative frames, not the complete movie."
+    },
+    {
+      "video": "/Users/weiyao/Desktop/考试星防作弊/原生控件验证_20261101/artifacts/native-ime-20261101T134127Z/raster-baseline/self-recording-8C1BC712.mp4",
+      "sha256": "b673f8903ec744548e7a43cb00052c2a4c92b1bc563c1eb61f405fc52f581754",
+      "metadata": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1800,
+            "height": 1000,
+            "duration": "8.213333",
+            "nb_frames": "188"
+          }
+        ]
+      },
+      "fullDecodeReturnCode": 0,
+      "fullDecodeErrors": "",
+      "frameProbeErrors": "",
+      "inputFrameCount": 188,
+      "nonIncreasingPTS": 0,
+      "representativeFrames": [
+        {
+          "label": "start",
+          "requestedSeconds": 0.5,
+          "firstInputPTSAtOrAfterRequest": 0.53,
+          "path": "/Users/weiyao/Desktop/考试星防作弊/原生控件验证_20261101/artifacts/native-ime-20261101T134127Z/raster-baseline/video-frames/self-recording-8C1BC712-start.png",
+          "returnCode": 0,
+          "errors": ""
+        },
+        {
+          "label": "middle",
+          "requestedSeconds": 4.1066665,
+          "firstInputPTSAtOrAfterRequest": 4.13,
+          "path": "/Users/weiyao/Desktop/考试星防作弊/原生控件验证_20261101/artifacts/native-ime-20261101T134127Z/raster-baseline/video-frames/self-recording-8C1BC712-middle.png",
+          "returnCode": 0,
+          "errors": ""
+        },
+        {
+          "label": "end",
+          "requestedSeconds": 8.013333000000001,
+          "firstInputPTSAtOrAfterRequest": 8.03,
+          "path": "/Users/weiyao/Desktop/考试星防作弊/原生控件验证_20261101/artifacts/native-ime-20261101T134127Z/raster-baseline/video-frames/self-recording-8C1BC712-end.png",
+          "returnCode": 0,
+          "errors": ""
+        }
+      ],
+      "scope": "All video frames decoded; OCR/content interpretation is only on the three selected representative frames, not the complete movie."
+    },
+    {
+      "video": "/Users/weiyao/Desktop/考试星防作弊/原生控件验证_20261101/artifacts/native-ime-20261101T134127Z/raster-protected/self-recording-D7697107.mp4",
+      "sha256": "0bd51bd73ab90baefa47ffa46e8f3eed1d44ded5ae7f63f6d7dea083f6434436",
+      "metadata": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1800,
+            "height": 1000,
+            "duration": "8.340000",
+            "nb_frames": "192"
+          }
+        ]
+      },
+      "fullDecodeReturnCode": 0,
+      "fullDecodeErrors": "",
+      "frameProbeErrors": "",
+      "inputFrameCount": 192,
+      "nonIncreasingPTS": 0,
+      "representativeFrames": [
+        {
+          "label": "start",
+          "requestedSeconds": 0.5,
+          "firstInputPTSAtOrAfterRequest": 0.508333,
+          "path": "/Users/weiyao/Desktop/考试星防作弊/原生控件验证_20261101/artifacts/native-ime-20261101T134127Z/raster-protected/video-frames/self-recording-D7697107-start.png",
+          "returnCode": 0,
+          "errors": ""
+        },
+        {
+          "label": "middle",
+          "requestedSeconds": 4.17,
+          "firstInputPTSAtOrAfterRequest": 4.208333,
+          "path": "/Users/weiyao/Desktop/考试星防作弊/原生控件验证_20261101/artifacts/native-ime-20261101T134127Z/raster-protected/video-frames/self-recording-D7697107-middle.png",
+          "returnCode": 0,
+          "errors": ""
+        },
+        {
+          "label": "end",
+          "requestedSeconds": 8.14,
+          "firstInputPTSAtOrAfterRequest": 8.158333,
+          "path": "/Users/weiyao/Desktop/考试星防作弊/原生控件验证_20261101/artifacts/native-ime-20261101T134127Z/raster-protected/video-frames/self-recording-D7697107-end.png",
+          "returnCode": 0,
+          "errors": ""
+        }
+      ],
+      "scope": "All video frames decoded; OCR/content interpretation is only on the three selected representative frames, not the complete movie."
+    },
+    {
+      "video": "/Users/weiyao/Desktop/考试星防作弊/原生控件验证_20261101/artifacts/native-keyboard-20261101T133448Z/raster-baseline/self-recording-D3ED5697.mp4",
+      "sha256": "e7260bd5875248f292dcb089f512baf42227139e5cc241bb331c03e9561ac957",
+      "metadata": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1800,
+            "height": 1000,
+            "duration": "13.988333",
+            "nb_frames": "326"
+          }
+        ]
+      },
+      "fullDecodeReturnCode": 0,
+      "fullDecodeErrors": "",
+      "frameProbeErrors": "",
+      "inputFrameCount": 326,
+      "nonIncreasingPTS": 0,
+      "representativeFrames": [
+        {
+          "label": "start",
+          "requestedSeconds": 0.5,
+          "firstInputPTSAtOrAfterRequest": 0.508333,
+          "path": "/Users/weiyao/Desktop/考试星防作弊/原生控件验证_20261101/artifacts/native-keyboard-20261101T133448Z/raster-baseline/video-frames/self-recording-D3ED5697-start.png",
+          "returnCode": 0,
+          "errors": ""
+        },
+        {
+          "label": "middle",
+          "requestedSeconds": 6.9941665,
+          "firstInputPTSAtOrAfterRequest": 7.008333,
+          "path": "/Users/weiyao/Desktop/考试星防作弊/原生控件验证_20261101/artifacts/native-keyboard-20261101T133448Z/raster-baseline/video-frames/self-recording-D3ED5697-middle.png",
+          "returnCode": 0,
+          "errors": ""
+        },
+        {
+          "label": "end",
+          "requestedSeconds": 13.788333000000002,
+          "firstInputPTSAtOrAfterRequest": 13.808333,
+          "path": "/Users/weiyao/Desktop/考试星防作弊/原生控件验证_20261101/artifacts/native-keyboard-20261101T133448Z/raster-baseline/video-frames/self-recording-D3ED5697-end.png",
+          "returnCode": 0,
+          "errors": ""
+        }
+      ],
+      "scope": "All video frames decoded; OCR/content interpretation is only on the three selected representative frames, not the complete movie."
+    },
+    {
+      "video": "/Users/weiyao/Desktop/考试星防作弊/原生控件验证_20261101/artifacts/native-keyboard-20261101T133448Z/raster-protected/self-recording-17B4B330.mp4",
+      "sha256": "0a07235f385aea4566b24fc3f55a195bf5372ea6689dfe87c8157cf746b6244c",
+      "metadata": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1800,
+            "height": 1000,
+            "duration": "14.236667",
+            "nb_frames": "333"
+          }
+        ]
+      },
+      "fullDecodeReturnCode": 0,
+      "fullDecodeErrors": "",
+      "frameProbeErrors": "",
+      "inputFrameCount": 333,
+      "nonIncreasingPTS": 0,
+      "representativeFrames": [
+        {
+          "label": "start",
+          "requestedSeconds": 0.5,
+          "firstInputPTSAtOrAfterRequest": 0.533333,
+          "path": "/Users/weiyao/Desktop/考试星防作弊/原生控件验证_20261101/artifacts/native-keyboard-20261101T133448Z/raster-protected/video-frames/self-recording-17B4B330-start.png",
+          "returnCode": 0,
+          "errors": ""
+        },
+        {
+          "label": "middle",
+          "requestedSeconds": 7.1183335,
+          "firstInputPTSAtOrAfterRequest": 7.133333,
+          "path": "/Users/weiyao/Desktop/考试星防作弊/原生控件验证_20261101/artifacts/native-keyboard-20261101T133448Z/raster-protected/video-frames/self-recording-17B4B330-middle.png",
+          "returnCode": 0,
+          "errors": ""
+        },
+        {
+          "label": "end",
+          "requestedSeconds": 14.036667000000001,
+          "firstInputPTSAtOrAfterRequest": 14.083333,
+          "path": "/Users/weiyao/Desktop/考试星防作弊/原生控件验证_20261101/artifacts/native-keyboard-20261101T133448Z/raster-protected/video-frames/self-recording-17B4B330-end.png",
+          "returnCode": 0,
+          "errors": ""
+        }
+      ],
+      "scope": "All video frames decoded; OCR/content interpretation is only on the three selected representative frames, not the complete movie."
+    },
+    {
+      "video": "/Users/weiyao/Desktop/考试星防作弊/原生控件验证_20261101/artifacts/source-exposure-control-20261101T132024Z/self-recording-7E9F8D69.mp4",
+      "sha256": "1b545eeaa0557531edb8591ce634d880c5876856d1db25db336b4ad4fde6b322",
+      "metadata": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1800,
+            "height": 1000,
+            "duration": "5.651667",
+            "nb_frames": "129"
+          }
+        ]
+      },
+      "fullDecodeReturnCode": 0,
+      "fullDecodeErrors": "",
+      "frameProbeErrors": "",
+      "inputFrameCount": 129,
+      "nonIncreasingPTS": 0,
+      "representativeFrames": [
+        {
+          "label": "start",
+          "requestedSeconds": 0.5,
+          "firstInputPTSAtOrAfterRequest": 0.525,
+          "path": "/Users/weiyao/Desktop/考试星防作弊/原生控件验证_20261101/artifacts/source-exposure-control-20261101T132024Z/video-frames/self-recording-7E9F8D69-start.png",
+          "returnCode": 0,
+          "errors": ""
+        },
+        {
+          "label": "middle",
+          "requestedSeconds": 2.8258335,
+          "firstInputPTSAtOrAfterRequest": 2.875,
+          "path": "/Users/weiyao/Desktop/考试星防作弊/原生控件验证_20261101/artifacts/source-exposure-control-20261101T132024Z/video-frames/self-recording-7E9F8D69-middle.png",
+          "returnCode": 0,
+          "errors": ""
+        },
+        {
+          "label": "end",
+          "requestedSeconds": 5.451667,
+          "firstInputPTSAtOrAfterRequest": 5.475,
+          "path": "/Users/weiyao/Desktop/考试星防作弊/原生控件验证_20261101/artifacts/source-exposure-control-20261101T132024Z/video-frames/self-recording-7E9F8D69-end.png",
+          "returnCode": 0,
+          "errors": ""
+        }
+      ],
+      "scope": "All video frames decoded; OCR/content interpretation is only on the three selected representative frames, not the complete movie."
+    }
+  ]
+}

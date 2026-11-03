@@ -1,0 +1,20 @@
+{
+  "runtime": "/Users/weiyao/Library/Caches/ExamHookUULab/20261101-runtime",
+  "nativeSession": "/Users/weiyao/Desktop/考试星防作弊/Hook新方案_20261101/artifacts/native-session-20261101T132925Z",
+  "targetConfig": {
+    "bounds": {
+      "height": 722,
+      "width": 850,
+      "x": 24,
+      "y": 57
+    },
+    "enabled": true,
+    "ownerPID": 89885,
+    "schemaVersion": 1,
+    "scope": "single_exam_window",
+    "timestamp": "2026-11-01T15:50:02Z",
+    "windowID": 185925,
+    "windowTitle": "NativeExamHookDemo — 原生考试窗口"
+  },
+  "copyApp": "/Users/weiyao/Desktop/考试星防作弊/Hook新方案_20261101/UU深入验证_20261101/sandbox-apps/UURemote-Test-Resigned.app"
+}

@@ -1,0 +1,15 @@
+{
+  "recordedAt": "2026-11-01T09:06:41.756941+00:00",
+  "note": "Three-group original source and order-control source are archived in each artifacts root. All experiment media is synthetic. Service stopped after each test.",
+  "files": {
+    "Sources/ClearKeyDemo/main.swift": "068cddf320b8b536d599f4d9ba0cc12131e3667502eb5b3758d577790df1489c",
+    "scripts/run-clearkey-matrix.py": "a3d9e662182e9ffa749aa931e7d30873891852a2b4e16ea270e442294e4368bf",
+    "scripts/build-clearkey-demo.sh": "35eb1ca245d2148fcff42872fdfa870c0425033f71453bc6c8c7ffe15636a3a2",
+    "scripts/analyze-clearkey-results.py": "a60bcb545ca3b2c86cf59319ebf73e0d0f2681620f3398fda0c70b92252f8586",
+    "scripts/prepare-clearkey-media.py": "d3d389b28a01bc5e2a7215f4db817cb97ef2bce7c15f560d39f14fe9d0b75003",
+    "scripts/run-clearkey-order-controls.py": "1074042d0031a8bf54842c2434f04bada408fba4094dfecf070a56233309af7f",
+    "docs/ClearKey有效媒体实验.md": "68f77f1824c2c1abd5c7b57e695114b53e086eda9f6c784b1c808d46500bdc1a",
+    "docs/深度复核与审阅问题.md": "66735997ea42d8650f6be108c475c4f08983538c1c3a05ba1fe90efe80ce348d",
+    "build/ClearKeyDemo.app/Contents/MacOS/ClearKeyDemo": "b45387bdbbd445477a21ff81cde5b6b0157dd7e1582ea14fed5e3cb89ad8d86a"
+  }
+}

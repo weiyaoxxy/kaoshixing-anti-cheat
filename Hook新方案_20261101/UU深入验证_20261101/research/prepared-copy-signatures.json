@@ -1,0 +1,47 @@
+{
+  "copy": "/Users/weiyao/Desktop/考试星防作弊/Hook新方案_20261101/UU深入验证_20261101/sandbox-apps/UURemote-Test-Resigned.app",
+  "originalFilesModified": false,
+  "hostArchitectures": "server/service/gui arm64-only; other components kept original",
+  "operations": [
+    {
+      "component": "server",
+      "relativePath": "Contents/Helpers/UURemoteServer",
+      "entitlements": {
+        "com.apple.security.device.audio-input": true,
+        "com.apple.security.cs.allow-dyld-environment-variables": true,
+        "com.apple.security.cs.disable-library-validation": true
+      },
+      "sha256": "5c856ae2ce555f0697477b0a71808b528ef8b4e0e1d7392d059d60c864a9549f",
+      "signReturnCode": 0
+    },
+    {
+      "component": "service",
+      "relativePath": "Contents/MacOS/UURemoteService",
+      "entitlements": {
+        "com.apple.security.cs.allow-dyld-environment-variables": true,
+        "com.apple.security.cs.disable-library-validation": true
+      },
+      "sha256": "78543903250f5467131fc8cc6c0f8fecadb557dfe837509bdbaa29f1ea60eb20",
+      "signReturnCode": 0
+    },
+    {
+      "component": "gui",
+      "relativePath": "Contents/MacOS/UURemote",
+      "entitlements": {
+        "com.apple.security.device.audio-input": true,
+        "com.apple.security.device.bluetooth": true,
+        "com.apple.security.cs.allow-dyld-environment-variables": true,
+        "com.apple.security.cs.disable-library-validation": true
+      },
+      "sha256": "6bc3c516072d3e99325d935dce76ecfa95e3b7928b4ac7e28f5df501ff9260f7",
+      "signReturnCode": 0
+    },
+    {
+      "operation": "outer-bundle-seal",
+      "returnCode": 0,
+      "stderr": "/Users/weiyao/Desktop/考试星防作弊/Hook新方案_20261101/UU深入验证_20261101/sandbox-apps/UU-build-staging: replacing existing signature\n"
+    }
+  ],
+  "deepVerifyReturnCode": 0,
+  "deepVerifyStderr": ""
+}

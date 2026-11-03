@@ -1,0 +1,10 @@
+build/
+artifacts/
+.DS_Store
+__pycache__/
+
+# Local copies of third-party applications used by the experiments.
+sandbox-apps/
+
+# Separate upstream checkout; see README.md for the pinned source revision.
+/深度调研_20261101/research/clearkey/Bento4/

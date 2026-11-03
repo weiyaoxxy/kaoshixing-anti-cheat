@@ -1,0 +1,101 @@
+{
+  "schemaVersion": 1,
+  "reviewedAtUTC": "2026-11-01T15:57:00.078016+00:00",
+  "scope": "Read-only fixed-token inspection of installed original UU Daemon, GUI and Service. No third-party app execution, job change, general log collection, connection arguments or credentials.",
+  "components": [
+    {
+      "path": "/Applications/UURemote.app/Contents/MacOS/UURemoteDaemon",
+      "sha256": "14a5ffe066832f267edfc8c3905b28b2f8c25d661b1be4815dca813e0f861eb3",
+      "fixedTokenSubstringHits": [
+        "certificate leaf",
+        "PU9BNSBJW7",
+        "listener:shouldAcceptNewConnection:",
+        "NSXPCConnection"
+      ],
+      "exactSelectedRequirementFragments": [
+        {
+          "text": "certificate leaf[subject.OU] = ",
+          "occurrencesInUniversalStrings": 2
+        }
+      ],
+      "arm64ImportedSecuritySymbols": [
+        "_SecCodeCheckValidity",
+        "_SecCodeCopyGuestWithAttributes",
+        "_SecCodeCopySigningInformation",
+        "_SecRequirementCreateWithString"
+      ],
+      "arm64NmReturnCode": 0,
+      "originalSignatureMetadata": [
+        "Identifier=com.netease.uuremote.daemon",
+        "CodeDirectory v=20500 size=17799 flags=0x10000(runtime) hashes=545+7 location=embedded",
+        "TeamIdentifier=PU9BNSBJW7"
+      ]
+    },
+    {
+      "path": "/Applications/UURemote.app/Contents/MacOS/UURemote",
+      "sha256": "235eb6415bc6828d05b87820869d40c9ebb5da268ebdd8ede8e4394c5f17f5e6",
+      "fixedTokenSubstringHits": [
+        "certificate leaf",
+        "NSXPCConnection"
+      ],
+      "exactSelectedRequirementFragments": [
+        {
+          "text": "certificate leaf[subject.OU] = ",
+          "occurrencesInUniversalStrings": 2
+        }
+      ],
+      "arm64ImportedSecuritySymbols": [
+        "_SecCodeCheckValidity",
+        "_SecCodeCopyGuestWithAttributes",
+        "_SecCodeCopySigningInformation",
+        "_SecRequirementCreateWithString"
+      ],
+      "arm64NmReturnCode": 0,
+      "originalSignatureMetadata": [
+        "Identifier=com.netease.uuremote",
+        "CodeDirectory v=20500 size=51328 flags=0x10000(runtime) hashes=1593+7 location=embedded",
+        "TeamIdentifier=PU9BNSBJW7"
+      ]
+    },
+    {
+      "path": "/Applications/UURemote.app/Contents/MacOS/UURemoteService",
+      "sha256": "a9f8ba82d37a8fa545323aeb311ad2316fea8ff86304ae13f00632098731af0a",
+      "fixedTokenSubstringHits": [
+        "certificate leaf",
+        "PU9BNSBJW7",
+        "listener:shouldAcceptNewConnection:",
+        "NSXPCConnection"
+      ],
+      "exactSelectedRequirementFragments": [
+        {
+          "text": "certificate leaf[subject.OU] = ",
+          "occurrencesInUniversalStrings": 2
+        }
+      ],
+      "arm64ImportedSecuritySymbols": [
+        "_SecCodeCheckValidity",
+        "_SecCodeCopyGuestWithAttributes",
+        "_SecCodeCopySigningInformation",
+        "_SecRequirementCreateWithString"
+      ],
+      "arm64NmReturnCode": 0,
+      "originalSignatureMetadata": [
+        "Identifier=com.netease.uuremote.agent",
+        "CodeDirectory v=20500 size=17990 flags=0x10000(runtime) hashes=551+7 location=embedded",
+        "TeamIdentifier=PU9BNSBJW7"
+      ]
+    }
+  ],
+  "supportedConclusion": "Original Daemon/GUI/Service all directly import four Security code-signing functions in arm64 and contain the selected certificate leaf subject.OU requirement fragment. These support the presence of potential manual code-signing validation logic even without NSXPC setCodeSigningRequirement selector hits.",
+  "importantQualification": [
+    "A requirement fragment does not reveal its dynamically appended right-hand value, target process or triggering operation.",
+    "PU9BNSBJW7 substring hits in Daemon/Service may originate in embedded signature/certificate material; they are not proof that a running IPC policy compares against that constant.",
+    "SecCode imports establish available code paths, not observed invocation, decision or IPC rejection in this live connection.",
+    "Signature checks might inspect the app itself, an updater/helper, or an IPC peer; no disassembly or runtime link to listener acceptance was established.",
+    "No fixed anchor apple generic or setCodeSigningRequirement: hit does not exclude a dynamically built requirement or manual SecCodeCheckValidity implementation.",
+    "The current copied Service/Server have ad-hoc signatures without vendor Team ID. If an unchanged original peer actually enforces the observed OU-based condition against them, rejection is plausible; this remains an inference.",
+    "Successful image_loaded/hook_installed in copied processes establishes library loading and installation only, not an accepted real UU session or screen capture callback."
+  ],
+  "selectedRawStringsOnly": true,
+  "nextEvidenceToResolve": "A legitimate connection attempt plus bounded process/error evidence identifying the accepting/rejecting peer and an actual signature-check failure. Do not infer the cause from a timeout or from strings alone."
+}

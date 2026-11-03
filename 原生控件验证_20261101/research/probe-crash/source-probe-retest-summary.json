@@ -1,0 +1,175 @@
+[
+  {
+    "report": "artifacts/source-probe-diagnostic-20261101T131705Z/hidden-source-capture-cg/report.json",
+    "reportSHA256": "f1da25cbd4e40df0f2f73f1da637d249ca9403a490115a760b0c4effe9b77c57",
+    "selectedResults": {
+      "processID": 67178,
+      "permissionBefore": true,
+      "permissionAfter": true,
+      "targetWindowID": 185716,
+      "targetFoundInCGList": true,
+      "targetFoundInSCList": false,
+      "targetRectangle": {
+        "height": 500,
+        "width": 900,
+        "x": -10000,
+        "y": 10482
+      },
+      "targetRectangleSource": "CGWindow bounds",
+      "coreGraphics": {
+        "directDisplay": {
+          "displayID": 1,
+          "file": "cg-direct-display.png",
+          "height": 1964,
+          "invocation": "dlsym of historical public CGDisplayCreateImage; runtime compatibility experiment",
+          "status": "saved",
+          "symbolAvailable": true,
+          "width": 3024
+        },
+        "display": {
+          "file": "cg-display.png",
+          "height": 1964,
+          "status": "saved",
+          "width": 3024
+        },
+        "invocation": "dlsym of public legacy CGWindowListCreateImage; direct declaration unavailable in macOS 15+ SDK; runtime behavior is recorded without claiming supported deployment.",
+        "symbolAvailable": true,
+        "window": {
+          "status": "nil_image"
+        }
+      },
+      "enumerationMethod": "getExcludingDesktopWindows",
+      "includeOffscreen": true,
+      "legacyDirectDisplayMatchedTargetRect": false
+    },
+    "targetSCEntry": null,
+    "targetCGEntry": {
+      "bounds": {
+        "Height": 500,
+        "Width": 900,
+        "X": -10000,
+        "Y": 10482
+      },
+      "id": 185716,
+      "layer": 0,
+      "owner": "NativeControlDemo",
+      "ownerPID": 67167,
+      "sharingState": 1,
+      "title": ""
+    }
+  },
+  {
+    "report": "artifacts/source-probe-diagnostic-20261101T131705Z/hidden-source-capture-screenshot/report.json",
+    "reportSHA256": "19024d46c4e4c4351ed6dd3390c1bd2cb876915c4470387e677b0c416ce9a128",
+    "selectedResults": {
+      "processID": 67187,
+      "permissionBefore": true,
+      "permissionAfter": true,
+      "targetWindowID": 185716,
+      "targetFoundInCGList": true,
+      "targetFoundInSCList": true,
+      "targetRectangle": {
+        "height": 500,
+        "width": 900,
+        "x": -10000,
+        "y": 10482
+      },
+      "targetRectangleSource": "CGWindow bounds",
+      "screenshot_window": {
+        "code": -3811,
+        "domain": "com.apple.ScreenCaptureKit.SCStreamErrorDomain",
+        "message": "Failed to start stream due to audio/video capture failure",
+        "status": "error"
+      },
+      "screenshot_rectangle": {
+        "reason": "No valid on-display target rectangle; an offscreen source is not a meaningful screen rectangle screenshot",
+        "status": "skipped"
+      },
+      "enumerationMethod": "getExcludingDesktopWindows",
+      "includeOffscreen": true,
+      "legacyDirectDisplayMatchedTargetRect": false
+    },
+    "targetSCEntry": {
+      "frame": {
+        "height": 500,
+        "width": 900,
+        "x": -10000,
+        "y": 10482
+      },
+      "id": 185716,
+      "onScreen": false,
+      "owner": "NativeControlDemo",
+      "ownerPID": 67167,
+      "title": ""
+    },
+    "targetCGEntry": {
+      "bounds": {
+        "Height": 500,
+        "Width": 900,
+        "X": -10000,
+        "Y": 10482
+      },
+      "id": 185716,
+      "layer": 0,
+      "owner": "NativeControlDemo",
+      "ownerPID": 67167,
+      "sharingState": 1,
+      "title": ""
+    }
+  },
+  {
+    "report": "artifacts/source-probe-diagnostic-20261101T131705Z/hidden-source-capture-current/report.json",
+    "reportSHA256": "cb3c75f1e8939f1e404b2488c581aca1eaba4654289ed9448d6af3501974c832",
+    "selectedResults": {
+      "processID": 67190,
+      "permissionBefore": true,
+      "permissionAfter": true,
+      "targetWindowID": 185716,
+      "targetFoundInCGList": true,
+      "targetFoundInSCList": true,
+      "targetRectangle": {
+        "height": 500,
+        "width": 900,
+        "x": -10000,
+        "y": 10482
+      },
+      "targetRectangleSource": "CGWindow bounds",
+      "screenshot_window": {
+        "code": -3811,
+        "domain": "com.apple.ScreenCaptureKit.SCStreamErrorDomain",
+        "message": "Failed to start stream due to audio/video capture failure",
+        "status": "error"
+      },
+      "enumerationMethod": "getWithCompletionHandler",
+      "includeOffscreen": true,
+      "legacyDirectDisplayMatchedTargetRect": false
+    },
+    "targetSCEntry": {
+      "frame": {
+        "height": 500,
+        "width": 900,
+        "x": -10000,
+        "y": 10482
+      },
+      "id": 185716,
+      "onScreen": false,
+      "owner": "NativeControlDemo",
+      "ownerPID": 67167,
+      "title": ""
+    },
+    "targetCGEntry": {
+      "bounds": {
+        "Height": 500,
+        "Width": 900,
+        "X": -10000,
+        "Y": 10482
+      },
+      "id": 185716,
+      "layer": 0,
+      "owner": "NativeControlDemo",
+      "ownerPID": 67167,
+      "sharingState": 1,
+      "title": ""
+    }
+  }
+]

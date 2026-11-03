@@ -1,0 +1,16 @@
+{
+  "createdAtUTC": "2026-11-01T15:12:58.437174+00:00",
+  "objective": "Investigate UU original loading limits and isolated re-signed test copy; distinguish load/capture/output/remote proof; preserve original application and previous deliverables.",
+  "originalApp": "/Applications/UURemote.app",
+  "priorReports": [
+    {
+      "path": "/Users/weiyao/Desktop/考试星防作弊/Hook新方案_20261101/docs/Hook新方案验证报告_v1.1_UU连线验证.docx",
+      "sha256": "c4c6ac9d06e3d772cf0e06407300fd7b1a8cd92471538a36a34e2e9bdcaf08d1"
+    },
+    {
+      "path": "/Users/weiyao/Desktop/考试星防作弊/Hook新方案_20261101/docs/Hook新方案验证报告.docx",
+      "sha256": "b7c3869dede2f72475f2f015e07aa91baceaa73aa72ab94608ae355a1e9b79b1"
+    }
+  ],
+  "parentProject": "/Users/weiyao/Desktop/考试星防作弊/Hook新方案_20261101"
+}

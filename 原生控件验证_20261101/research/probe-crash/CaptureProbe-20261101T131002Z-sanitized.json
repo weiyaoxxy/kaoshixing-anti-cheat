@@ -1,0 +1,86 @@
+{
+  "sourceBasename": "CaptureProbe-2026-11-01-184005.ips",
+  "sourceSHA256": "9f46e2c1b95624d5a5e8f4a5d14b051aeb8125c536e3cd0a89600cf83d79e41d",
+  "redaction": "Extracted only CaptureProbe exception, faulting thread frames, two argument registers and executable UUID. Other threads, host identity, paths and full system image inventory are intentionally omitted. The original IPS remains in the original local DiagnosticReports folder.",
+  "processName": "CaptureProbe",
+  "processID": 60220,
+  "captureTime": "2026-11-01 18:40:02.9703 +0530",
+  "exception": {
+    "codes": "0x0000000000000001, 0x00000001024e9c10",
+    "rawCodes": [
+      1,
+      4333673488
+    ],
+    "type": "EXC_BREAKPOINT",
+    "signal": "SIGTRAP"
+  },
+  "termination": {
+    "code": 5,
+    "namespace": "SIGNAL",
+    "indicator": "Trace/BPT trap: 5"
+  },
+  "executableUUID": "a5e2eeea-ae4b-3b18-b45e-7fa37e2c91a6",
+  "faultingThreadIndex": 1,
+  "faultingThreadFrames": [
+    {
+      "imageOffset": 39952,
+      "symbol": "@objc completion handler block implementation for @escaping @callee_unowned @convention(block) @Sendable (@unowned SCShareableContent?, @unowned NSError?) -> () with result type SCShareableContent",
+      "symbolLocation": 168,
+      "imageName": "CaptureProbe"
+    },
+    {
+      "imageOffset": 6696,
+      "symbol": "_dispatch_call_block_and_release",
+      "symbolLocation": 32,
+      "imageName": "libdispatch.dylib"
+    },
+    {
+      "imageOffset": 111792,
+      "symbol": "_dispatch_client_callout",
+      "symbolLocation": 16,
+      "imageName": "libdispatch.dylib"
+    },
+    {
+      "imageOffset": 232812,
+      "symbol": "<deduplicated_symbol>",
+      "symbolLocation": 28,
+      "imageName": "libdispatch.dylib"
+    },
+    {
+      "imageOffset": 80604,
+      "symbol": "_dispatch_root_queue_drain",
+      "symbolLocation": 708,
+      "imageName": "libdispatch.dylib"
+    },
+    {
+      "imageOffset": 82208,
+      "symbol": "_dispatch_worker_thread2",
+      "symbolLocation": 184,
+      "imageName": "libdispatch.dylib"
+    },
+    {
+      "imageOffset": 11908,
+      "symbol": "_pthread_wqthread",
+      "symbolLocation": 232,
+      "imageName": "libsystem_pthread.dylib"
+    },
+    {
+      "imageOffset": 7184,
+      "symbol": "start_wqthread",
+      "symbolLocation": 8,
+      "imageName": "libsystem_pthread.dylib"
+    }
+  ],
+  "argumentRegisters": {
+    "error_x20": 0,
+    "content_x21": 0
+  },
+  "binaryInspectionAtDiagnosis": {
+    "matchedUUID": true,
+    "bridgeStartOffsetHex": "0x9b68",
+    "trapOffsetHex": "0x9c10",
+    "relativeTrapInstruction": "brk #0x1",
+    "observedBranch": "error argument nil, then content argument nil -> trap",
+    "limits": "This demonstrates the immediate async bridge trap. It does not establish why the framework completion returned both values nil."
+  }
+}

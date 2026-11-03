@@ -1,0 +1,62 @@
+[
+  {
+    "path": "docs/Hook新方案验证报告.docx",
+    "sha256": "b7c3869dede2f72475f2f015e07aa91baceaa73aa72ab94608ae355a1e9b79b1"
+  },
+  {
+    "path": "docs/Hook报告排版QA/final-qa.json",
+    "sha256": "64b3b9ae29e8faeb98e82da0f1098ce77e8e8f0412f841d2c5d731e79603062d"
+  },
+  {
+    "path": "docs/Hook报告排版QA/final/Hook新方案验证报告.pdf",
+    "sha256": "b4cbc4469356724826c9c50d516bffbd1b087ef3f0a90d4469081f008695c54e"
+  },
+  {
+    "path": "docs/Hook报告排版QA/final/page-1.png",
+    "sha256": "0e08c8b1793a1e347739a00a962bb42f4a05ee2abe2cf1ec6a7494ca9b26e8ab"
+  },
+  {
+    "path": "docs/Hook报告排版QA/final/page-10.png",
+    "sha256": "16344d9ba46b54d9dc4eb8be1102d2661661c04e93445c7c71c90fc7624023dd"
+  },
+  {
+    "path": "docs/Hook报告排版QA/final/page-11.png",
+    "sha256": "c679d8a6e7e9e33325667711f411b439d304b6991028dd9414bd1dfea4230a2f"
+  },
+  {
+    "path": "docs/Hook报告排版QA/final/page-12.png",
+    "sha256": "57af6ba8ad47864a09bc2f1f7afe92e8101208262579848afaec8d068fce9980"
+  },
+  {
+    "path": "docs/Hook报告排版QA/final/page-2.png",
+    "sha256": "a6d6356c4ae6fb0a0cee37504052d7a1eba88da1754e5f8eb9d67f2f6c44b3e6"
+  },
+  {
+    "path": "docs/Hook报告排版QA/final/page-3.png",
+    "sha256": "fb5496bc1000b45e4d054213bf42ed323e253002e64d515b59048e007ea6203a"
+  },
+  {
+    "path": "docs/Hook报告排版QA/final/page-4.png",
+    "sha256": "a1409ca657b5bd59ac2017a5e2e89fffdc563aafe42387642ad1e9434ee43e2e"
+  },
+  {
+    "path": "docs/Hook报告排版QA/final/page-5.png",
+    "sha256": "e8aae411b234eb18ac883ead214c76485142c777a814599f12dbf2a7e14305ea"
+  },
+  {
+    "path": "docs/Hook报告排版QA/final/page-6.png",
+    "sha256": "0ef4492555f35226781ed49a0b9309d2582355bc68df19dccceaedb027edeac8"
+  },
+  {
+    "path": "docs/Hook报告排版QA/final/page-7.png",
+    "sha256": "b28b4952716802d1fb4f4520d3ef0b4047e2c9acb79948adec90d3a0658f9fd4"
+  },
+  {
+    "path": "docs/Hook报告排版QA/final/page-8.png",
+    "sha256": "e457f7d4042d0c24cb2a43913a22808e54e9752d68ae563b1fdae725642b42d5"
+  },
+  {
+    "path": "docs/Hook报告排版QA/final/page-9.png",
+    "sha256": "ea716db51c40701e91203f05ed020682f84d40d6c13eecae8d3f2b4e0ab65f03"
+  }
+]

@@ -1,0 +1,2506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<title>HTTP Live Streaming (HLS) authoring specification for Apple devices</title>
+<style>
+:root {
+    /* Palette lifted from developer.apple.com/streaming/: hero gradient
+       (#6600cc -> #000033 -> #003399 -> #00ccff) and the site-wide link
+       accent (#0071e3). The sidebar keeps this dark gradient regardless
+       of light/dark mode (it reads fine either way); everything else
+       below is a custom property so the dark-mode block further down
+       can retarget it in one place. */
+    --sidebar-start: #000033;
+    --sidebar-mid: #003399;
+    --sidebar-end: #0057b8;
+    --bright-blue: #00ccff;
+    --accent: #0071e3;
+    --border: #cfe0f5;
+    --bg-muted: #eaf3fc;
+    --bg-page: #f2f8ff;
+    --text: #1d1d1f;
+    --text-muted: #3a3a3c;
+    --heading-1: #000033;
+    --heading-2: #003399;
+    --sidebar-w: 260px;
+}
+@media (prefers-color-scheme: dark) {
+    :root {
+        --border: #33445c;
+        --bg-muted: #1b2431;
+        --bg-page: #0c0f14;
+        --text: #e5e5e7;
+        --text-muted: #b6b8bd;
+        --heading-1: #9cc8ff;
+        --heading-2: #7fb2f5;
+        --accent: #4da3ff;
+    }
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.55;
+    color: var(--text);
+    margin: 0;
+    background: var(--bg-page);
+    display: flex;
+    min-height: 100vh;
+}
+.sidebar {
+    width: var(--sidebar-w);
+    flex: none;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    overflow-y: auto;
+    padding: 1.5rem 1rem 1.5rem calc(1rem + env(safe-area-inset-left));
+    background: linear-gradient(165deg, var(--sidebar-start) 0%, var(--sidebar-mid) 65%, var(--sidebar-end) 100%);
+    scrollbar-width: auto;
+    scrollbar-color: var(--bright-blue) rgba(255, 255, 255, 0.12);
+}
+.sidebar::-webkit-scrollbar { width: 10px; }
+.sidebar::-webkit-scrollbar-track { background: rgba(255, 255, 255, 0.12); }
+.sidebar::-webkit-scrollbar-thumb {
+    background: var(--bright-blue);
+    border-radius: 5px;
+    border: 2px solid transparent;
+    background-clip: content-box;
+}
+.sidebar::-webkit-scrollbar-thumb:hover { background: #6fe0ff; background-clip: content-box; }
+.sidebar .doc-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #cfe6ff;
+    margin: 0 0.5rem 1.2rem;
+    line-height: 1.3;
+}
+.sidebar nav a {
+    display: block;
+    padding: 0.5em 0.7em;
+    margin-bottom: 0.15em;
+    border-radius: 6px;
+    color: #d7e8fb;
+    text-decoration: none;
+    font-size: 0.92rem;
+}
+.sidebar nav a:hover { background: rgba(255, 255, 255, 0.1); color: #fff; }
+
+.sidebar nav details.subnav-group { margin-bottom: 0.15em; }
+.sidebar nav details.subnav-group summary {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    cursor: pointer;
+    border-radius: 6px;
+}
+.sidebar nav details.subnav-group summary::-webkit-details-marker { display: none; }
+.sidebar nav details.subnav-group summary::before {
+    content: "";
+    flex: none;
+    width: 0.4em;
+    height: 0.4em;
+    margin: 0 0.3em 0 0.7em;
+    border-right: 2px solid #9db8dc;
+    border-bottom: 2px solid #9db8dc;
+    transform: rotate(-45deg);
+    transition: transform 0.15s ease;
+}
+.sidebar nav details.subnav-group[open] > summary::before { transform: rotate(45deg); }
+.sidebar nav details.subnav-group summary:hover::before { border-color: #fff; }
+.sidebar nav details.subnav-group summary a { flex: 1; margin-bottom: 0; }
+
+.sidebar nav ul.subnav {
+    list-style: none;
+    margin: 0.15em 0 0.5em;
+    padding: 0;
+    border-left: 2px solid rgba(255, 255, 255, 0.15);
+}
+.sidebar nav ul.subnav a {
+    font-size: 0.85rem;
+    padding: 0.4em 0.7em 0.4em calc(1rem + 2ch);
+    color: #b9d4f2;
+}
+.sidebar nav ul.subnav a:hover { background: rgba(255, 255, 255, 0.08); color: #fff; }
+
+.sidebar nav a.external-link {
+    margin-top: 0.75rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+main {
+    flex: 1;
+    min-width: 0;
+    padding: 2.5rem calc(3rem + env(safe-area-inset-right)) calc(6rem + env(safe-area-inset-bottom));
+}
+.content {
+    padding: 2.5rem 3rem;
+}
+.doc-main-title { font-size: 1.6rem; margin-top: 0; color: var(--heading-1); }
+
+.toc-print { display: none; }
+
+.panel { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border); }
+.panel:first-of-type { margin-top: 0; padding-top: 0; border-top: none; }
+
+h1 { font-size: 1.9rem; margin-top: 0; margin-bottom: 0.4em; color: var(--heading-1); }
+h2 { font-size: 1.4rem; margin-top: 1.6em; color: var(--heading-2); }
+h3 { font-size: 1.15rem; margin-top: 1.4em; color: var(--heading-2); }
+h4 { font-size: 1.02rem; margin-top: 1.2em; color: var(--text-muted); }
+code {
+    font-family: "SF Mono", SFMono-Regular, ui-monospace, Menlo, Consolas, monospace;
+    background: var(--bg-muted);
+    padding: 0.1em 0.35em;
+    border-radius: 4px;
+    font-size: 0.9em;
+}
+pre {
+    background: var(--bg-muted);
+    padding: 0.8em 1em;
+    border-radius: 8px;
+    overflow-x: auto;
+}
+blockquote {
+    border-left: 3px solid var(--accent);
+    margin: 1em 0;
+    padding: 0.2em 1em;
+    background: var(--bg-muted);
+    color: var(--text);
+}
+table { border-collapse: collapse; width: 100%; margin: 1em 0; font-size: 0.9em; }
+th, td { border: 1px solid var(--border); padding: 0.4em 0.7em; text-align: left; }
+th { background: var(--bg-muted); color: var(--heading-2); }
+#revision-history td:first-child, #revision-history th:first-child { white-space: nowrap; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+@media (max-width: 780px) {
+    .sidebar { display: none; }
+    main { padding: 1.5rem calc(1.5rem + env(safe-area-inset-right)) calc(1.5rem + env(safe-area-inset-bottom)) calc(1.5rem + env(safe-area-inset-left)); }
+    .content { padding: 1.5rem; }
+}
+
+@media print {
+    html, body { height: auto; }
+    body { display: block; }
+    .sidebar { display: none; }
+    main { display: block; padding: 0; }
+    .content { padding: 0; }
+    .toc-print {
+        display: block;
+        margin-bottom: 2.5rem;
+        padding-bottom: 1.5rem;
+        border-bottom: 2px solid var(--border);
+    }
+    .toc-print h2 { margin-top: 0; }
+    .toc-print nav a { display: block; padding: 0.2em 0; }
+    .toc-print nav a.external-link { display: none; }
+    .toc-print details > summary ~ * { display: block !important; }
+    .toc-print details summary { display: block; cursor: default; }
+    .toc-print details summary::before { display: none; }
+    .toc-print nav ul.subnav {
+        list-style: none;
+        margin: 0 0 0.3em;
+        padding: 0;
+    }
+    .toc-print nav ul.subnav a { padding-left: 1.5em; font-size: 0.95em; }
+    h1, h2, h3, h4 { break-after: avoid-page; }
+}
+</style>
+</head>
+<body>
+<aside class="sidebar">
+<div class="doc-title">HTTP Live Streaming (HLS) authoring specification for Apple devices</div>
+<nav>
+<a href="#overview">Overview</a>
+<a href="#about-hls-authoring">About HLS authoring</a>
+<a href="#about-spatial-video">About spatial video</a>
+<a href="#about-multi-format-audio-codecs">About multi-format audio codecs</a>
+<a href="#about-apple-podcasts-hls-support">About Apple podcasts HLS support</a>
+<details class="subnav-group" open><summary><a href="#general-authoring-requirements">General authoring requirements</a></summary><ul class="subnav">
+<li><a href="#general-authoring-requirements-video">Video</a></li>
+<li><a href="#general-authoring-requirements-audio">Audio</a></li>
+<li><a href="#general-authoring-requirements-ads-and-pre-mid-post-rolls">Ads and pre-/mid-/post-rolls</a></li>
+<li><a href="#general-authoring-requirements-accessibility">Accessibility</a></li>
+<li><a href="#general-authoring-requirements-subtitles">Subtitles</a></li>
+<li><a href="#general-authoring-requirements-trick-play">Trick Play</a></li>
+<li><a href="#general-authoring-requirements-media-segmentation">Media Segmentation</a></li>
+<li><a href="#general-authoring-requirements-media-playlists">Media Playlists</a></li>
+<li><a href="#general-authoring-requirements-multivariant-playlist">Multivariant Playlist</a></li>
+<li><a href="#general-authoring-requirements-delivery">Delivery</a></li>
+<li><a href="#general-authoring-requirements-privacy">Privacy</a></li>
+<li><a href="#general-authoring-requirements-security">Security</a></li>
+<li><a href="#general-authoring-requirements-content-protection">Content Protection</a></li>
+<li><a href="#general-authoring-requirements-low-latency-hls">Low-Latency HLS</a></li>
+<li><a href="#general-authoring-requirements-shareplay">SharePlay</a></li>
+<li><a href="#general-authoring-requirements-spatial-stereo-immersive-and-projected-video">Spatial (stereo, immersive and projected) video</a></li>
+</ul></details>
+<details class="subnav-group"><summary><a href="#amended-requirements-for-macos">Amended requirements for macOS</a></summary><ul class="subnav">
+<li><a href="#amended-requirements-for-macos-video">Video</a></li>
+</ul></details>
+<details class="subnav-group"><summary><a href="#amended-requirements-for-ios">Amended requirements for iOS</a></summary><ul class="subnav">
+<li><a href="#amended-requirements-for-ios-video">Video</a></li>
+<li><a href="#amended-requirements-for-ios-multivariant-playlist">Multivariant Playlist</a></li>
+</ul></details>
+<details class="subnav-group"><summary><a href="#amended-requirements-for-visionos">Amended requirements for visionOS</a></summary><ul class="subnav">
+<li><a href="#amended-requirements-for-visionos-video">Video</a></li>
+<li><a href="#amended-requirements-for-visionos-trick-play">Trick play</a></li>
+<li><a href="#amended-requirements-for-visionos-spatial-stereo-immersive-and-projected-video">Spatial (stereo, immersive and projected) video</a></li>
+</ul></details>
+<details class="subnav-group"><summary><a href="#amended-requirements-for-tvos">Amended requirements for tvOS</a></summary><ul class="subnav">
+<li><a href="#amended-requirements-for-tvos-video">Video</a></li>
+<li><a href="#amended-requirements-for-tvos-audio">Audio</a></li>
+<li><a href="#amended-requirements-for-tvos-trick-play">Trick Play</a></li>
+<li><a href="#amended-requirements-for-tvos-media-playlists">Media Playlists</a></li>
+<li><a href="#amended-requirements-for-tvos-multivariant-playlist">Multivariant Playlist</a></li>
+</ul></details>
+<details class="subnav-group"><summary><a href="#amended-requirements-for-airplay-2-enabled-tvs">Amended requirements for AirPlay 2-Enabled TVs</a></summary><ul class="subnav">
+<li><a href="#amended-requirements-for-airplay-2-enabled-tvs-video">Video</a></li>
+<li><a href="#amended-requirements-for-airplay-2-enabled-tvs-audio">Audio</a></li>
+<li><a href="#amended-requirements-for-airplay-2-enabled-tvs-ads-and-pre-mid-post-rolls">Ads and pre-/mid-/post-rolls</a></li>
+<li><a href="#amended-requirements-for-airplay-2-enabled-tvs-subtitles">Subtitles</a></li>
+<li><a href="#amended-requirements-for-airplay-2-enabled-tvs-trick-play">Trick Play</a></li>
+<li><a href="#amended-requirements-for-airplay-2-enabled-tvs-media-playlists">Media Playlists</a></li>
+<li><a href="#amended-requirements-for-airplay-2-enabled-tvs-multivariant-playlist">Multivariant Playlist</a></li>
+</ul></details>
+<details class="subnav-group"><summary><a href="#appendix">Appendix</a></summary><ul class="subnav">
+<li><a href="#appendix-testing-your-streams">Testing your streams</a></li>
+<li><a href="#appendix-using-hlsreport">Using hlsreport</a></li>
+<li><a href="#appendix-declared-versus-measured-values-of-bandwidths">Declared versus measured values of bandwidths</a></li>
+<li><a href="#appendix-audio-compatibility">Audio compatibility</a></li>
+<li><a href="#appendix-on-bit-rates-for-variants">On bit rates for variants</a></li>
+<li><a href="#appendix-i-frame-bit-rates-versus-normal-bit-rates">I-frame bit rates versus normal bit rates</a></li>
+<li><a href="#appendix-i-frame-image-sequences">I-frame image sequences</a></li>
+<li><a href="#appendix-audio-rendition-groups-and-variants">Audio rendition groups and variants</a></li>
+<li><a href="#appendix-values-for-the-codecs-attribute">Values for the CODECS attribute</a></li>
+<li><a href="#appendix-allowed-cpc-values-for-fairplay-streaming">ALLOWED-CPC values for FairPlay Streaming</a></li>
+<li><a href="#appendix-the-supplemental-codecs-attribute">The SUPPLEMENTAL-CODECS attribute</a></li>
+<li><a href="#appendix-dim-flashing-lights">Dim Flashing Lights</a></li>
+<li><a href="#appendix-additional-spatial-video-specifications">Additional spatial video specifications</a></li>
+<li><a href="#appendix-multivariant-playlist-and-its-resources-expiry-requirements">Multivariant Playlist and its resources expiry requirements</a></li>
+<li><a href="#appendix-content-steering-requirements">Content Steering requirements</a></li>
+<li><a href="#appendix-interstitials-requirements">Interstitials requirements</a></li>
+<li><a href="#appendix-download-performance-requirements">Download performance requirements</a></li>
+<li><a href="#appendix-example-playlist-with-stereo-video">Example playlist with Stereo video.</a></li>
+<li><a href="#appendix-example-playlist-with-apmp-video">Example playlist with APMP video.</a></li>
+<li><a href="#appendix-example-playlist-with-aiv-video">Example playlist with AIV video.</a></li>
+<li><a href="#appendix-example-playlist-with-sdr-dolby-vision-hdr10-and-hlg-content-at-resolutions-from-720p-to-4k">Example playlist with SDR, Dolby Vision, HDR10, and HLG content at resolutions from 720p to 4K</a></li>
+</ul></details>
+<a href="#revision-history">Revision history</a>
+</nav>
+</aside>
+<main>
+<div class="content">
+<h1 class="doc-main-title">HTTP Live Streaming (HLS) authoring specification for Apple devices</h1>
+<div class="toc-print">
+<h2>Table of Contents</h2>
+<nav>
+<a href="#overview">Overview</a>
+<a href="#about-hls-authoring">About HLS authoring</a>
+<a href="#about-spatial-video">About spatial video</a>
+<a href="#about-multi-format-audio-codecs">About multi-format audio codecs</a>
+<a href="#about-apple-podcasts-hls-support">About Apple podcasts HLS support</a>
+<details class="subnav-group" open><summary><a href="#general-authoring-requirements">General authoring requirements</a></summary><ul class="subnav">
+<li><a href="#general-authoring-requirements-video">Video</a></li>
+<li><a href="#general-authoring-requirements-audio">Audio</a></li>
+<li><a href="#general-authoring-requirements-ads-and-pre-mid-post-rolls">Ads and pre-/mid-/post-rolls</a></li>
+<li><a href="#general-authoring-requirements-accessibility">Accessibility</a></li>
+<li><a href="#general-authoring-requirements-subtitles">Subtitles</a></li>
+<li><a href="#general-authoring-requirements-trick-play">Trick Play</a></li>
+<li><a href="#general-authoring-requirements-media-segmentation">Media Segmentation</a></li>
+<li><a href="#general-authoring-requirements-media-playlists">Media Playlists</a></li>
+<li><a href="#general-authoring-requirements-multivariant-playlist">Multivariant Playlist</a></li>
+<li><a href="#general-authoring-requirements-delivery">Delivery</a></li>
+<li><a href="#general-authoring-requirements-privacy">Privacy</a></li>
+<li><a href="#general-authoring-requirements-security">Security</a></li>
+<li><a href="#general-authoring-requirements-content-protection">Content Protection</a></li>
+<li><a href="#general-authoring-requirements-low-latency-hls">Low-Latency HLS</a></li>
+<li><a href="#general-authoring-requirements-shareplay">SharePlay</a></li>
+<li><a href="#general-authoring-requirements-spatial-stereo-immersive-and-projected-video">Spatial (stereo, immersive and projected) video</a></li>
+</ul></details>
+<details class="subnav-group"><summary><a href="#amended-requirements-for-macos">Amended requirements for macOS</a></summary><ul class="subnav">
+<li><a href="#amended-requirements-for-macos-video">Video</a></li>
+</ul></details>
+<details class="subnav-group"><summary><a href="#amended-requirements-for-ios">Amended requirements for iOS</a></summary><ul class="subnav">
+<li><a href="#amended-requirements-for-ios-video">Video</a></li>
+<li><a href="#amended-requirements-for-ios-multivariant-playlist">Multivariant Playlist</a></li>
+</ul></details>
+<details class="subnav-group"><summary><a href="#amended-requirements-for-visionos">Amended requirements for visionOS</a></summary><ul class="subnav">
+<li><a href="#amended-requirements-for-visionos-video">Video</a></li>
+<li><a href="#amended-requirements-for-visionos-trick-play">Trick play</a></li>
+<li><a href="#amended-requirements-for-visionos-spatial-stereo-immersive-and-projected-video">Spatial (stereo, immersive and projected) video</a></li>
+</ul></details>
+<details class="subnav-group"><summary><a href="#amended-requirements-for-tvos">Amended requirements for tvOS</a></summary><ul class="subnav">
+<li><a href="#amended-requirements-for-tvos-video">Video</a></li>
+<li><a href="#amended-requirements-for-tvos-audio">Audio</a></li>
+<li><a href="#amended-requirements-for-tvos-trick-play">Trick Play</a></li>
+<li><a href="#amended-requirements-for-tvos-media-playlists">Media Playlists</a></li>
+<li><a href="#amended-requirements-for-tvos-multivariant-playlist">Multivariant Playlist</a></li>
+</ul></details>
+<details class="subnav-group"><summary><a href="#amended-requirements-for-airplay-2-enabled-tvs">Amended requirements for AirPlay 2-Enabled TVs</a></summary><ul class="subnav">
+<li><a href="#amended-requirements-for-airplay-2-enabled-tvs-video">Video</a></li>
+<li><a href="#amended-requirements-for-airplay-2-enabled-tvs-audio">Audio</a></li>
+<li><a href="#amended-requirements-for-airplay-2-enabled-tvs-ads-and-pre-mid-post-rolls">Ads and pre-/mid-/post-rolls</a></li>
+<li><a href="#amended-requirements-for-airplay-2-enabled-tvs-subtitles">Subtitles</a></li>
+<li><a href="#amended-requirements-for-airplay-2-enabled-tvs-trick-play">Trick Play</a></li>
+<li><a href="#amended-requirements-for-airplay-2-enabled-tvs-media-playlists">Media Playlists</a></li>
+<li><a href="#amended-requirements-for-airplay-2-enabled-tvs-multivariant-playlist">Multivariant Playlist</a></li>
+</ul></details>
+<details class="subnav-group"><summary><a href="#appendix">Appendix</a></summary><ul class="subnav">
+<li><a href="#appendix-testing-your-streams">Testing your streams</a></li>
+<li><a href="#appendix-using-hlsreport">Using hlsreport</a></li>
+<li><a href="#appendix-declared-versus-measured-values-of-bandwidths">Declared versus measured values of bandwidths</a></li>
+<li><a href="#appendix-audio-compatibility">Audio compatibility</a></li>
+<li><a href="#appendix-on-bit-rates-for-variants">On bit rates for variants</a></li>
+<li><a href="#appendix-i-frame-bit-rates-versus-normal-bit-rates">I-frame bit rates versus normal bit rates</a></li>
+<li><a href="#appendix-i-frame-image-sequences">I-frame image sequences</a></li>
+<li><a href="#appendix-audio-rendition-groups-and-variants">Audio rendition groups and variants</a></li>
+<li><a href="#appendix-values-for-the-codecs-attribute">Values for the CODECS attribute</a></li>
+<li><a href="#appendix-allowed-cpc-values-for-fairplay-streaming">ALLOWED-CPC values for FairPlay Streaming</a></li>
+<li><a href="#appendix-the-supplemental-codecs-attribute">The SUPPLEMENTAL-CODECS attribute</a></li>
+<li><a href="#appendix-dim-flashing-lights">Dim Flashing Lights</a></li>
+<li><a href="#appendix-additional-spatial-video-specifications">Additional spatial video specifications</a></li>
+<li><a href="#appendix-multivariant-playlist-and-its-resources-expiry-requirements">Multivariant Playlist and its resources expiry requirements</a></li>
+<li><a href="#appendix-content-steering-requirements">Content Steering requirements</a></li>
+<li><a href="#appendix-interstitials-requirements">Interstitials requirements</a></li>
+<li><a href="#appendix-download-performance-requirements">Download performance requirements</a></li>
+<li><a href="#appendix-example-playlist-with-stereo-video">Example playlist with Stereo video.</a></li>
+<li><a href="#appendix-example-playlist-with-apmp-video">Example playlist with APMP video.</a></li>
+<li><a href="#appendix-example-playlist-with-aiv-video">Example playlist with AIV video.</a></li>
+<li><a href="#appendix-example-playlist-with-sdr-dolby-vision-hdr10-and-hlg-content-at-resolutions-from-720p-to-4k">Example playlist with SDR, Dolby Vision, HDR10, and HLG content at resolutions from 720p to 4K</a></li>
+</ul></details>
+<a href="#revision-history">Revision history</a>
+</nav>
+</div>
+<section class="panel" id="overview"><h1>Overview</h1><p>For a deeper discussion of the features available in HLS, refer to <a href="http://developer.apple.com/streaming/">Apple’s streaming
+resource page</a>, which contains pointers to
+the overview document, the HLS specification, technical notes, tools, presentations,
+and examples.</p></section>
+<section class="panel" id="about-hls-authoring"><h1>About HLS authoring</h1><p>The HLS specification is a published RFC (<a href="https://datatracker.ietf.org/doc/html/rfc8216">RFC 8216</a>).
+However, HLS continues to evolve, so there’s an updated draft specification — <a href="https://datatracker.ietf.org/doc/html/draft-pantos-hls-rfc8216bis">draft-pantos-hls-rfc8216bis
+(HLS2)</a>.</p>
+<p>Please see <a href="https://developer.apple.com/streaming/">Documentation</a>, which may contain a reference
+to a preliminary version of the draft specification.</p>
+<p>This document always uses the most up-to-date version, which is, either the preliminary
+version or the draft specification (whichever has a higher version number).</p>
+<blockquote>
+<p>Note: HLS was originally specified in draft-pantos-http-live-streaming (HLS1).
+That document was superseded by RFC 8216.</p>
+</blockquote>
+<p>The key words “MUST,” “MUST NOT,” “REQUIRED,” “SHALL,” “SHALL NOT,” “SHOULD,” “SHOULD
+NOT,” “RECOMMENDED,” “MAY,” and “OPTIONAL” in this document are to be interpreted
+as described in <a href="https://datatracker.ietf.org/doc/html/rfc8219">RFC 2119</a>.</p>
+<p>Find additional information for HLS specifications in the Appendix.</p></section>
+<section class="panel" id="about-spatial-video"><h1>About spatial video</h1><p>Spatial video is intended to produce a richer experience for the user.
+Spatial video MUST use the REQ-VIDEO-LAYOUT attribute to specify desired channel and projection specifiers.
+Please see <a href="https://developer.apple.com/streaming/HLS-draft-pantos.pdf">HLS specification</a> for valid channel and projection specifiers.</p>
+<p>Spatial video media is split into following categories.</p>
+<ul>
+<li>
+<p><strong>Stereo Video:</strong> Similar to Stereo audio, which indicates different audio for the left and the right ear, visual media can be
+stereoscopic in which a separate view is available for the left eye and another view is available to be presented simultaneously to the right eye.</p>
+</li>
+<li>
+<p><strong>Projection Video:</strong> Rectilinear projection is default for the video media which indicates there is no further processing necessary to present the video.
+Content creators can opt for non rectilinear projections to preserve the artistic intent. Please refer to <a href="https://developer.apple.com/streaming/HLS-draft-pantos.pdf">HLS specification</a> for possible non-rectilinear projections.
+This content is categorized under Apple Projected Media Profile (APMP) and can be monoscopic or stereo.</p>
+</li>
+<li>
+<p><strong>Immersive Video:</strong> This video is projected from a hemisphere (typically a special lens) and often requires a special metadata file in order render correctly.</p>
+</li>
+</ul>
+<p>This video relies on a special projection type, known as 'PROJ-AIV' which is defined outside the core HLS specification.
+For details, see <a href="https://developer.apple.com/av-foundation/Stereo-Video-ISOBMFF-Extensions.pdf">QuickTime and ISO Base Media File Formats and Spatial and Immersive Media</a></p>
+<blockquote>
+<p>Note: Stereo, Immersive and stereo APMP video is only supported in visionOS. See amended requirements for visionOS.</p>
+</blockquote></section>
+<section class="panel" id="about-multi-format-audio-codecs"><h1>About multi-format audio codecs</h1><p>Multi-format audio codecs support combinations of channels, audio objects, and ambisonics as opposed to multi-channel codecs that just support channels.
+Examples of such a multi-format codec are:</p>
+<ul>
+<li>Apple Positional Audio Codec <a href="https://developer.apple.com/av-foundation/Apple-Positional-Audio-Codec.pdf">APAC</a></li>
+<li>Dolby Digital Plus JOC</li>
+</ul></section>
+<section class="panel" id="about-apple-podcasts-hls-support"><h1>About Apple podcasts HLS support</h1><p>Apple Podcasts supports HTTP Live Streaming (HLS) video-on-demand (VOD) with Interstitials.
+Podcasts content providers MUST follow the published authoring guidelines.
+Please see <a href="https://developer.apple.com/documentation/http-live-streaming/hls-for-podcasts">Podcasts HLS guidelines</a> for detailed authoring specification.</p></section>
+<section class="panel" id="general-authoring-requirements"><h1>General authoring requirements</h1><p>A stream that matches these requirements should be compatible with iOS, tvOS, macOS or
+visionOS. Rules with a leading asterisk (*) are modified by one or more of the Amended
+Requirements listed below.</p>
+<p>Support for a specific video Profile and Level doesn’t imply that any particular
+device supports the maximum bit rate for that Level.</p></section>
+<section class="panel" id="general-authoring-requirements-video"><h4 id="video">Video</h4>
+<p>1. <strong>Video encoding requirements</strong></p>
+<p>1.1. All video MUST be encoded using H.264/AVC, HEVC/H.265, Dolby Vision, or AV1.</p>
+<p>1.2. The container format for H.264 video MUST be fragmented MP4 (fMP4) files or
+MPEG transport streams.</p>
+<p>1.3.</p>
+<p>1.3a. * For maximum compatibility, some H.264 variants SHOULD be less than or
+equal to High Profile, Level 4.1.</p>
+<p>1.3b. * Profile and Level for H.264 MUST be less than or equal to High Profile,
+Level 5.2.</p>
+<p>1.4. For H.264, you SHOULD use High Profile in preference to Main or Baseline Profile.</p>
+<p>1.5. The container format for HEVC video MUST be fMP4.</p>
+<p>1.6.</p>
+<p>1.6a. * For maximum compatibility, some HEVC variants SHOULD be less than or
+equal to Main 10 Profile, Level 4.0, Main Tier.</p>
+<p>1.6b. * Profile, Level, and Tier for HEVC MUST be less than or equal to Main
+10 Profile, Level 5.1, High Tier.</p>
+<p>1.7. High Dynamic Range (HDR) HEVC video MUST be HDR10, HLG, or Dolby Vision.</p>
+<p>1.8. For HDR10 video, the <code>SEI NAL</code> units (that is, static metadata) SHOULD be in
+the HEVC Configuration Box (<code>'hvcC'</code>) and not in the individual sample data.</p>
+<p>1.9. * Profile and Level for Dolby Vision MUST be Profile 5 (single layer 10-bit HEVC)
+and less than or equal to Level 7.</p>
+<p>1.10. You SHOULD use video formats in which the parameter sets are stored in the
+sample descriptions, rather than the samples. (That is, use <code>'avc1'</code>, <code>'hvc1'</code>, or
+<code>'dvh1'</code> rather than <code>'avc3'</code>, <code>'hev1'</code>, or <code>'dvhe'</code>.)</p>
+<p>1.11. For backward compatibility, content SHOULD NOT use a higher level than required
+by the content resolution and frame rate.</p>
+<p>1.12. * For backward compatibility, some video content SHOULD be encoded with H.264.</p>
+<p>1.13. Key frames (IDRs) SHOULD be present every two seconds.</p>
+<p>1.14. All interlaced source content MUST be deinterlaced.</p>
+<p>1.15. You SHOULD deinterlace 30i content to 60p instead of 30p.</p>
+<p>1.16. Live (linear) video from NTSC or ATSC source SHOULD be 60 or 59.94 fps.</p>
+<p>1.17. Live (linear) video from PAL source SHOULD be 50 fps.</p>
+<p>1.18. Video on Demand (VOD) content SHOULD use a natural frame rate for the content.
+Frame rates 23.976, 24, 25, 29.97, 30, 50, 59.94, and 60 fps are supported.</p>
+<p>1.19. Frame rates above 60 fps SHALL NOT be used.</p>
+<p>1.20. * For HDR content, frame rates less than or equal to 30 fps SHOULD be provided.</p>
+<p>1.21. Streams SHOULD use a single color space — one of either Rec. 601, Rec. 709,
+DCI-P3, or Rec. 2020.</p>
+<p>1.22.  For VOD, the color space SHOULD be the original color space of the material.</p>
+<p>1.23. * If multiple video streams are provided (H.264, HEVC, HDR), each stream SHOULD
+provide all anticipated bandwidths. Clients SHOULD NOT be required to switch codecs.</p>
+<p>1.24. * For backward compatibility, SDR streams MUST be provided. (See also item 6.16.)</p>
+<p>1.25. * There are many possible choices of bit rates for variants. The following
+tables provide one possible set of bit rate variants. (See <em>On bit rates for variants</em>
+for additional considerations.)</p>
+<table>
+<thead>
+<tr>
+<th>16:9 aspect ratio</th>
+<th>H.264/AVC</th>
+<th>Frame rate</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>416 x 234</td>
+<td>145</td>
+<td>≤ 30 fps</td>
+</tr>
+<tr>
+<td>640 x 360</td>
+<td>365</td>
+<td>≤ 30 fps</td>
+</tr>
+<tr>
+<td>768 x 432</td>
+<td>730</td>
+<td>≤ 30 fps</td>
+</tr>
+<tr>
+<td>768 x 432</td>
+<td>1100</td>
+<td>≤ 30 fps</td>
+</tr>
+<tr>
+<td>960 x 540</td>
+<td>2000</td>
+<td>Same as source</td>
+</tr>
+<tr>
+<td>1280 x 720</td>
+<td>3000</td>
+<td>Same as source</td>
+</tr>
+<tr>
+<td>1280 x 720</td>
+<td>4500</td>
+<td>Same as source</td>
+</tr>
+<tr>
+<td>1920 x 1080</td>
+<td>6000</td>
+<td>Same as source</td>
+</tr>
+<tr>
+<td>1920 x 1080</td>
+<td>7800</td>
+<td>Same as source</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>16:9 aspect ratio</th>
+<th>HEVC/H.265 30 fps</th>
+<th>HDR (HEVC) 30 fps</th>
+<th>Frame rate</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>640 x 360</td>
+<td>145</td>
+<td>160</td>
+<td>≤ 30 fps</td>
+</tr>
+<tr>
+<td>768 x 432</td>
+<td>300</td>
+<td>360</td>
+<td>≤ 30 fps</td>
+</tr>
+<tr>
+<td>960 x 540</td>
+<td>600</td>
+<td>730</td>
+<td>≤ 30 fps</td>
+</tr>
+<tr>
+<td>960 x 540</td>
+<td>900</td>
+<td>1090</td>
+<td>≤ 30 fps</td>
+</tr>
+<tr>
+<td>960 x 540</td>
+<td>1600</td>
+<td>1930</td>
+<td>Same as source</td>
+</tr>
+<tr>
+<td>1280 x 720</td>
+<td>2400</td>
+<td>2900</td>
+<td>Same as source</td>
+</tr>
+<tr>
+<td>1280 x 720</td>
+<td>3400</td>
+<td>4080</td>
+<td>Same as source</td>
+</tr>
+<tr>
+<td>1920 x 1080</td>
+<td>4500</td>
+<td>5400</td>
+<td>Same as source</td>
+</tr>
+<tr>
+<td>1920 x 1080</td>
+<td>5800</td>
+<td>7000</td>
+<td>Same as source</td>
+</tr>
+<tr>
+<td>2560 x 1440</td>
+<td>8100</td>
+<td>9700</td>
+<td>Same as source</td>
+</tr>
+<tr>
+<td>3840 x 2160</td>
+<td>11600</td>
+<td>13900</td>
+<td>Same as source</td>
+</tr>
+<tr>
+<td>3840 x 2160</td>
+<td>16800</td>
+<td>20000</td>
+<td>Same as source</td>
+</tr>
+</tbody>
+</table>
+<p>Following tables provide a possible bit rate recommendations for APMP videos.</p>
+<h4 id="apmp-monoscopic-videos">APMP monoscopic videos:</h4>
+<table>
+<thead>
+<tr>
+<th>Tier</th>
+<th>Resolution</th>
+<th>Bit rate</th>
+<th>Projection specifier</th>
+<th>fps</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>8k x 4k</td>
+<td>80 Mbps</td>
+<td>PROJ-EQUI</td>
+<td>60</td>
+</tr>
+<tr>
+<td>2</td>
+<td>8k x 4k</td>
+<td>60 Mbps</td>
+<td>PROJ-EQUI</td>
+<td>60</td>
+</tr>
+<tr>
+<td>3</td>
+<td>8k x 4k</td>
+<td>40 Mbps</td>
+<td>PROJ-EQUI</td>
+<td>60</td>
+</tr>
+</tbody>
+</table>
+<p>If the quality of the 3rd tier is not acceptable, or you are working with very high
+motion content, one can lower the resolution and bitrate combination further.</p>
+<table>
+<thead>
+<tr>
+<th>Tier</th>
+<th>Resolution</th>
+<th>Bit rate</th>
+<th>Projection specifier</th>
+<th>fps</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4</td>
+<td>5760 x 2880</td>
+<td>60 Mbps</td>
+<td>PROJ-EQUI</td>
+<td>60</td>
+</tr>
+<tr>
+<td>5</td>
+<td>5760 x 2880</td>
+<td>40 Mbps</td>
+<td>PROJ-EQUI</td>
+<td>60</td>
+</tr>
+<tr>
+<td>6</td>
+<td>5760 x 2880</td>
+<td>30 Mbps</td>
+<td>PROJ-EQUI</td>
+<td>60</td>
+</tr>
+<tr>
+<td>7</td>
+<td>4096 x 2048</td>
+<td>20 Mbps</td>
+<td>PROJ-EQUI</td>
+<td>60</td>
+</tr>
+</tbody>
+</table>
+<h4 id="apmp-stereoscopic-videos">APMP stereoscopic videos:</h4>
+<table>
+<thead>
+<tr>
+<th>Tier</th>
+<th>Resolution</th>
+<th>Bit rate</th>
+<th>Projection specifier</th>
+<th>fps</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>4k x 4k</td>
+<td>80 Mbps</td>
+<td>PROJ-HEQU</td>
+<td>60</td>
+</tr>
+<tr>
+<td>2</td>
+<td>4k x 4k</td>
+<td>60 Mbps</td>
+<td>PROJ-HEQU</td>
+<td>60</td>
+</tr>
+<tr>
+<td>3</td>
+<td>4k x 4k</td>
+<td>40 Mbps</td>
+<td>PROJ-HEQU</td>
+<td>60</td>
+</tr>
+</tbody>
+</table>
+<p>If the quality of the 3rd tier is not acceptable, or you are working with very high
+motion content, one can lower the resolution and bitrate combination further.</p>
+<table>
+<thead>
+<tr>
+<th>Tier</th>
+<th>Resolution</th>
+<th>Bit rate</th>
+<th>Projection specifier</th>
+<th>fps</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4</td>
+<td>2880 x 2880</td>
+<td>60 Mbps</td>
+<td>PROJ-EQUI</td>
+<td>60</td>
+</tr>
+<tr>
+<td>5</td>
+<td>2880 x 2880</td>
+<td>40 Mbps</td>
+<td>PROJ-EQUI</td>
+<td>60</td>
+</tr>
+<tr>
+<td>6</td>
+<td>2880 x 2880</td>
+<td>30 Mbps</td>
+<td>PROJ-EQUI</td>
+<td>60</td>
+</tr>
+<tr>
+<td>7</td>
+<td>2048 x 2048</td>
+<td>20 Mbps</td>
+<td>PROJ-EQUI</td>
+<td>60</td>
+</tr>
+</tbody>
+</table>
+<p>Following table provides a possible bit rate recommendations for AIV.</p>
+<table>
+<thead>
+<tr>
+<th>Tier</th>
+<th>Average bandwith</th>
+<th>Peak bandwidth</th>
+<th>Resolution</th>
+<th>fps</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>100 Mbps</td>
+<td>150 Mbps</td>
+<td>4320 x 4320</td>
+<td>90</td>
+</tr>
+<tr>
+<td>2</td>
+<td>80  Mbps</td>
+<td>120 Mbps</td>
+<td>4320 x 4320</td>
+<td>90</td>
+</tr>
+<tr>
+<td>3</td>
+<td>50  Mbps</td>
+<td>100 Mbps</td>
+<td>4320 x 4320</td>
+<td>90</td>
+</tr>
+<tr>
+<td>4</td>
+<td>32  Mbps</td>
+<td>64  Mbps</td>
+<td>4320 x 4320</td>
+<td>90</td>
+</tr>
+<tr>
+<td>5</td>
+<td>25  Mbps</td>
+<td>50  Mbps</td>
+<td>4320 x 4320</td>
+<td>90</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Note: The above bit rates are initial encoding targets for typical content delivered
+via HLS. Apple recommends that you evaluate them against your specific content and
+encoding workflow, then adjust accordingly.</p>
+<p>30i source content is considered to have a source frame rate of 60 fps. 24 fps
+HEVC content should use bit rates reduced by about 20% from the values above.</p>
+</blockquote>
+<p>1.26. For VOD content, the average segment bit rate MUST be within 10% of the <code>AVERAGE-BANDWIDTH</code>
+attribute. (See <em>Declared versus measured values of bandwidths</em>.)</p>
+<p>1.27. For VOD content, the measured peak bit rate MUST be within 10% of the <code>BANDWIDTH</code>
+attribute.</p>
+<p>1.28. For live (linear) content, the average segment bit rate over a long (~1 hour)
+period of time MUST be less than 110% of the <code>AVERAGE-BANDWIDTH</code> attribute.</p>
+<p>1.29. For live (linear) content, the measured peak bit rate MUST be less than 125%
+of the <code>BANDWIDTH</code> attribute.</p>
+<p>1.30. For VOD content, the peak bit rate SHOULD be no more than 200% of the average
+bit rate.</p>
+<p>1.31. Different variants MAY have different frame rates.</p>
+<p>1.32. * The default video variants SHOULD be the 2000 kbit/s (average bit rate)
+variant. (Defaults are the first variant listed in the Multivariant Playlist within
+a group of variants having compatible audio).</p>
+<p>1.33. All video variants SHOULD have identical aspect ratios.</p>
+<p>1.34. For maximum compatibility when UHD video resolution is provided, some UHD
+variants SHOULD be less than or equal to 15 Mbit/s.</p>
+<p>1.35. For HDR10 content, the Mastering Display Color Volume and Content Light Level
+Information SEI messages SHOULD be present.</p>
+<p>1.36. MV-HEVC video MUST NOT be used for anything other than stereo video.</p>
+<p>1.37. Level for AV1 MUST be less than or equal to Level 6.2</p>
+<p>1.38. All APMP monoscopic videos MUST be encoded using HEVC/H.265.</p>
+<p>1.39. The container format for AV1 video MUST be fMP4.</p></section>
+<section class="panel" id="general-authoring-requirements-audio"><h4 id="audio">Audio</h4>
+<p>2. <strong>Audio encoding requirements</strong></p>
+<p>2.1. Audio data SHOULD be provided as an elementary audio stream or in fMP4.</p>
+<p>2.2. Codecs that provide stereo audio are:</p>
+<ul>
+<li>Apple Positional Audio Codec (APAC)</li>
+<li>AAC-LC </li>
+<li>HE-AAC v1 </li>
+<li>HE-AAC v2 </li>
+<li>xHE-AAC</li>
+<li>Apple Lossless</li>
+<li>FLAC</li>
+</ul>
+<p>2.3. * Stereo audio in AAC, HE-AAC v1, or HE-AAC v2 format MUST be provided.</p>
+<p>2.4. You SHOULD NOT use HE-AAC if your audio bit rate is above 64 kbit/s.</p>
+<p>2.5. Supported multichannel audio codecs are:</p>
+<ul>
+<li>APAC</li>
+<li>AAC-LC</li>
+<li>HE-AAC v1</li>
+<li>Apple Lossless</li>
+<li>FLAC</li>
+<li>Dolby Digital (AC-3) </li>
+<li>Dolby Digital Plus (E-AC-3)(ec-3)</li>
+<li>Dolby Digital Plus JOC (ec+3)</li>
+</ul>
+<p>(See <em>Values for the CODECS attribute</em>
+for more information about specifying Dolby Digital Plus JOC.)</p>
+<p>2.6. * If Dolby Digital Plus is provided and your streams are delivered to devices
+that don’t support Dolby Digital Plus, then Dolby Digital MUST be provided also.
+See <em>Audio compatibility</em>.</p>
+<p>2.7. Stereo audio MAY be provided at multiple bit rates.</p>
+<p>2.8. * Multichannel audio using a particular codec MAY be provided at multiple bit
+rates.</p>
+<p>2.9. Overall bit rate recommendations are as follows:</p>
+<h4 id="bitrate-recommendations-for-stereo-are-as-follows">Bitrate recommendations for stereo are as follows:</h4>
+<table>
+<thead>
+<tr>
+<th>Audio channels</th>
+<th>Codec</th>
+<th>Total (kbit/s)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2.0 (stereo)</td>
+<td>APAC</td>
+<td>32 to 160</td>
+</tr>
+<tr>
+<td>2.0 (stereo)</td>
+<td>AAC</td>
+<td>32 to 160</td>
+</tr>
+<tr>
+<td>2.0 (stereo)</td>
+<td>xHE-AAC</td>
+<td>24 to 160</td>
+</tr>
+<tr>
+<td>2.0 (stereo)</td>
+<td>Dolby Digital Plus</td>
+<td>96 to 160</td>
+</tr>
+</tbody>
+</table>
+<h4 id="bitrate-recommendations-for-multi-channel-surround-formats-are-as-follows">Bitrate recommendations for multi-channel surround formats are as follows:</h4>
+<table>
+<thead>
+<tr>
+<th>Audio channels</th>
+<th>Codec</th>
+<th>Total (kbit/s)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5.1 (surround)</td>
+<td>APAC</td>
+<td>320</td>
+</tr>
+<tr>
+<td>5.1 (surround)</td>
+<td>AAC</td>
+<td>320</td>
+</tr>
+<tr>
+<td>5.1 (surround)</td>
+<td>Dolby Digital</td>
+<td>384</td>
+</tr>
+<tr>
+<td>5.1 (surround)</td>
+<td>Dolby Digital Plus</td>
+<td>192</td>
+</tr>
+<tr>
+<td>7.1 (surround)</td>
+<td>APAC</td>
+<td>384</td>
+</tr>
+<tr>
+<td>7.1 (surround)</td>
+<td>Dolby Digital Plus</td>
+<td>384</td>
+</tr>
+</tbody>
+</table>
+<h4 id="bitrate-recommendations-for-ambisonics-are-as-follows">Bitrate recommendations for Ambisonics are as follows:</h4>
+<table>
+<thead>
+<tr>
+<th>Ambisonic order</th>
+<th>Codec</th>
+<th>Audio coding identifier</th>
+<th>Total (kbit/s)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>APAC</td>
+<td>1OA</td>
+<td>192 to 384</td>
+</tr>
+<tr>
+<td>2</td>
+<td>APAC</td>
+<td>2OA</td>
+<td>240 to 512</td>
+</tr>
+<tr>
+<td>3</td>
+<td>APAC</td>
+<td>3OA</td>
+<td>/270 to 768</td>
+</tr>
+</tbody>
+</table>
+<p>See <a href="https://developer.apple.com/av-foundation/Apple-Positional-Audio-Codec.pdf">APAC</a> for more information about ambisonics.</p>
+<p>2.10. * You MAY change channel layout within a stream.</p>
+<p>2.11. Channel layout changes MUST be in conjunction with an <code>EXT-X-DISCONTINUITY</code>
+tag.</p>
+<p>2.12. If you provide Descriptive Video Service (DVS), also called "Audio Description",
+it MUST be marked with the attribute <code>CHARACTERISTICS="public.accessibility.describes-video"</code>.</p>
+<p>2.13. If you provide DVS, the <code>AUTOSELECT</code> attribute MUST have a value of "<code>YES"</code>.</p>
+<p>2.14. The name of DVS audio SHOULD indicate that the stream is DVS content.</p>
+<p>2.15. If you provide alternative audio or DVS, you MUST provide it for the entire
+content duration, even if it only really exists for a portion of the main content.</p>
+<p>2.16. Alternative audio or DVS MAY reuse the audio segments of regular content when
+the alternative content isn’t available.</p>
+<p>2.17. A single Media Segment MUST NOT contain multiple audio streams.</p>
+<p>2.18. Loudness management or Dynamic range control SHOULD be present unless all
+content (including ads) has been encoded at the same audio levels.</p>
+<p>2.19. In fMP4 files, except for the APAC codec, you SHOULD provide loudness information by way of a loudness
+box ('<code>ludt</code>'). When present, the loudness box takes precedence over any loudness
+information in the audio stream. For APAC, a loudness box SHALL not be used.</p>
+<p>2.20. In the absence of a loudness box, Dolby Digital and Dolby Digital Plus loudness
+SHOULD be specified by the <code>dialnorm</code> field (ATSC A/52:2012). </p>
+<p>2.21. For AAC, in the absence of a loudness box, AAC dialog loudness SHOULD be specified
+by either AAC <code>prog_ref_level</code> (ISO 14496-3 subclause 4.5.2.7), as specified by SCTE
+193-1 section 7.4.1, or by the <code>loudnessInfo()</code> payload as specified by ISO 23003-4,
+in which case, <code>samplePeakLevel</code> or <code>truePeakLevel</code> MUST be present, <code>measurementSystem</code>
+MUST be 2, and <code>methodDefinition</code> MUST be 1 or 2, while for video content it SHOULD
+be 2.</p>
+<p>2.22. For xHE-AAC, loudness metadata MUST be present according to the Basic Loudness
+Metadata specified in ISO 23003-4 Table I.5; <code>samplePeakLevel</code> or <code>truePeakLevel</code>
+MUST be present. The <code>methodDefinition</code> SHOULD be 2 for video content.</p>
+<p>2.23. The loudness value MUST indicate the actual loudness of the content.</p>
+<p>2.24. HE-AAC in fMP4 files MUST use explicit signaling of SBR data.</p>
+<p>2.25. The container format for xHE-AAC, Apple Lossless, FLAC, and APAC audio MUST be fMP4.</p>
+<p>2.26. If you provide non-Dolby multichannel audio, you SHOULD provide multichannel
+AAC also.</p>
+<p>2.27. For audio description, the LANGUAGE attribute MUST be present and indicate
+the primary language used to convey the descriptions.</p>
+<p>2.28. Audio that has been prepared or otherwise processed to heighten the intelligibility
+of speech MAY be marked with the
+attribute <code>CHARACTERISTICS="public.accessibility.enhances-speech-intelligibility"</code>.</p>
+<p>2.29. Supported multi-format audio codecs that carry the combination of two or more formats out of channels, objects and Ambisonics are:</p>
+<ul>
+<li>APAC</li>
+<li>Dolby Digital Plus JOC</li>
+</ul>
+<p>2.30. APAC encoded content MUST have in-stream loudness and DRC metadata.</p>
+<p>2.31. If you provide APAC immersive audio, you SHOULD provide stereo AAC also.</p></section>
+<section class="panel" id="general-authoring-requirements-ads-and-pre-mid-post-rolls"><h4 id="ads-and-pre-mid-post-rolls">Ads and pre-/mid-/post-rolls</h4>
+<p>3. <strong>Ad requirements</strong> (See also the Media Playlists section of <em>hls-authoring-specification-for-apple-devices</em>.)</p>
+<p>3.1. Your ads and other nonprimary media MAY be inserted in the Media Playlists or as Interstitials.</p>
+<p>3.2. Inserted media SHOULD be encoded with the same codecs as the other content
+in the Media Playlist.</p>
+<p>3.3. Inserted media SHOULD be encoded with the same aspect ratio as the other content
+in the Media Playlist.</p>
+<p>3.4. Inserted media SHOULD be at or under the specified bandwidths for that variant.</p></section>
+<section class="panel" id="general-authoring-requirements-accessibility"><h4 id="accessibility">Accessibility</h4>
+<p>4. <strong>Accessibility requirements</strong></p>
+<p>4.1. Captions SHOULD be provided with your streams to make content accessible to
+people who are deaf or hard of hearing.</p>
+<p>4.2. Supported caption formats are:</p>
+<ul>
+<li>CEA-608 closed captions </li>
+<li>CEA-708 closed captions </li>
+<li>WebVTT subtitles </li>
+<li>IMSC1 subtitles (text profile only)</li>
+</ul>
+<p>4.3. Closed captions (if any) MUST be included in the video Media Segments.</p>
+<p>4.4. The presence of closed captions MUST be declared via an <code>EXT-X-MEDIA</code> tag that
+contains a <code>LANGUAGE</code> attribute.</p>
+<p>4.5. If a subtitles track is intended to provide accessibility for people who are
+deaf or hard of hearing, it MUST be marked with the attribute <code>CHARACTERISTICS="public.accessibility.transcribes-spoken-dialog,public.accessibility.describes-music-and-sound"</code>.
+(Subtitles with this attribute value are treated the same as closed captions.)</p>
+<p>4.6. If a subtitles track is intended to provide accessibility for people who are
+deaf or hard of hearing, the <code>AUTOSELECT</code> attribute MUST have a value of <code>"YES"</code>.</p>
+<p>4.7. The <code>LANGUAGE</code> attribute MUST be included in the <code>EXT-X-MEDIA</code> tag for a subtitles
+track.</p>
+<p>4.8. For information on including audio descriptions with your streams, see items
+2.12 through 2.16.</p></section>
+<section class="panel" id="general-authoring-requirements-subtitles"><h4 id="subtitles">Subtitles</h4>
+<p>5. <strong>Subtitle requirements</strong></p>
+<p>5.1. Subtitles MAY be provided.</p>
+<p>5.2. * Subtitles MUST be WebVTT (according to the HLS specification) or IMSC1 in
+fMP4.</p>
+<p>5.3. WebVTT subtitles MUST be in text files, with an <code>X-TIMESTAMP-MAP</code> according
+to the HLS specification.</p>
+<p>5.4. IMSC1 subtitles MUST be in fMP4 files.</p>
+<p>5.5. The subtitle playlist MUST exist for the entirety of the main content, even
+if the actual subtitles only exist for a portion of the content.</p>
+<p>5.6. For live (linear) content, target durations for subtitle playlists MUST be
+identical to other media.</p>
+<p>5.7. For VOD content, target durations of subtitle playlists MAY be longer than
+the other media.</p>
+<p>5.8. If the content has forced subtitles and regular subtitles in a given language,
+the regular subtitles track in that language MUST contain both the forced subtitles
+and the regular subtitles for that language.</p>
+<p>5.9. If your videos contain text burnt into the video and you have access to a version
+without the burn-in, you SHOULD use forced subtitles instead. (This allows you to
+easily translate into multiple languages. An example of when you might use forced
+subtitles is a science fiction film, where alien languages are translated into English.)</p>
+<p>5.10. The kind of subtitles SHOULD be specified in the <code>CODECS</code> attribute of
+the associated <code>EXT-X-STREAM-INF</code> tags. You SHOULD use <code>"stpp.ttml.im1t"</code> to identify
+IMSC1 subtitles. You MAY use <code>"wvtt"</code> to identify WebVTT subtitles.</p>
+<p>5.11. Forced subtitles SHOULD always have <code>AUTOSELECT=YES</code>.</p></section>
+<section class="panel" id="general-authoring-requirements-trick-play"><h4 id="trick-play">Trick Play</h4>
+<p>6. <strong>Trick play requirements</strong></p>
+<p>6.1. I-frame playlists (<code>EXT-X-I-FRAME-STREAM-INF</code>) MUST be provided to support
+scrubbing and scanning UI.</p>
+<p>6.2. You SHOULD have one frame per second <em>dense</em> I-frame renditions. These are
+dedicated renditions that only contain I-frames.</p>
+<p>6.3. Alternatively, you MAY use the I-frames from your normal content, but trick
+play performance is improved with a higher density of I-frames.</p>
+<p>6.4. If you provide multiple bit rates at the same spatial resolution for your regular
+video, you SHOULD create the I-frame playlist for that resolution from the same source
+used for the lowest bit rate in that group.</p>
+<p>6.5. The bit rate of I-frame playlists SHOULD be the bit rate of a normal playlist
+of the same resolution times the fps of the I-frame playlist divided by eight. (See
+<em>I frame bit rates versus normal bit rates</em>.)</p>
+<p>6.6. * You SHOULD provide multiple I-frame Media Playlists with different bit rates.</p>
+<p>6.7. As with normal video, there are many possible choices of bit rates for dense
+I-frame variants. The following tables provide one possible set of variants. (See
+<em>On bit rates for variants</em>.)</p>
+<table>
+<thead>
+<tr>
+<th>16:9 aspect ratio</th>
+<th>H.264/AVC</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>640 x 360</td>
+<td>45</td>
+</tr>
+<tr>
+<td>768 x 432</td>
+<td>90</td>
+</tr>
+<tr>
+<td>960 x 540</td>
+<td>250</td>
+</tr>
+<tr>
+<td>1280 x 720</td>
+<td>375</td>
+</tr>
+<tr>
+<td>1920 x 1080</td>
+<td>580</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>16:9 aspect ratio</th>
+<th>HEVC/H.265</th>
+<th>HDR (HEVC)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>768 x 432</td>
+<td>40</td>
+<td>55</td>
+</tr>
+<tr>
+<td>960 x 540</td>
+<td>75</td>
+<td>94</td>
+</tr>
+<tr>
+<td>960 x 540</td>
+<td>200</td>
+<td>238</td>
+</tr>
+<tr>
+<td>1280 x 720</td>
+<td>300</td>
+<td>360</td>
+</tr>
+<tr>
+<td>1920 x 1080</td>
+<td>525</td>
+<td>650</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Note: These bit rates are based on the assumption of a 1 fps dense I-frame track.
+The values should be modified based on the actual frame rate of the I-frame rendition.
+(See item 6.5.)</p>
+<p>The above tables are average bit rates. Earlier versions of this specification
+used peak bit rates.</p>
+</blockquote>
+<p>6.8. I-frame playlists MUST contain the <code>EXT-X-I-FRAMES-ONLY</code> tag.</p>
+<p>6.9. The peak segment bit rate MUST be calculated according to the HLS specification.</p>
+<p>6.10. If using fMP4, I-frame segments MUST include the 'moof' header associated
+with the I-frame.</p>
+<p>6.11. For live (linear) content, target durations for I-frame playlists MUST be
+identical to other media.</p>
+<p>6.12. For VOD content, target durations of I-frame playlists MAY be different from
+the other media.</p>
+<p>6.13. * I-frame playlists MAY use a different video codec than the normal video
+segments.</p>
+<p>6.14. * For backward compatibility, some trick play content SHOULD be encoded with
+H.264.</p>
+<p>6.15. If HDR trick play streams are provided, they SHOULD be provided at all resolutions.</p>
+<p>6.16. * For backward compatibility, SDR trick play streams MUST be provided.</p>
+<p>6.17. I-frame content MAY be encoded using the fMP4 ‘mjpg’ codec.
+(See <em>I frame image sequences</em>.)</p></section>
+<section class="panel" id="general-authoring-requirements-media-segmentation"><h4 id="media-segmentation">Media Segmentation</h4>
+<p>7. <strong>Media segmentation requirements</strong></p>
+<p>7.1. Your media MUST be continuous across segments, with the exception of transitions
+for ads and other inserted material.</p>
+<p>7.2. If using a transport stream, continuity counters and timestamps MUST be sequential.</p>
+<p>7.3. If using fMP4, the track fragment decode time MUST be consistent with the decode
+time and duration of the previous segment.</p>
+<p>7.4. Video segments MUST start with an IDR frame.</p>
+<p>7.5. Target durations SHOULD be 6 seconds.</p>
+<p>7.6. Segment durations SHOULD be nominally 6 seconds (for example, NTSC 29.97 may
+be 6.006 seconds).</p>
+<p>7.7. Media Segments MUST NOT exceed the target duration by more than 0.5 seconds.</p>
+<p>7.8. Each xHE-AAC segment SHOULD start with an Immediate Playout Frame (IPF).</p>
+<p>7.9. Each APAC segment MUST start with an Audio Synchronization Packet (ASP).</p></section>
+<section class="panel" id="general-authoring-requirements-media-playlists"><h4 id="media-playlists">Media Playlists</h4>
+<p>8. <strong>Media Playlist requirements</strong></p>
+<p>8.1. You MUST use sufficiently accurate segment durations to ensure that the sum
+of the <code>EXTINF</code> durations of any contiguous group of segments is within one video
+frame duration of the actual duration of the content.</p>
+<p>8.2. Audio and video playlists MUST all use the same target duration.</p>
+<p>8.3. Audio and video playlists MUST contain the same duration of the content.</p>
+<p>8.4. The <code>EXT-X-PROGRAM-DATE-TIME</code> tag MUST be present in every live (linear) Media
+Playlist.</p>
+<p>8.5. The date-time value of an <code>EXT-X-PROGRAM-DATE-TIME</code> tag SHOULD be aligned with
+the airtime of the content.</p>
+<p>8.6. If your Media Playlists are created from static source content (VOD), you MUST
+add the <code>EXT-X-PLAYLIST-TYPE</code> with the value <code>VOD</code>.</p>
+<p>8.7. Within one asset, all Media Playlists with an <code>EXT-X-PLAYLIST-TYPE</code> of <code>VOD</code>
+MUST cover exactly the same media time range.</p>
+<p>8.8. If your Media Playlists are event style (start from a fixed point with segments
+never removed), you MUST add the <code>EXT-X-PLAYLIST-TYPE</code> with the value <code>EVENT</code>.</p>
+<p>8.9. Separate audio streams MUST be declared using <code>EXT-X-MEDIA</code> tags.</p>
+<p>8.10. The <code>LANGUAGE</code> attribute MUST be included in every <code>EXT-X-MEDIA</code> tag that
+doesn’t have <code>TYPE=VIDEO</code>.</p>
+<p>8.11. You MUST provide at least six segments in a live (linear) playlist.</p>
+<p>8.12. * You SHOULD provide at least 15 minutes of content in a live (linear) playlist.</p>
+<p>8.13. Breaks of encoding continuity MUST be indicated with the <code>EXT-X-DISCONTINUITY</code>
+tag.</p>
+<p>8.14. Video frame rate changes MUST be marked as a discontinuity using <code>EXT-X-DISCONTINUITY</code>
+tags.</p>
+<p>8.15. All variants and renditions MUST have discontinuities at the same points in
+time.</p>
+<p>8.16. * You SHOULD avoid switching codecs at discontinuities, for example, switching
+between HEVC and H.264, or between AAC and Dolby Digital.</p>
+<p>8.17. If live (linear) content will ever contain an <code>EXT-X-DISCONTINUITY</code> tag, the
+<code>EXT-X-DISCONTINUITY-SEQUENCE</code> tag MUST always be present.</p>
+<p>8.18. Your media requests MUST NOT use HTTP redirects, with the exception of ad
+content to allow dynamic selection of ads.</p>
+<p>8.19. You SHOULD identify interstitial and program boundaries using the <code>EXT-X-DATERANGE</code>
+tag.</p>
+<p>8.20. If using fMP4, <code>EXT-X-MAP</code> tags MUST be present.</p>
+<p>8.21. Metadata SHOULD be in the playlist (using <code>EXT-X-DATERANGE</code>) rather than in
+the media (using Timed Metadata).</p>
+<p>8.22. * For maximum interoperability, all audio/video variants and renditions SHOULD
+have segment boundaries at the same points in time.</p>
+<p>8.23. If your xHE-AAC segments start with an IPF, you SHOULD use the <code>EXT-X-INDEPENDENT-SEGMENTS</code>
+tag in the Media Playlist.</p>
+<p>8.24. A live (linear) playlist update SHOULD be considered invalid when the Last-Modified
+HTTP header, if supplied, is more than three target durations from the Date HTTP
+header.</p>
+<p>8.25. If your APAC segments start with an ASP, you SHOULD use the <code>EXT-X-INDEPENDENT-SEGMENTS</code>
+tag in the Media Playlist.</p></section>
+<section class="panel" id="general-authoring-requirements-multivariant-playlist"><h4 id="multivariant-playlist">Multivariant Playlist</h4>
+<p>9. <strong>Multivariant Playlist requirements</strong></p>
+<p>9.1. Your <code>EXT-X-STREAM-INF</code> tag MUST always provide the <code>CODECS</code> attribute.</p>
+<p>9.2. Your <code>EXT-X-STREAM-INF</code> tag MUST always provide the <code>RESOLUTION</code> attribute
+if the rendition includes video.</p>
+<p>9.3. Your <code>EXT-X-I-FRAME-STREAM-INF</code> tag MUST always provide the <code>CODECS</code> attribute.</p>
+<p>9.4. Your <code>EXT-X-I-FRAME-STREAM-INF</code> tag MUST always provide the <code>RESOLUTION</code> attribute.</p>
+<p>9.5. You SHOULD deliver video and audio as separate streams.</p>
+<p>9.6. If you have multichannel audio, you MUST use separate audio streams.</p>
+<p>9.7. If you have alternative audio content (languages/commentary/DVS), you MUST
+use separate audio streams.</p>
+<p>9.8. If you have different video angles, you MUST use separate audio streams.</p>
+<p>9.9. You MUST provide multiple bit rates of video (that is, variants).</p>
+<p>9.10. For HD content, there SHOULD be at least two variants encoded at the highest-available
+resolution.</p>
+<p>9.11. If your video segments start with an IDR, you SHOULD use the <code>EXT-X-INDEPENDENT-SEGMENTS</code>
+tag in the Multivariant Playlist. (See item 7.4.)</p>
+<p>9.12. If your video segments start with an IDR and the <code>EXT-X-INDEPENDENT-SEGMENTS</code>
+tag isn’t in the Multivariant Playlist, you MUST use the <code>EXT-X-INDEPENDENT-SEGMENTS</code>
+tag in all video Media Playlists. (See item 7.4.)</p>
+<p>9.13. The <code>BANDWIDTH</code> attribute MUST be the largest sum of peak segment bit rates
+that’s produced by any playable combination of renditions.</p>
+<p>9.14. You MUST include the <code>AVERAGE-BANDWIDTH</code> attribute.</p>
+<p>9.15. Each <code>EXT-X-STREAM-INF</code> tag that includes video content MUST have a <code>FRAME-RATE</code>
+attribute.</p>
+<p>9.16. The <code>VIDEO-RANGE</code> attribute MUST be specified unless all variants and renditions
+are SDR.</p>
+<p>9.17. Within a group of Renditions (<code>EXT-X-MEDIA</code> tags having the same <code>TYPE</code> and
+<code>GROUP-ID</code>), those tags having the same <code>LANGUAGE</code> value should be ordered from most
+general to most specific. (Because <code>CHARACTERISTICS</code> are open-ended, the matching
+algorithm needs the ordering since it can’t interpret all the semantics.)</p>
+<p>9.18. An <code>EXT-X-CONTENT-STEERING</code> tag SHOULD always have a <code>PATHWAY-ID</code> attribute.</p>
+<p>9.19. The <code>SCORE</code> attribute (if present) MUST be on every variant. Otherwise, the
+<code>SCORE</code> attribute will be ignored.</p>
+<p>9.20. For APAC, the APAC profile and level MUST be provided as a part of Codec string.
+See <a href="https://developer.apple.com/av-foundation/Apple-Positional-Audio-Codec.pdf">APAC</a>
+for more information about APAC profile and level.</p></section>
+<section class="panel" id="general-authoring-requirements-delivery"><h4 id="delivery">Delivery</h4>
+<p>10. <strong>Delivery requirements</strong></p>
+<p>10.1. The server MUST deliver playlists using <code>gzip</code> content-encoding.</p>
+<p>10.2. You SHOULD support stream failover, for example by listing duplicate streams
+in the Multivariant Playlist.</p>
+<p>10.3. Media data SHOULD NOT be delivered to the application through a local server.</p>
+<p>10.4. You SHOULD use the recommended MIME types for content. The recommendations
+are in the following table:</p>
+<table>
+<thead>
+<tr>
+<th>Media type</th>
+<th>Format</th>
+<th>Recommended MIME type</th>
+<th>Typical file extension</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Playlist</td>
+<td>HLS playlist</td>
+<td><code>application/vnd.apple.mpegurl</code></td>
+<td><code>m3u8</code></td>
+</tr>
+<tr>
+<td>Playlist</td>
+<td>M3U playlist</td>
+<td><code>audio/mpegurl</code></td>
+<td><code>m3u</code></td>
+</tr>
+<tr>
+<td>Video</td>
+<td>MPEG transport stream</td>
+<td><code>video/mp2t</code></td>
+<td><code>ts</code></td>
+</tr>
+<tr>
+<td>Media Initializaton</td>
+<td>Fragmented MP4</td>
+<td><code>video/mp4</code></td>
+<td>mp4</td>
+</tr>
+<tr>
+<td>Video or audio</td>
+<td>Fragmented MP4</td>
+<td><code>video/iso.segment</code></td>
+<td>m4s</td>
+</tr>
+<tr>
+<td>Video</td>
+<td>Fragmented MP4</td>
+<td><code>video/mp4</code></td>
+<td><code>mp4</code></td>
+</tr>
+<tr>
+<td>Audio</td>
+<td>MPEG transport stream</td>
+<td><code>video/mp2t</code></td>
+<td><code>ts</code></td>
+</tr>
+<tr>
+<td>Audio</td>
+<td>Fragmented MP4</td>
+<td><code>audio/mp4</code></td>
+<td><code>mp4</code></td>
+</tr>
+<tr>
+<td>Audio</td>
+<td>Packed audio</td>
+<td><code>audio/aac</code></td>
+<td><code>aac</code></td>
+</tr>
+<tr>
+<td>Audio</td>
+<td>Packed audio</td>
+<td><code>audio/mpeg</code></td>
+<td><code>mp3</code></td>
+</tr>
+<tr>
+<td>Audio</td>
+<td>Packed audio</td>
+<td><code>audio/ac3</code></td>
+<td><code>ac3</code></td>
+</tr>
+<tr>
+<td>Audio</td>
+<td>Packed audio</td>
+<td><code>audio/eac3</code></td>
+<td><code>ec3</code></td>
+</tr>
+<tr>
+<td>Subtitles</td>
+<td>WebVTT</td>
+<td><code>text/vtt</code> or <code>text/plain</code></td>
+<td><code>vtt</code></td>
+</tr>
+<tr>
+<td>Subtitles</td>
+<td>IMSC1</td>
+<td><code>application/mp4</code></td>
+<td><code>mp4</code></td>
+</tr>
+<tr>
+<td>Content Steering Manifest</td>
+<td>JSON file</td>
+<td><code>application/vnd.apple.steering-list</code></td>
+<td>json</td>
+</tr>
+<tr>
+<td><code>X-ASSET-LIST</code> response</td>
+<td>JSON file</td>
+<td><code>application/json</code></td>
+<td>json</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Note: The M3U playlist MIME type <code>audio/mpegurl</code> isn’t registered with the IANA.
+According to the IANA, the <code>audio/aac</code> MIME type allows LATM/LOAS or ADTS.
+HLS only supports ADTS.
+Some older players are known to reject <code>text/vtt</code> as an illegal type. For compatibility,
+<code>text/plain</code> is acceptable.</p>
+</blockquote></section>
+<section class="panel" id="general-authoring-requirements-privacy"><h4 id="privacy">Privacy</h4>
+<blockquote>
+<p>Note: In a future release, Apple may require delivery over TLS.</p>
+</blockquote>
+<p>11. <strong>Privacy requirements</strong></p>
+<p>11.1. Multivariant Playlists SHOULD be delivered using Transport Layer Security
+(TLS).</p>
+<p>11.2. Media Playlists SHOULD be delivered using TLS.</p>
+<p>11.3. Media Segments SHOULD be delivered using TLS.</p>
+<p>11.4. Media Segment URLs requested over unencrypted transport SHOULD NOT contain
+revealing strings, such as movie title, show title, episode name, episode number,
+genre, advertiser, or product.</p></section>
+<section class="panel" id="general-authoring-requirements-security"><h4 id="security">Security</h4>
+<p>12. <strong>Security requirements</strong></p>
+<p>12.1. Transport Layer Security (TLS) MUST be version 1.2 or later with forward secrecy.</p>
+<p>12.2. TLS MUST NOT use known-insecure cryptographic primitives (such as, RC4 encryption,
+SHA-1 certificate signatures).</p>
+<p>12.3. Within TLS, key sizes MUST be 2048 bits for RSA and 256 bits for EC.</p>
+<p>12.4. The URLs for Media Segments SHOULD NOT be completely static. URLs should be
+issued per device or changed over time.</p></section>
+<section class="panel" id="general-authoring-requirements-content-protection"><h4 id="content-protection">Content Protection</h4>
+<p>13. <strong>Content protection requirements</strong></p>
+<p>13.1. Content protection of video and audio SHOULD follow the FairPlay Streaming
+(FPS) specification.</p>
+<p>13.2. If the content is encrypted with FPS, the method MUST be <code>SAMPLE-AES</code>.</p>
+<p>13.3. If the content is encrypted with FPS, the key format MUST be <code>"com.apple.streamingkeydelivery"</code>.</p>
+<p>13.4. The <code>IV</code> attribute SHOULD NOT be used with FPS unless necessary for interoperability.</p>
+<p>13.5. Content with <code>HD</code> resolutions SHOULD use <code>HDCP-LEVEL</code> of <code>TYPE-0</code>.</p>
+<p>13.6. Content with greater than <code>HD</code> resolutions SHOULD use <code>HDCP-LEVEL</code> of <code>TYPE-1</code>.</p>
+<p>13.7. Video encrypted with Common Encryption MUST use an <code>encrypt:skip</code> pattern
+of 1:9 (10% partial encryption).</p>
+<p>13.8. Content encrypted with FPS MAY use the <code>ALLOWED-CPC</code> attribute. (See <em>ALLOWED CPC values for FairPlay Streaming</em>.)</p>
+<p>13.9. Common encryption MUST NOT use content sensitive encryption.</p>
+<p>13.10. Content authors MAY mix encrypted and unencrypted samples in a single HLS
+fMP4 segment with a single Media Initialization Section by supplying both an encrypted
+SampleDescription at index 0 and an unencrypted SampleDescription at index 1 for
+each track. The sample index field of each sample should point to the appropriate
+SampleDescription.</p>
+<p>13.11. Encryption with <code>SAMPLE-AES-CTR</code> SHALL NOT be used on Apple devices.</p>
+<blockquote>
+<p>Note: HD is approximately the range of 720p to 1080p.</p>
+</blockquote></section>
+<section class="panel" id="general-authoring-requirements-low-latency-hls"><h4 id="low-latency-hls">Low-Latency HLS</h4>
+<p>14. <strong>Low-Latency HLS requirements</strong></p>
+<p>14.1. Low-Latency stream delivery MUST meet all requirements of the Low-Latency
+Server Configuration Profile in Appendix B of <a href="https://tools.ietf.org/html/draft-pantos-hls-rfc8216bis-07">draft-pantos-hls-rfc8216bis-07</a>
+or later.</p>
+<p>14.2.</p>
+<p>14.2a. The Part Target Duration MUST be at least the maximum round-trip time
+(RTT) to the server that 95% of the clients are expected to see (P95 RTT).</p>
+<p>14.2b. The Part Target Duration SHOULD be at least three times the P95 RTT.</p>
+<p>14.2c. The RECOMMENDED Part Target Duration is one second.</p>
+<p>14.3. The <code>PART-HOLD-BACK</code> value MUST be at least three times the Part Target Duration.</p>
+<p>14.4. Services with Playlist windows longer than two minutes SHOULD offer Playlist
+Delta Updates.</p>
+<p>14.5. Services that offer Playlist Delta Updates and use <code>EXT-X-DATERANGE</code> tags
+SHOULD also use <code>CAN-SKIP-DATERANGES=YES</code>.</p></section>
+<section class="panel" id="general-authoring-requirements-shareplay"><h4 id="shareplay">SharePlay</h4>
+<blockquote>
+<p>Note: Other requirements only apply to the playlists and media received by a single
+client. SharePlay adds requirements that apply to all participants in the SharePlay
+session.</p>
+</blockquote>
+<p>15. <strong>SharePlay HLS requirements</strong></p>
+<p>15.1. For live (linear) content, the timeline derived from the EXT-X-PROGRAM-DATE-TIME
+tag is used for synchronization. That timeline MUST be in agreement for all participants.</p>
+<p>15.2. For VOD content, the timeline based on the start of the playlist is used
+for synchronization. That timeline MUST be in agreement for all participants.</p>
+<p>15.3. Interstitials delivered to participants in a SharePlay session SHOULD
+match in duration. If they do not, participants receiving longer duration interstitials
+will miss some of the primary content. This behavior can only be overridden when
+all participants are using apps that support control of coordinated media playback.</p></section>
+<section class="panel" id="general-authoring-requirements-spatial-stereo-immersive-and-projected-video"><h4 id="spatial-stereo-immersive-and-projected-video">Spatial (stereo, immersive and projected) video</h4>
+<blockquote>
+<p>Note: Please see <em>About spatial video</em> for information regarding Spatial Video.</p>
+</blockquote>
+<p>16. <strong>Spatial (stereo, immersive and projected) video requirements</strong></p>
+<p>16.1. All variants containing spatial video MUST be marked with a REQ-VIDEO-LAYOUT attribute.</p>
+<p>16.2. All spatial video content MUST include Video Extended Usage (<code>'vexu'</code>) atoms/boxes.
+(See <em>Additional spatial video specifications</em>.)</p>
+<p>16.3. Switches between spatial and non-spatial video content MUST be marked with an EXT-X-DISCONTINUITY tag, or the Media Initialization Section MUST contain sample descriptions for both kinds of content.</p>
+<p>16.4. Stereo and Immersive video content SHOULD include parallax metadata if your content has subtitles.
+(See <em>Additional spatial video specifications</em>.)</p>
+<p>16.5. If spatial video content includes sections of monoscopic video content, then the REQ-VIDEO-LAYOUT attribute MUST include “CH-MONO" as one entry.</p></section>
+<section class="panel" id="amended-requirements-for-macos"><h1>Amended requirements for macOS</h1><p>All general rules apply except as expressly modified by a rule with the same number
+in this section. Rules with a leading plus sign (+) are additional rules.</p></section>
+<section class="panel" id="amended-requirements-for-macos-video"><h2>Video</h2><p>1. <strong>Video encoding requirements</strong></p>
+<p>1.3.</p>
+<p>1.3b. Profile and Level for H.264 MUST be less than or equal to High Profile,
+Level 5.0.</p></section>
+<section class="panel" id="amended-requirements-for-ios"><h1>Amended requirements for iOS</h1><p>All general rules apply except as expressly modified by a rule with the same number
+in this section. Rules with a leading plus sign (+) are additional rules.</p></section>
+<section class="panel" id="amended-requirements-for-ios-video"><h2>Video</h2><p>1. <strong>Video encoding requirements</strong></p>
+<p>1.6.</p>
+<p>1.6b. Profile and Level for H.264 MUST be less than or equal to High Profile,
+Level 6.0.</p>
+<p>1.9.</p>
+<p>1.9a. Profile and Level for Dolby Vision MUST be Profile 5 (single layer 10-bit HEVC)
+or Profile 10 (single layer 10-bit AV1) and less than or equal to Level 9.</p>
+<p>1.9b. + For maximum compatibility, some Dolby Vision variants SHOULD be Profile 5 and less than or
+equal to Level 7.</p>
+<p>1.32.</p>
+<p>1.32a. For Wi-Fi delivery, the default video variant SHOULD be the 2000 kbit/s (average
+bit rate) variant.</p>
+<p>1.32b. For cellular delivery, the default video variant SHOULD be the 730 kbit/s
+(average bit rate) variant.</p></section>
+<section class="panel" id="amended-requirements-for-ios-multivariant-playlist"><h2>Multivariant Playlist</h2><p>9. <strong>Multivariant Playlist requirements</strong></p>
+<p>9.21. + Multivariant Playlists that are delivered over cellular networks MUST contain
+a variant whose peak <code>BANDWIDTH</code> is less than or equal to 192 kbit/s.</p>
+<p>9.22. + For backward compatibility, a peak 192 kbit/s H.264 variant packaged in a
+transport stream SHOULD be provided for cellular.</p></section>
+<section class="panel" id="amended-requirements-for-visionos"><h1>Amended requirements for visionOS</h1><p>All general rules apply except as expressly modified by a rule with the same number
+in this section. Rules with a leading plus sign (+) are additional rules.</p>
+<p>The following general rules regarding compatibility aren't applicable in visionOS if 
+all variants contain stereo video content: 1.3a, 1.6a, 1.9b, 1.12, 1.24, 2.3, 2.6, 6.14, 6.16.</p></section>
+<section class="panel" id="amended-requirements-for-visionos-video"><h2>Video</h2><p>1. <strong>Video encoding requirements</strong></p>
+<p>1.9.</p>
+<p>1.9a. Dolby Vision monoscopic content MUST be Profile 5 (single layer 10-bit HEVC)
+and less than or equal to Level 9.</p>
+<p>1.9c. + Dolby Vision stereo video MUST be Profile 20 (MV-HEVC)
+and less than or equal to Level 9.</p>
+<p>1.25. Suggested bit rates for MV-HEVC variants.</p>
+<table>
+<thead>
+<tr>
+<th>16:9 aspect ratio</th>
+<th>MV-HEVC SDR 30 fps</th>
+<th>MV-HEVC HDR 30 fps</th>
+<th>Frame rate</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>640 x 360</td>
+<td>246</td>
+<td>272</td>
+<td>≤ 30 fps</td>
+</tr>
+<tr>
+<td>768 x 432</td>
+<td>510</td>
+<td>612</td>
+<td>≤ 30 fps</td>
+</tr>
+<tr>
+<td>960 x 540</td>
+<td>1020</td>
+<td>1241</td>
+<td>≤ 30 fps</td>
+</tr>
+<tr>
+<td>960 x 540</td>
+<td>1530</td>
+<td>1853</td>
+<td>≤ 30 fps</td>
+</tr>
+<tr>
+<td>960 x 540</td>
+<td>2720</td>
+<td>3281</td>
+<td>Same as source</td>
+</tr>
+<tr>
+<td>1280 x 720</td>
+<td>4080</td>
+<td>4930</td>
+<td>Same as source</td>
+</tr>
+<tr>
+<td>1280 x 720</td>
+<td>5780</td>
+<td>6936</td>
+<td>Same as source</td>
+</tr>
+<tr>
+<td>1920 x 1080</td>
+<td>7650</td>
+<td>9180</td>
+<td>Same as source</td>
+</tr>
+<tr>
+<td>1920 x 1080</td>
+<td>9660</td>
+<td>11900</td>
+<td>Same as source</td>
+</tr>
+<tr>
+<td>2560 x 1440</td>
+<td>13770</td>
+<td>16490</td>
+<td>Same as source</td>
+</tr>
+<tr>
+<td>3840 x 2160</td>
+<td>19720</td>
+<td>23630</td>
+<td>Same as source</td>
+</tr>
+<tr>
+<td>3840 x 2160</td>
+<td>28560</td>
+<td>34000</td>
+<td>Same as source</td>
+</tr>
+</tbody>
+</table>
+<p>1.40. + Stereo video MUST be encoded using Dolby Vision Profile 20 (MV-HEVC).</p></section>
+<section class="panel" id="amended-requirements-for-visionos-trick-play"><h2>Trick play</h2><p>6. <strong>Trick play requirements</strong></p>
+<p>6.6. If your only content is stereo video, then you SHOULD provide only one I-frame Media Playlist. (See item 6.19.)</p>
+<p>6.18. + Trick play content SHOULD be monoscopic and rectilinear.</p>
+<p>6.19. + In visionOS, a thumbnail list is produced for scrubbing and scanning.
+These thumbnails are 160px height with a width that matches the aspect ratio of the main content.
+For better performance, you MAY provide an I-frame playlist having exactly this height.</p></section>
+<section class="panel" id="amended-requirements-for-visionos-spatial-stereo-immersive-and-projected-video"><h2>Spatial (stereo, immersive and projected) video</h2><p>16. <strong>Spatial (stereo, immersive and projected) video requirements</strong></p>
+<p>16.6. + All Stereo (including APMP) video MUST be encoded using MV-HEVC.</p>
+<p>16.7. + Immersive video content MUST use CH-STEREO and PROJ-AIV for channel and projection specifier in REQ-VIDEO-LAYOUT.</p></section>
+<section class="panel" id="amended-requirements-for-tvos"><h1>Amended requirements for tvOS</h1><p>All general rules apply except as expressly modified by a rule with the same number
+in this section. Rules with a leading plus sign (+) are additional rules.</p></section>
+<section class="panel" id="amended-requirements-for-tvos-video"><h2>Video</h2><p>1. <strong>Video encoding requirements</strong></p>
+<p>1.3.</p>
+<p>1.3b. Profile and Level for H.264 MUST be less than or equal to High Profile,
+Level 5.1.</p>
+<p>1.20. For HDR content, frame rates less than or equal to 30 fps MUST be provided.</p>
+<p>1.25. The 145 kbit/s variant SHOULD NOT be provided.</p></section>
+<section class="panel" id="amended-requirements-for-tvos-audio"><h2>Audio</h2><p>2. Audio encoding requirements</p>
+<p>2.8. Multichannel audio using a particular codec MAY be provided at multiple
+bit rates. However, Dolby Atmos content SHOULD be restricted to a single bit rate.</p></section>
+<section class="panel" id="amended-requirements-for-tvos-trick-play"><h2>Trick Play</h2><p>6. <strong>Trick play requirements</strong></p>
+<p>6.16. SDR trick play streams MUST be provided.</p></section>
+<section class="panel" id="amended-requirements-for-tvos-media-playlists"><h2>Media Playlists</h2><p>8. <strong>Media Playlist requirements</strong></p>
+<p>8.12. You SHOULD provide at least 120 minutes of content in a live (linear) playlist.</p></section>
+<section class="panel" id="amended-requirements-for-tvos-multivariant-playlist"><h2>Multivariant Playlist</h2><p>9. <strong>Multivariant Playlist requirements</strong></p>
+<p>9.20. + You MUST have no audio-only variants listed in the Multivariant Playlist.</p></section>
+<section class="panel" id="amended-requirements-for-airplay-2-enabled-tvs"><h1>Amended requirements for AirPlay 2-Enabled TVs</h1><p>All general rules apply except as expressly modified by a rule with the same number
+in this section. Rules with a leading plus sign (+) are additional rules.</p>
+<blockquote>
+<p>Note: AirPlay on older third-party TVs does <em>not</em> support the Sample Group Description
+Box (<code>'sgpd'</code>) and Sample to Group Box (<code>'sbgp'</code>) for encrypted content. You must remove
+them from encrypted CMAF content to enable playback.</p>
+</blockquote></section>
+<section class="panel" id="amended-requirements-for-airplay-2-enabled-tvs-video"><h2>Video</h2><p>1. <strong>Video encoding requirements</strong></p>
+<p>1.23. If multiple video streams are provided (H.264, HEVC, HDR), each stream MUST
+provide all anticipated bandwidths.</p>
+<p>1.41. + Encrypted fMP4 content MUST contain either a Sample Encryption Box (<code>'senc'</code>),
+or both a Sample Auxiliary Information Sizes Box (<code>'saiz'</code>) and a Sample Auxiliary
+Information Offsets Box (<code>'saio'</code>).</p></section>
+<section class="panel" id="amended-requirements-for-airplay-2-enabled-tvs-audio"><h2>Audio</h2><p>2. <strong>Audio encoding requirements</strong></p>
+<p>2.10. Channel layout SHOULD NOT change within a stream.</p></section>
+<section class="panel" id="amended-requirements-for-airplay-2-enabled-tvs-ads-and-pre-mid-post-rolls"><h2>Ads and pre-/mid-/post-rolls</h2><p>3. <strong>Ad requirements</strong></p>
+<p>3.5. + Inserted media SHOULD be at a similar frame rate (x, 2x, x/2) as the other
+content in the Media Playlist.</p></section>
+<section class="panel" id="amended-requirements-for-airplay-2-enabled-tvs-subtitles"><h2>Subtitles</h2><p>5. <strong>Subtitle requirements</strong></p>
+<p>5.2. Subtitles MUST be WebVTT.</p></section>
+<section class="panel" id="amended-requirements-for-airplay-2-enabled-tvs-trick-play"><h2>Trick Play</h2><p>6. <strong>Trick play requirements</strong></p>
+<p>6.13. If a normal video variant uses a video codec, one or more I-frame variants
+MUST exist with the same video codec or the <code>mjpg</code> codec.</p></section>
+<section class="panel" id="amended-requirements-for-airplay-2-enabled-tvs-media-playlists"><h2>Media Playlists</h2><p>8. <strong>Media Playlist requirements</strong></p>
+<p>8.16. You SHOULD NOT switch codecs at discontinuities. For example, don’t switch
+between HEVC and H.264, or between AAC and Dolby Digital.</p>
+<p>8.22. All video variants and renditions MUST have segment boundaries at the same
+points in time.</p>
+<p>8.25. + Frame rate changes at discontinuities SHOULD use a similar frame rate (x,
+2x, x/2).</p></section>
+<section class="panel" id="amended-requirements-for-airplay-2-enabled-tvs-multivariant-playlist"><h2>Multivariant Playlist</h2><p>9. <strong>Multivariant Playlist requirements</strong></p>
+<p>9.23. + You SHOULD provide a full range of variants for each codec type and frame
+rate. Similar frame rates (x, 2x, x/2) are compatible, nonsimilar frame rates may
+cause playback issues.</p>
+<p>9.24. + If you supply HDR content, you SHOULD provide both Dolby Vision and HDR10.</p></section>
+<section class="panel" id="appendix"><h1>Appendix</h1><p>This appendix expands on information provided earlier in this document.
+It is not intended as a standalone document.</p></section>
+<section class="panel" id="appendix-testing-your-streams"><h2>Testing your streams</h2><p>Apple provides several command-line tools for <a href="https://developer.apple.com/download/all">HTTP Live Streaming</a>.
+After signing in with your Apple Developer account, search for <em>http live streaming
+tools</em>.</p>
+<p>To assist in validating your streams, use the command-line tools <code>mediastreamvalidator</code>
+and <code>hlsreport</code>. While these tools are unable to check everything about your streams,
+the checks they do are fairly comprehensive and Apple continues to improve the tools.</p>
+<p>Check the video quality of your streams by visual inspection. The <code>mediastreamvalidator</code>
+tool does not check video quality, so check playback of your streams under a variety
+of network conditions.</p></section>
+<section class="panel" id="appendix-using-hlsreport"><h2>Using hlsreport</h2><p>Use the binary <code>hlsreport</code> to generate an HTML summary report from a JSON file that
+<code>mediastreamvalidator</code> creates. The report includes several tables with details about
+variants, renditions, and I-frame variants. Each table entry has a unique stream
+ID number. A list of issues is included, divided into Must Fix and Should Fix categories
+according to this specification. The issues cross-reference individual variants and
+renditions using the unique stream IDs.</p>
+<blockquote>
+<p>Note: Earlier versions of the HLS tools used a script called <code>hlsreport.py</code> rather
+than a binary.</p>
+</blockquote>
+<p>The simplest way to call it is:</p>
+<p><code>hlsreport validation_data.json</code></p>
+<p>where <code>validation_data.json</code> is the JSON file that <code>mediastreamvalidator</code> generates.
+This produces a file called <code>validation_data.html</code> that is the report. You can change
+the name of the report file with the <code>-o</code> option:</p>
+<p><code>hlsreport -o my_report.html validation_data.json</code></p>
+<p>For further information, see the <code>hlsreport(1)</code> man page.</p></section>
+<section class="panel" id="appendix-declared-versus-measured-values-of-bandwidths"><h2>Declared versus measured values of bandwidths</h2><p>VOD bit rates are measured over the entirety of the content. Live (linear) bit rates
+are measured over ~1 hour of content.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>VOD</th>
+<th>Live/Linear</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Measured average bit rate versus AVERAGE-BANDWIDTH (attribute)</td>
+<td>within 10% of attribute value</td>
+<td>&lt; 110% of attribute value</td>
+</tr>
+<tr>
+<td>Measured peak bit rate versus BANDWIDTH (attribute)</td>
+<td>within 10% of attribute value</td>
+<td>&lt; 125% of attribute value</td>
+</tr>
+<tr>
+<td>Measured peak bit rate versus measured average bit rate</td>
+<td>&lt; 200% of measured average</td>
+<td>no rule</td>
+</tr>
+</tbody>
+</table></section>
+<section class="panel" id="appendix-audio-compatibility"><h2>Audio compatibility</h2><p>Additional information about device and audio format compatibility.</p>
+<blockquote>
+<p>Note: Multichannel output depends on the capability of the actual output device.</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Devices</th>
+<th>AAC (Stereo)</th>
+<th>AC-3/E-AC-3</th>
+<th>Dolby Digital Plus with Dolby Atmos</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>iOS devices - A12 Bionic based and later</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Apple TV 4K (1st and 2nd Gen)†</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>OS X devices - 2018 and later</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>iOS and tvOS devices - A7-based or later *, but not listed above</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Plays as E-AC-3</td>
+</tr>
+<tr>
+<td>Older OS X devices</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Plays as E-AC-3</td>
+</tr>
+<tr>
+<td>Apple TV (3rd Gen), iPhone 5, and iPhone 5C</td>
+<td>Yes</td>
+<td>Only AC-3 via pass-through</td>
+<td>No</td>
+</tr>
+<tr>
+<td>All older iOS and tvOS devices</td>
+<td>Yes</td>
+<td>No</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Note: All of the devices in the above table support AAC (Stereo).</p>
+</blockquote>
+<p>See <a href="https://support.apple.com/specs/">Specs</a> for actual
+technical specifications.</p>
+<p>*Complete support requires iOS 9.3 or tvOS 9.2, or later. Dolby Digital Plus with
+Dolby Atmos requires tvOS 12.0 or later.</p>
+<p>Dolby Digital Plus with Dolby Atmos† requires tvOS 12.0 or later.</p>
+<p>APAC support depends on the capability of the actual device and OS version.
+See <a href="https://developer.apple.com/av-foundation/Apple-Positional-Audio-Codec.pdf">APAC</a> specification for support information.</p></section>
+<section class="panel" id="appendix-on-bit-rates-for-variants"><h2>On bit rates for variants</h2><p>A number of factors affect the bit rate needed to encode video:</p>
+<ul>
+<li>Codec (for example, H.264 or HEVC)</li>
+<li>Specific encoder implementation and features used</li>
+<li>Resolution (for example, 1920 x 1080, 1280 x 720, and so on)</li>
+<li>Frame rate (for example, 24, 25, 30, 50, 60)</li>
+<li>Bits per pixel (for example, HDR typically uses more bits than SDR)</li>
+<li>Complexity of the content</li>
+<li>Desired subjective quality</li>
+</ul>
+<p>These factors make universal encoding recommendations for content difficult. This document
+includes initial bit rate recommendations that you can evaluate against your content,
+constraints and encoding workflow.</p></section>
+<section class="panel" id="appendix-i-frame-bit-rates-versus-normal-bit-rates"><h2>I-frame bit rates versus normal bit rates</h2><p>The formula in item 6.5 (for I-frame bit rates) in this document
+requires some explanation.</p>
+<p>During trick play, the player tries to deliver eight frames per second. If the playback
+rate implies a higher frame rate, frames will be dropped to keep the frame rate at
+eight frames per second. If fewer frames are available, it will play at a lower frame
+rate.</p>
+<p>The I-frame bit rate is the bit rate of the rendition if it were played at normal
+speed. The I-frame rendition may be 2 fps, 1 fps, 0.5 fps, 0.2 fps, or something
+else. Let F be the frame rate of the I-frame rendition. Then, 8/F is the multiplier,
+that is, how much the bit rate is increased by playing the rendition at eight frames
+per second. The bit rate doesn't increase by more than this factor because the player
+can't play more than eight frames per second.</p>
+<p>The I-frame rendition should have an effective bit rate similar to the normal content.
+So the normal bit rate divided by the multiplier should be the bit rate for the I-frame.
+Dividing by a fraction is the same as multiplying by its inverse, so the result is
+6.5 — the bit rate of a normal playlist of the same resolution times the fps of the
+I-frame playlist divided by eight.</p></section>
+<section class="panel" id="appendix-i-frame-image-sequences"><h2>I-frame image sequences</h2><p>I-frame image sequences using the <code>mjpg</code> codec have been added to support some third-party devices.
+The sequences should be low bandwidth and require minimal processing.
+Players should prefer video I-frame variants over image sequences.</p>
+<p>The recommendations for image sequences are as folows:</p>
+<ul>
+<li>Supply a single <code>mjpg</code> variant</li>
+<li>Unencrypted</li>
+<li>400 pixels wide with height based on the aspect ratio</li>
+<li>One key-frame every 1 to 2 seconds</li>
+<li>Bandwidth should be reasonable for the resolution based on the codec implementation</li>
+</ul></section>
+<section class="panel" id="appendix-audio-rendition-groups-and-variants"><h2>Audio rendition groups and variants</h2><p>In building up a multivariant playlist, the first step is to choose your video resolutions
+and codecs. These are your basic variants. Each one will have a video media playlist.
+The playlist URI may be repeated in multiple <code>EXT-X-STREAM-INF</code> tags so that the
+same video can be associated with different audio content.</p>
+<p>You will have some set of audio languages and codecs. A particular codec may
+be in stereo, in 5.1 sound, or both. Create one audio group for each pair of codec
+and channel count. Each group needs to have every language in it.</p>
+<p>When you're making audio groups, there are some things to remember. First, ensure
+you have a stereo AAC group. This is good fallback because it's something all devices
+can play. If you have multichannel in a lossless audio codec, it's a good practice
+to have a multichannel AAC codec as well. Lossless requires a high bit rate. You
+want something available that has a lower bit rate. During playback you don't want
+to switch the number of channels. If playback is in multichannel, you want to stay
+in multichannel.</p>
+<p>Generally speaking, the player doesn't switch between audio codecs, but there are
+three notable exceptions. The player switches between the AAC variants: AAC-LC,
+HE-AAC, HE-AACv2, and USAC (also called xHE-AAC). 
+The player will also switch between lossless codecs and AAC codecs.
+In addition, when rendering audio to Spatial Audio-capable routes on Apple
+devices, the player may switch between available audio codecs and even channel layouts.</p>
+<p>After you have your audio groups, you replicate the variant entries for each group,
+with some exceptions. If the codecs are switchable, like the AAC codecs, then you
+can spread the audio groups across the variants using the low audio bit rate group
+with the low video bit rates and the high audio bit rate group with the high video.
+But, if the codecs are not switchable, like AC-3 and lossless, then you want each
+codec to be associated with every variant. This doesn't create new variant playlists;
+it just creates new <code>EXT-X-STREAM-INF</code> tags in the multivariant playlist, which associate
+a video playlist with an audio group.</p>
+<p>You may encounter a problem where the variants you want to favor aren't being chosen.
+The default behavior is to choose the highest bit rate among what's currently playable.
+With USAC and with Dolby Digital Plus, this can cause an inversion where the chosen
+variant is not what you would prefer. To remedy this, Apple added the <code>SCORE</code> attribute.
+The value is a floating-point number. You have to put it on all the variants. If
+you want to set an order, it has to be complete, otherwise you'll have situations
+where you won't be able to choose. The usual filtering occurs to get down to a set
+of variants, any of which could be played. At that point, the system uses <code>SCORE</code>
+to decide and the highest <code>SCORE</code> wins.</p></section>
+<section class="panel" id="appendix-values-for-the-codecs-attribute"><h2>Values for the CODECS attribute</h2><p>Use the <code>CODECS</code> attribute of the <code>EXT-X-STREAM-INF</code> tag (and <code>EXT-X-I-FRAME-STREAM-INF</code>)
+to specify media sample types. The value is a quoted-string containing a comma-separated
+list of formats, where each format specifies a media sample type that is present
+in a media segment of the playlist or in a media segment of some rendition that the
+tag references.</p>
+<p>Valid format identifiers are those in the ISO Base Media File Format Name Space defined
+by RFC 6381. A format identifier is a sequence of elements separated by periods.
+The first element is the base sample type. HLS currently recognizes the following
+values for the base sample types:</p>
+<table>
+<thead>
+<tr>
+<th>Base sample type</th>
+<th>Description</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ac-3</code></td>
+<td>AC-3 audio</td>
+<td></td>
+</tr>
+<tr>
+<td><code>alac</code></td>
+<td>Apple Lossless</td>
+<td></td>
+</tr>
+<tr>
+<td><code>apac</code></td>
+<td>Apple Positional Audio Codec</td>
+<td></td>
+</tr>
+<tr>
+<td><code>avc1</code></td>
+<td>H.264 (Advanced Video Coding)</td>
+<td></td>
+</tr>
+<tr>
+<td><code>avc3</code></td>
+<td>H.264 (Advanced Video Coding)</td>
+<td>Use not recommended</td>
+</tr>
+<tr>
+<td><code>dvh1</code></td>
+<td>Dolby Vision (based on <code>hvc1</code>)</td>
+<td></td>
+</tr>
+<tr>
+<td><code>dvhe</code></td>
+<td>Dolby Vision (based on <code>hev1</code>)</td>
+<td>Use not recommended</td>
+</tr>
+<tr>
+<td><code>ec-3</code></td>
+<td>Enhanced AC-3 audio</td>
+<td></td>
+</tr>
+<tr>
+<td><code>fLaC</code></td>
+<td>Free Lossless Audio Codec</td>
+<td></td>
+</tr>
+<tr>
+<td><code>hev1</code></td>
+<td>HEVC (High-Efficiency Video Coding)</td>
+<td>Use not recommended</td>
+</tr>
+<tr>
+<td><code>hvc1</code></td>
+<td>HEVC (High-Efficiency Video Coding)</td>
+<td></td>
+</tr>
+<tr>
+<td><code>mjpg</code></td>
+<td>JPEG image sequence</td>
+<td>Limited use</td>
+</tr>
+<tr>
+<td><code>mp4a</code></td>
+<td>MPEG-4 audio</td>
+<td></td>
+</tr>
+<tr>
+<td><code>stpp</code></td>
+<td>Subtitles (Timed Text)</td>
+<td></td>
+</tr>
+<tr>
+<td><code>wvtt</code></td>
+<td>WebVTT data</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Note: HLS recognizes <code>'avc3'</code>, <code>'dvhe'</code>, and <code>'hev1'</code>, but Apple doesn't recommend
+using them.</p>
+</blockquote>
+<p>The MP4 registration authority (<a href="http://mp4ra.org">mp4ra.org</a>) lists a value of <code>ec+3</code>
+for Enhanced AC-3 audio with JOC (Dolby Atmos) but it has been deprecated now.
+HLS uses <code>ec-3</code> and marks the presence of the additional JOC content with <code>JOC</code> in
+the <code>CHANNELS</code> attribute of the audio rendition. The <code>JOC</code> must be capitalized. For
+example, <code>CHANNELS="16/JOC"</code>. The numeric value should match the value of the <code>complexity_index_type_a</code>
+field in the <code>EC3SpecificBox</code> of the Dolby Digital Plus audio track.</p>
+<table>
+<thead>
+<tr>
+<th>Sample type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ac-3</code></td>
+<td>AC-3 audio</td>
+</tr>
+<tr>
+<td><code>alac</code></td>
+<td>Apple Lossless audio</td>
+</tr>
+<tr>
+<td><code>apac.31.00</code></td>
+<td>Apple Positional Audio Codec, profile 31, level 0</td>
+</tr>
+<tr>
+<td><code>avc1.42001f</code></td>
+<td>H.264 Baseline Profile, Level 3.1 video</td>
+</tr>
+<tr>
+<td><code>avc1.4d0028</code></td>
+<td>H.264 Main Profile, Level 4.0 video</td>
+</tr>
+<tr>
+<td><code>avc1.640029</code></td>
+<td>H.264 High Profile, Level 4.1 video</td>
+</tr>
+<tr>
+<td><code>dvh1.05.01</code></td>
+<td>Dolby Vision Profile 5 (10-bit HEVC), Level 1 (720p24) video</td>
+</tr>
+<tr>
+<td><code>dvh1.05.06</code></td>
+<td>Dolby Vision Profile 5 (10-bit HEVC), Level 6 (2160p24) video</td>
+</tr>
+<tr>
+<td><code>ec-3</code></td>
+<td>Enhanced AC-3 audio</td>
+</tr>
+<tr>
+<td><code>fLaC</code></td>
+<td>Free Lossless Audio Codec audio</td>
+</tr>
+<tr>
+<td><code>hvc1.1.4.L126.B0</code></td>
+<td>HEVC Main Profile, Main Tier, Level 4.2 video</td>
+</tr>
+<tr>
+<td><code>hvc1.2.4.L123.B0</code></td>
+<td>HEVC Main 10 Profile, Main Tier, Level 4.1 video</td>
+</tr>
+<tr>
+<td><code>hvc1.2.4.L150.B0</code></td>
+<td>HEVC Main 10 Profile, Main Tier, Level 5.0 video</td>
+</tr>
+<tr>
+<td><code>mjpg</code></td>
+<td>JPEG image sequence</td>
+</tr>
+<tr>
+<td><code>mp4a.40.2</code></td>
+<td>AAC-LC audio</td>
+</tr>
+<tr>
+<td><code>mp4a.40.5</code></td>
+<td>HE-AAC audio</td>
+</tr>
+<tr>
+<td><code>mp4a.40.29</code></td>
+<td>HE-AACv2 audio</td>
+</tr>
+<tr>
+<td><code>mp4a.40.34</code></td>
+<td>MP3 audio</td>
+</tr>
+<tr>
+<td><code>mp4a.40.42</code></td>
+<td>xHE-AAC audio</td>
+</tr>
+<tr>
+<td><code>stpp.ttml.im1t</code></td>
+<td>IMSC1 text-only subtitles</td>
+</tr>
+<tr>
+<td><code>wvtt</code></td>
+<td>WebVTT subtitles</td>
+</tr>
+</tbody>
+</table></section>
+<section class="panel" id="appendix-allowed-cpc-values-for-fairplay-streaming"><h2>ALLOWED-CPC values for FairPlay Streaming</h2><p>The <code>ALLOWED-CPC</code> attribute restricts playback of an encrypted variant stream to
+devices that guarantee a certain level of content protection robustness. The attribute
+associates a list of Content Protection Configuration (CPC) Labels with a specific
+<code>KEYFORMAT</code> value.</p>
+<p>The permitted CPC Labels for FairPlay Streaming are:</p>
+<table>
+<thead>
+<tr>
+<th><strong>CPC Label</strong></th>
+<th><strong>Devices that conform to that CPC Label</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>AppleBaseline</strong></td>
+<td>Any Apple platform that supports FairPlay Streaming.</td>
+</tr>
+<tr>
+<td><strong>AppleMain</strong></td>
+<td>Any Apple platform that supports FairPlay Streaming and guarantees enhanced content protection robustness (sufficient for studio 4K/HDR playback).</td>
+</tr>
+<tr>
+<td><strong>Baseline</strong></td>
+<td>Any non-Apple platform that supports FairPlay Streaming. For example, any AirPlay 2-enabled smart TV.</td>
+</tr>
+<tr>
+<td><strong>Main</strong></td>
+<td>Any non-Apple platform that supports FairPlay Streaming and guarantees enhanced content protection robustness (sufficient for studio 4K/HDR playback).</td>
+</tr>
+</tbody>
+</table>
+<p>An example of a valid attribute is: <code>ALLOWED-CPC="com.apple.streamingkeydelivery:AppleMain/Main"</code></p></section>
+<section class="panel" id="appendix-the-supplemental-codecs-attribute"><h2>The SUPPLEMENTAL-CODECS attribute</h2><p>Some codecs are backward-compatible with other codecs. These codecs work by adding
+metadata that are ignored when being interpreted as the compatible codec, but used
+by the newer codec. These codecs include Dolby Vision 8.4 and 10.4 (compatible with HLG) and
+Dolby Vision 8.1 and 10.1 (compatible with HDR10).</p>
+<p>To support these codecs on older implementations, the <code>CODECS</code> attribute is used
+to describe the base layer. The enhanced codec is described in the <code>SUPPLEMENTAL-CODECS</code>
+attribute. This allows implementations that support <code>SUPPLEMENTAL-CODECS</code> to take
+advantage of the true codec.</p>
+<p>Each element in the <code>SUPPLEMENTAL-CODECS</code> attribute is a slash-separated list of
+fields.  The first field must be a valid <code>CODECS</code> format. If more than one field
+is present, the remaining fields must be compatibility brands that pertain to that
+codec's bitstream.</p>
+<p>You can indicate the presence of HDR10+ metadata by adding a brand of 'cdm4'.</p>
+<p>Example-codec-values:</p>
+<table>
+<thead>
+<tr>
+<th><strong>Codec</strong></th>
+<th><strong>CODECS attribute</strong></th>
+<th><strong>SUPPLEMENTAL-CODECS attribute</strong></th>
+<th><strong>VIDEO-RANGE attribute</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dolby Vision 8.4</td>
+<td>hvc1.2.4.L153.b0</td>
+<td>dvh1.08.07/db4h</td>
+<td>HLG</td>
+</tr>
+<tr>
+<td>Dolby Vision 8.1</td>
+<td>hvc1.2.4.L150</td>
+<td>dvh1.08.06/db1p</td>
+<td>PQ</td>
+</tr>
+<tr>
+<td>Dolby Vision 10.4</td>
+<td>av01.0.13M.10.0.112</td>
+<td>dav1.10.09/db4h</td>
+<td>HLG</td>
+</tr>
+<tr>
+<td>AV1 w/ HDR10+</td>
+<td>av01.0.05M.10.0.112</td>
+<td>av01.0.05M.10.0.112/cdm4</td>
+<td>PQ</td>
+</tr>
+</tbody>
+</table>
+<p>Note that, for Dolby Vision, the compatibility brand and the <code>VIDEO-RANGE</code> attribute
+act as cross-checks. Leaving out either one is incorrect.</p></section>
+<section class="panel" id="appendix-dim-flashing-lights"><h2>Dim Flashing Lights</h2><p>Dim Flashing Lights is a setting (see
+<a href="https://developer.apple.com/accessibility/#dim-flashing-lights">What's new in Accessibility</a>)
+that allows people to indicate that they want to avoid bright, frequent flashes of light in video.
+As an additional measure, content producers can add markers to their HTTP Live Streaming content that
+identify the regions likely to cause discomfort.</p>
+<p>Regions can be signalled using the standard <code>#EXT-X-DATERANGE</code> tag. The <code>CLASS</code> attribute should be set to
+"com.apple.accessibility.video.strobing.general-flash". Add an additional <code>X-RISK-LEVEL</code> attribute.
+The risk level should be a decimal floating-point value in the range 0 to 100,
+where 0 is minimal risk and 100 is very risky.</p>
+<p>To avoid using a large number of regions, restrict risk-level values to a small set of values.
+Use a risk level of zero for regions that have very low risk.
+Don't mark regions with a risk level unless they have been analyzed.
+Raw risk values can be computed using an algorithm such as
+<a href="https://github.com/apple/VideoFlashingReduction">VideoFlashingReduction</a>.</p>
+<p>The <a href="https://developer.apple.com/documentation/avfoundation/avplayeritemmetadatacollector"><code>avplayeritemmetadatacollector</code></a> class
+can be used in your application to fetch the <code>#EXT-X-DATERANGE</code> tag metadata.</p>
+<p>If you use the <a href="https://developer.apple.com/documentation/avkit"><code>avkit</code></a> framework the metadata is fetched
+for you and the timeline is marked with a reddish color. If you display your own timeline you
+should do something similar.</p></section>
+<section class="panel" id="appendix-additional-spatial-video-specifications"><h2>Additional spatial video specifications</h2><p>Video Extended Usage atom (<code>'vexu'</code>) is a sample description extension that conveys extensible information about
+spatial views.
+For more information, see <a href="https://developer.apple.com/av-foundation/Stereo-Video-ISOBMFF-Extensions.pdf">QuickTime and ISO Base Media File Formats and Spatial and Immersive Media</a>.</p>
+<p>Spatial video can benefit from frame based metadata. This can be provided using
+timed metadata tracks within ISOBMFF (ISO Base Media File Format) or QuickTime files.</p>
+<blockquote>
+<p>Note: An <code>'mebx'</code> atom or box describes the samples in a timed metadata track.
+The international standard ISO/IEC 14496-12:2022 ("Information technology — Coding of audio-visual objects — Part 12: ISO base media file format") refers to this box as a <code>BoxedMetadataSampleEntry</code> (for more information, see section 12.9 <em>Multiplexed timed metadata tracks</em> of that document).
+The <a href="https://developer.apple.com/documentation/quicktime-file-format">QuickTime File Format Specification</a> refers to the <code>'mebx'</code> atom as a <em>timed metadata sample description</em> (see <a href="https://developer.apple.com/documentation/quicktime-file-format/timed_metadata_sample_descriptions">Timed Metadata Media</a>).
+The <code>'mebx'</code> atom and its contents are a generic structure.</p>
+</blockquote>
+<p>You can provide parallax metadata for subtitles or captions using a timed metadata track.
+This allows control over the depth at which the text is displayed relative to the image.
+For details, see <a href="https://developer.apple.com/av-foundation/Stereo-Video-ISOBMFF-Extensions.pdf">QuickTime and ISO Base Media File Formats and Spatial and Immersive Media</a>
+and <a href="https://developer.apple.com/av-foundation/Video-Contour-Map-Metadata.pdf">Video Contour Map Payload Metadata within the QuickTime Movie File Format</a>.</p>
+<p>You can provide per frame rectangular mask metadata (PFRM, aka dynamic mask metadata) using a timed metadata track.
+This is used to indicate a fixed or changing rectangular area extracted from otherwise constant sized decoded video, for example letterboxing, or more complex spatial video adjustments to the displayed area.
+For details, see <a href="https://developer.apple.com/av-foundation/Rectangular-Dynamic-Mask-Metadata.pdf">Rectangular Mask Payload Metadata within the QuickTime Movie File Format</a></p>
+<p>Immersive video MUST point to an Apple Immersive Media Embedded (AIME) file via EXT-X-SESSION-DATA tag. This file provides information necessary to present the video correctly.
+To learn more about AIME, see <a href="https://support.apple.com/guide/immersive-video-utility/requirements-dev4579429f0/1.0/web/1.0">Apple Immersive Media Embedded</a>.
+See <a href="https://support.apple.com/guide/immersive-video-utility/welcome/web">Apple Immersive Video Utility User Guide</a> for more information.</p>
+<p>Immersive video SHOULD use Apple Positional Audio Codec (APAC) for audio codec. APAC provides rich spatial audio experience.
+To learn more about APAC, see <a href="https://developer.apple.com/av-foundation/Apple-Positional-Audio-Codec.pdf">Apple Positional Audio Codec</a>.</p>
+<p>For more information on encoding MV-HEVC video, see <a href="https://developer.apple.com/av-foundation/HEVC-Stereo-Video-Profile.pdf">Apple HEVC Stereo Video</a>.</p>
+<p>You can find also find these resources listed at
+<a href="https://developer.apple.com/av-foundation/">AVFoundation Overview</a>.</p></section>
+<section class="panel" id="appendix-multivariant-playlist-and-its-resources-expiry-requirements"><h2>Multivariant Playlist and its resources expiry requirements</h2><p><em>Requirements for downloading and persisting HLS streams</em></p>
+<p>Content providers MUST assure that the original Multivariant Playlist URL and its resources do not expire on the CDN, as long as the downloaded asset will be needed by the application. There are 3 reasons.
+- (Online playback) While online the player may attempt to load additional resources from the MVP (for assuring compatibility when the device configuration changes, e.g., an external display adapter is connected), which could cause playback to fail or misbehave if the MVP (or its resources) is no longer available from the network.
+- (Supplementary downloads) If the app explicitly initiates supplementary download of variants and renditions to an existing movpkg location, the download operation will fail if the Multivariant Playlist URL or its resources have expired on the CDN.
+- (AirPlay) When AirPlay-ing a downloaded HLS content, the AirPlay receiver will attempt to load the original Multivariant Playlist URL, which should remain available for as long as the download can be persisted on the sender device.</p></section>
+<section class="panel" id="appendix-content-steering-requirements"><h2>Content Steering requirements</h2><ul>
+<li>If the content supports <a href="https://datatracker.ietf.org/doc/html/draft-pantos-content-steering">Content Steering</a>, Media Playlists MUST include STABLE-RENDITION-ID &amp; STABLE-VARIANT-ID attributes; this decouples the variant identity from its CDN location.</li>
+<li>If one Media Playlist includes a STABLE-RENDITION-ID or STABLE-VARIANT-ID, all other Media Playlists MUST also specify a stable ID.</li>
+<li>The Content Steering manifest MUST remain available for the same timespan as the Multivariant Playlist URL above for the same reasons.</li>
+</ul></section>
+<section class="panel" id="appendix-interstitials-requirements"><h2>Interstitials requirements</h2><ul>
+<li>Your ads and other non-primary media MAY be inserted in the Media Playlists or as Interstitials.</li>
+<li>To allow predictable tier selection at the time of download, interstitial assets SHOULD follow the content structure of the main content (e.g., Codecs, subtitle/audio languages, etc.,).</li>
+</ul></section>
+<section class="panel" id="appendix-download-performance-requirements"><h2>Download performance requirements</h2><ul>
+<li>Download speed will be improved by authoring content in a way that reduces the total number of HTTP requests, and specifically the requests that have a short payload. HLS content intended for download SHOULD be encapsulated as fMP4 or elementary audio stream, and consecutive segments in Media Playlists use EXT-X-BYTERANGE attributes with contiguous ranges; this allows the number of HTTP requests to be reduced via coalescing. Content SHOULD also avoid usage of small files, where possible. For instance, subtitles can be authored as a single segment for all cues across the entire asset duration.</li>
+<li>Extra-long-form content, such as audiobooks, SHOULD be split in multiple assets (e.g., per chapter). This is particularly important for playback of downloaded audio assets on watchOS, to enable performant playback start-up and reduce battery usage.</li>
+</ul></section>
+<section class="panel" id="appendix-example-playlist-with-stereo-video"><h2>Example playlist with Stereo video.</h2><p><em>Example playlists</em></p>
+<blockquote>
+<p>Note: Please see <a href="https://developer.apple.com/streaming/examples/">Streaming Examples</a> for sample HLS streams.</p>
+</blockquote>
+<pre><code class="language-swift">#EXTM3U
+#EXT-X-VERSION:12
+#EXT-X-INDEPENDENT-SEGMENTS
+
+#EXT-X-MEDIA:TYPE=AUDIO,GROUP-ID=&quot;ac3-48-384&quot;,NAME=&quot;English&quot;,LANGUAGE=&quot;en-US&quot;,AUTOSELECT=YES,DEFAULT=YES,CHANNELS=&quot;6&quot;,URI=&quot;audio/prog_index.m3u8&quot;
+
+#EXT-X-STREAM-INF:AVERAGE-BANDWIDTH=726521,BANDWIDTH=910558,VIDEO-RANGE=PQ,CODECS=&quot;dvh1.20.01,ac-3&quot;,RESOLUTION=640x360,FRAME-RATE=24.000,CLOSED-CAPTIONS=NONE,AUDIO=&quot;ac3-48-384&quot;,REQ-VIDEO-LAYOUT=&quot;CH-STEREO&quot;
+360p/prog_index.m3u8
+
+#EXT-X-STREAM-INF:AVERAGE-BANDWIDTH=7224756,BANDWIDTH=10079102,VIDEO-RANGE=PQ,CODECS=&quot;dvh1.20.01,ec-3&quot;,RESOLUTION=1280x720,FRAME-RATE=24.000,CLOSED-CAPTIONS=NONE,AUDIO=&quot;atmos-48-448&quot;,REQ-VIDEO-LAYOUT=&quot;CH-STEREO&quot;
+720p/prog_index.m3u8
+
+#EXT-X-STREAM-INF:AVERAGE-BANDWIDTH=12327020,BANDWIDTH=17120478,VIDEO-RANGE=PQ,CODECS=&quot;dvh1.20.03,ec-3&quot;,RESOLUTION=1920x1080,FRAME-RATE=24.000,CLOSED-CAPTIONS=NONE,AUDIO=&quot;atmos-48-448&quot;,REQ-VIDEO-LAYOUT=&quot;CH-STEREO&quot;
+1080p/prog_index.m3u8
+
+#EXT-X-STREAM-INF:AVERAGE-BANDWIDTH=16683700,BANDWIDTH=23228969,VIDEO-RANGE=PQ,CODECS=&quot;dvh1.20.05,ac-3&quot;,RESOLUTION=2560x1440,FRAME-RATE=24.000,CLOSED-CAPTIONS=NONE,AUDIO=&quot;ac3-48-384&quot;,REQ-VIDEO-LAYOUT=&quot;CH-STEREO&quot;
+1440p/prog_index.m3u8
+
+#EXT-X-STREAM-INF:AVERAGE-BANDWIDTH=34515644,BANDWIDTH=47959720,VIDEO-RANGE=PQ,CODECS=&quot;dvh1.20.06,ac-3&quot;,RESOLUTION=3840x2160,FRAME-RATE=24.000,CLOSED-CAPTIONS=NONE,AUDIO=&quot;ac3-48-384&quot;,REQ-VIDEO-LAYOUT=&quot;CH-STEREO&quot;
+2160p/prog_index.m3u8
+</code></pre></section>
+<section class="panel" id="appendix-example-playlist-with-apmp-video"><h2>Example playlist with APMP video.</h2><pre><code class="language-swift">#EXTM3U
+#EXT-X-VERSION:12
+#EXT-X-INDEPENDENT-SEGMENTS
+
+#EXT-X-STREAM-INF:AVERAGE-BANDWIDTH=25403063,BANDWIDTH=34135166,VIDEO-RANGE=SDR,CODECS=&quot;hvc1.2.20000000.H150.B0&quot;,RESOLUTION=3840x1920,FRAME-RATE=29.970,CLOSED-CAPTIONS=NONE,REQ-VIDEO-LAYOUT=&quot;CH-STEREO/PROJ-EQUI&quot;
+small/prog_index.m3u8
+
+#EXT-X-STREAM-INF:AVERAGE-BANDWIDTH=50285525,BANDWIDTH=65273029,VIDEO-RANGE=SDR,CODECS=&quot;hvc1.2.20000000.H180.B0&quot;,RESOLUTION=5440x2720,FRAME-RATE=29.970,CLOSED-CAPTIONS=NONE,REQ-VIDEO-LAYOUT=&quot;CH-STEREO/PROJ-EQUI&quot;
+med/prog_index.m3u8
+
+#EXT-X-STREAM-INF:AVERAGE-BANDWIDTH=102904567,BANDWIDTH=117277565,VIDEO-RANGE=SDR,CODECS=&quot;hvc1.2.20000000.H180.B0&quot;,RESOLUTION=7680x3840,FRAME-RATE=29.970,CLOSED-CAPTIONS=NONE,REQ-VIDEO-LAYOUT=&quot;CH-STEREO/PROJ-EQUI&quot;
+large/prog_index.m3u8
+
+#EXT-X-I-FRAME-STREAM-INF:AVERAGE-BANDWIDTH=1787583,BANDWIDTH=2559008,VIDEO-RANGE=SDR,CODECS=&quot;hvc1.2.20000000.H150.B0&quot;,RESOLUTION=3840x1920,REQ-VIDEO-LAYOUT=&quot;CH-MONO/PROJ-RECT&quot;,URI=&quot;small/iframe_var.m3u8&quot;
+
+#EXT-X-I-FRAME-STREAM-INF:AVERAGE-BANDWIDTH=3121560,BANDWIDTH=4464969,VIDEO-RANGE=SDR,CODECS=&quot;hvc1.2.20000000.H180.B0&quot;,RESOLUTION=5440x2720,REQ-VIDEO-LAYOUT=&quot;CH-MONO/PROJ-RECT&quot;,URI=&quot;med/iframe_var.m3u8&quot;
+
+#EXT-X-I-FRAME-STREAM-INF:AVERAGE-BANDWIDTH=5070173,BANDWIDTH=6906054,VIDEO-RANGE=SDR,CODECS=&quot;hvc1.2.20000000.H180.B0&quot;,RESOLUTION=7680x3840,REQ-VIDEO-LAYOUT=&quot;CH-MONO/PROJ-RECT&quot;,URI=&quot;large/iframe_var.m3u8&quot;
+</code></pre></section>
+<section class="panel" id="appendix-example-playlist-with-aiv-video"><h2>Example playlist with AIV video.</h2><pre><code class="language-swift">#EXTM3U
+#EXT-X-VERSION:12
+#EXT-X-INDEPENDENT-SEGMENTS
+
+#EXT-X-SESSION-DATA:DATA-ID=&quot;com.apple.hls.venue-description&quot;,URI=&quot;sample.aime&quot;
+
+#== AUDIO
+#EXT-X-MEDIA:TYPE=AUDIO,LANGUAGE=&quot;en&quot;,GROUP-ID=&quot;apac&quot;,NAME=&quot;English&quot;,DEFAULT=YES,CHANNELS=&quot;20/3OA/BED-4&quot;,CHARACTERISTICS=&quot;public.original-content&quot;,URI=&quot;Audio/audio_index.m3u8&quot;
+
+#-- subtitles --
+#EXT-X-MEDIA:TYPE=SUBTITLES,GROUP-ID=&quot;subs&quot;,LANGUAGE=&quot;en&quot;,NAME=&quot;English&quot;,AUTOSELECT=NO,FORCED=NO,URI=&quot;Subtitles/en/en_index.m3u8&quot;
+
+#== VIDEO - Stereo MV-HEVC
+#EXT-X-MEDIA:TYPE=VIDEO,GROUP-ID=&quot;stereo-16&quot;,NAME=&quot;Director's Cut&quot;,DEFAULT=YES,CHARACTERISTICS=&quot;com.apple.position.dirs-cut&quot;,URI=&quot;Video/16Mb/prog_index.m3u8&quot;
+#EXT-X-MEDIA:TYPE=VIDEO,GROUP-ID=&quot;stereo-20&quot;,NAME=&quot;Director's Cut&quot;,DEFAULT=YES,CHARACTERISTICS=&quot;com.apple.position.dirs-cut&quot;,URI=&quot;Video/20Mb/prog_index.m3u8&quot;
+#EXT-X-MEDIA:TYPE=VIDEO,GROUP-ID=&quot;stereo-40&quot;,NAME=&quot;Director's Cut&quot;,DEFAULT=YES,CHARACTERISTICS=&quot;com.apple.position.dirs-cut&quot;,URI=&quot;Video/40Mb/prog_index.m3u8&quot;
+#EXT-X-MEDIA:TYPE=VIDEO,GROUP-ID=&quot;stereo-50&quot;,NAME=&quot;Director's Cut&quot;,DEFAULT=YES,CHARACTERISTICS=&quot;com.apple.position.dirs-cut&quot;,URI=&quot;Video/50Mb/prog_index.m3u8&quot;
+#EXT-X-MEDIA:TYPE=VIDEO,GROUP-ID=&quot;stereo-100&quot;,NAME=&quot;Director's Cut&quot;,DEFAULT=YES,CHARACTERISTICS=&quot;com.apple.position.dirs-cut&quot;,URI=&quot;Video/100Mb/prog_index.m3u8&quot;
+
+
+#== Variants
+#EXT-X-STREAM-INF:AVERAGE-BANDWIDTH=18077520,BANDWIDTH=30636545,AUDIO=&quot;apac&quot;,SUBTITLES=&quot;subs&quot;,VIDEO=&quot;stereo-16&quot;,VIDEO-RANGE=PQ,CODECS=&quot;hvc1.2.20000000.H183.B0,apac.31.00&quot;,RESOLUTION=3600x3600,FRAME-RATE=90.000,CLOSED-CAPTIONS=NONE,REQ-VIDEO-LAYOUT=&quot;CH-STEREO/PROJ-AIV&quot;
+Video/16Mb/prog_index.m3u8
+#EXT-X-STREAM-INF:AVERAGE-BANDWIDTH=21960196,BANDWIDTH=36415190,AUDIO=&quot;apac&quot;,SUBTITLES=&quot;subs&quot;,VIDEO=&quot;stereo-20&quot;,VIDEO-RANGE=PQ,CODECS=&quot;hvc1.2.20000000.H183.B0,apac.31.00&quot;,RESOLUTION=3600x3600,FRAME-RATE=90.000,CLOSED-CAPTIONS=NONE,REQ-VIDEO-LAYOUT=&quot;CH-STEREO/PROJ-AIV&quot;
+Video/20Mb/prog_index.m3u8
+#EXT-X-STREAM-INF:AVERAGE-BANDWIDTH=41505403,BANDWIDTH=71521624,AUDIO=&quot;apac&quot;,SUBTITLES=&quot;subs&quot;,VIDEO=&quot;stereo-40&quot;,VIDEO-RANGE=PQ,CODECS=&quot;hvc1.2.20000000.H183.B0,apac.31.00&quot;,RESOLUTION=4320x4320,FRAME-RATE=90.000,CLOSED-CAPTIONS=NONE,REQ-VIDEO-LAYOUT=&quot;CH-STEREO/PROJ-AIV&quot;
+Video/40Mb/prog_index.m3u8
+#EXT-X-STREAM-INF:AVERAGE-BANDWIDTH=98690153,BANDWIDTH=177339446,AUDIO=&quot;apac&quot;,SUBTITLES=&quot;subs&quot;,VIDEO=&quot;stereo-100&quot;,VIDEO-RANGE=PQ,CODECS=&quot;hvc1.2.20000000.H183.B0,apac.31.00&quot;,RESOLUTION=4320x4320,FRAME-RATE=90.000,CLOSED-CAPTIONS=NONE,REQ-VIDEO-LAYOUT=&quot;CH-STEREO/PROJ-AIV&quot;
+Video/100Mb/prog_index.m3u8
+</code></pre></section>
+<section class="panel" id="appendix-example-playlist-with-sdr-dolby-vision-hdr10-and-hlg-content-at-resolutions-from-720p-to-4k"><h2>Example playlist with SDR, Dolby Vision, HDR10, and HLG content at resolutions from 720p to 4K</h2><p>The SUPPLEMENTAL-CODECS attribute is used to indicate that 
+the HDR10 content is compatible with Dolby Vison 8.1
+and the HLG content is compatible with Dolby Vision 8.4.</p>
+<pre><code class="language-swift">#EXTM3U
+#EXT-X-VERSION:7
+#EXT-X-INDEPENDENT-SEGMENTS
+
+#EXT-X-STREAM-INF:AVERAGE-BANDWIDTH=2778321,BANDWIDTH=3971374,VIDEO-RANGE=SDR,CODECS=&quot;hvc1.2.4.L123.B0&quot;,RESOLUTION=1280x720,FRAME-RATE=23.976,CLOSED-CAPTIONS=NONE,HDCP-LEVEL=NONE
+sdr_720/prog_index.m3u8
+#EXT-X-STREAM-INF:AVERAGE-BANDWIDTH=6759875,BANDWIDTH=10022043,VIDEO-RANGE=SDR,CODECS=&quot;hvc1.2.4.L123.B0&quot;,RESOLUTION=1920x1080,FRAME-RATE=23.976,CLOSED-CAPTIONS=NONE,HDCP-LEVEL=TYPE-0
+sdr_1080/prog_index.m3u8
+#EXT-X-STREAM-INF:AVERAGE-BANDWIDTH=20985770,BANDWIDTH=28058971,VIDEO-RANGE=SDR,CODECS=&quot;hvc1.2.4.L150.B0&quot;,RESOLUTION=3840x2160,FRAME-RATE=23.976,CLOSED-CAPTIONS=NONE,HDCP-LEVEL=TYPE-1
+sdr_2160/prog_index.m3u8
+
+#EXT-X-STREAM-INF:AVERAGE-BANDWIDTH=3385450,BANDWIDTH=5327059,VIDEO-RANGE=PQ,CODECS=&quot;dvh1.05.01&quot;,RESOLUTION=1280x720,FRAME-RATE=23.976,CLOSED-CAPTIONS=NONE,HDCP-LEVEL=NONE
+dolby_720/prog_index.m3u8
+#EXT-X-STREAM-INF:AVERAGE-BANDWIDTH=7999361,BANDWIDTH=12876596,VIDEO-RANGE=PQ,CODECS=&quot;dvh1.05.03&quot;,RESOLUTION=1920x1080,FRAME-RATE=23.976,CLOSED-CAPTIONS=NONE,HDCP-LEVEL=TYPE-0
+dolby_1080/prog_index.m3u8
+#EXT-X-STREAM-INF:AVERAGE-BANDWIDTH=24975091,BANDWIDTH=30041698,VIDEO-RANGE=PQ,CODECS=&quot;dvh1.05.06&quot;,RESOLUTION=3840x2160,FRAME-RATE=23.976,CLOSED-CAPTIONS=NONE,HDCP-LEVEL=TYPE-1
+dolby_2160/prog_index.m3u8
+
+#EXT-X-STREAM-INF:AVERAGE-BANDWIDTH=3320040,BANDWIDTH=5280654,VIDEO-RANGE=PQ,CODECS=&quot;hvc1.2.4.L123.B0&quot;,SUPPLEMENTAL-CODECS=&quot;dvh1.08.01/db1p&quot;,RESOLUTION=1280x720,FRAME-RATE=23.976,CLOSED-CAPTIONS=NONE,HDCP-LEVEL=NONE
+hdr10_dolby_720/prog_index.m3u8
+#EXT-X-STREAM-INF:AVERAGE-BANDWIDTH=7964551,BANDWIDTH=12886714,VIDEO-RANGE=PQ,CODECS=&quot;hvc1.2.4.L123.B0&quot;,SUPPLEMENTAL-CODECS=&quot;dvh1.08.03/db1p&quot;,RESOLUTION=1920x1080,FRAME-RATE=23.976,CLOSED-CAPTIONS=NONE,HDCP-LEVEL=TYPE-0
+hdr10_dolby_1080/prog_index.m3u8
+#EXT-X-STREAM-INF:AVERAGE-BANDWIDTH=24833402,BANDWIDTH=29983769,VIDEO-RANGE=PQ,CODECS=&quot;hvc1.2.4.L150.B0&quot;,SUPPLEMENTAL-CODECS=&quot;dvh1.08.08/db1p&quot;,RESOLUTION=3840x2160,FRAME-RATE=23.976,CLOSED-CAPTIONS=NONE,HDCP-LEVEL=TYPE-1
+hdr10_dolby_2160/prog_index.m3u8
+
+#EXT-X-STREAM-INF:AVERAGE-BANDWIDTH=3061873,BANDWIDTH=3109758,VIDEO-RANGE=HLG,CODECS=&quot;hvc1.2.20000000.L150.B0&quot;,SUPPLEMENTAL-CODECS=&quot;dvh1.08.01/db4h&quot;,RESOLUTION=1280x720,FRAME-RATE=23.976,CLOSED-CAPTIONS=NONE,HDCP-LEVEL=NONE
+hlg_dolby_720_24/prog_index.m3u8
+#EXT-X-STREAM-INF:AVERAGE-BANDWIDTH=6759750,BANDWIDTH=6884346,VIDEO-RANGE=HLG,CODECS=&quot;hvc1.2.20000000.L153.B0&quot;,SUPPLEMENTAL-CODECS=&quot;dvh1.08.03/db4h&quot;,RESOLUTION=1920x1080,FRAME-RATE=23.976,CLOSED-CAPTIONS=NONE,HDCP-LEVEL=TYPE-0
+hlg_dolby_1080_30/prog_index.m3u8
+#EXT-X-STREAM-INF:AVERAGE-BANDWIDTH=26472863,BANDWIDTH=28111779,VIDEO-RANGE=HLG,CODECS=&quot;hvc1.2.20000000.L183.B0&quot;,SUPPLEMENTAL-CODECS=&quot;dvh1.08.08/db4h&quot;,RESOLUTION=3840x2160,FRAME-RATE=23.976,CLOSED-CAPTIONS=NONE,HDCP-LEVEL=TYPE-1
+hlg_dolby_2160_60/prog_index.m3u8
+
+#EXT-X-I-FRAME-STREAM-INF:AVERAGE-BANDWIDTH=248586,BANDWIDTH=593626,VIDEO-RANGE=SDR,CODECS=&quot;hvc1.2.4.L123.B0&quot;,RESOLUTION=1280x720,HDCP-LEVEL=NONE,URI=&quot;sdr_720/iframe_index.m3u8&quot;
+#EXT-X-I-FRAME-STREAM-INF:AVERAGE-BANDWIDTH=399790,BANDWIDTH=956552,VIDEO-RANGE=SDR,CODECS=&quot;hvc1.2.4.L123.B0&quot;,RESOLUTION=1920x1080,HDCP-LEVEL=TYPE-0,URI=&quot;sdr_1080/iframe_index.m3u8&quot;
+#EXT-X-I-FRAME-STREAM-INF:AVERAGE-BANDWIDTH=826971,BANDWIDTH=1941397,VIDEO-RANGE=SDR,CODECS=&quot;hvc1.2.4.L150.B0&quot;,RESOLUTION=3840x2160,HDCP-LEVEL=TYPE-1,URI=&quot;sdr_2160/iframe_index.m3u8&quot;
+
+#EXT-X-I-FRAME-STREAM-INF:AVERAGE-BANDWIDTH=232253,BANDWIDTH=573073,VIDEO-RANGE=PQ,CODECS=&quot;dvh1.05.01&quot;,RESOLUTION=1280x720,HDCP-LEVEL=NONE,URI=&quot;dolby_720/iframe_index.m3u8&quot;
+#EXT-X-I-FRAME-STREAM-INF:AVERAGE-BANDWIDTH=365337,BANDWIDTH=905037,VIDEO-RANGE=PQ,CODECS=&quot;dvh1.05.03&quot;,RESOLUTION=1920x1080,HDCP-LEVEL=TYPE-0,URI=&quot;dolby_1080/iframe_index.m3u8&quot;
+#EXT-X-I-FRAME-STREAM-INF:AVERAGE-BANDWIDTH=739114,BANDWIDTH=1893236,VIDEO-RANGE=PQ,CODECS=&quot;dvh1.05.06&quot;,RESOLUTION=3840x2160,HDCP-LEVEL=TYPE-1,URI=&quot;dolby_2160/iframe_index.m3u8&quot;
+
+#EXT-X-I-FRAME-STREAM-INF:AVERAGE-BANDWIDTH=232511,BANDWIDTH=572673,VIDEO-RANGE=PQ,CODECS=&quot;hvc1.2.4.L123.B0&quot;,SUPPLEMENTAL-CODECS=&quot;dvh1.08.01/db1p&quot;,RESOLUTION=1280x720,HDCP-LEVEL=NONE,URI=&quot;hdr10_dolby_720/iframe_index.m3u8&quot;
+#EXT-X-I-FRAME-STREAM-INF:AVERAGE-BANDWIDTH=364552,BANDWIDTH=905053,VIDEO-RANGE=PQ,CODECS=&quot;hvc1.2.4.L123.B0&quot;,SUPPLEMENTAL-CODECS=&quot;dvh1.08.03/db1p&quot;,RESOLUTION=1920x1080,HDCP-LEVEL=TYPE-0,URI=&quot;hdr10_dolby_1080/iframe_index.m3u8&quot;
+#EXT-X-I-FRAME-STREAM-INF:AVERAGE-BANDWIDTH=739757,BANDWIDTH=1895477,VIDEO-RANGE=PQ,CODECS=&quot;hvc1.2.4.L150.B0&quot;,SUPPLEMENTAL-CODECS=&quot;dvh1.08.08/db1p&quot;,RESOLUTION=3840x2160,HDCP-LEVEL=TYPE-1,URI=&quot;hdr10_dolby_2160/iframe_index.m3u8&quot;
+
+#EXT-X-I-FRAME-STREAM-INF:AVERAGE-BANDWIDTH=214431,BANDWIDTH=337245,VIDEO-RANGE=HLG,CODECS=&quot;hvc1.2.20000000.L150.B0&quot;,SUPPLEMENTAL-CODECS=&quot;dvh1.08.01/db4h&quot;,RESOLUTION=1280x720,HDCP-LEVEL=NONE,URI=&quot;hlg_dolby_720/prog_index.m3u8&quot;
+#EXT-X-I-FRAME-STREAM-INF:AVERAGE-BANDWIDTH=309406,BANDWIDTH=483498,VIDEO-RANGE=HLG,CODECS=&quot;hvc1.2.20000000.L153.B0&quot;,SUPPLEMENTAL-CODECS=&quot;dvh1.08.03/db4h&quot;,RESOLUTION=1920x1080,HDCP-LEVEL=TYPE-0,URI=&quot;hlg_dolby_1080/prog_index.m3u8&quot;
+#EXT-X-I-FRAME-STREAM-INF:AVERAGE-BANDWIDTH=788595,BANDWIDTH=1777136,VIDEO-RANGE=HLG,CODECS=&quot;hvc1.2.20000000.L183.B0&quot;,SUPPLEMENTAL-CODECS=&quot;dvh1.08.08/db4h&quot;,RESOLUTION=3840x2160,HDCP-LEVEL=TYPE-1,URI=&quot;hlg_dolby_2160/prog_index.m3u8&quot;
+</code></pre>
+<p>The HEVC codec values are described in ISO/IEC 14496-15. A short description is <code>Codec.Profile.Flags.TierLevel.Constraints</code>,
+so in <code>hvc1.2.4.L123.B0</code>, the <code>2</code> means <em>Main 10 profile</em>, and the <code>L123</code> means <em>normal
+tier, level 4.1</em>.</p>
+<p>Information about Dolby Video codec values can be obtained from Dolby.
+A short description is <code>Codec.Profile.Level</code>, so in <code>dvh1.05.03</code> the Profile is 5
+and the Level is 3.</p></section>
+<section class="panel" id="revision-history"><h1>Revision history</h1><p>The following table describes the changes to this document.</p>
+<table>
+<thead>
+<tr>
+<th>Date</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2025-06-26</td>
+<td>Fixed malformed URLs.</td>
+</tr>
+<tr>
+<td>2025-06-24</td>
+<td>Added container format rule for AV1.</td>
+</tr>
+<tr>
+<td>2025-05-08</td>
+<td>Added AIV bit-rate tiers.</td>
+</tr>
+<tr>
+<td>2025-05-02</td>
+<td>Added Offline download guidelines.</td>
+</tr>
+<tr>
+<td>2025-04-30</td>
+<td>Added APAC authoring guidelines.</td>
+</tr>
+<tr>
+<td>2025-04-18</td>
+<td>Added Spatial (Stereo, APMP and AIV) authoring guidelines.</td>
+</tr>
+<tr>
+<td>2025-03-25</td>
+<td>Clarified use of DV20 for Stereo video for VisionOS.</td>
+</tr>
+<tr>
+<td>2023-05-24</td>
+<td>Minor changes.</td>
+</tr>
+<tr>
+<td>2023-08-15</td>
+<td>Added visionOS requirements. Added note about audio/aac.</td>
+</tr>
+<tr>
+<td>2023-06-27</td>
+<td>Added stereo video rules and MV-HEVC bit rate.</td>
+</tr>
+<tr>
+<td>2023-05-19</td>
+<td>Added detail about I-frame image sequences.</td>
+</tr>
+<tr>
+<td>2022-08-22</td>
+<td>Added “Audio rendition groups and variants” section to the appendix, clarified language around the LANGUAGE attribute, and added additional information about Apple TV and Dolby ATMOS.</td>
+</tr>
+<tr>
+<td>2021-11-12</td>
+<td>Renamed “primary playlist” to “Multivariant Playlist.”</td>
+</tr>
+<tr>
+<td>2020-06-22</td>
+<td>Added new sections: Low-Latency HLS and ALLOWED-CPC Values for FairPlay Streaming.</td>
+</tr>
+<tr>
+<td>2019-06-03</td>
+<td>Added new table describing MIME types.</td>
+</tr>
+<tr>
+<td>2019-03-04</td>
+<td>Added new rules for Airplay 2-enabled TVs. Moved appendixes into child article.</td>
+</tr>
+<tr>
+<td>2018-09-11</td>
+<td>Added new rules for content protection and media playlists.</td>
+</tr>
+<tr>
+<td>2018-06-18</td>
+<td>Added Dolby Digital Plus with Dolby Atmos information. Added codec value section.</td>
+</tr>
+<tr>
+<td>2018-04-09</td>
+<td>Made several minor changes to individual spec points. Updated the variant bit rate table and broke it into two separate tables.</td>
+</tr>
+<tr>
+<td>2018-01-16</td>
+<td>Fixed several typos and made a couple of minor changes to audio encoding requirements.</td>
+</tr>
+<tr>
+<td>2017-09-19</td>
+<td>Updated document with HDR (HEVC) information.</td>
+</tr>
+<tr>
+<td>2017-06-06</td>
+<td>Updated document with HEVC/H.265 information.</td>
+</tr>
+<tr>
+<td>2016-09-13</td>
+<td>Added rules for fragmented MP4 files.</td>
+</tr>
+<tr>
+<td>2016-06-13</td>
+<td>Updated for iOS and macOS specifications.</td>
+</tr>
+<tr>
+<td>2016-03-21</td>
+<td>Updated Dolby Digital bit rate recommendation to 384 kbit/s.</td>
+</tr>
+<tr>
+<td>2016-01-11</td>
+<td>Fixed typo in section 10.2.</td>
+</tr>
+<tr>
+<td>2015-12-17</td>
+<td>Added section on using the <code>hlsreport</code> tool.</td>
+</tr>
+<tr>
+<td>2015-12-08</td>
+<td>Corrected a mistake in Table 2-3, Column 2 heading. Changed to 16:9 aspect from 19:0.</td>
+</tr>
+<tr>
+<td>2015-10-21</td>
+<td>Published the first edition of this document describing the HTTP Live Streaming specifications for audio and video content delivery for Apple TV.</td>
+</tr>
+</tbody>
+</table></section>
+</div>
+</main>
+</body>
+</html>

@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 2,
+  "policyVersion": "known-macos-remote-components-20261103-v2",
+  "scope": "Observed ToDesk 5.2.3.0, UU 4.40.0, AweSun 16.5.0; not an exhaustive remote-software catalogue",
+  "vendors": {
+    "todesk": {
+      "displayName": "ToDesk",
+      "teamID": "KM56KD59W4",
+      "identifiers": {
+        "com.youqu.todesk.mac": "gui",
+        "ToDesk_Service": "service",
+        "ToDesk_Session_Proxy": "sessionProxy",
+        "com.youqu.todesk.mac.tdsvc": "session",
+        "com.youqu.todesk.helper": "helper",
+        "com.youqu.todesk.RenderHelper": "screenwallHelper"
+      }
+    },
+    "uu": {
+      "displayName": "UU 远程",
+      "teamID": "PU9BNSBJW7",
+      "identifiers": {
+        "com.netease.uuremote": "gui",
+        "com.netease.uuremote.agent": "service",
+        "com.netease.uuremote.server": "server",
+        "com.netease.uuremote.daemon": "daemon",
+        "com.netease.uuremote.helper": "helper",
+        "com.netease.uuremote.updater": "updater"
+      }
+    },
+    "sunlogin": {
+      "displayName": "向日葵",
+      "teamID": "ZBNMDRTU32",
+      "identifiers": {
+        "com.oray.sunlogin.macclient": "gui",
+        "AweSun": "service",
+        "$(PRODUCT_BUNDLE_IDENTIFIER)": "helper",
+        "com.oray.sunlogin.macclient.agent": "desktopAgent"
+      },
+      "requiredCDHashes": {
+        "$(PRODUCT_BUNDLE_IDENTIFIER)": [
+          "e3a12b43dfba8ef18382d5ae85d3e53a9b0937c2"
+        ]
+      },
+      "pinEvidence": "AweSun 16.5.0 build 30905 arm64; artifacts/remote-process-detection-20261103/live-final/snapshot-03.json; new builds require revalidation"
+    }
+  }
+}

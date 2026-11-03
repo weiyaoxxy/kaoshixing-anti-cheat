@@ -1,0 +1,50 @@
+[
+  {
+    "pid": 3980,
+    "ppid": 1,
+    "uid": 0,
+    "executable": "/Applications/UURemote.app/Contents/MacOS/UURemoteDaemon"
+  },
+  {
+    "pid": 77126,
+    "ppid": 78332,
+    "uid": 501,
+    "executable": "/Applications/ToDesk.app/Contents/Helpers/ToDesk_Session.app/Contents/MacOS/ToDesk_Session"
+  },
+  {
+    "pid": 78215,
+    "ppid": 1,
+    "uid": 0,
+    "executable": "/Applications/ToDesk.app/Contents/MacOS/ToDesk_Service"
+  },
+  {
+    "pid": 78332,
+    "ppid": 1,
+    "uid": 501,
+    "executable": "/Applications/ToDesk.app/Contents/MacOS/ToDesk_Session_Proxy"
+  },
+  {
+    "pid": 81381,
+    "ppid": 1,
+    "uid": 501,
+    "executable": "/Applications/ToDesk.app/Contents/MacOS/ToDesk"
+  },
+  {
+    "pid": 84366,
+    "ppid": 1,
+    "uid": 501,
+    "executable": "/Applications/UURemote.app/Contents/MacOS/UURemoteService"
+  },
+  {
+    "pid": 89133,
+    "ppid": 1,
+    "uid": 501,
+    "executable": "/Applications/UURemote.app/Contents/MacOS/UURemote"
+  },
+  {
+    "pid": 89157,
+    "ppid": 84366,
+    "uid": 501,
+    "executable": "/Applications/UURemote.app/Contents/Helpers/UURemoteServer"
+  }
+]

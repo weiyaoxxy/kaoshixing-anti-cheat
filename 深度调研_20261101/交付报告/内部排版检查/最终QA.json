@@ -1,0 +1,33 @@
+{
+  "checkedAtUTC": "2026-11-01T09:41:24.556153+00:00",
+  "report": "macOS考试窗口防截屏_深度技术预研与验证报告_v2.0.docx",
+  "sha256": "b44daa2697e411c69269071ebbe8da2f8208b5b434f405eedacdf8e9707c34d5",
+  "bytes": 1095404,
+  "pages": 26,
+  "embeddedImages": 8,
+  "tables": 24,
+  "references": 27,
+  "visualQA": {
+    "v3_pages_1_9": "system_research agent: all original page PNGs inspected",
+    "v3_pages_10_16": "root: all original page PNGs inspected",
+    "v3_pages_17_26": "api_research agent: all original page PNGs inspected",
+    "v4_changed_pages": [
+      5,
+      12,
+      14
+    ],
+    "v4_changed_pages_review": "root directly inspected pages 5, 12, 14; no blocking clipping, overlap, missing glyphs or caption issues observed",
+    "v4_other_pages": "23 pages pixel-identical to reviewed v3"
+  },
+  "previousDeliveryDocumentHashesUnchanged": {
+    "README.md": true,
+    "docs/API依据.md": true,
+    "docs/DRM与系统路线.md": true,
+    "docs/PoC设计与复现.md": true,
+    "docs/evidence-overview.png": true,
+    "docs/实验矩阵与验收.md": true,
+    "docs/技术预研报告.md": true,
+    "docs/本机测试结果.md": true
+  },
+  "scope": "Visual/structural delivery QA; does not extend the experimental claims or resolve the unverified scenarios in the report."
+}

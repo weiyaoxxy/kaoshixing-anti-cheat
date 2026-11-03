@@ -1,0 +1,6 @@
+{
+  "source": "research/uu-server-current-sample.txt",
+  "method": "2-second read-only sampling",
+  "matchingStackLines": [],
+  "interpretation": "Only observed stack frames count as runtime evidence; absence in a short sample does not prove an API is unused."
+}

@@ -1,0 +1,109 @@
+// AAC lifecycle example; intentionally excluded from the runnable Demo.
+// macOS 10.15.4+. No session was started during this research.
+// Requires Apple approval, a matching provisioning profile and signed app.
+// Do NOT merely add the restricted entitlement to an ad-hoc signed app.
+// https://developer.apple.com/documentation/automaticassessmentconfiguration/aeassessmentsession
+//
+// Integrate into an AppKit app. Keep this controller strongly referenced.
+// All public controller methods must be invoked on the main thread.
+// begin/end temporarily change system-wide assessment restrictions.
+// Keep exam content hidden before begin, while awaiting approval, and on failure.
+// A raw-frame AVAssetWriter running during AAC is a hypothesis to test,
+// not an Apple-documented exception for screen recording or a proven capability.
+
+import AppKit
+import AutomaticAssessmentConfiguration
+
+@available(macOS 10.15.4, *)
+final class AssessmentSessionExample: NSObject, AEAssessmentSessionDelegate {
+    private var session: AEAssessmentSession?
+    private var ending = false
+
+    // Bind these to the actual exam UI and recording lifecycle.
+    // hideExam must remove sensitive content synchronously on the main thread.
+    private let hideExam: () -> Void
+    private let showExam: () -> Void
+    private let log: (String) -> Void
+
+    init(hideExam: @escaping () -> Void,
+         showExam: @escaping () -> Void,
+         log: @escaping (String) -> Void) {
+        self.hideExam = hideExam
+        self.showExam = showExam
+        self.log = log
+        super.init()
+    }
+
+    func begin() {
+        precondition(Thread.isMainThread)
+        guard session == nil else { return }
+        hideExam()
+        ending = false
+        let newSession = AEAssessmentSession(configuration: AEAssessmentConfiguration())
+        newSession.delegate = self
+        session = newSession // Strong reference for the entire assessment.
+        log("AAC begin requested; exam remains hidden")
+        newSession.begin() // Asynchronous: return does not mean protection is active.
+    }
+
+    func end() {
+        precondition(Thread.isMainThread)
+        hideExam() // Hide before releasing any restrictions.
+        guard let session, !ending else { return }
+        ending = true
+        log("AAC end requested; awaiting didEnd")
+        session.end()
+    }
+
+    // Delegate work is serialized onto the main thread for safe AppKit updates.
+    private func onMain(_ work: @escaping () -> Void) {
+        if Thread.isMainThread { work() }
+        else { DispatchQueue.main.async(execute: work) }
+    }
+
+    func assessmentSessionDidBegin(_ incoming: AEAssessmentSession) {
+        onMain { [weak self] in
+            guard let self, self.session === incoming else { return }
+            guard !self.ending else {
+                self.hideExam()
+                incoming.end()
+                return
+            }
+            self.log("AAC didBegin; now allowed to display exam")
+            self.showExam()
+            // Optional later PoC: start own original-frame writer here and
+            // explicitly verify its output while external capture is blocked.
+        }
+    }
+
+    func assessmentSession(_ incoming: AEAssessmentSession,
+                           failedToBeginWithError error: Error) {
+        onMain { [weak self] in
+            guard let self, self.session === incoming else { return }
+            self.hideExam()
+            self.log("AAC failedToBegin: \(error)")
+            self.session = nil
+            self.ending = false
+        }
+    }
+
+    func assessmentSession(_ incoming: AEAssessmentSession,
+                           wasInterruptedWithError error: Error) {
+        onMain { [weak self] in
+            guard let self, self.session === incoming else { return }
+            self.hideExam()
+            self.log("AAC interrupted; exam hidden: \(error)")
+            self.end()
+        }
+    }
+
+    func assessmentSessionDidEnd(_ incoming: AEAssessmentSession) {
+        onMain { [weak self] in
+            guard let self, self.session === incoming else { return }
+            self.hideExam()
+            self.log("AAC didEnd; restrictions released")
+            self.session = nil
+            self.ending = false
+        }
+    }
+}

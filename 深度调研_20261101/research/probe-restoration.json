@@ -1,0 +1,26 @@
+{
+  "at": "2026-11-01T08:53:05.196473+00:00",
+  "action": "Reverse only the deep-research extension edits in original root; extended copies remain in new root.",
+  "files": {
+    "CaptureProbe.swift": {
+      "extendedSHA256": "bf2751a79da69bbbddea347621b7c04ac49c1ae2ffe89ac857a5c3c6ec112964",
+      "copiedIdentically": true,
+      "restoredSHA256": "e764f9471a00ac100ead12775e4580363265c77e2700d725987465b1393f54dc"
+    },
+    "LegacyCapture.c": {
+      "extendedSHA256": "8eab8becbca50bcd7530ef494208e61494f0d3d3b187db77fa5ac7a74266cf0b",
+      "copiedIdentically": true,
+      "restoredSHA256": "a58732023af21d36523a47917077fd4b7db5ad9e1ba0517cc3dd9386b28f570e"
+    },
+    "LegacyCapture.h": {
+      "extendedSHA256": "270eed21f13786538bbf71e49748ede6e737c1bf56c5fa3ae3751e696e7b1e0b",
+      "copiedIdentically": true,
+      "restoredSHA256": "1770960103f7e9f99773910e571e49bb5cfd9b0d07f02384d6f8f47a255f5708"
+    },
+    "README.md": {
+      "extendedSHA256": "72f8ffd0289f58b56fe463e83e5feb0f9e01aab5d183b69b33fbcd6f6c7a8581",
+      "copiedIdentically": true,
+      "restoredSHA256": "16b4415b33ed518c5362b2870f924e20bc5c15a28a7a1fb0bd2ef13000a85ab2"
+    }
+  }
+}

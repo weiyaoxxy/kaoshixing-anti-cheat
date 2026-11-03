@@ -1,0 +1,42 @@
+File:
+  major brand:      mp42
+  minor version:    1
+  compatible brand: isom
+  compatible brand: mp41
+  compatible brand: mp42
+  fast start:       no
+
+Movie:
+  duration:   10796 (movie timescale units)
+  duration:   17993 (ms)
+  time scale: 600
+  fragments:  no
+
+Found 1 Tracks
+Track 1:
+  flags:        1 ENABLED
+  id:           1
+  type:         Video
+  duration: 17993 ms
+  language: und
+  media:
+    sample count: 360
+    timescale:    600
+    duration:     10796 (media timescale units)
+    duration:     17993 (ms)
+    bitrate (computed): 1242.224 Kbps
+  display width:  1800.000000
+  display height: 1000.000000
+  frame rate (computed): 20.007
+  Sample Description 0
+    Coding:       avc1 (H.264)
+    Codec String: avc1.640028
+    AVC Profile:          100 (High)
+    AVC Profile Compat:   0
+    AVC Level:            40
+    AVC NALU Length Size: 4
+    AVC SPS: [27640028ac56501c41ff9654]
+    AVC PPS: [28ee3cb0]
+    Width:       1800
+    Height:      1000
+    Depth:       24

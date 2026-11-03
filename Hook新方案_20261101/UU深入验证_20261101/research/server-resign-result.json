@@ -1,0 +1,12 @@
+{
+  "relativePath": "Contents/Helpers/UURemoteServer",
+  "codesignReturnCode": 1,
+  "codesignStderr": "/Users/weiyao/Desktop/考试星防作弊/Hook新方案_20261101/UU深入验证_20261101/sandbox-apps/UURemote-Test.app/Contents/Helpers/UURemoteServer: replacing existing signature\n/Users/weiyao/Desktop/考试星防作弊/Hook新方案_20261101/UU深入验证_20261101/sandbox-apps/UURemote-Test.app/Contents/Helpers/UURemoteServer: internal error in Code Signing subsystem\n",
+  "verifyReturnCode": 0,
+  "metadata": "Executable=/Users/weiyao/Desktop/考试星防作弊/Hook新方案_20261101/UU深入验证_20261101/sandbox-apps/UURemote-Test.app/Contents/Helpers/UURemoteServer\nIdentifier=com.netease.uuremote.server\nFormat=Mach-O universal (x86_64 arm64)\nCodeDirectory v=20500 size=23719 flags=0x10000(runtime) hashes=730+7 location=embedded\nVersionPlatform=1\nVersionMin=720896\nVersionSDK=1704448\nHash type=sha256 size=32\nCandidateCDHash sha256=7f99ac5cb5ccba488562c3506905e5070ad0a356\nCandidateCDHashFull sha256=7f99ac5cb5ccba488562c3506905e5070ad0a356e2d0d40e1a5b3d3e7526f761\nHash choices=sha256\nCMSDigest=7f99ac5cb5ccba488562c3506905e5070ad0a356e2d0d40e1a5b3d3e7526f761\nCMSDigestType=2\nExecutable Segment base=0\nExecutable Segment limit=9535488\nExecutable Segment flags=0x1\nPage size=16384\nCDHash=7f99ac5cb5ccba488562c3506905e5070ad0a356\nSignature size=9082\nAuthority=Developer ID Application: Hangzhou Bobo Technology Co Ltd (PU9BNSBJW7)\nAuthority=Developer ID Certification Authority\nAuthority=Apple Root CA\nTimestamp=Sep 11, 2026 at 6:33:30 PM\nInfo.plist entries=20\nTeamIdentifier=PU9BNSBJW7\nRuntime Version=26.2.0\nSealed Resources=none\nInternal requirements count=1 size=188\n",
+  "entitlements": {
+    "com.apple.security.device.audio-input": true,
+    "com.apple.security.cs.allow-dyld-environment-variables": true,
+    "com.apple.security.cs.disable-library-validation": true
+  }
+}

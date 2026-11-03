@@ -1,0 +1,63 @@
+AEAssessmentApplication.h:2: //  AEAssessmentApplication.h
+AEAssessmentApplication.h:12: API_AVAILABLE(ios(15.0), macCatalyst(15.0), macos(12.0))
+AEAssessmentApplication.h:14: @interface AEAssessmentApplication : NSObject <NSCopying>
+AEAssessmentApplication.h:16: @property (nonatomic, copy, readonly) NSString *bundleIdentifier API_AVAILABLE(ios(17.5), macCatalyst(15.0), macos(12.0));
+AEAssessmentApplication.h:17: @property (nonatomic, copy, readonly, nullable) NSString *teamIdentifier API_AVAILABLE(macCatalyst(15.0), macos(12.0)) API_UNAVAILABLE(ios);
+AEAssessmentApplication.h:18: @property (nonatomic, assign) BOOL requiresSignatureValidation API_AVAILABLE(macCatalyst(15.0), macos(12.0)) API_UNAVAILABLE(ios);
+AEAssessmentApplication.h:20: - (instancetype)initWithBundleIdentifier:(NSString *)bundleIdentifier API_AVAILABLE(ios(17.5), macCatalyst(15.0), macos(12.0));
+AEAssessmentApplication.h:22:                           teamIdentifier:(nullable NSString *)teamIdentifier API_AVAILABLE(macCatalyst(15.0), macos(12.0)) API_UNAVAILABLE(ios);
+AEAssessmentConfiguration.h:13: @class AEAssessmentApplication;
+AEAssessmentConfiguration.h:41: /// - ``AEAssessmentApplication``
+AEAssessmentConfiguration.h:46: /// - ``allowsAccessibilityKeyboard``
+AEAssessmentConfiguration.h:72: /// - ``allowsScreenshots``
+AEAssessmentConfiguration.h:74: API_AVAILABLE(ios(13.4), macos(10.15.4), macCatalyst(14.0))
+AEAssessmentConfiguration.h:104: API_AVAILABLE(ios(14.0), macCatalyst(18.0), macos(15.0))
+AEAssessmentConfiguration.h:120: @property (nonatomic, assign) AEAutocorrectMode autocorrectMode API_AVAILABLE(ios(14.0), macCatalyst(18.0), macos(15.0));
+AEAssessmentConfiguration.h:126: @property (nonatomic, assign) BOOL allowsSpellCheck API_AVAILABLE(ios(14.0), macCatalyst(18.0), macos(15.0));
+AEAssessmentConfiguration.h:132: @property (nonatomic, assign) BOOL allowsPredictiveKeyboard API_AVAILABLE(ios(14.0), macCatalyst(18.0), macos(15.0));
+AEAssessmentConfiguration.h:138: @property (nonatomic, assign) BOOL allowsKeyboardShortcuts API_AVAILABLE(ios(14.0), macCatalyst(18.0), macos(15.0));
+AEAssessmentConfiguration.h:144: @property (nonatomic, assign) BOOL allowsActivityContinuation API_AVAILABLE(ios(14.0)) API_UNAVAILABLE(macos, macCatalyst);
+AEAssessmentConfiguration.h:150: @property (nonatomic, assign) BOOL allowsDictation API_AVAILABLE(ios(14.0)) API_UNAVAILABLE(macos, macCatalyst);
+AEAssessmentConfiguration.h:154: /// Users can enable the Accessibility Keyboard in the Settings app (Accessibility > Keyboard > Accessibility Keyboard) to access an on-screen keyboard with alternative input methods. An assessment session disables alternative input methods in the Accessibility Keyboard by default, but you can allow them by setting ``AEAssessmentConfiguration/allowsAccessibilityKeyboard`` to `true` in the ``AEAssessmentConfiguration`` instance that you use to initialize a session.
+AEAssessmentConfiguration.h:156: @property (nonatomic, assign) BOOL allowsAccessibilityKeyboard API_AVAILABLE(macos(26.1), macCatalyst(26.1)) API_UNAVAILABLE(ios);
+AEAssessmentConfiguration.h:162: @property (nonatomic, assign) BOOL allowsAccessibilityLiveCaptions API_AVAILABLE(ios(26.1), macCatalyst(26.1), macos(26.1));
+AEAssessmentConfiguration.h:168: @property (nonatomic, assign) BOOL allowsAccessibilityReader API_AVAILABLE(ios(26.1), macCatalyst(26.1), macos(26.1));
+AEAssessmentConfiguration.h:179: @property (nonatomic, assign) BOOL allowsAccessibilitySpeech API_AVAILABLE(ios(14.0)) API_UNAVAILABLE(macos, macCatalyst);
+AEAssessmentConfiguration.h:185: @property (nonatomic, assign) BOOL allowsAccessibilityTypingFeedback API_AVAILABLE(ios(26.0)) API_UNAVAILABLE(macos, macCatalyst);
+AEAssessmentConfiguration.h:191: @property (nonatomic, assign) BOOL allowsPasswordAutoFill API_AVAILABLE(ios(14.0)) API_UNAVAILABLE(macos, macCatalyst);
+AEAssessmentConfiguration.h:197: @property (nonatomic, assign) BOOL allowsContinuousPathKeyboard API_AVAILABLE(ios(14.0)) API_UNAVAILABLE(macos, macCatalyst);
+AEAssessmentConfiguration.h:201: /// An assessment session disables the ability to take screenshots by default to maintain assessment integrity. This property specifically applies to screenshots that are copied to the clipboard, typically those taken using the Command+Control+Shift+3 and Command+Control+Shift+4 keyboard shortcuts. You can allow clipboard screenshots by setting `allowsScreenshots` to `true`.
+AEAssessmentConfiguration.h:205: @property (nonatomic, assign) BOOL allowsScreenshots API_AVAILABLE(macos(26.1), macCatalyst(26.1)) API_UNAVAILABLE(ios);
+AEAssessmentConfiguration.h:211: @property (nonatomic, assign) BOOL allowsEmojiKeyboard API_AVAILABLE(ios(26.4)) API_UNAVAILABLE(macos, macCatalyst);
+AEAssessmentConfiguration.h:215: /// Use this property to get and customize the app-specific configuration that's applied to your own app. For example, you can set the `allowsNetworkAccess` property for your own app:
+AEAssessmentConfiguration.h:219: /// config.mainParticipantConfiguration.allowsNetworkAccess = false
+AEAssessmentConfiguration.h:222: @property (nonatomic, strong, readonly) AEAssessmentParticipantConfiguration *mainParticipantConfiguration API_AVAILABLE(ios(17.5), macCatalyst(15.0), macos(12.0));
+AEAssessmentConfiguration.h:228: @property (nonatomic, copy, readonly) NSDictionary<AEAssessmentApplication *, AEAssessmentParticipantConfiguration *> *configurationsByApplication API_AVAILABLE(ios(17.5), macCatalyst(15.0), macos(12.0));
+AEAssessmentConfiguration.h:232: /// Use this method to make an app besides your own available during an assessment. Create a representation of the app that you want to allow as an ``AEAssessmentApplication`` instance, and the configuration for that app using an ``AEAssessmentParticipantConfiguration`` instance:
+AEAssessmentConfiguration.h:235: /// let calculator = AEAssessmentApplication(bundleIdentifier: "com.apple.calculator")
+AEAssessmentConfiguration.h:237: /// calculatorConfig.allowsNetworkAccess = false // Calculator doesn't need the network.
+AEAssessmentConfiguration.h:254: - (void)setConfiguration:(AEAssessmentParticipantConfiguration *)configuration forApplication:(AEAssessmentApplication *)application API_AVAILABLE(ios(17.5), macCatalyst(15.0), macos(12.0));
+AEAssessmentConfiguration.h:263: - (void)removeApplication:(AEAssessmentApplication *)application API_AVAILABLE(ios(17.5), macCatalyst(15.0), macos(12.0));
+AEAssessmentParticipantConfiguration.h:12: API_AVAILABLE(ios(15.0), macCatalyst(15.0), macos(12.0))
+AEAssessmentParticipantConfiguration.h:16: @property (nonatomic, assign) BOOL allowsNetworkAccess API_AVAILABLE(ios(17.5), macCatalyst(15.0), macos(12.0));
+AEAssessmentParticipantConfiguration.h:17: @property (nonatomic, assign, getter=isRequired) BOOL required API_AVAILABLE(ios(26.0), macCatalyst(26.0), macos(26.0)) API_UNAVAILABLE(visionos);
+AEAssessmentParticipantConfiguration.h:19: @property (nonatomic, copy) NSDictionary<NSString *, id> *configurationInfo API_AVAILABLE(ios(18.0), macCatalyst(18.0), macos(15.0));
+AEAssessmentParticipantConfiguration.h:21: - (instancetype)init API_AVAILABLE(ios(17.5), macCatalyst(15.0), macos(12.0));
+AEAssessmentParticipantConfiguration.h:22: + (instancetype)new API_AVAILABLE(ios(17.5), macCatalyst(15.0), macos(12.0));
+AEAssessmentSession.h:16: API_AVAILABLE(ios(13.4), macos(10.15.4), macCatalyst(14.0)) 
+AEAssessmentSession.h:20: @property (class, assign, readonly) BOOL supportsMultipleParticipants API_AVAILABLE(ios(17.5), macCatalyst(17.5), macos(14.5));
+AEAssessmentSession.h:21: @property (class, assign, readonly) BOOL supportsConfigurationUpdates API_AVAILABLE(ios(17.5), macCatalyst(17.5), macos(14.5));
+AEAssessmentSession.h:24: @property (nonatomic, copy, readonly) AEAssessmentConfiguration *configuration API_AVAILABLE(ios(15.0), macCatalyst(15.0), macos(12.0));
+AEAssessmentSession.h:33: - (void)updateToConfiguration:(AEAssessmentConfiguration *)configuration API_AVAILABLE(ios(17.5), macCatalyst(15.0), macos(12.0));
+AEAssessmentSessionDelegate.h:15: API_AVAILABLE(ios(13.4), macos(10.15.4), macCatalyst(14.0))
+AEAssessmentSessionDelegate.h:28: - (void)assessmentSessionDidUpdate:(AEAssessmentSession *)session API_AVAILABLE(ios(17.5), macCatalyst(15.0), macos(12.0));
+AEAssessmentSessionDelegate.h:30: - (void)assessmentSession:(AEAssessmentSession *)session failedToUpdateToConfiguration:(AEAssessmentConfiguration *)configuration error:(NSError *)error API_AVAILABLE(ios(17.5), macCatalyst(15.0), macos(12.0));
+AEErrors.h:13: AE_VISIBLE NSErrorDomain const AEAssessmentErrorDomain API_AVAILABLE(ios(13.4), macos(10.15.4), macCatalyst(14.0)) API_UNAVAILABLE(visionos);
+AEErrors.h:15: API_AVAILABLE(ios(13.4), macos(10.15.4), macCatalyst(14.0))
+AEErrors.h:19:     AEAssessmentErrorUnsupportedPlatform API_AVAILABLE(ios(16.0), macos(13.0), macCatalyst(16.0)) = 2,
+AEErrors.h:20:     AEAssessmentErrorMultipleParticipantsNotSupported API_AVAILABLE(ios(17.5), macos(14.5), macCatalyst(17.5)) = 3,
+AEErrors.h:21:     AEAssessmentErrorConfigurationUpdatesNotSupported API_AVAILABLE(ios(17.5), macos(14.5), macCatalyst(17.5)) = 4,
+AEErrors.h:22:     AEAssessmentErrorRequiredParticipantsNotAvailable API_AVAILABLE(ios(26.0), macCatalyst(26.0), macos(26.0)) = 5
+AEErrors.h:25: AE_VISIBLE NSString * AENotInstalledParticipantsKey NS_REFINED_FOR_SWIFT API_AVAILABLE(ios(26.0), macCatalyst(26.0), macos(26.0)) API_UNAVAILABLE(visionos);
+AEErrors.h:26: AE_VISIBLE NSString * AERestrictedSystemParticipantsKey NS_REFINED_FOR_SWIFT API_AVAILABLE(ios(26.0), macCatalyst(26.0), macos(26.0)) API_UNAVAILABLE(visionos);
+AutomaticAssessmentConfiguration.h:8: #import <AutomaticAssessmentConfiguration/AEAssessmentApplication.h>

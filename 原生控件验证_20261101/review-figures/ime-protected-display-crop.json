@@ -1,0 +1,11 @@
+{
+  "source": "artifacts/native-ime-20261101T134127Z/raster-protected/capture-composition/sck-screenshot-display.png",
+  "sourceSHA256": "c17aae4c0ceb6aa16f33e857eab10ae4570ac96ba321bc6e64b2ef0f9a5f43ff",
+  "cropPixels": [
+    552,
+    146,
+    2472,
+    1510
+  ],
+  "modification": "crop only; no compositing or redaction"
+}

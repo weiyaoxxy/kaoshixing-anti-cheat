@@ -1,0 +1,12 @@
+{
+  "AXIsProcessTrusted" : true,
+  "CGPreflightPostEventAccess" : true,
+  "clipboardRead" : false,
+  "permissionRequested" : false,
+  "posted" : false,
+  "postedEventCount" : 0,
+  "routing" : "CGEvent.postToPid",
+  "status" : "permission_check_only",
+  "timestamp" : "2026-11-01T13:07:31Z",
+  "verificationBoundary" : "A successful post is not evidence the app handled the event. Compare Demo state, editing selection, native events, and rendered pixels. Unicode injection does not test an IME composition session."
+}
